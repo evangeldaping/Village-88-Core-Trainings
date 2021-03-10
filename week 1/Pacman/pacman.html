@@ -1,0 +1,125 @@
+<html lang="de">
+
+<head>
+    <title>Pac Man</title>
+    <meta charset="UTF-8">
+
+    <style>
+        #pacman {
+            margin: 10px;
+            top: 0;
+            position: absolute;
+        }
+
+        td {
+            background-color: green;
+            height: 50px;
+            width: 50px;
+        }
+
+        table {
+            border-spacing: 0;
+            margin: 200px;
+        }
+
+        td.wall {
+            background-color: darkgreen;
+        }
+    </style>
+
+    <script>
+        walls = document.querySelectorAll(".wall");
+        positionX = 10;
+        positionY = 10;
+        movingX = 0;
+        movingY = 0;
+
+        document.addEventListener("keydown", function (event) {
+            if (event.keyCode == 87) { // W
+                movingX = 0;
+                movingY = -2;
+            }
+            if (event.keyCode == 83) { // S
+                movingX = 0;
+                movingY = 2;
+            }
+            if (event.keyCode == 65) { // A
+                movingX = -2;
+                movingY = 0;
+            }
+            if (event.keyCode == 68) { // D
+                movingX = 2;
+                movingY = 0;
+            }
+            if (event.keyCode == 27) { // ESCAPE
+                movingX = 0;
+                movingY = 0;
+            }
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="wall">
+
+            </td>
+            <td>
+
+            </td>
+            <td class="wall">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td class="wall">
+
+            </td>
+        </tr>
+    </table>
+    <button id="pacman">Top</button>
+</body>
+<script>
+    let walls = document.querySelectorAll(".wall");
+
+    setInterval(function () {
+        checkAndMove();
+    }, 1000);
+
+    function checkAndMove() {
+        if (checkWalls() == 1) {
+            for (i = 0; i < 10; i++) {
+                setTimeout(function () {
+                    move();
+                }, 100 * i);
+            }
+        }
+    }
+    function checkWalls() {
+        for (i = 0; i < walls.length; i++) {
+            rect = walls[i].getBoundingClientRect();
+            if ((positionX + (movingX * 30)) > rect.left &&
+                (positionX + (movingX * 30)) < rect.right &&
+                (positionY + (movingY * 30)) > rect.top &&
+                (positionY + (movingY * 30)) < rect.bottom) {
+
+                return false;
+            }
+        }
+        return 1;
+    }
+    function move() {
+        document.getElementById("pacman").style.marginTop = (positionY += movingY) + "px";
+        document.getElementById("pacman").style.marginLeft = (positionX += movingX) + "px";
+    }
+
+</script>
+
+</html>

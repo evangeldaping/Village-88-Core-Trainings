@@ -1,0 +1,112 @@
+body {
+  background: black;
+}
+
+#title {
+  color: white;
+}
+
+.centered {
+  text-align: center;
+}
+
+.shiftRight {
+  text-align: right;
+}
+
+#scoreboard {
+  width: 700px;
+  margin: auto;
+}
+
+#scoreboard > p {
+  margin: 5px auto;
+  font-size: 16px;
+  color: white;
+}
+
+div.wall {
+  /* background: url("../images/wall.png"); */
+  background-size: cover;
+  background: blue;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+div.wall2 {
+  /* background: url("../images/wall.png"); */
+  background-size: cover;
+  background: pink;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+div.wall3 {
+  /* background: url("../images/wall.png"); */
+  background-size: cover;
+  background: green;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+div.wall4 {
+  /* background: url("../images/wall.png"); */
+  background-size: cover;
+  background: red;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+div.wall5 {
+  /* background: url("../images/wall.png"); */
+  background-size: cover;
+  background: skyblue;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+div.coin {
+  background: url("../images/coin.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+.blank {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  /* background: #181819; */
+}
+
+#pacman {
+  background: url("../images/pacman.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+.ghost {
+  background: url("../images/ghost1.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+.container {
+  height: 25px;
+  width: 700px;
+  margin: auto;
+}

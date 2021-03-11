@@ -1,18 +1,35 @@
 function resetNegatives(arr){
-    console.log(arr.map(a => a.toString()[0] !== '-' ? a : 0));
+    for(var i=0; i<=arr.length; i++){
+        if(arr[i]<0){
+            arr[i] = 0;
+        }
+    }
+    console.log(arr);
 }
-resetNegatives([1,2,-1,-3]);
+
+resetNegatives([-1,2,3,4,5]);
+resetNegatives([-1,-2,3,4,5]);
+resetNegatives([1,-2,-3,4,5]);
+resetNegatives([1,2,-3,-4,5]);
+resetNegatives([1,2,3,-4,5]);
 
 console.log("----------");
 
 function moveForward(arr){
-    arr.shift();
+    if(!arr.length){
+        return undefined;
+    }
     arr.push(0);
-    console.log(arr);
+    arr1 = arr.splice(1, arr.length);
+
+    console.log(arr1);
 }
-moveForward([1,2,3]);
 
-
+moveForward([1,2]);
+moveForward([2,3,4]);
+moveForward([3,3,4,5]);
+moveForward([4,5,6,7,9]);
+moveForward([5,6,7,8,9,10]);
 
 console.log("----------");
 
@@ -24,7 +41,12 @@ function returnReversed(arr){
     }
     console.log(arr);
 }
-returnReversed([1,2,3])
+
+returnReversed([1,2,3,4,5,6]);
+returnReversed([1,2,3,4,5]);
+returnReversed([1,2,3,4]);
+returnReversed([1,2,3]);
+returnReversed([1,2,]);
 
 console.log("----------");
 
@@ -39,4 +61,9 @@ const res = element.reduce((acc, curr, idx) => {
 
 console.log(res);
 }
+
+repeatTwice(["Ulysses", 42, false,4])
 repeatTwice([4,"Ulysses", 42, false])
+repeatTwice([false,4,"Ulysses",42])
+repeatTwice([42,false, 4, "Ulysses"])
+

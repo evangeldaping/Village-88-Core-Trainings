@@ -1,0 +1,267 @@
+<style>
+body{
+	background-color:black;
+}
+#background{
+	width: 800px;
+	height: 580px;
+	background: url('bg.gif');
+	background-size: cover;
+}
+
+#character1{
+	background: url('ken.png') 0px -80px;
+	width:70px;
+	height:80px;
+	position:absolute;
+}
+#character2{
+	background: url('ken.png') -70px -160px;
+	width:70px;
+	height:80px;
+	position:absolute;
+	transform: scaleX(-1);
+}
+#healthbar1{
+	width:200px;
+	height:15px;
+	background-color:lightgreen;
+	border:3px solid green;
+	position:absolute;
+	top:30px;
+	left:25px;
+}
+#healthbar2{
+	width:200px;
+	height:15px;
+	background-color:pink;
+	border:3px solid red;
+	position:absolute;
+	top:30px;
+	left:325px;
+}
+div.bubble{
+	background: url('ken.png') -8px -339px;
+	/* background: url('ken.png'); */
+	width:70px;
+	height:80px;
+	position:absolute;
+}
+</style>
+
+<div id='background'>
+	<div id='character1'></div>
+	<div id='character2'></div>
+	<div id='healthbar1'></div>
+	<div id='healthbar2'></div>
+	<div id='bubbles'></div>
+	<audio id="power">
+		<source src="ryuken-shoryuken.mp3" />
+	</audio>
+	<audio id="jump">
+		<source src="jump.mp3" />
+	</audio>
+	<audio id="punch">
+		<source src="punch.mp3" />
+	</audio>
+	<audio id="kick">
+		<source src="kick.mp3" />
+	</audio>
+	<audio id="crouch">
+		<source src="ryuken-shoryuken.mp3" />
+	</audio>
+</div>
+
+
+<script>
+
+	var action = 'STANDING';
+	var which_frame = 0;
+
+	var bubbles = [];
+	
+	var character1={
+		top: 485,
+		left: 100,
+		health: 100
+	}
+	var character2={
+		top: 485,
+		left: 400,
+		health: 100
+	}
+
+	function GameLoop()
+	{
+		displayCharacters();
+		moveBubbles();
+		displayBubbles();
+		moveEnemy();
+	}
+
+	setInterval(GameLoop, 100);
+
+	function moveEnemy() {
+		character2.left += Math.floor(Math.random() * 17) - 8;	
+	}
+
+	function displayCharacters()
+	{
+		document.getElementById('character1').style.top = character1.top;
+		document.getElementById('character1').style.left = character1.left;
+
+		document.getElementById('character2').style.top = character2.top;
+		document.getElementById('character2').style.left = character2.left;
+
+		document.getElementById('healthbar1').style.width = character1.health*2.3;
+		document.getElementById('healthbar2').style.width	 = character2.health*2.3;
+
+
+		if(action == 'STANDING')
+		{
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -80px";
+			which_frame = which_frame+1;
+
+			if(which_frame >= 4)
+			{
+				which_frame = 0;
+			}
+		}
+		else if(action == 'PUNCH')
+		{
+			if(which_frame == 2 && character1.left > character2.left - 150 && character1.left < character2.left + 50)
+			{
+				character2.health = character2.health-5;
+			}
+			const mySound = document.getElementById("punch");
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -160px";
+			which_frame = which_frame+1;
+			mySound.play();
+			if(which_frame >= 3)
+			{
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if(action == 'ROUND_KICK')
+		{
+			if(which_frame == 2 && character1.left > character2.left - 150 && character1.left < character2.left + 50)
+			{
+				character2.health = character2.health-8;
+			}
+			const mySound = document.getElementById("kick");
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -560px";
+			which_frame = which_frame+1;
+			mySound.play();
+			if(which_frame >= 5)
+			{
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if (action == 'CROUCH') {
+			document.getElementById('character1').style.background = "url('ken.png') -" + which_frame  + "px -720px";
+			which_frame = which_frame + 1;
+
+			if (which_frame >= 5) {
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if (action == 'JUMP') {
+			const mySound = document.getElementById("jump");
+			document.getElementById('character1').style.background = "url('ken.png') -" + which_frame* 70 + "px -640px";
+			mySound.play();
+			which_frame = which_frame + 1;
+			if (which_frame >= 5) {
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if (action == 'POWER') {
+			// if (which_frame == 2 && character1.left > character2.left - 150 && character1.left < character2.left + 50) {
+			// 	character2.health = character2.health - 8;
+			// }
+			const mySound = document.getElementById("power");
+			document.getElementById('character1').style.background = "url('ken.png') -" + which_frame * 70 + "px -800px";
+			mySound.play();
+			which_frame = which_frame + 1;
+
+			if (which_frame >= 5) {
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if (action == 'BUBBLES') {
+			if (which_frame == 2 && character1.left > character2.left - 150 && character1.left < character2.left + 50) {
+				character2.health = character2.health - 8;
+			}
+			document.getElementById('character1').style.background = "url('ken.png') -" + which_frame * 70 + "px 410px";
+			which_frame = which_frame + 1;
+			if (which_frame >= 5) {
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+	}
+
+	function displayBubbles() {
+		var output = '';
+		for (var i = 0; i < bubbles.length; i++) {
+			output = output + "<div class='bubble' style='top:" + bubbles[i].y + "px; left:" + bubbles[i].x + "px;'></div>";
+		}
+		document.getElementById('bubbles').innerHTML = output;
+	}
+
+	function moveBubbles() {
+		for (var i = 0; i < bubbles.length; i++) {
+			if (bubbles[i].x > 400) {
+				bubbles[i] = bubbles[bubbles.length - 1];
+				bubbles.pop();
+			}
+		}
+		for (var i = 0; i < bubbles.length; i++) {
+			bubbles[i].x += 10;
+		}
+	}
+
+	document.onkeydown = function(e)
+	{
+		console.log(e);
+		if(e.keyCode == 37 && character1.left > 0)
+		{
+			character1.left = character1.left-10;
+		}
+		else if(e.keyCode == 39 && character1.left < 800)
+		{
+			character1.left = character1.left+10;
+		}
+		else if (e.keyCode == 38)
+		{
+			action = 'JUMP';
+		}
+		else if (e.keyCode == 40)
+		{
+			action = 'CROUCH';
+		}
+		else if(e.keyCode == 83)
+		{
+			action = 'PUNCH';
+		}
+		else if(e.keyCode == 68)
+		{
+			action = 'ROUND_KICK';
+		}
+		else if (e.keyCode == 32) {
+			action = 'POWER';	
+			bubbles.push({
+				x: character1.left + 32,
+				y: character1.top
+			});					
+		}
+		// console.log(e);
+		which_frame = 0;
+		displayCharacters();
+		displayBubbles();
+	}
+</script>

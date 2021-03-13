@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" onclick="jump()">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+
+    <style> 
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #game{
+            width: 400px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            overflow: hidden;
+            background: url('bg.gif');
+            background-size: cover;
+        }
+        #block{
+            width: 50px;
+            height: 500px;
+            background: url('pipe.jpg');
+            background-size: cover;
+            position: relative;
+            left: 400px;
+            animation: block 2s infinite linear;
+        }
+        @keyframes block{
+            0%{left:400px}
+            100%{left:-50px}
+        }
+        #hole{
+            width: 50px;
+            height: 150px;
+            background-color: #48C4CC;
+            position: relative;
+            left: 400px;
+            top: -500px;
+            animation: block 2s infinite linear;
+        }
+        #character{
+            width: 50px;
+            height: 50px;
+            background: url('bird.gif');
+            background-size: cover;
+            position: absolute;
+            top: 100px;
+        }
+        #score{
+            position:absolute;
+            border:10px solid red;
+            top:20px;
+            left:800px;
+            background-color:white;
+            padding:10px;
+            font-size:30px;
+            font-family: Arial;	
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game">
+        <div id="block"></div>
+        <div id="hole"></div>
+        <div id="character"></div>
+        <div id="score">0</div>
+        <audio id="wing">
+            <source src="wing.mp3" />
+        </audio>
+        <audio id="point">
+            <source src="point.mp3" />
+        </audio>
+        <audio id="hit">
+            <source src="hit.mp3" />
+        </audio>
+        <audio id="die">
+            <source src="die.mp3" />
+        </audio>
+    </div>
+
+</body>
+    <script>
+        var block = document.getElementById("block");
+        var hole = document.getElementById("hole");
+        var character = document.getElementById("character");
+        var jumping = 0;
+        var counter = 1;
+
+        hole.addEventListener('animationiteration', () => {
+            const pointSound = document.getElementById("point");
+            var random = Math.random()*3;
+            var top = (random*100)+150;
+            hole.style.top = -(top) + "px";
+            pointSound.play();
+            displayScore();
+            counter++;
+        });
+        setInterval(function () {
+            var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+            if (jumping == 0) {
+                character.style.top = (characterTop + 3) + "px";
+            }
+            const hitSound = document.getElementById("hit");
+            const dieSound = document.getElementById("die");
+            var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+            var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
+            var cTop = -(500 - characterTop);
+            
+            if ((characterTop > 480) || ((blockLeft < 20) && (blockLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 130)))) {
+                hitSound.play();
+                alert("Game over. Score: " + (counter-1));
+                character.style.top = 100 + "px";
+                counter = 0;
+                dieSound.play();
+            }
+        }, 10);
+
+        function jump() {
+            jumping = 1;
+            let jumpCount = 0;
+            const wingSound = document.getElementById("wing");
+            var jumpInterval = setInterval(function () {
+                var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+                if ((characterTop > 6) && (jumpCount < 15)) {
+                    character.style.top = (characterTop - 5) + "px";
+                    wingSound.play();
+                }
+                if (jumpCount > 20) {
+                    clearInterval(jumpInterval);
+                    jumping = 0;
+                    jumpCount = 0;
+                }                 
+                jumpCount++;
+            }, 10);
+        }
+
+        function displayScore() {
+            document.getElementById('score').innerHTML = counter;
+        }
+        displayScore();
+    </script>
+</html>

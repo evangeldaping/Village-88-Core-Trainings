@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/ -->
+<html lang="en"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="aax_if_prefetch_frame" allowtransparency="true" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/display.html" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation-by-user-activation allow-scripts" name="{&quot;type&quot;:&quot;prefetch_frame&quot;,&quot;fid&quot;:2,&quot;tarOg&quot;:&quot;https://www.webdesignerdepot.com&quot;}" style="display: none !important;"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="aaxclient" allowtransparency="true" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/getcbids.html" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation-by-user-activation allow-scripts" name="{&quot;fid&quot;:1,&quot;tarOg&quot;:&quot;https://www.webdesignerdepot.com&quot;}" style="display: none !important;"></iframe><script type="text/javascript" async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/gpt.js.download"></script><script type="text/javascript" async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/tcb.js.download"></script><script type="text/javascript" async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/analytics.js.download"><script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/ga.js.download" async="true"></script></script><script type="text/javascript" async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/aax.js.download"></script><script type="module" src="chrome-extension://jdkknkkbebbapilgoeccciglkfbmbnfm/hook.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>	
+   10 CSS Selectors You Shouldn’t Code without | Webdesigner Depot	  Webdesigner Depot  » Blog Archive 	</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="Webdesigner Depot RSS Feed" href="https://www.webdesignerdepot.com/feed/">
+<link rel="pingback" href="https://www.webdesignerdepot.com/xmlrpc.php">
+<link rel="stylesheet" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/khu5dcw.css">
+<link rel="stylesheet" type="text/css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/style.css" media="screen, print">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@DesignerDepot">
+<meta name="twitter:site" content="@DesignerDepot">
+<meta name="twitter:title" content="10 CSS Selectors You Shouldn’t Code without">
+<meta name="twitter:description" content="Every time we use CSS, we use selectors. But despite this, CSS selectors are one of the more neglected parts of the specification.We talk about the big transformations in CSS3 but all too often forg">
+<meta name="twitter:image" content="https://www.webdesignerdepot.com/cdn-origin/uploads/2013/07/featured35.jpg">
+
+
+<meta name="description" content="Every time we use CSS, we use selectors. But despite this, CSS selectors are one of the more neglected parts of the specification. We talk about the big transformations in CSS3 but all too often forget the basics. Good use of selectors makes our day-to-day coding simpler and more elegant. Today I’m going to cover […]">
+<link rel="canonical" href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/">
+<meta name="google" content="nositelinkssearchbox">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/www.webdesignerdepot.com\/#website","url":"https:\/\/www.webdesignerdepot.com\/","name":"Webdesigner Depot","description":"Web Design Resources and Tutorials","publisher":{"@id":"https:\/\/www.webdesignerdepot.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/www.webdesignerdepot.com\/#organization","name":"Webdesigner Depot","url":"https:\/\/www.webdesignerdepot.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/www.webdesignerdepot.com\/#listItem","position":1,"item":{"@type":"CollectionPage","@id":"https:\/\/www.webdesignerdepot.com\/#item","name":"Home","description":"Web Design Resources for Web Designers. We include Photoshop Tutorials, WordPress Plugins, and Web Development tools. Download free icons, Photoshop brushes and tools for web and graphic designers.","url":"https:\/\/www.webdesignerdepot.com\/"},"nextItem":"https:\/\/www.webdesignerdepot.com\/2013\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.webdesignerdepot.com\/2013\/#listItem","position":2,"item":{"@type":"CollectionPage","@id":"https:\/\/www.webdesignerdepot.com\/2013\/#item","name":"August 6, 2013 | Webdesigner Depot","url":"https:\/\/www.webdesignerdepot.com\/2013\/"},"nextItem":"https:\/\/www.webdesignerdepot.com\/2013\/08\/#listItem","previousItem":"https:\/\/www.webdesignerdepot.com\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/#listItem","position":3,"item":{"@type":"CollectionPage","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/#item","name":"August 6, 2013 | Webdesigner Depot","url":"https:\/\/www.webdesignerdepot.com\/2013\/08\/"},"nextItem":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#listItem","previousItem":"https:\/\/www.webdesignerdepot.com\/2013\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#listItem","position":4,"item":{"@type":"Article","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#item","name":"10 CSS selectors you shouldn't code without","description":"Every time we use CSS, we use selectors. But despite this, CSS selectors are one of the more neglected parts of the specification. We talk about the big transformations in CSS3 but all too often forget the basics. Good use of selectors makes our day-to-day coding simpler and more elegant. Today I\u2019m going to cover [\u2026]","url":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/"},"previousItem":"https:\/\/www.webdesignerdepot.com\/2013\/08\/#listItem"}]},{"@type":"Person","@id":"https:\/\/www.webdesignerdepot.com\/author\/svieira\/#author","url":"https:\/\/www.webdesignerdepot.com\/author\/svieira\/","name":"Sara Vieira","image":{"@type":"ImageObject","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/67ad9cf0282936d7dc245d47058a0dce?s=96&d=mm&r=g","width":96,"height":96,"caption":"Sara Vieira"}},{"@type":"WebPage","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#webpage","url":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/","name":"10 CSS Selectors You Shouldn\u2019t Code without | Webdesigner Depot","description":"Every time we use CSS, we use selectors. But despite this, CSS selectors are one of the more neglected parts of the specification. We talk about the big transformations in CSS3 but all too often forget the basics. Good use of selectors makes our day-to-day coding simpler and more elegant. Today I\u2019m going to cover [\u2026]","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/www.webdesignerdepot.com\/#website"},"breadcrumb":{"@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#breadcrumblist"},"author":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#author","creator":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#author","image":{"@type":"ImageObject","@id":"https:\/\/www.webdesignerdepot.com\/#mainImage","url":"https:\/\/www.webdesignerdepot.com\/cdn-origin\/uploads\/2013\/07\/featured35.jpg","width":1684,"height":960},"primaryImageOfPage":{"@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#mainImage"},"datePublished":"2013-08-06T14:15:21-03:00","dateModified":"2018-02-07T13:56:20-03:00"},{"@type":"Article","@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#article","name":"10 CSS Selectors You Shouldn\u2019t Code without | Webdesigner Depot","description":"Every time we use CSS, we use selectors. But despite this, CSS selectors are one of the more neglected parts of the specification. We talk about the big transformations in CSS3 but all too often forget the basics. Good use of selectors makes our day-to-day coding simpler and more elegant. Today I\u2019m going to cover [\u2026]","headline":"10 CSS selectors you shouldn't code without","author":{"@id":"https:\/\/www.webdesignerdepot.com\/author\/svieira\/#author"},"publisher":{"@id":"https:\/\/www.webdesignerdepot.com\/#organization"},"datePublished":"2013-08-06T14:15:21-03:00","dateModified":"2018-02-07T13:56:20-03:00","commentCount":"47","articleSection":"UI","mainEntityOfPage":{"@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#webpage"},"isPartOf":{"@id":"https:\/\/www.webdesignerdepot.com\/2013\/08\/10-css-selectors-you-shouldnt-code-without\/#webpage"},"image":{"@type":"ImageObject","@id":"https:\/\/www.webdesignerdepot.com\/#articleImage","url":"https:\/\/www.webdesignerdepot.com\/cdn-origin\/uploads\/2013\/07\/featured35.jpg","width":1684,"height":960}}]}
+		</script>
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Webdesigner Depot » 10 CSS Selectors You Shouldn’t Code without Comments Feed" href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/feed/">
+<link rel="stylesheet" id="formidable-css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/formidableforms.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="animate-css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/animate.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-quiz-css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/wp-quiz.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/default.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/jquery.js.download"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.webdesignerdepot.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.webdesignerdepot.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Free Download: 48 Flat Designer Icons" href="https://www.webdesignerdepot.com/2013/08/free-download-48-flat-designer-icons/">
+<link rel="next" title="How to Take WordPress to the Cloud with Amazon S3 &amp; CloudFront" href="https://www.webdesignerdepot.com/2013/08/how-to-take-wordpress-to-the-cloud-with-amazon-s3-cloudfront/">
+<meta name="generator" content="WordPress 5.4.4">
+<link rel="shortlink" href="https://www.webdesignerdepot.com/?p=56614">
+<link rel="alternate" type="application/json+oembed" href="https://www.webdesignerdepot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.webdesignerdepot.com%2F2013%2F08%2F10-css-selectors-you-shouldnt-code-without%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.webdesignerdepot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.webdesignerdepot.com%2F2013%2F08%2F10-css-selectors-you-shouldnt-code-without%2F&amp;format=xml">
+<script type="text/javascript">
+var ajaxurl = 'https://www.webdesignerdepot.com/wp-admin/admin-ajax.php';
+</script>
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><link rel="amphtml" href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/amp/"><link rel="icon" href="https://www.webdesignerdepot.com/cdn-origin/uploads/2017/12/cropped-favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.webdesignerdepot.com/cdn-origin/uploads/2017/12/cropped-favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.webdesignerdepot.com/cdn-origin/uploads/2017/12/cropped-favicon-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.webdesignerdepot.com/cdn-origin/uploads/2017/12/cropped-favicon-270x270.png">
+
+
+<script type="text/javascript">(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();</script><script type="text/javascript" async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/pro.js.download"></script>
+
+
+
+
+
+<script type="text/javascript">
+	var tyche = { mode: 'tyche', config: '//config.playwire.com/1024317/v2/websites/72732/banner.json' }
+	</script>
+<script id="tyche" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/pageos.js.download" type="text/javascript"></script><script charset="utf-8" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/videoCard.1451368a7b5e945a3252.js.download"></script><script charset="utf-8" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/batchHandler.04bb1e00ea7004ed29f9.js.download"></script><script type="text/javascript" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/moatheader.js.download" async=""></script>
+
+
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1879157,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/hotjar-1879157.js.download"></script>
+
+<script async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-331696-9');
+</script>
+<script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/embed.js.download" data-timestamp="1615897852988"></script><style type="text/css" id="pwCustomCSS">div[id*="pw-oop-desktop_in_article"] {
+  width: unset !important;
+  margin: 0 auto !important;
+}
+
+div[id*="pw-oop-mobile_in_article"] {
+  width: unset !important;
+  margin: 0 auto !important;
+  left: 85px !important;
+}
+
+div#pw-oop-desktop_in_article > div {
+  margin: 0 auto !important;
+}
+
+/* DESKTOP fixes the ad from moving to the left of the article paragraph */
+.entry-content iframe[title*="3rd party ad content"]  {
+  width: 728px; !important;
+  max-width: 728px; !important;
+}
+
+/* MOBILE fixed the ad size consistency */
+@media only screen and (max-device-width: 768px) {
+  .entry-content iframe[title*="3rd party ad content"]  {
+    width: 100%; !important;
+    max-width: 100%; !important;
+    margin: 0 auto;
+  }
+
+/* MOBILE Inner Ad Center Targetting */
+  div.GoogleCreativeContainerClass {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .GoogleActiveViewElement { 
+    display: flex 
+  }
+    .GoogleActiveViewElement iframe { 
+    margin: 0 auto; 
+  }
+}
+
+/* BOTTOM LEADER BOARD */
+.single-bottom-ads { float: right !important; }</style><script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/tyche.js.download" type="text/javascript"></script><div id="_bsa_srv-CKYDLK3W_0"></div><script async="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/modules.385e5029655a846359a5.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/aws-sdk-kinesis.min.js.download"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.c82b267b396dfbc10ae5113342115da8.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.f485ba8b89bf2153fdb9f493ec342aed.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.23a4221792e0033ef287b443e614e232.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/pubads_impl_2021031001.js.download" async=""></script></head>
+<body class="post-template-default single single-post postid-56614 single-format-standard blog-body" data-new-gr-c-s-check-loaded="14.998.0" data-gr-ext-installed=""><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="mnet" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/aacxs.html" style="display: none !important;"></iframe><span role="button" class="acsb-sr-only acsb-skip-link" data-acsb-sr-trigger="true" data-acsb-sr-only="true" data-acsb-force-visible="true" aria-label=" Use Website In a Screen-Reader Mode "></span><div class="acsb-skip-links acsb-force-visible acsb-ready" role="region" aria-label="Skip Links" data-acsb="skipLinks" style="display: none;"> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#acsbContent" data-acsb-skip-link="content" class="acsb-skip-link"> Skip to Content <div aria-hidden="true"><span class="acsb-symbol">↵</span>ENTER</div> </a> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#acsbMenu" data-acsb-skip-link="menu" class="acsb-skip-link"> Skip to Menu <div aria-hidden="true"><span class="acsb-symbol">↵</span>ENTER</div> </a> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#acsbFooter" data-acsb-skip-link="footer" class="acsb-skip-link"> Skip to Footer <div aria-hidden="true"><span class="acsb-symbol">↵</span>ENTER</div> </a>
+</div><div id="_flexbar_" data-attributes="{&quot;type&quot;:&quot;flexbar&quot;,&quot;key&quot;:&quot;CKYDLK3W&quot;,&quot;segment&quot;:&quot;placement:webdesignerdepotcom&quot;,&quot;options&quot;:{&quot;target&quot;:&quot;body&quot;,&quot;script_id&quot;:&quot;_bsa_srv-CKYDLK3W_0&quot;,&quot;platforms&quot;:[&quot;desktop&quot;,&quot;mobile&quot;]},&quot;ads&quot;:[{&quot;active&quot;:&quot;1&quot;,&quot;ad_via_link&quot;:&quot;http://selfserve.buysellads.com/checkout/new/?utm_source=webdesignerdepot-com-flexbar&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=flexbar&quot;,&quot;backgroundColor&quot;:&quot;#ee3625&quot;,&quot;backgroundHoverColor&quot;:&quot;#ee3625&quot;,&quot;bannerid&quot;:&quot;418948&quot;,&quot;callToAction&quot;:&quot;Try it for free&quot;,&quot;company&quot;:&quot;Shutterstock&quot;,&quot;companyTagline&quot;:&quot;Get 10 FREE images&quot;,&quot;creativeid&quot;:&quot;456186&quot;,&quot;ctaBackgroundColor&quot;:&quot;#3251d7&quot;,&quot;ctaBackgroundHoverColor&quot;:&quot;#ee3625&quot;,&quot;ctaTextColor&quot;:&quot;#ffffff&quot;,&quot;ctaTextColorHover&quot;:&quot;#ffffff&quot;,&quot;description&quot;:&quot;🥳Download 10 FREE images from Shutterstock’s world-class library with a free 1-month trial! 🙌&quot;,&quot;evenodd&quot;:&quot;0&quot;,&quot;external_id&quot;:&quot;73183&quot;,&quot;height&quot;:&quot;0&quot;,&quot;i&quot;:&quot;0&quot;,&quot;identifier&quot;:&quot;2fd166d145e0c531b58182274ce212a4&quot;,&quot;image&quot;:&quot;https://cdn4.buysellads.net/uu/1/75270/1601332131-shutterstock-80x80.png&quot;,&quot;logo&quot;:&quot;https://cdn4.buysellads.net/uu/1/75270/1601332135-logo_250x100_white_-_nativecpc.png&quot;,&quot;longimp&quot;:&quot;T3A5PWDTTTTTTT46XHZCTTTTTTTDWB4NKTTTTTTTY45MTYTTTTTTT&quot;,&quot;longlink&quot;:&quot;THA5PWDTTTTTTT46XHZCTTTTTTTDWB4NKTTTTTTTY45MTYTTTTTTTNIQFHSHKILC53QCV2IGK2IN5AIF5RZWKYLKPA7T&quot;,&quot;num_slots&quot;:&quot;1&quot;,&quot;pixel&quot;:&quot;https://924-img.c3tag.com/v.gif?cid=924&amp;c3=N349404.3227239CARBONADS-255357086&amp;creative=136864249&amp;redirect=&amp;#126;%7Bhttps://ad.doubleclick.net/ddm/trackimp/N349404.3227239CARBONADS/B10404391.255357086;dc_trk_aid=451704511;dc_trk_cid=136864249;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=$;gdpr_consent=$?%7D&amp;#126;&quot;,&quot;rendering&quot;:&quot;flexbar&quot;,&quot;statimp&quot;:&quot;//srv.buysellads.com/ads/imp/x/GTND42JJCWAI423ICYY4YKQNC6SDCKQLCYBDVZ3JCYYIKKJUCWBI423KFTSDP2QJCEAI55QLCT7IVK7ECY7IK2QKC6SD42QYF6SDTK3EHJWNBADLKM7UCBZG2Y&quot;,&quot;statlink&quot;:&quot;//srv.buysellads.com/ads/click/x/GTND42JJCWAI423ICYY4YKQNC6SDCKQLCYBDVZ3JCYYIKKJUCWBI423KFTSDP2QJCEAI55QLCT7IVK7ECY7IK2QKC6SD42QYF6SDTK3EHJNCLSIZ&quot;,&quot;textColor&quot;:&quot;#ffffff&quot;,&quot;textColorHover&quot;:&quot;#ffffff&quot;,&quot;timestamp&quot;:&quot;1615897853&quot;,&quot;width&quot;:&quot;0&quot;,&quot;zoneid&quot;:&quot;30904&quot;,&quot;zonekey&quot;:&quot;CKYDLK3W&quot;}]}"><style type="text/css">#_flexbar_._bsa_hide ._bsa_flexbar{display:none}#_flexbar_._bsa_show ._bsa_flexbar{display:block}#_flexbar_{display:block}#_flexbar_._bsa_hide{margin-bottom:0}#_flexbar_ ._bsa_flexbar{position:relative;z-index:999999;width:100%;background:#ee3625;text-align:left;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif !important;-webkit-animation:fadein 2s;-moz-animation:fadein 2s;-ms-animation:fadein 2s;-o-animation:fadein 2s;animation:fadein 2s}#_flexbar_ ._bsa_flexbar:hover{background:#ee3625}#_flexbar_ .flexbar-wrap{display:flex;padding:18px 40px;text-decoration:none;align-items:center;justify-content:space-between}#_flexbar_ .flexbar-left{display:flex;align-items:center;justify-content:flex-start}#_flexbar_ .flexbar-text{display:flex;flex-direction:column;margin-right:60px}#_flexbar_ .flexbar-heading{color:#ffffff;text-transform:uppercase;letter-spacing:1px;font-weight:600;font-size:10px}#_flexbar_ .flexbar-sponsor{letter-spacing:1px;font-weight:400;opacity:.8}#_flexbar_ .flexbar-desc{color:#ffffff;letter-spacing:1px;font-size:16px;font-weight:400;line-height:1.3}#_flexbar_ .flexbar-logo{line-height:0}#_flexbar_ .flexbar-logo img{margin:0 30px 0 0;max-width:125px}#_flexbar_ .flexbar-cta{padding:10px 14px;border:0;border-radius:3px;background:#3251d7;color:#ffffff;text-decoration:none;text-transform:uppercase;white-space:nowrap;letter-spacing:.5px;font-weight:600;font-size:14px;line-height:1}#_flexbar_ .flexbar-footer{position:absolute;right:40px;bottom:4px;border-top:0;line-height:1;border-top-left-radius:3px;color:#ffffff;text-decoration:none;text-transform:uppercase;letter-spacing:1px;font-weight:600;font-size:8px}#_flexbar_ .flexbar-close{color:#ffffffcc;cursor:pointer}#_flexbar_ .flexbar-close:hover{color:#ffffff}#_flexbar_ .flexbar-via{color:#ffffffcc !important;text-decoration:none !important}#_flexbar_ .flexbar-via:hover{color:#ffffff !important}@media all and (max-width:768px){#_flexbar_ .flexbar-logo img{max-width:100px}#_flexbar_ .flexbar-heading{font-size:9px;line-height:1.5;margin-bottom:2px}#_flexbar_ .flexbar-desc{font-size:14px}#_flexbar_ .flexbar-cta{font-size:12px}}@media all and (max-width:568px){#_flexbar_ .flexbar-logo img{display:none}#_flexbar_ .flexbar-cta{display:none}#_flexbar_ .flexbar-heading{font-size:8px}#_flexbar_ .flexbar-desc{font-size:12px}#_flexbar_ .flexbar-text{margin-right:0}#_flexbar_ .flexbar-footer{right:15px}#_flexbar_ .flexbar-wrap{padding:20px 15px}}</style><div class="_bsa_flexbar"><a href="https://srv.buysellads.com/ads/click/x/GTND42JJCWAI423ICYY4YKQNC6SDCKQLCYBDVZ3JCYYIKKJUCWBI423KFTSDP2QJCEAI55QLCT7IVK7ECY7IK2QKC6SD42QYF6SDTK3EHJNCLSIZ?segment=placement:webdesignerdepotcom;" class="flexbar-wrap" target="_blank" rel="noopener sponsored"><span class="flexbar-left"><span class="flexbar-logo"><img src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/1601332135-logo_250x100_white_-_nativecpc.png"></span><span class="flexbar-text"><span class="flexbar-heading"><span class="flexbar-sponsor">Sponsored by</span> Shutterstock</span><span class="flexbar-desc">🥳Download 10 FREE images from Shutterstock’s world-class library with a free 1-month trial! 🙌</span></span></span><span class="flexbar-cta">Try it for free</span></a><div class="flexbar-footer"><span class="flexbar-close" onclick="_bsa.close(&#39;_flexbar_&#39;)">Hide Ad</span> • <a class="flexbar-via" href="http://selfserve.buysellads.com/checkout/new/?utm_source=webdesignerdepot-com-flexbar&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=flexbar">Ad via BuySellAds</a></div><img src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/v.gif" style="display:none;" height="0" width="0"></div></div>
+
+<div id="pushdown">
+
+<script>
+    //googletag.pubads().definePassback('/15184186/WebDesignerDepot_1x1_Pushdown', [1, 1]).display();
+  </script>
+</div><div id="adBanner" class="adLeaderboard adBanner" style="background-color: transparent; height: 1px; width: 1px; position: fixed; bottom: -10px; left: -10px;">&nbsp;</div>
+<div id="wrapper">
+<header id="header">
+<div class="content-block" id="header-top">
+<a class="mms-icon hamburger-to-close mhm-lnk" id="mms-icon-blog" data-list="msml-blog">
+<span class="hamburger-middle"></span>
+</a>
+<div id="header-social-block">
+<a href="https://www.facebook.com/webdesignerdepot" class="hs-lnk wicon-facebook">
+<svg enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#191C1D" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path></svg> </a>
+<a href="https://twitter.com/designerdepot" class="hs-lnk wicon-twitter">
+<svg aria-labelledby="simpleicons-twitter-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path fill="#191C1D" d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg> </a>
+<a href="https://feeds2.feedburner.com/webdesignerdepot?format=html" class="hs-lnk wicon-rss">
+<svg aria-labelledby="simpleicons-rss-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-rss-icon">RSS icon</title><path fill="#191C1D" d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"></path></svg> </a>
+</div>
+<div id="top-center" class="d-flex flex-row justify-content-center">
+<div class="top-submenu-wrap d-flex flex-column justify-content-center ">
+<nav class="top-submenu">
+<a href="https://www.webdesignerdepot.com/" class="mn-item">Home
+<span class="mn-stb">Home</span>
+</a>
+<div class="mn-wrap">
+<span class="mn-item">Articles
+<span class="mn-stb">Articles</span>
+</span>
+<div class="categories-drop-down">
+<div>
+<a href="https://www.webdesignerdepot.com/category/quiz" class="category-link">Quiz</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/poll" class="category-link">Poll</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/strategy-workflow" class="category-link">Workflow</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/content-strategy" class="category-link">Content</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/user-experience" class="category-link">UX</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/usability-testing" class="category-link">Usability</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/visual-design" class="category-link">Design</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/business-tech" class="category-link">Tech</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/search-marketing" class="category-link">SEO</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/community-inspiration" class="category-link">Inspiration</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/news" class="category-link">News</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/tools-resources" class="category-link">Resources</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/code" class="category-link">Code</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/funny" class="category-link">Funny</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/sponsored" class="category-link">Sponsored</a>
+</div>
+</div> </div>
+</nav>
+</div>
+<span class="logo-anim-mask">
+<a href="https://www.webdesignerdepot.com/" class="w-logo" title="Web Design Blog: WebdesignerDepot.com">
+<span class="vi-logo">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489 304"><defs><style>.cls-1{fill:#f0353d;}.cls-2{fill:#d32633;}.cls-3{fill:#f29c2a;}.cls-4{fill:#fbb239;}</style></defs><polygon class="cls-1" points="220 0 139 0 314 304 314 164 220 0"></polygon><polygon class="cls-2" points="408 0 314 164 314 304 489 0 408 0"></polygon><polygon class="cls-3" points="190.17 137.53 175 164 175 304 230.5 207.59 190.17 137.53"></polygon><polygon class="cls-4" points="81 0 0 0 175 304 175 164 81 0"></polygon></svg> </span>
+<span class="ghost-logo">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489 304"><defs><style>.cls-1{fill:#f0353d;}.cls-2{fill:#d32633;}.cls-3{fill:#f29c2a;}.cls-4{fill:#fbb239;}</style></defs><polygon class="cls-1" points="220 0 139 0 314 304 314 164 220 0"></polygon><polygon class="cls-2" points="408 0 314 164 314 304 489 0 408 0"></polygon><polygon class="cls-3" points="190.17 137.53 175 164 175 304 230.5 207.59 190.17 137.53"></polygon><polygon class="cls-4" points="81 0 0 0 175 304 175 164 81 0"></polygon></svg> </span>
+</a>
+</span>
+<div class="top-submenu-wrap d-flex flex-column justify-content-center">
+<nav class="top-submenu">
+<a href="https://www.webdesignerdepot.com/category/freebies" class="mn-item">Freebies
+<span class="mn-stb">Freebies</span>
+</a>
+<a href="https://www.mightydeals.com/all_deals?ref=wddnavbar" class="mn-item">Deals
+<span class="mn-stb">Deals</span>
+</a>
+</nav>
+</div>
+</div>
+<div id="header-search">
+<div class="search-wrap">
+<a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" id="search-btn">
+<svg id="search-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>search-icon</title><path fill="#ffffff" d="M15.5,14h-.793l-.27637-.27637a6.51878,6.51878,0,1,0-.707.707L14,14.707V15.5l5,5L20.5,19ZM5,9.5A4.5,4.5,0,1,1,9.5,14,4.5,4.5,0,0,1,5,9.5Z"></path></svg> <span class="l-icon-cancel-1"></span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<form method="get" action="https://www.webdesignerdepot.com/" id="search-form">
+<input type="text" name="s" value="" id="search-field" class="h-holder non-active" data-value="Search articles...">
+</form>
+<div class="content-block">
+<div id="article-header-stub">
+</div>
+<div id="article-header-wrap">
+<div id="article-header">
+
+<div class="content-block ah-cim ah-cim-img" style="background-image:url(https://www.webdesignerdepot.com/cdn-origin/uploads/2013/07/featured35@wdd2x.jpg);">
+<div class="single-title-im-wrap">
+<div class="single-title-im-content clearfix">
+<div class="single-title-im-inside clearfix">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to UI" class="hp-category" href="https://www.webdesignerdepot.com/category/interactive-design/">UI</a> </div>
+<h1 class="single-title">
+<span>
+10 CSS Selectors You Shouldn’t Code without </span>
+</h1>
+<div class="stiw-pinfo clearfix">
+<div class="hp-post-pub-info">
+<div class="hp-post-pub-info-content">
+<a data-tooltip="See all posts by Sara Vieira" class="hp-author-avatar-lnk" href="https://www.webdesignerdepot.com/author/Sara-Vieira">
+<img src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/67ad9cf0282936d7dc245d47058a0dce.jpeg" alt="Sara Vieira" class="hpppi-author-avatar">
+</a>
+<span class="hpppi-author">
+By <a data-tooltip="See all posts by Sara Vieira" href="https://www.webdesignerdepot.com/author/Sara-Vieira">Sara Vieira</a>
+</span>
+<span class="hpppi-separator">&nbsp;|&nbsp;</span>
+<span class="hppi-time">
+<span class="icon-clock-1"></span>
+Aug. 06, 2013 </span>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="overwrap">
+<div class="content-block">
+<div class="wrapper flex-wrap">
+<div class="content ">
+
+<div class="content-block single-content-block">
+<div class="entry-content single-content">
+<div id="article-sticky-stuff">
+<div class="sticky-shares-wrap">
+<div class="sticky-shares">
+<div class="post-share-row psr-color">
+<a onclick="openFbShare(this)" href="javascript:void(0);" data-url="http://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/" data-href="http://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/" class="psi-lnk psi-sci psi-fb"><span class="p-share-icon icon-facebook"></span>
+</a>
+</div>
+<div class="post-share-row psr-color">
+<a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.webdesignerdepot.com%2F&amp;via=designerdepot&amp;text=10+CSS+selectors+you+shouldn%27t+code+without&amp;source=tweetbutton&amp;url=http://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/" onclick="return openTwShare(this); return false;" class="psi-lnk psi-sci psi-tw">
+<span class="p-share-icon icon-twitter"></span>
+</a>
+</div>
+<div class="post-share-row">
+<a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#comments_section" class="psi-lnk psi-service scroll-to"><span class="p-share-icon icon-comment"></span></a>
+</div>
+<div class="post-share-row">
+<a href="javascript:window.print()" class="psi-lnk psi-service"><span class="p-share-icon icon-print"></span></a>
+</div>
+<div class="post-share-row">
+<a href="mailto:?subject=Check%20out%20this%20article:%2010%20CSS%20Selectors%20You%20Shouldn&amp;8217;t%20Code%20without&amp;body=https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/" class="psi-lnk psi-service"><span class="p-share-icon icon-mail-alt"></span></a>
+</div>
+</div> 
+</div>
+</div>
+<p class="single-first-p">Every time we use CSS, we use selectors. But despite this, CSS selectors are one of the more neglected parts of the specification.</p>
+<p>We talk about the big transformations in CSS3 but all too often forget the basics. Good use of selectors makes our day-to-day coding simpler and more elegant. Today I’m going to cover the 10 selectors that often slip our minds, but are both effective and highly useful.</p><p class="fixed-empty-p">&nbsp;</p><h2>*</h2>
+<p>The * selector may be the one you remember most easily but &nbsp;it’s often underused. What it does is style everything on the page and it’s great for creating a reset and also for creating some page defaults like the font family and size you wish to have.</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">* </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span class="token lf">
+</span>   <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span class="token lf">
+</span>   <span class="token property">font-family</span><span class="token punctuation">:</span> helvetica, arial, sans-serif<span class="token punctuation">;</span><span class="token lf">
+</span>   <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span><span class="token lf">
+</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A + B</h2>
+<p>This selector is called an&nbsp;adjacent selector and what it does is selects the element that is&nbsp;immediately after the first element. If you wanted to select the first div after our header you would type:</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">header + div </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">margin-top</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A &gt; B</h2>
+<p>This selector will only select the direct children unlike <strong>A B</strong> that will select any level children of<strong> A.</strong> This selector is recommended for when you are working with first level children of a parent element. For example if you want to select the first level list items in an unordered&nbsp;list that looks like this:</p>
+<div class="pre-wrap">
+<pre class="xml language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List Item With ul<span class="token lf">
+</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Sub list item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Sub list item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Sub list item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List Item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tab">	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List Item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token lf">
+</span></code></pre>
+</div>
+<p>You would use this selector because the usual <strong>A B</strong> selector will also selected the list items inside the nested unordered list</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">ul &gt; li </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span><span class="token lf">
+</span>   <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span><span class="token lf">
+</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A[href*=”example”]</h2>
+<p>This is a really good selector for when you want to style a particular link in a different way, whatever is in quotes will be matched against the href of the link. For example to style all links to facebook with the color blue you would use:&nbsp;</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">a[href*="facebook"] </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span></code></pre>
+</div>
+<p>There is also a version without the * that matches the exact url that you can use for exact links.</p>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A:not(B)</h2>
+<p>This selector if&nbsp;particularly useful because of it’s negation clause that allows you to select any group of elements that do not match what you place in <strong>B.</strong> If you want to select every div except the footer you just need:&nbsp;</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">div<span class="token pseudo-class">:not(.footer)</span> </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span><span class="token lf">
+</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A:first-child &nbsp;/ A:last-child&nbsp;</h2>
+<p>The first-child and last-child allow us to select the first and last child of the parent element. This can be a great help when it comes to list items and removing the margin-right or borders. To remove the border in the first list item and the margin in the last list item you need:</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">ul li<span class="token pseudo-class">:first-child</span> </span><span class="token punctuation">{</span>  <span class="token lf">
+</span>   <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>  <span class="token lf">
+</span><span class="token punctuation">}</span>     <span class="token lf">
+</span><span class="token selector">ul li<span class="token pseudo-class">:last-child</span> </span><span class="token punctuation">{</span>  <span class="token lf">
+</span>   <span class="token property">margin-right</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span>     <span class="token lf">
+</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A:nth-child(n)</h2>
+<p>The nth-child is a simple way for you to select any child of an element by its order. If for example you wanted the third list item in an unordered list this would be the way to go:</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">ul li<span class="token pseudo-class">:nth-child(3)</span> </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">background</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span><span class="token lf">
+</span></code></pre>
+</div>
+<p>We can use nth-child to select every multiplier of a number by using the variable n , for example if we put 3n it would select the list item number 3, 6, 9, 12 and so forth.</p>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A:nth-last-child(n)</h2>
+<p>The nth-last-child works like the nth-child but instead of counting form the first list item it starts counting from the last , so if you use it with the number two it will select the list item that comes before the last one and its usage is just like the nth-child selector:</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">ul li<span class="token pseudo-class">:nth-last-child(2)</span> </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">background</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span><span class="token lf">
+</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A:nth-of-type(n)</h2>
+<p>This selector does exactly what you think it does; it sees what type of element you placed on it and it selects, for example, the third element on your page that matches what you typed. For selecting the third paragraph in a div you would use:</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">div p<span class="token pseudo-class">:nth-of-type(3)</span> </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span><span class="token lf">
+</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>A:visited</h2>
+<p>Ever noticed that when you search for something on google the pages you have already seen appear in a different color ? That is exactly what visited does. This is a great addition for the users but it’s sometimes forgotten and by my experience it’s comes in handy every time I search google.</p>
+<div class="pre-wrap">
+<pre class="css language-css"><code class=" language-css"><span class="token selector">a<span class="token pseudo-class">:visited</span> </span><span class="token punctuation">{</span><span class="token lf">
+</span>   <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token lf">
+</span><span class="token punctuation">}</span></code></pre>
+</div>
+<p class="fixed-empty-p">&nbsp;</p>
+<h2>Final thoughts</h2>
+<p>In my experience using these kinds of selectors when coding can save us a lot of time and also avoid the need for a lot of ID’s cluttering up our markup. And this is just the beginning of CSS selectors, there are plenty more selectors that are really handy but sometimes forgotten.</p>
+<p class="fixed-empty-p">&nbsp;</p>
+<p><em><strong>Do you use CSS selectors in your style sheets? Is it easier to fall back on IDs and classes? Let us know in the comments.</strong></em></p>
+<p><em>Featured image/thumbnail, <a href="http://www.shutterstock.com/pic-131307065/stock-photo-program-code-on-a-monitor.html" class="external inner-link-effect" rel="nofollow"><span class="ile-sp">code image</span></a> via Shutterstock.</em></p>
+</div>
+<div id="after-single">
+<div class="post-author-bio clearfix">
+<img alt="" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/67ad9cf0282936d7dc245d47058a0dce(1).jpeg" srcset="https://secure.gravatar.com/avatar/67ad9cf0282936d7dc245d47058a0dce?s=228&amp;d=mm&amp;r=g 2x" class="avatar avatar-114 photo" height="114" width="114">
+<div class="post-author-bio-content">
+<h2 class="post-author-name">
+<a href="https://www.webdesignerdepot.com/author/Sara-Vieira">By Sara Vieira</a>
+</h2>
+<div class="author-bio-text">Sara Vieira is a freelance Web Designer and Developer with a passion for HTML5/CSS3 and jQuery. You can follow her on <a href="https://twitter.com/NikkitaFTW">twitter</a> or check out her <a href="http://www.iamsaravieira.com/">website</a>. <a data-title="Articles by Sara Vieira" href="https://www.webdesignerdepot.com/author/Sara-Vieira">More articles </a> by Sara Vieira </div>
+</div>
+</div>
+<div class="single-bottom-ads">
+
+<div align="center" id="WDD_970x90">
+
+<div data-pw-desk="leaderboard_btf"><div id="dad_800525801_0" style="width: 728px; height: auto; margin: 0px auto; padding: 0px !important;"><div id="aax_dad_800525801_0"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="90px" width="728px" id="aax_if_aax_dad_800525801_0" allowtransparency="true" name="{&quot;type&quot;:1,&quot;fid&quot;:4,&quot;tarOg&quot;:&quot;https://www.webdesignerdepot.com&quot;}" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/display(1).html" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation-by-user-activation allow-scripts"></iframe></div></div></div>
+
+<div data-pw-mobi="leaderboard_btf"></div>
+
+</div> </div>
+<div id="comments_section">
+<div id="disqus_thread"><iframe id="dsq-app5803" name="dsq-app5803" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/saved_resource(5).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<script type="text/javascript">
+        var disqus_shortname = "webdesignerdepot";
+        var disqus_title = "10 CSS selectors you shouldn't code without";
+        var disqus_url = "https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/";
+        var disqus_identifier = "webdesignerdepot-56614";
+    </script>
+<script>    
+        (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//webdesignerdepot.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+</div> </div>
+</div>
+</div>
+<nav id="sidebar" class="clearfix">
+
+
+<div class="pw-ph-sky" data-pw-desk="sky_atf"></div>
+
+<div data-pw-mobi="med_rect_atf"></div>
+
+<div class="sb-popular-posts spp-dark">
+<div class="sb-popular-posts-block-title"><span>Popular posts</span></div>
+<div class="sb-popular-posts-block sb-post-rows">
+<article class="sb-post-row d-flex flex-row">
+<img width="842" height="463" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_quiz-1024x563.jpg" class="sb-post-bg-img wp-post-image" alt="Quiz: What Type of Designer Should You Be?" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_quiz-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_quiz-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_quiz-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_quiz-1536x845.jpg 1536w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_quiz-2048x1126.jpg 2048w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_quiz-1684x926.jpg 1684w" sizes="(max-width: 842px) 100vw, 842px">
+<a href="https://www.webdesignerdepot.com/2021/02/quiz-what-type-of-designer-should-you-be/" class="sb-post-lnk-imgq d-flex flex-column justify-content-center">
+<img width="150" height="150" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_quiz-150x150.jpg" class="sb-post-thumb wp-post-image" alt=""> </a>
+<div class="sb-post-info-2 d-flex flex-column justify-content-center">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Quiz" class="hp-category" href="https://www.webdesignerdepot.com/category/quiz/">Quiz</a> </div>
+<h2 class="sb-post-title">
+<a href="https://www.webdesignerdepot.com/2021/02/quiz-what-type-of-designer-should-you-be/" class="anim-link">Quiz: What Type of Designer Should You Be?</a>
+</h2>
+</div>
+</article> <article class="sb-post-row d-flex flex-row">
+<img width="842" height="463" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_sponsored-1024x563.jpg" class="sb-post-bg-img wp-post-image" alt="5 Web Design Trends and Ideas for 2021" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_sponsored-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_sponsored-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_sponsored-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_sponsored-1536x845.jpg 1536w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_sponsored-2048x1126.jpg 2048w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_sponsored-1684x926.jpg 1684w" sizes="(max-width: 842px) 100vw, 842px">
+<a href="https://www.webdesignerdepot.com/2021/02/5-web-design-trends-and-ideas-for-2021/" class="sb-post-lnk-imgq d-flex flex-column justify-content-center">
+<img width="150" height="150" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_sponsored-150x150.jpg" class="sb-post-thumb wp-post-image" alt=""> </a>
+<div class="sb-post-info-2 d-flex flex-column justify-content-center">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Sponsored" class="hp-category" href="https://www.webdesignerdepot.com/category/sponsored/">Sponsored</a> </div>
+<h2 class="sb-post-title">
+<a href="https://www.webdesignerdepot.com/2021/02/5-web-design-trends-and-ideas-for-2021/" class="anim-link">5 Web Design Trends and Ideas for 2021</a>
+</h2>
+</div>
+</article> <article class="sb-post-row d-flex flex-row">
+<img width="842" height="463" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_twitter-1024x563.jpg" class="sb-post-bg-img wp-post-image" alt="Is Twitter Rebrand a Glimpse at the Future of Design?" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_twitter-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_twitter-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_twitter-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_twitter-1536x845.jpg 1536w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_twitter-2048x1126.jpg 2048w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_twitter-1684x926.jpg 1684w" sizes="(max-width: 842px) 100vw, 842px">
+<a href="https://www.webdesignerdepot.com/2021/02/is-twitter-rebrand-a-glimpse-at-the-future-of-design/" class="sb-post-lnk-imgq d-flex flex-column justify-content-center">
+<img width="150" height="150" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_twitter-150x150.jpg" class="sb-post-thumb wp-post-image" alt=""> </a>
+<div class="sb-post-info-2 d-flex flex-column justify-content-center">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to News" class="hp-category" href="https://www.webdesignerdepot.com/category/news/">News</a> </div>
+<h2 class="sb-post-title">
+<a href="https://www.webdesignerdepot.com/2021/02/is-twitter-rebrand-a-glimpse-at-the-future-of-design/" class="anim-link">Is Twitter Rebrand a Glimpse at the Future of Design?</a>
+</h2>
+</div>
+</article> <article class="sb-post-row d-flex flex-row">
+<img width="842" height="463" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_imageCDN-1024x563.jpg" class="sb-post-bg-img wp-post-image" alt="Top 9 Tips For Optimizing Images in 2021" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_imageCDN-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_imageCDN-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_imageCDN-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_imageCDN-1536x845.jpg 1536w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_imageCDN-2048x1126.jpg 2048w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_imageCDN-1684x926.jpg 1684w" sizes="(max-width: 842px) 100vw, 842px">
+<a href="https://www.webdesignerdepot.com/2021/02/top-9-tips-for-optimizing-images-in-2021/" class="sb-post-lnk-imgq d-flex flex-column justify-content-center">
+<img width="150" height="150" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_imageCDN-150x150.jpg" class="sb-post-thumb wp-post-image" alt=""> </a>
+<div class="sb-post-info-2 d-flex flex-column justify-content-center">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Sponsored" class="hp-category" href="https://www.webdesignerdepot.com/category/sponsored/">Sponsored</a> </div>
+<h2 class="sb-post-title">
+<a href="https://www.webdesignerdepot.com/2021/02/top-9-tips-for-optimizing-images-in-2021/" class="anim-link">Top 9 Tips For Optimizing Images in 2021</a>
+</h2>
+</div>
+</article> <article class="sb-post-row d-flex flex-row">
+<img width="842" height="463" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_wordpress-1024x563.png" class="sb-post-bg-img wp-post-image" alt="Exclusive Infographic: WordPress by the Numbers" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_wordpress-1024x563.png 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_wordpress-300x165.png 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_wordpress-768x422.png 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_wordpress-1536x845.png 1536w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_wordpress-2048x1126.png 2048w, https://www.webdesignerdepot.com/cdn-origin/uploads/2021/02/featured_wordpress-1684x926.png 1684w" sizes="(max-width: 842px) 100vw, 842px">
+<a href="https://www.webdesignerdepot.com/2021/02/exclusive-infographic-wordpress-by-the-numbers/" class="sb-post-lnk-imgq d-flex flex-column justify-content-center">
+<img width="150" height="150" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_wordpress-150x150.png" class="sb-post-thumb wp-post-image" alt=""> </a>
+<div class="sb-post-info-2 d-flex flex-column justify-content-center">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Tech" class="hp-category" href="https://www.webdesignerdepot.com/category/business-tech/">Tech</a> </div>
+<h2 class="sb-post-title">
+<a href="https://www.webdesignerdepot.com/2021/02/exclusive-infographic-wordpress-by-the-numbers/" class="anim-link">Exclusive Infographic: WordPress by the Numbers</a>
+</h2>
+</div>
+</article> </div>
+</div>
+<div class="bsads-300">
+
+<div id="sb-bsap-rects-ads">
+<div class="bsads-300">
+
+<div align="center" id="WebDesignerDepot_300x250_sidebar_2">
+
+<div data-pw-desk="med_rect_btf"><div id="dad_612931520_0" style="width: 300px; height: auto; margin: 0px auto; padding: 0px !important;"><div id="aax_dad_612931520_0"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="250px" width="300px" id="aax_if_aax_dad_612931520_0" allowtransparency="true" name="{&quot;type&quot;:1,&quot;fid&quot;:3,&quot;tarOg&quot;:&quot;https://www.webdesignerdepot.com&quot;}" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/display(2).html" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation-by-user-activation allow-scripts"></iframe></div></div></div>
+
+<div data-pw-mobi="med_rect_btf"></div>
+
+</div>
+</div>
+<div class="bsads-300">
+
+<div align="center" id="WebDesignerDepot_300x250_sidebar_1">
+
+<div data-pw-desk="med_rect_btf"></div>
+
+<div data-pw-mobi="med_rect_btf"></div>
+
+</div>
+</div>
+</div>
+<div class="google-ads-sidebar">
+</div>
+<div id="sidebar-poll">
+<script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/poll.js.php" async="true" data-id="114" data-sba="true" data-block-id="sb-poll-114"></script><div id="sb-poll-114"><link rel="stylesheet" type="text/css" href="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/styles.css">
+
+   <div class="empoll_box">
+<div class="empollsouter">
+
+<div class="empollheader">
+  <span class="empoll_question">Should designers stay out of politics?</span>
+
+  <div class="empollcta">
+    <h2>
+      <span class="empollcta_vote">Vote!</span>
+      <span class="empollcta_here">Here</span>
+    </h2>
+    <div class="empollcta_arrow"></div>
+  </div>
+
+</div>
+
+<div class="empoll_box_content">
+
+	<!-- two-choice poll-->
+	<ul class="pollvotes" style="display:none;">
+	  <li class="polloption polloption1 ">
+	    
+	  </li>
+	  <li class="pollor">Or</li>
+	  <li class="polloption polloption2">
+	    
+	  </li>
+	</ul>
+	
+	<div class="pollimgbox" style="display:none;">
+	  <ul class="pollimgvotes">
+	    <li>
+	    <a href="javascript:;" class="pollimgvote pollimgvote1"></a>
+	    <div class="pollimgresult pollimgresult1 " style="display:none;">
+	      <span class="votecountimg">Voted<span class="votecountimgchk"></span></span>
+	      <span class="votecount1"></span>
+	    </div>
+	    </li>
+	    <li>
+	    <a href="javascript:;" class="pollimgvote pollimgvote2"></a>
+	    <div class="pollimgresult pollimgresult2 " style="display:none;"> <!-- pollimgresultvoted -->
+	      <span class="votecountimg">Voted<span class="votecountimgchk"></span></span>
+	      <span class="votecount2"></span>
+	    </div>
+	    </li>
+	  </ul>
+	          
+	</div>
+	
+	<!-- many-choice poll-->
+
+	<div class="sharembed" style="display:none;">
+  <div class="sharembedcont">
+    <a href="javascript:;" class="js-link-cancel">Cancel</a>
+      <h3 class="shareh3"></h3>
+    <ul class="sharelinks">
+      <li class="shareli">
+        <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" target="_blank" class="sharea twshare" data-share-type="twitter">
+          <span></span>Tweet
+        </a>
+      </li>
+      <li class="shareli">
+        <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" target="_blank" class="sharea fbshare" data-share-type="facebook">
+          <span></span>Share
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+	<ul class="multiul polloption-4 "><li class="multili group"><div data-poll-choice-sort-index="1" class="multilia multilia1"><div class="multiimgwrap multiimgwrap1"><div class="multiimg multiimg1" style="background-image: url(&#39;https://www.webdesignerdepot.com/cdn-origin/uploads/2021/01/yes-please-i-just-want-to-make-things-beautiful.jpg&#39;);"><p class="multicheck multicheck1">167</p></div></div><p class="multitext">Yes, please - I just want to make things beautiful</p><div class="pollimgresultmulti"></div></div></li><li class="multili group"><div data-poll-choice-sort-index="2" class="multilia multilia2"><div class="multiimgwrap multiimgwrap2"><div class="multiimg multiimg2" style="background-image: url(&#39;https://www.webdesignerdepot.com/cdn-origin/uploads/2021/01/no-with-great-power-comes-great-responsibility.jpg&#39;);"><p class="multicheck multicheck2">100</p></div></div><p class="multitext">No - With great power comes great responsibility</p><div class="pollimgresultmulti"></div></div></li><li class="multili group"><div data-poll-choice-sort-index="3" class="multilia multilia3"><div class="multiimgwrap multiimgwrap3"><div class="multiimg multiimg3" style="background-image: url(&#39;https://www.webdesignerdepot.com/cdn-origin/uploads/2021/01/yes-stay-independent-and-follow-the-brief.jpg&#39;);"><p class="multicheck multicheck3">94</p></div></div><p class="multitext">Yes - Stay independent and follow the brief</p><div class="pollimgresultmulti"></div></div></li><li class="multili group"><div data-poll-choice-sort-index="4" class="multilia multilia4"><div class="multiimgwrap multiimgwrap4"><div class="multiimg multiimg4" style="background-image: url(&#39;https://www.webdesignerdepot.com/cdn-origin/uploads/2021/01/nope-like-it-or-not-everything-is-political.jpg&#39;);"><p class="multicheck multicheck4">250</p></div></div><p class="multitext">Nope - Like it or not, everything is political</p><div class="pollimgresultmulti"></div></div></li></ul></div>
+  </div>	
+</div></div>
+</div>
+<div class="bsads-300">
+
+<div align="center" id="WDD_300x250">
+
+<div data-pw-desk="med_rect_btf"></div>
+
+<div data-pw-mobi="med_rect_btf"></div>
+
+</div>
+</div>
+<div align="center">
+<div class="pw-ph-sky" data-pw-desk="sky_btf"> </div>
+
+</div>
+</div></nav>
+</div>
+
+</div>
+<div class="content-block">
+<div class="content-block-w">
+<div class="popular-posts-block related-posts-block">
+<div class="pop-block-title"><span>Related posts</span></div>
+<div class="pop-block-diline"></div>
+<div class="d-flex flex-row pop-posts-items">
+<article class="article-diagonal-post adp-4 ">
+<div class="adp-content" data-width="272.5" style="width: 272.5px;">
+<a class="adp-img" href="https://www.webdesignerdepot.com/2019/10/5-unexpected-ux-design-skills/">
+<img width="2780" height="1529" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_uxrole.jpg" class="article-post-img wp-post-image vishi" alt="5 Unexpected UX Design Skills to Help You Level Up" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2019/09/featured_uxrole.jpg 2780w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/09/featured_uxrole-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/09/featured_uxrole-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/09/featured_uxrole-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/09/featured_uxrole-1684x926.jpg 1684w" sizes="(max-width: 2780px) 100vw, 2780px">
+<span class="adp-img-stub" style="background-image: url(&quot;https://www.webdesignerdepot.com/cdn-origin/uploads/2019/09/featured_uxrole.jpg&quot;);"></span></a>
+<div class="article-post-info-wrap">
+<div class="article-post-info">
+<div class="article-post-info-cont" style="max-width: 262.5px;">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Tech" class="hp-category" href="https://www.webdesignerdepot.com/category/business-tech/">Tech</a> </div>
+<h2 class="article-post-title">
+<a href="https://www.webdesignerdepot.com/2019/10/5-unexpected-ux-design-skills/" class="anim-link">5 Unexpected UX Design Skills to Help You Level Up</a>
+</h2>
+
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="article-diagonal-post adp-4 ">
+<div class="adp-content" data-width="272.5" style="width: 272.5px;">
+<a class="adp-img" href="https://www.webdesignerdepot.com/2019/04/how-to-pick-your-next-tech-focus/">
+<img width="2780" height="1529" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_tech.jpg" class="article-post-img wp-post-image vishi" alt="How to Pick Your Next Tech Focus" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2019/01/featured_tech.jpg 2780w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/01/featured_tech-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/01/featured_tech-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/01/featured_tech-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/01/featured_tech-1684x926.jpg 1684w" sizes="(max-width: 2780px) 100vw, 2780px">
+<span class="adp-img-stub" style="background-image: url(&quot;https://www.webdesignerdepot.com/cdn-origin/uploads/2019/01/featured_tech.jpg&quot;);"></span></a>
+<div class="article-post-info-wrap">
+<div class="article-post-info">
+<div class="article-post-info-cont" style="max-width: 262.5px;">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Tech" class="hp-category" href="https://www.webdesignerdepot.com/category/business-tech/">Tech</a> </div>
+<h2 class="article-post-title">
+<a href="https://www.webdesignerdepot.com/2019/04/how-to-pick-your-next-tech-focus/" class="anim-link">How to Pick Your Next Tech Focus</a>
+</h2>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="article-diagonal-post adp-4 ">
+<div class="adp-content" data-width="272.5" style="width: 272.5px;">
+<a class="adp-img" href="https://www.webdesignerdepot.com/2020/04/can-web-designers-save-the-world/">
+<img width="2780" height="1528" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_world-1.jpg" class="article-post-img wp-post-image vishi" alt="Can Web Designers Save the World?" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2020/03/featured_world-1.jpg 2780w, https://www.webdesignerdepot.com/cdn-origin/uploads/2020/03/featured_world-1-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2020/03/featured_world-1-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2020/03/featured_world-1-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2020/03/featured_world-1-1684x926.jpg 1684w" sizes="(max-width: 2780px) 100vw, 2780px">
+<span class="adp-img-stub" style="background-image: url(&quot;https://www.webdesignerdepot.com/cdn-origin/uploads/2020/03/featured_world-1.jpg&quot;);"></span></a>
+<div class="article-post-info-wrap">
+<div class="article-post-info">
+<div class="article-post-info-cont" style="max-width: 262.5px;">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Tech" class="hp-category" href="https://www.webdesignerdepot.com/category/business-tech/">Tech</a> </div>
+<h2 class="article-post-title">
+<a href="https://www.webdesignerdepot.com/2020/04/can-web-designers-save-the-world/" class="anim-link">Can Web Designers Save the World?</a>
+</h2>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="article-diagonal-post adp-4 ">
+<div class="adp-content" data-width="272.5" style="width: 272.5px;">
+<a class="adp-img" href="https://www.webdesignerdepot.com/2019/05/design-your-website-to-sell-while-you-work/">
+<img width="2780" height="1529" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/featured_sell.jpg" class="article-post-img wp-post-image vishi" alt="Design Your Website to Sell While You Work" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2019/04/featured_sell.jpg 2780w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/04/featured_sell-300x165.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/04/featured_sell-768x422.jpg 768w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/04/featured_sell-1024x563.jpg 1024w, https://www.webdesignerdepot.com/cdn-origin/uploads/2019/04/featured_sell-1684x926.jpg 1684w" sizes="(max-width: 2780px) 100vw, 2780px">
+<span class="adp-img-stub" style="background-image: url(&quot;https://www.webdesignerdepot.com/cdn-origin/uploads/2019/04/featured_sell.jpg&quot;);"></span></a>
+<div class="article-post-info-wrap">
+<div class="article-post-info">
+<div class="article-post-info-cont" style="max-width: 242.5px;">
+<div class="hp-cat">
+<a data-tooltip="See all posts related to Tech" class="hp-category" href="https://www.webdesignerdepot.com/category/business-tech/">Tech</a> </div>
+<h2 class="article-post-title">
+<a href="https://www.webdesignerdepot.com/2019/05/design-your-website-to-sell-while-you-work/" class="anim-link">Design Your Website to Sell While You Work</a>
+</h2>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div> </div>
+</div>
+<script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/wdd-freebie-popup.php"></script>
+</div><iframe id="pw_user_data" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/iframe.html" style="display: none; height: 0px; width: 0px; position: fixed; bottom: -99999px;"></iframe> 
+<footer id="footer-wrap">
+<div id="footer">
+<div class="content-block">
+<form id="newsletter-form" method="post" action="https://www.webdesignerdepot.com/newsletter" class="d-flex flex-row justify-content-center clearfix">
+<div id="newsletter-label" class="d-flex flex-column justify-content-center" data-text="Subscribe to our newsletter" data-replacing-text2="Subscribe to our newsletter" data-replacing-text3="JOIN OUR 490,599 SUBSCRIBERS" data-replacing-text1="GET EXCLUSIVE FREEBIES AND NEWS">
+JOIN OUR 490,599 SUBSCRIBERS
+<div id="nl-sublabel">GET EXCLUSIVE ACCESS TO FREEBIES AND NEWS</div>
+</div>
+<div id="newsletter-email-wrap">
+<input type="email" id="newsletter-email" value="" placeholder="Enter your email address here">
+<div>
+<label class="inline-agree-label">
+<input type="checkbox" name="nl_agree_chk" value="1">
+I agree to subscribe to the newsletter. See our <a href="https://www.webdesignerdepot.com/disclaimer-and-privacy-policy/" target="_blank">Privacy Policy</a>.
+</label>
+</div>
+</div>
+<div id="newsletter-button-wrap">
+<a id="newsletter-button" href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" class="d-flex flex-column justify-content-center"><span>Submit</span></a>
+</div>
+</form> </div>
+<div class="content-block">
+<div id="footer-tags">
+<span id="ft-tg-bg"></span>
+<a href="https://www.webdesignerdepot.com/tag/adobe/" title="Adobe articles" class="adobe"><span>Adobe </span></a><a href="https://www.webdesignerdepot.com/tag/apple/" title="Apple articles" class="apple"><span>Apple </span></a><a href="https://www.webdesignerdepot.com/tag/apps/" title="Apps articles" class="apps"><span>Apps </span></a><a href="https://www.webdesignerdepot.com/tag/art/" title="Art articles" class="art"><span>Art </span></a><a href="https://www.webdesignerdepot.com/tag/best-of/" title="Best Of articles" class="best-of"><span>Best Of </span></a><a href="https://www.webdesignerdepot.com/tag/blogging/" title="Blogging articles" class="blogging"><span>Blogging </span></a><a href="https://www.webdesignerdepot.com/tag/branding/" title="Branding articles" class="branding"><span>Branding </span></a><a href="https://www.webdesignerdepot.com/tag/business/" title="Business articles" class="business"><span>Business </span></a><a href="https://www.webdesignerdepot.com/tag/cartoons/" title="cartoons articles" class="cartoons"><span>cartoons </span></a><a href="https://www.webdesignerdepot.com/tag/clients/" title="Clients articles" class="clients"><span>Clients </span></a><a href="https://www.webdesignerdepot.com/tag/comics/" title="Comics articles" class="comics"><span>Comics </span></a><a href="https://www.webdesignerdepot.com/tag/comics-for-designers/" title="comics for designers articles" class="comics-for-designers"><span>comics for designers </span></a><a href="https://www.webdesignerdepot.com/tag/compilation/" title="Compilation articles" class="compilation"><span>Compilation </span></a><a href="https://www.webdesignerdepot.com/tag/css/" title="CSS articles" class="css"><span>CSS </span></a><a href="https://www.webdesignerdepot.com/tag/css3/" title="css3 articles" class="css3"><span>css3 </span></a><a href="https://www.webdesignerdepot.com/tag/design/" title="Design articles" class="design"><span>Design </span></a><a href="https://www.webdesignerdepot.com/tag/design-inspiration/" title="design inspiration articles" class="design-inspiration"><span>design inspiration </span></a><a href="https://www.webdesignerdepot.com/tag/design-trends/" title="design trends articles" class="design-trends"><span>design trends </span></a><a href="https://www.webdesignerdepot.com/tag/fonts/" title="Fonts articles" class="fonts"><span>Fonts </span></a><a href="https://www.webdesignerdepot.com/tag/free-download/" title="free download articles" class="free-download"><span>free download </span></a><a href="https://www.webdesignerdepot.com/tag/free-downloads/" title="free downloads articles" class="free-downloads"><span>free downloads </span></a><a href="https://www.webdesignerdepot.com/tag/free-font/" title="free font articles" class="free-font"><span>free font </span></a><a href="https://www.webdesignerdepot.com/tag/free-fonts/" title="free fonts articles" class="free-fonts"><span>free fonts </span></a><a href="https://www.webdesignerdepot.com/tag/free-icons/" title="free icons articles" class="free-icons"><span>free icons </span></a><a href="https://www.webdesignerdepot.com/tag/free-resources/" title="free resources articles" class="free-resources"><span>free resources </span></a><a href="https://www.webdesignerdepot.com/tag/free-typeface/" title="free typeface articles" class="free-typeface"><span>free typeface </span></a><a href="https://www.webdesignerdepot.com/tag/freebie/" title="freebie articles" class="freebie"><span>freebie </span></a><a href="https://www.webdesignerdepot.com/tag/freebies/" title="Freebies articles" class="freebies"><span>Freebies </span></a><a href="https://www.webdesignerdepot.com/tag/freelancing/" title="Freelancing articles" class="freelancing"><span>Freelancing </span></a><a href="https://www.webdesignerdepot.com/tag/funny/" title="Funny articles" class="funny"><span>Funny </span></a><a href="https://www.webdesignerdepot.com/tag/google/" title="Google articles" class="google"><span>Google </span></a><a href="https://www.webdesignerdepot.com/tag/graphic-design/" title="Graphic Design articles" class="graphic-design"><span>Graphic Design </span></a><a href="https://www.webdesignerdepot.com/tag/html5/" title="html5 articles" class="html5"><span>html5 </span></a><a href="https://www.webdesignerdepot.com/tag/humor/" title="Humor articles" class="humor"><span>Humor </span></a><a href="https://www.webdesignerdepot.com/tag/icons/" title="Icons articles" class="icons"><span>Icons </span></a><a href="https://www.webdesignerdepot.com/tag/illustration/" title="illustration articles" class="illustration"><span>illustration </span></a><a href="https://www.webdesignerdepot.com/tag/inspiration/" title="Inspiration articles" class="inspiration"><span>Inspiration </span></a><a href="https://www.webdesignerdepot.com/tag/javascript/" title="JavaScript articles" class="javascript"><span>JavaScript </span></a><a href="https://www.webdesignerdepot.com/tag/jquery/" title="jQuery articles" class="jquery"><span>jQuery </span></a><a href="https://www.webdesignerdepot.com/tag/photography/" title="Photography articles" class="photography"><span>Photography </span></a><a href="https://www.webdesignerdepot.com/tag/photoshop/" title="Photoshop articles" class="photoshop"><span>Photoshop </span></a><a href="https://www.webdesignerdepot.com/tag/responsive-design/" title="responsive design articles" class="responsive-design"><span>responsive design </span></a><a href="https://www.webdesignerdepot.com/tag/social-media/" title="Social Media articles" class="social-media"><span>Social Media </span></a><a href="https://www.webdesignerdepot.com/tag/typography/" title="Typography articles" class="typography"><span>Typography </span></a><a href="https://www.webdesignerdepot.com/tag/usability/" title="Usability articles" class="usability"><span>Usability </span></a>
+</div>
+<div class="footer-sep"></div>
+</div>
+<nav id="footer-nav-links">
+<a href="https://www.webdesignerdepot.com/">Home</a>
+<a href="https://www.webdesignerdepot.com/about">About</a>
+<a href="https://www.webdesignerdepot.com/category/freebies">Freebies</a>
+<a href="https://www.webdesignerdepot.com/authors">Authors</a>
+<a class="m-contact-link" href="https://www.webdesignerdepot.com/contact?sm=advertise">Advertise</a>
+<a href="https://www.webdesignerdepot.com/write-for-us">Write for us</a>
+<a href="https://www.webdesignerdepot.com/disclaimer-and-privacy-policy">Legal</a>
+<a class="m-contact-link" href="https://www.webdesignerdepot.com/contact">Contact</a>
+</nav>
+<div class="footer-copy">
+© 2010-2021 All Rights Reserved
+</div>
+</div>
+</footer>
+<div id="m-side-menu">
+<div id="m-side-menu-list">
+<div id="msml-blog" class="msml-part">
+<div class="msml-blog-categories">
+<div>
+<a href="https://www.webdesignerdepot.com/category/quiz" class="category-link">Quiz</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/poll" class="category-link">Poll</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/strategy-workflow" class="category-link">Workflow</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/content-strategy" class="category-link">Content</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/user-experience" class="category-link">UX</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/usability-testing" class="category-link">Usability</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/visual-design" class="category-link">Design</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/business-tech" class="category-link">Tech</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/search-marketing" class="category-link">SEO</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/community-inspiration" class="category-link">Inspiration</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/news" class="category-link">News</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/tools-resources" class="category-link">Resources</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/code" class="category-link">Code</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/funny" class="category-link">Funny</a>
+</div>
+<div>
+<a href="https://www.webdesignerdepot.com/category/sponsored" class="category-link">Sponsored</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/global.js.download"></script>
+<!--[if lt IE 8]>
+<script src="/app/js/json2.min.js"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+  <script type="text/javascript" src="https://www.webdesignerdepot.com/wp-content/themes/wdd18/js/html5shiv.js"></script>
+  <script type="text/javascript" src="https://www.webdesignerdepot.com/wp-content/themes/wdd18/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<!--[if lte IE 9 ]>
+<script>
+var is_ie_lte9 = true;
+</script>
+<![endif]-->
+<script type="text/javascript" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/pushdown.min.js.download"></script>
+<script type="text/javascript">
+
+try {
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-331696-9']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+ var ga = document.createElement('script');
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 
+   'http://www') + '.google-analytics.com/ga.js';
+ ga.setAttribute('async', 'true');
+ document.documentElement.firstChild.appendChild(ga);
+})();
+
+} catch(err) {}
+
+</script>
+<div id="body-end"></div>
+<script src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/monetization.js.download" type="text/javascript"></script>
+<script>
+  (function() {
+    if (typeof _bsa !== 'undefined' && _bsa) {
+      _bsa.init('flexbar', 'CKYDLK3W', 'placement:webdesignerdepotcom');
+    }
+  })();
+  </script>
+<script>(function(){var s = document.createElement('script'),e = ! document.body ? document.querySelector('head') : document.body;s.src = 'https://acsbapp.com/apps/app/dist/js/app.js';s.async = true;s.onload = function(){acsbJS.init({statementLink : '',footerHtml : '',hideMobile : false,hideTrigger : false,language : 'en',position : 'right',leadColor : '#146FF8',triggerColor : '#146FF8',triggerRadius : '50%',triggerPositionX : 'right',triggerPositionY : 'bottom',triggerIcon : 'people',triggerSize : 'medium',triggerOffsetX : 20,triggerOffsetY : 20,mobile : {triggerSize : 'small',triggerPositionX : 'right',triggerPositionY : 'center',triggerOffsetX : 0,triggerOffsetY : 0,triggerRadius : '50%'}});};e.appendChild(s);}());</script>
+
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe style="display: none;" src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/saved_resource(6).html"></iframe><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div><img src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/pxusr.gif" style="display: none !important;"><img src="./10 CSS Selectors You Shouldn’t Code without _ Webdesigner Depot Webdesigner Depot » Blog Archive_files/pxext.gif" style="display: none !important;"><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div><div class="acsb-trigger acsb-bg-lead acsb-trigger-size-medium acsb-trigger-position-x-right acsb-trigger-position-y-bottom acsb-ready" tabindex="0" role="button" style="display: none; inset: auto 20px 20px auto; border-radius: 50%;" aria-label="Open accessibility options, statement and help" data-acsb="trigger"> <span class="acsb-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 131.3" enable-background="new 0 0 100 131.3" xml:space="preserve"><path d="M71.6,131.3c1,0,2.1-0.3,3.1-0.8c3.9-1.8,5.5-6.2,3.6-10.1c0,0-14.3-32.7-16.9-44.7c-1-4.2-1.6-15.3-1.8-20.5c0-1.8,1-3.4,2.6-3.9l32-9.6c3.9-1,6.2-5.5,5.2-9.4c-1-3.9-5.5-6.2-9.4-5.2c0,0-29.6,9.6-40.3,9.6c-10.4,0-39.8-9.4-39.8-9.4c-3.9-1-8.3,0.8-9.6,4.7c-1.3,4.2,1,8.6,5.2,9.6l32,9.6c1.6,0.5,2.9,2.1,2.6,3.9c-0.3,5.2-0.8,16.4-1.8,20.5c-2.6,12-16.9,44.7-16.9,44.7c-1.8,3.9,0,8.3,3.6,10.1c1,0.5,2.1,0.8,3.1,0.8c2.9,0,5.7-1.6,6.8-4.4l15.3-31.2l14.6,31.4C66.1,129.7,68.7,131.3,71.6,131.3z"></path> <circle style="fill: #fff;" cx="50.3" cy="14.6" r="14.6"></circle></svg></span><span class="acsb-actions-active-icon"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 105 79" style="enable-background:new 0 0 105 79;" xml:space="preserve"> <g>	<path d="M12.6,38.9C6,31.9-4.7,42.6,2.3,49.2c8.7,9,17.3,18.3,26.3,27c4,3.7,7,3.7,10.7,0l63.6-63.3	c6.7-7-3.7-17.6-10.7-10.7L34.3,60.2L12.6,38.9z"></path>
+</g>
+</svg> </span>
+</div><style class="acsb-initial-css acsb-styles">.acsb-trigger{position:fixed;display:none !important;visibility:visible;cursor:pointer;box-sizing:border-box;opacity:1;line-height:1;outline:none 0 !important;overflow:visible !important;background-color:#146ff8;z-index:999999999999;-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-trigger *{box-sizing:border-box !important}.acsb-trigger:hover,.acsb-trigger:focus{-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1)}.acsb-trigger:hover .acsb-remove,.acsb-trigger:focus .acsb-remove{opacity:1}.acsb-trigger:active{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}.acsb-trigger.acsb-active{opacity:0;visibility:hidden;-webkit-transform:scale(1.5);-moz-transform:scale(1.5);-ms-transform:scale(1.5);-o-transform:scale(1.5);transform:scale(1.5)}.acsb-trigger.acsb-ready{display:block !important}.acsb-trigger.acsb-hidden{display:none !important}.acsb-trigger.acsb-hidden.acsb-ready{display:none !important}.acsb-trigger.acsb-trigger-hidden{display:none !important;visibility:hidden !important;pointer-events:none !important}.acsb-trigger.acsb-trigger-hidden.acsb-ready{display:none !important}.acsb-trigger.acsb-trigger-position-x-left{left:20px;right:auto}.acsb-trigger.acsb-trigger-position-x-left.acsb-mobile{left:10px}.acsb-trigger.acsb-trigger-position-x-right{right:20px;left:auto}.acsb-trigger.acsb-trigger-position-x-right.acsb-mobile{right:10px}.acsb-trigger.acsb-trigger-position-y-bottom{top:auto;bottom:20px}.acsb-trigger.acsb-trigger-position-y-bottom.acsb-mobile{bottom:10px}.acsb-trigger.acsb-trigger-position-y-top{top:20px;bottom:auto}.acsb-trigger.acsb-trigger-position-y-top.acsb-mobile{top:10px}.acsb-trigger.acsb-trigger-position-y-center{top:0;bottom:0;margin:auto 0}.acsb-trigger.acsb-trigger-size-small{width:30px;height:30px}.acsb-trigger.acsb-trigger-size-small .acsb-entity{width:27px;height:27px;font-size:28px}.acsb-trigger.acsb-trigger-size-medium{width:45px;height:45px}.acsb-trigger.acsb-trigger-size-big{width:65px;height:65px}.acsb-trigger.acsb-actions-active .acsb-actions-active-icon{display:block}.acsb-trigger .acsb-actions-active-icon{display:none;position:absolute;bottom:0;left:-5px;width:22px;height:22px;border-radius:50%;line-height:1;border:solid 2px #146ff8;background-color:#fff !important}.acsb-trigger .acsb-actions-active-icon svg{position:absolute;width:11px;height:11px;line-height:1;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);-moz-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);-o-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.acsb-trigger .acsb-actions-active-icon svg path{fill:#146ff8 !important}.acsb-trigger .acsb-trigger-icon{position:static !important}.acsb-trigger .acsb-trigger-icon svg,.acsb-trigger .acsb-trigger-icon img,.acsb-trigger .acsb-trigger-icon .acsb-entity{position:absolute;max-width:65% !important;max-height:65% !important;overflow:visible !important;top:0;left:0;bottom:0;right:0;margin:auto;visibility:visible;opacity:1}.acsb-trigger .acsb-trigger-icon svg path,.acsb-trigger .acsb-trigger-icon svg g,.acsb-trigger .acsb-trigger-icon svg circle,.acsb-trigger .acsb-trigger-icon svg rect,.acsb-trigger .acsb-trigger-icon img path,.acsb-trigger .acsb-trigger-icon img g,.acsb-trigger .acsb-trigger-icon img circle,.acsb-trigger .acsb-trigger-icon img rect,.acsb-trigger .acsb-trigger-icon .acsb-entity path,.acsb-trigger .acsb-trigger-icon .acsb-entity g,.acsb-trigger .acsb-trigger-icon .acsb-entity circle,.acsb-trigger .acsb-trigger-icon .acsb-entity rect{fill:#fff !important}.acsb-trigger .acsb-trigger-icon .acsb-entity{width:35px;height:35px;max-width:none !important;max-height:none !important;font-size:28px;color:#fff;text-align:center}.acsb-trigger .acsb-remove{position:absolute;text-align:center;line-height:0;left:-10px;top:-10px;border:solid 2px #fff;border-radius:30px;width:25px;height:25px;opacity:0;-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-trigger .acsb-remove svg,.acsb-trigger .acsb-remove img{position:absolute;width:11px;height:11px;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);-moz-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);-o-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.acsb-trigger .acsb-remove svg path,.acsb-trigger .acsb-remove img path{fill:#fff !important}.acsb-hide .acsb-navigator-wrapper{display:none !important}.acsb-navigator{position:fixed;display:none !important;width:320px;max-width:85% !important;max-height:85vh;overflow-x:hidden;overflow-y:auto;top:20px;left:20px;border-radius:10px;text-align:left;direction:ltr;opacity:0;text-transform:none;outline:none !important;box-sizing:border-box !important;pointer-events:none;box-shadow:0 0 10px rgba(0,0,0,.1) !important;line-height:1;letter-spacing:0;font-family:Arial,Helvetica Neue,Helvetica,sans-serif !important;z-index:100000000000000020 !important;scrollbar-color:#ccc transparent;scrollbar-width:thin}.acsb-navigator::-webkit-scrollbar{width:7px}.acsb-navigator::-webkit-scrollbar-track{border-radius:50px;background-color:transparent}.acsb-navigator::-webkit-scrollbar-thumb{background-color:#ccc;border-radius:50px}.acsb-navigator:before{position:fixed;visibility:hidden;opacity:0;top:0;left:0;width:100%;height:100%;pointer-events:none;background-color:rgba(0,0,0,.3);z-index:-1;content:"";-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-navigator.acsb-ready{display:block !important}@media screen and (max-width: 500px){.acsb-navigator.acsb-ready{display:none !important}}.acsb-navigator.acsb-focused{pointer-events:auto !important;opacity:1 !important;z-index:100000000000000020 !important;-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-navigator.acsb-focused:before{visibility:visible;opacity:1}.acsb-navigator.acsb-focused .acsb-navigator-label .acsb-navigator-icon.acsb-chevron{display:none}.acsb-navigator.acsb-focused .acsb-navigator-label .acsb-navigator-icon.acsb-close{display:block}.acsb-navigator.acsb-focused .acsb-navigator-options,.acsb-navigator.acsb-focused .acsb-navigator-search{display:block}.acsb-navigator.acsb-rtl{text-align:right;direction:rtl}.acsb-navigator.acsb-rtl .acsb-navigator-label{padding-right:15px;padding-left:30px}.acsb-navigator.acsb-rtl .acsb-navigator-label .acsb-navigator-icon{right:auto;left:15px}.acsb-navigator.acsb-rtl .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-links{justify-content:center}.acsb-navigator.acsb-rtl .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-links .acsb-navigator-given-link{margin:0 10px}.acsb-navigator.acsb-rtl .acsb-navigator-options .acsb-navigator-search .acsb-navigator-search-icon{left:15px;right:auto}.acsb-navigator *{box-sizing:border-box !important}.acsb-navigator .acsb-sr-only{position:absolute;left:0 !important;top:0 !important;width:100% !important;height:100% !important;z-index:-1 !important}.acsb-navigator .acsb-navigator-label{display:flex;flex-wrap:wrap;position:relative;width:100%;padding:15px;align-items:center;background-color:#fff;color:#1f2533;z-index:1}.acsb-navigator .acsb-navigator-label .acsb-navigator-title{display:block;width:100%;font-size:18px;font-weight:bold;color:#1f2533;line-height:1}.acsb-navigator .acsb-navigator-label .acsb-navigator-explanation{display:block;width:100%;margin-top:10px;font-size:13px;color:#1f2533;line-height:1}.acsb-navigator .acsb-navigator-label .acsb-navigator-icon{position:absolute;top:20px;right:15px;outline:none !important;-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-navigator .acsb-navigator-label .acsb-navigator-icon.acsb-chevron{display:block}.acsb-navigator .acsb-navigator-label .acsb-navigator-icon.acsb-close{display:none}.acsb-navigator .acsb-navigator-label .acsb-navigator-icon:focus,.acsb-navigator .acsb-navigator-label .acsb-navigator-icon:hover{border:none 0 !important}.acsb-navigator .acsb-navigator-label .acsb-navigator-icon i{font-size:18px;color:#1f2533}.acsb-navigator .acsb-navigator-label .acsb-navigator-icon [data-acsb-lazy-load]{width:15px;height:15px}.acsb-navigator .acsb-navigator-search{display:none;position:relative;width:100%;margin:0;padding:0 15px;border:none 0;background-color:#fff}.acsb-navigator .acsb-navigator-search form{margin:0 !important}.acsb-navigator .acsb-navigator-search input.acsb-navigator-search-input{display:block !important;width:100% !important;height:40px !important;border-radius:5px !important;font-size:13px !important;font-weight:normal !important;color:#3e465d !important;font-family:Arial,Helvetica Neue,Helvetica,sans-serif !important;background:#fff !important;outline:none 0 !important;border:solid 2px #e3e8fb !important;padding:0 15px !important;margin:0 !important;-webkit-appearance:textfield !important}.acsb-navigator .acsb-navigator-search input.acsb-navigator-search-input:focus,.acsb-navigator .acsb-navigator-search input.acsb-navigator-search-input:hover{border:solid 2px #146ff8 !important}.acsb-navigator .acsb-navigator-search input.acsb-navigator-search-input::placeholder{color:#3e465d !important;font-size:13px !important}.acsb-navigator .acsb-navigator-search input.acsb-navigator-search-input::-webkit-input-placeholder{color:#3e465d !important;font-size:13px !important}.acsb-navigator .acsb-navigator-search input.acsb-navigator-search-input::-moz-placeholder{color:#3e465d !important;font-size:13px !important}.acsb-navigator .acsb-navigator-search .acsb-navigator-search-icon{position:absolute;top:14px;right:30px;left:auto;font-size:12px;color:#1f2533}.acsb-navigator .acsb-navigator-search .acsb-navigator-search-icon [data-acsb-lazy-load]{width:12px;height:12px}.acsb-navigator .acsb-navigator-search .acsb-navigator-search-results{display:block;color:#1f2533;font-size:13px;font-weight:bold;text-align:center;margin-top:7px}.acsb-navigator .acsb-navigator-options{display:none;position:relative;padding:15px;background-color:#f7fcff;z-index:1}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group{display:block;margin:0 !important;padding:0 !important;margin-bottom:15px !important}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group:last-child{margin-bottom:0}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group li{display:block !important;list-style:none !important;margin:0 !important;padding:0 !important}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group li:last-child .acsb-navigator-option{border-bottom:none 0 !important}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group .acsb-navigator-option{display:block;padding:10px 15px;font-size:13px;color:#1f2533;cursor:pointer;overflow:hidden;line-height:1.3;border:none 0 !important;border-bottom:solid 1px #e3e8fb !important;background-color:#fff;outline:none !important;-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group .acsb-navigator-option:hover,.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group .acsb-navigator-option:focus{padding-left:20px;padding-right:20px;background-color:#146ff8;color:#fff;border:none 0 !important;border-bottom:solid 1px #e3e8fb !important;outline:none !important}.acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group .acsb-navigator-option:active{opacity:.7}body.acsb-keyboard-navigation .acsb-skip-links.acsb-ready .acsb-skip-link{display:flex !important}body.acsb-keyboard-navigation .acsb-skip-links.acsb-ready .acsb-skip-link[data-acsb-skip-link=keynav]{display:none !important}.acsb-skip-links{display:none !important;position:fixed;top:0;left:0;z-index:100000000000000020 !important}.acsb-skip-links:before{position:fixed;visibility:hidden;opacity:0;top:0;left:0;width:100%;height:100%;pointer-events:none;background-color:rgba(0,0,0,.3);z-index:-1;content:"";-webkit-transition:all .15s ease;-moz-transition:all .15s ease;-o-transition:all .15s ease;transition:all .15s ease}.acsb-skip-links.acsb-active:before{visibility:visible;opacity:1}.acsb-skip-links.acsb-ready{display:block !important}@media screen and (max-width: 700px){.acsb-skip-links.acsb-ready.acsb-skip-link-hide-mobile{display:none !important}}.acsb-skip-link{display:inline-flex !important;width:auto !important;height:auto !important;max-width:85% !important;min-width:200px !important;position:fixed !important;justify-content:center !important;align-items:center !important;top:50px !important;left:20px !important;text-align:center !important;padding:13px 20px !important;border-radius:50px !important;text-decoration:none !important;background-color:#fff !important;color:#1f2533 !important;font-size:16px !important;text-shadow:0 0 #27272d !important;font-weight:normal !important;white-space:nowrap !important;cursor:pointer !important;opacity:0 !important;pointer-events:none !important;z-index:100000000000000020 !important;font-family:Arial,Helvetica,sans-serif !important;line-height:1 !important;direction:ltr !important;clip:rect(0, 0, 0, 0) !important;border:solid 3px rgba(19,110,248,.8);outline:solid 0 #639af9 !important;box-shadow:0 0 0 5px rgba(19,110,248,.3) !important;-webkit-transition:top .22s ease;-moz-transition:top .22s ease;-o-transition:top .22s ease;transition:top .22s ease}.acsb-skip-link:focus{top:20px !important;opacity:1 !important;pointer-events:auto !important;clip:auto !important}.acsb-skip-link div{display:inline-flex !important;margin-left:30px !important;font-size:10px !important;text-transform:uppercase !important;text-align:center !important;line-height:.9 !important;justify-content:center !important;align-items:center !important;border-radius:50px !important;background-color:#146ff8 !important;padding:5px 10px !important;color:#fff !important}@media screen and (max-width: 500px){.acsb-skip-link div{display:none !important}}.acsb-skip-link div .acsb-symbol{display:block !important;font-size:15px !important;margin-right:3px !important;line-height:1 !important;font-family:Arial,Helvetica,sans-serif !important}.acsb-skip-link [data-acsb-lazy-load]{width:18px;height:18px}@media screen and (max-width: 500px){.acsb-skip-link{font-size:14px;padding:12px 20px;white-space:normal}}.acsb-body-focuser{position:fixed;left:0;top:0;width:5px;height:5px;opacity:0 !important}.acsb-body-focuser:focus{outline:none !important;box-shadow:0 0 0 transparent !important}.acsb-sr-only{position:absolute !important;left:0 !important;top:0 !important;margin:-1px 0 0 -1px !important;padding:0 !important;display:block !important;width:1px !important;height:1px !important;font-weight:normal !important;font-size:15px !important;line-height:1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;border:0 !important;outline:0 !important;cursor:text !important;text-transform:capitalize !important}
+</style><div class="acsb-widget acsb-widget-position-right acsb-ready" style="display: none;" tabindex="-1" role="dialog" aria-label="Accessibility Adjustments" aria-modal="true" aria-hidden="true" data-acsb="widget"> <div class="acsb-header acsb-flex"> <div class="acsb-start"> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" role="button" tabindex="0" class="acsb-header-option acsb-header-option-close" data-acsb-option="close" aria-label="Close Accessibility Interface" data-acsb-tooltip="Close Accessibility Interface"> <i class="acsbi-close"></i> </a> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" role="button" tabindex="0" class="acsb-header-option acsb-header-option-position" data-acsb-option="position" aria-label="Change Accessibility Interface Position" data-acsb-tooltip="Change Accessibility Interface Position"> <i class="acsbi-sides"></i> </a> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" role="button" tabindex="0" class="acsb-header-option acsb-header-option-statement" data-acsb-option="statement" aria-label="Accessibility Statement" data-acsb-tooltip="Accessibility Statement"> <i class="acsbi-question"></i> </a> </div> <a role="button" href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" tabindex="0" aria-label="English" class="acsb-language acsb-header-option-language" data-acsb-option="language" data-acsb-popup-trigger="acsb-language-popup"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/en.svg" data-acsb-lazy-load-options="alt=English"></span> </span> <span class="acsb-language-text">English</span> <i class="acsbi-chevron_down"></i> </a>
+</div> <div class="acsb-main" data-acsb="main"> <div class="acsb-hero"> <span class="acsb-hero-title">Accessibility Adjustments</span> <div class="acsb-hero-actions acsb-flex"> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" class="acsb-hero-action" role="button" tabindex="0" data-acsb-option="reset"> <i class="acsbi-reset"></i> <span>Reset Settings</span> </a> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" class="acsb-hero-action" role="button" data-acsb-option="statement"> <i class="acsbi-bullhorn"></i> <span>Statement</span> </a> <a href="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" class="acsb-hero-action" role="button" tabindex="0" data-acsb-popup-trigger="acsb-hide-popup"> <i class="acsbi-hide"></i> <span>Hide Interface</span> </a> </div>
+</div> <div class="acsb-main-options"> <div class="acsb-search"> <form class="acsb-form" data-acsb-search="form" enctype="multipart/form-data" action="https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/#" method="POST"> <input type="text" tabindex="0" name="acsb_search" autocomplete="off" placeholder="Search the online dictionary..." aria-label="Search the online dictionary..."> <i class="acsbi-search"></i> </form> <div class="acsb-search-results-wrapper" data-acsb-search-results="wrapper"> <span role="button" tabindex="0" data-acsb-search-results="close" aria-label="Close" class="acsb-search-close"> <i class="acsbi-close"></i> </span> <div class="acsb-search-results" data-acsb-search-results="list"></div> </div>
+</div> <div class="acsb-actions"> <div class="acsb-actions-box acsb-actions-box-profiles" data-acsb-actions-box="profiles"> <div class="acsb-actions-title">Choose the right accessibility profile for you</div> <div class="acsb-profiles"> <div class="acsb-profile acsb-profile-seizures" tabindex="0" role="button" aria-pressed="false" data-acsb-action="seizuresProfile"> <div class="acsb-profile-toggle" aria-hidden="true"> <div class="acsb-toggle acsb-toggle-off"> <span class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div> </div> <div class="acsb-profile-content"> <span class="acsb-profile-name">Seizure Safe Profile</span> <span class="acsb-profile-text">Eliminates flashes and reduces color</span> <i class="acsbi-vibrate"></i> </div> <div class="acsb-profile-description"> This profile enables epileptic and seizure prone users to browse safely by eliminating the risk of seizures that result from flashing or blinking animations and risky color combinations. </div> <i class="acsb-profile-connected acsbi-chain"></i> </div> <div class="acsb-profile acsb-profile-vision" tabindex="0" role="button" aria-pressed="false" data-acsb-action="visionProfile"> <div class="acsb-profile-toggle" aria-hidden="true"> <div class="acsb-toggle acsb-toggle-off"> <span class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div> </div> <div class="acsb-profile-content"> <span class="acsb-profile-name">Vision Impaired Profile</span> <span class="acsb-profile-text">Enhances the website's visuals</span> <i class="acsbi-eye"></i> </div> <div class="acsb-profile-description"> This profile adjusts the website, so that it is accessible to the majority of visual impairments such as Degrading Eyesight, Tunnel Vision, Cataract, Glaucoma, and others. </div> <i class="acsb-profile-connected acsbi-chain"></i> </div> <div class="acsb-profile acsb-profile-cognitive" tabindex="0" role="button" aria-pressed="false" data-acsb-action="cognitiveProfile"> <div class="acsb-profile-toggle" aria-hidden="true"> <div class="acsb-toggle acsb-toggle-off"> <span class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div> </div> <div class="acsb-profile-content"> <span class="acsb-profile-name">Cognitive Disability Profile</span> <span class="acsb-profile-text">Assists with reading and focusing</span> <i class="acsbi-thought"></i> </div> <div class="acsb-profile-description"> This profile provides various assistive features to help users with cognitive disabilities such as Autism, Dyslexia, CVA, and others, to focus on the essential elements of the website more easily. </div> <i class="acsb-profile-connected acsbi-chain"></i> </div> <div class="acsb-profile acsb-profile-adhd" tabindex="0" role="button" aria-pressed="false" data-acsb-action="adhdProfile"> <div class="acsb-profile-toggle" aria-hidden="true"> <div class="acsb-toggle acsb-toggle-off"> <span class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div> </div> <div class="acsb-profile-content"> <span class="acsb-profile-name">ADHD Friendly Profile</span> <span class="acsb-profile-text">More focus and fewer distractions</span> <i class="acsbi-target"></i> </div> <div class="acsb-profile-description"> This profile significantly reduces distractions, to help people with ADHD and Neurodevelopmental disorders browse, read, and focus on the essential elements of the website more easily. </div> <i class="acsb-profile-connected acsbi-chain"></i> </div> <div class="acsb-profile acsb-profile-blind" tabindex="0" role="button" aria-pressed="false" data-acsb-action="motorProfile"> <div class="acsb-profile-toggle" aria-hidden="true"> <div class="acsb-toggle acsb-toggle-off"> <span class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div> </div> <div class="acsb-profile-content"> <span class="acsb-profile-name">Blind Users (Screen-reader)</span> <span class="acsb-profile-text">Use the website with your screen-reader</span> <i class="acsbi-voice"></i> </div> <div class="acsb-profile-description"> This profile adjusts the website to be compatible with screen-readers such as JAWS, NVDA, VoiceOver, and TalkBack. A screen-reader is software that is installed on the blind user’s computer and smartphone, and websites should ensure compatibility with it. <br><br><strong>Note:</strong> This profile prompts automatically to screen-readers. </div> <i class="acsb-profile-connected acsbi-chain"></i> </div> <div class="acsb-profile acsb-profile-motor" tabindex="0" role="button" aria-pressed="false" data-acsb-action="motorProfile"> <div class="acsb-profile-toggle" aria-hidden="true"> <div class="acsb-toggle acsb-toggle-off"> <span class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div> </div> <div class="acsb-profile-content"> <span class="acsb-profile-name">Keyboard Navigation (Motor)</span> <span class="acsb-profile-text">Use the website with the keyboard</span> <i class="acsbi-navigation"></i> </div> <div class="acsb-profile-description"> This profile enables motor-impaired persons to operate the website using the keyboard Tab, Shift+Tab, and the Enter keys. Users can also use shortcuts such as “M” (menus), “H” (headings), “F” (forms), “B” (buttons), and “G” (graphics) to jump to specific elements.<br><br><strong>Note:</strong> This profile prompts automatically for keyboard users. </div> <i class="acsb-profile-connected acsbi-chain"></i> </div> </div> </div> <div class="acsb-actions-box acsb-actions-box-textAdjustments" data-acsb-actions-box="textAdjustments"> <div class="acsb-actions-title">Content Adjustments</div> <div class="acsb-actions-group"> <div class="acsb-action-box acsb-action-box-zoom acsb-action-box-big " tabindex="0" data-acsb-action="zoom" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="zoom" data-acsb-action-specific-element="body" data-acsb-action-specific-increment="25"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-zoom"></i> <span class="acsb-box-title">Content Scaling</span> </div> <div class="acsb-big-box-element acsb-big-box-element-range"> <div class="acsb-range" data-acsb-range-slider=""> <div class="acsb-range-plus acsb-range-button acsb-bg-lead" data-acsb-range-action="increase" role="button" tabindex="0" aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div> <div class="acsb-range-base acsb-color-lead" data-acsb-range-current-number="" data-acsb-range-default="Default"> Default </div> <div class="acsb-range-minus acsb-range-button acsb-bg-lead" data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease" role="button"> <i class="acsbi-chevron_down"></i> </div>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-readableFont " role="button" aria-pressed="false" tabindex="0" data-acsb-action="readableFont" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-font"></i> <span class="acsb-box-title">Readable Font</span> </div> </div> <div class="acsb-action-box acsb-action-box-emphasizeTitles " role="button" aria-pressed="false" tabindex="0" data-acsb-action="emphasizeTitles" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-heading"></i> <span class="acsb-box-title">Highlight Titles</span> </div> </div> <div class="acsb-action-box acsb-action-box-emphasizeLinks " role="button" aria-pressed="false" tabindex="0" data-acsb-action="emphasizeLinks" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-link"></i> <span class="acsb-box-title">Highlight Links</span> </div> </div> <div class="acsb-action-box acsb-action-box-magnifier " role="button" aria-pressed="false" tabindex="0" data-acsb-action="magnifier" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-magnifier"></i> <span class="acsb-box-title">Text Magnifier</span> </div> </div> <div class="acsb-action-box acsb-action-box-fontSize acsb-action-box-big " tabindex="0" data-acsb-action="fontSize" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="font-size" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-size"></i> <span class="acsb-box-title">Adjust Font Sizing</span> </div> <div class="acsb-big-box-element acsb-big-box-element-range"> <div class="acsb-range" data-acsb-range-slider=""> <div class="acsb-range-plus acsb-range-button acsb-bg-lead" data-acsb-range-action="increase" role="button" tabindex="0" aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div> <div class="acsb-range-base acsb-color-lead" data-acsb-range-current-number="" data-acsb-range-default="Default"> Default </div> <div class="acsb-range-minus acsb-range-button acsb-bg-lead" data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease" role="button"> <i class="acsbi-chevron_down"></i> </div>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-textAlignCenter " role="button" aria-pressed="false" tabindex="0" data-acsb-action="textAlignCenter" data-acsb-action-group="textAlign" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-text_center"></i> <span class="acsb-box-title">Align Center</span> </div> </div> <div class="acsb-action-box acsb-action-box-lineHeight acsb-action-box-big " tabindex="0" data-acsb-action="lineHeight" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="line-height" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0.1"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-line_height"></i> <span class="acsb-box-title">Adjust Line Height</span> </div> <div class="acsb-big-box-element acsb-big-box-element-range"> <div class="acsb-range" data-acsb-range-slider=""> <div class="acsb-range-plus acsb-range-button acsb-bg-lead" data-acsb-range-action="increase" role="button" tabindex="0" aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div> <div class="acsb-range-base acsb-color-lead" data-acsb-range-current-number="" data-acsb-range-default="Default"> Default </div> <div class="acsb-range-minus acsb-range-button acsb-bg-lead" data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease" role="button"> <i class="acsbi-chevron_down"></i> </div>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-textAlignLeft " role="button" aria-pressed="false" tabindex="0" data-acsb-action="textAlignLeft" data-acsb-action-group="textAlign" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-text_left"></i> <span class="acsb-box-title">Align Left</span> </div> </div> <div class="acsb-action-box acsb-action-box-letterSpacing acsb-action-box-big " tabindex="0" data-acsb-action="letterSpacing" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="letter-spacing" data-acsb-action-specific-element="" data-acsb-action-specific-increment="2"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-space"></i> <span class="acsb-box-title">Adjust Letter Spacing</span> </div> <div class="acsb-big-box-element acsb-big-box-element-range"> <div class="acsb-range" data-acsb-range-slider=""> <div class="acsb-range-plus acsb-range-button acsb-bg-lead" data-acsb-range-action="increase" role="button" tabindex="0" aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div> <div class="acsb-range-base acsb-color-lead" data-acsb-range-current-number="" data-acsb-range-default="Default"> Default </div> <div class="acsb-range-minus acsb-range-button acsb-bg-lead" data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease" role="button"> <i class="acsbi-chevron_down"></i> </div>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-textAlignRight acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="textAlignRight" data-acsb-action-group="textAlign" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-text_right"></i> <span class="acsb-box-title">Align Right</span> </div> </div> </div> </div> <div class="acsb-actions-box acsb-actions-box-colorAdjustments" data-acsb-actions-box="colorAdjustments"> <div class="acsb-actions-title">Color Adjustments</div> <div class="acsb-actions-group"> <div class="acsb-action-box acsb-action-box-darkContrast " role="button" aria-pressed="false" tabindex="0" data-acsb-action="darkContrast" data-acsb-action-group="contrast" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-dark"></i> <span class="acsb-box-title">Dark Contrast</span> </div> </div> <div class="acsb-action-box acsb-action-box-lightContrast " role="button" aria-pressed="false" tabindex="0" data-acsb-action="lightContrast" data-acsb-action-group="contrast" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-light"></i> <span class="acsb-box-title">Light Contrast</span> </div> </div> <div class="acsb-action-box acsb-action-box-monochrome " role="button" aria-pressed="false" tabindex="0" data-acsb-action="monochrome" data-acsb-action-group="contrast" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-monochrome"></i> <span class="acsb-box-title">Monochrome</span> </div> </div> <div class="acsb-action-box acsb-action-box-highSaturation " role="button" aria-pressed="false" tabindex="0" data-acsb-action="highSaturation" data-acsb-action-group="contrast" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-saturation"></i> <span class="acsb-box-title">High Saturation</span> </div> </div> <div class="acsb-action-box acsb-action-box-textColor acsb-action-box-big " tabindex="0" data-acsb-action="textColor" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-picker"></i> <span class="acsb-box-title">Adjust Text Colors</span> </div> <div class="acsb-big-box-element acsb-big-box-element-color">
+<div class="acsb-color-box"> <span data-acsb-color="#0076B4" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Blue" data-acsb-tooltip="Change Color to Blue" style="background-color: #0076B4 !important;"> </span> <span data-acsb-color="#7A549C" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Purple" data-acsb-tooltip="Change Color to Purple" style="background-color: #7A549C !important;"> </span> <span data-acsb-color="#C83733" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Red" data-acsb-tooltip="Change Color to Red" style="background-color: #C83733 !important;"> </span> <span data-acsb-color="#D07021" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Orange" data-acsb-tooltip="Change Color to Orange" style="background-color: #D07021 !important;"> </span> <span data-acsb-color="#26999F" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Teal" data-acsb-tooltip="Change Color to Teal" style="background-color: #26999F !important;"> </span> <span data-acsb-color="#4D7831" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Green" data-acsb-tooltip="Change Color to Green" style="background-color: #4D7831 !important;"> </span> <span data-acsb-color="#ffffff" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to WHITE" data-acsb-tooltip="Change Color to WHITE" style="background-color: #ffffff !important;"> </span> <span data-acsb-color="#000000" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Black" data-acsb-tooltip="Change Color to Black" style="background-color: #000000 !important;"> </span> <div class="disable" role="button" tabindex="0" data-acsb-color="disable"> Cancel </div>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-highContrast " role="button" aria-pressed="false" tabindex="0" data-acsb-action="highContrast" data-acsb-action-group="contrast" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-contrast"></i> <span class="acsb-box-title">High Contrast</span> </div> </div> <div class="acsb-action-box acsb-action-box-titleColor acsb-action-box-big " tabindex="0" data-acsb-action="titleColor" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-picker"></i> <span class="acsb-box-title">Adjust Title Colors</span> </div> <div class="acsb-big-box-element acsb-big-box-element-color">
+<div class="acsb-color-box"> <span data-acsb-color="#0076B4" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Blue" data-acsb-tooltip="Change Color to Blue" style="background-color: #0076B4 !important;"> </span> <span data-acsb-color="#7A549C" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Purple" data-acsb-tooltip="Change Color to Purple" style="background-color: #7A549C !important;"> </span> <span data-acsb-color="#C83733" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Red" data-acsb-tooltip="Change Color to Red" style="background-color: #C83733 !important;"> </span> <span data-acsb-color="#D07021" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Orange" data-acsb-tooltip="Change Color to Orange" style="background-color: #D07021 !important;"> </span> <span data-acsb-color="#26999F" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Teal" data-acsb-tooltip="Change Color to Teal" style="background-color: #26999F !important;"> </span> <span data-acsb-color="#4D7831" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Green" data-acsb-tooltip="Change Color to Green" style="background-color: #4D7831 !important;"> </span> <span data-acsb-color="#ffffff" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to WHITE" data-acsb-tooltip="Change Color to WHITE" style="background-color: #ffffff !important;"> </span> <span data-acsb-color="#000000" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Black" data-acsb-tooltip="Change Color to Black" style="background-color: #000000 !important;"> </span> <div class="disable" role="button" tabindex="0" data-acsb-color="disable"> Cancel </div>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-lowSaturation " role="button" aria-pressed="false" tabindex="0" data-acsb-action="lowSaturation" data-acsb-action-group="contrast" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-invert"></i> <span class="acsb-box-title">Low Saturation</span> </div> </div> <div class="acsb-action-box acsb-action-box-backgroundColor acsb-action-box-big " tabindex="0" data-acsb-action="backgroundColor" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-picker"></i> <span class="acsb-box-title">Adjust Background Colors</span> </div> <div class="acsb-big-box-element acsb-big-box-element-color">
+<div class="acsb-color-box"> <span data-acsb-color="#0076B4" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Blue" data-acsb-tooltip="Change Color to Blue" style="background-color: #0076B4 !important;"> </span> <span data-acsb-color="#7A549C" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Purple" data-acsb-tooltip="Change Color to Purple" style="background-color: #7A549C !important;"> </span> <span data-acsb-color="#C83733" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Red" data-acsb-tooltip="Change Color to Red" style="background-color: #C83733 !important;"> </span> <span data-acsb-color="#D07021" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Orange" data-acsb-tooltip="Change Color to Orange" style="background-color: #D07021 !important;"> </span> <span data-acsb-color="#26999F" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Teal" data-acsb-tooltip="Change Color to Teal" style="background-color: #26999F !important;"> </span> <span data-acsb-color="#4D7831" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Green" data-acsb-tooltip="Change Color to Green" style="background-color: #4D7831 !important;"> </span> <span data-acsb-color="#ffffff" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to WHITE" data-acsb-tooltip="Change Color to WHITE" style="background-color: #ffffff !important;"> </span> <span data-acsb-color="#000000" class="acsb-color-selection" role="button" tabindex="0" aria-label="Change Color to Black" data-acsb-tooltip="Change Color to Black" style="background-color: #000000 !important;"> </span> <div class="disable" role="button" tabindex="0" data-acsb-color="disable"> Cancel </div>
+</div> </div> </div> </div> </div> <div class="acsb-actions-box acsb-actions-box-orientationAdjustments" data-acsb-actions-box="orientationAdjustments"> <div class="acsb-actions-title">Orientation Adjustments</div> <div class="acsb-actions-group"> <div class="acsb-action-box acsb-action-box-mute " role="button" aria-pressed="false" tabindex="0" data-acsb-action="mute" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-mute"></i> <span class="acsb-box-title">Mute Sounds</span> </div> </div> <div class="acsb-action-box acsb-action-box-hideImages " role="button" aria-pressed="false" tabindex="0" data-acsb-action="hideImages" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-image"></i> <span class="acsb-box-title">Hide Images</span> </div> </div> <div class="acsb-action-box acsb-action-box-readMode acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="readMode" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-keyboard"></i> <span class="acsb-box-title">Read Mode</span> </div> </div> <div class="acsb-action-box acsb-action-box-readingGuide acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="readingGuide" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-bookmark"></i> <span class="acsb-box-title">Reading Guide</span> </div> </div> <div class="acsb-action-box acsb-action-box-usefulLinks acsb-action-box-big " tabindex="0" data-acsb-action="usefulLinks" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-links"></i> <span class="acsb-box-title">Useful Links</span> </div> <div class="acsb-big-box-element acsb-big-box-element-selecter"> <div class="acsb-selecter" data-acsb-selecter="usefulLinks"> <select aria-label="Useful Links"> <option selected="" disabled="" value="acsbDefault">Select an option</option> <option value="homepage">Home</option> <option value="top">Header</option> <option value="bottom">Footer</option> <option value="content">Main Content</option> </select>
+</div> </div> </div> <div class="acsb-action-box acsb-action-box-stopAnimations " role="button" aria-pressed="false" tabindex="0" data-acsb-action="stopAnimations" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-vibrate"></i> <span class="acsb-box-title">Stop Animations</span> </div> </div> <div class="acsb-action-box acsb-action-box-readingMask acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="readingMask" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-overlay"></i> <span class="acsb-box-title">Reading Mask</span> </div> </div> <div class="acsb-action-box acsb-action-box-emphasizeHover acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="emphasizeHover" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-mouse"></i> <span class="acsb-box-title">Highlight Hover</span> </div> </div> <div class="acsb-action-box acsb-action-box-emphasizeFocus " role="button" aria-pressed="false" tabindex="0" data-acsb-action="emphasizeFocus" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-focus"></i> <span class="acsb-box-title">Highlight Focus</span> </div> </div> <div class="acsb-action-box acsb-action-box-bigBlackCursor acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="bigBlackCursor" data-acsb-action-group="cursor" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-cursor_full"></i> <span class="acsb-box-title">Big Black Cursor</span> </div> </div> <div class="acsb-action-box acsb-action-box-bigWhiteCursor acsb-action-box-hide-mobile" role="button" aria-pressed="false" tabindex="0" data-acsb-action="bigWhiteCursor" data-acsb-action-group="cursor" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-cursor"></i> <span class="acsb-box-title">Big White Cursor</span> </div> </div> </div> </div> <div class="acsb-actions-box acsb-actions-box-hiddenAdjustments" data-acsb-actions-box="hiddenAdjustments"> <div class="acsb-actions-title">HIDDEN_ADJUSTMENTS</div> <div class="acsb-actions-group"> <div class="acsb-action-box acsb-action-box-keynav " role="button" aria-pressed="false" tabindex="0" data-acsb-action="keynav" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-"></i> <span class="acsb-box-title">Keyboard Navigation</span> </div> </div> <div class="acsb-action-box acsb-action-box-accessMode " role="button" aria-pressed="false" tabindex="0" data-acsb-action="accessMode" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-"></i> <span class="acsb-box-title">Accessible Mode</span> </div> </div> <div class="acsb-action-box acsb-action-box-screenReader " role="button" aria-pressed="false" tabindex="0" data-acsb-action="screenReader" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-"></i> <span class="acsb-box-title">Screen Reader Adjustments</span> </div> </div> <div class="acsb-action-box acsb-action-box-readMode " role="button" aria-pressed="false" tabindex="0" data-acsb-action="readMode" data-acsb-action-group="" data-acsb-action-message="" data-acsb-action-css-property="" data-acsb-action-specific-element="" data-acsb-action-specific-increment="0"> <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-"></i> <span class="acsb-box-title">Read Mode</span> </div> </div> </div> </div> </div> </div> </div> <div class="acsb-footer acsb-flex acsb-flex-center" data-acsb-footer="true"> <a rel="nofollow" data-acsb-footer-link="true" href="https://accessibe.com/?utm_medium=link&amp;utm_source=widget" target="_blank"> Web Accessibility Solution By accessiBe </a>
+</div><div class="acsb-popup acsb-language-popup" tabindex="0" data-acsb-popup="acsb-language-popup"> <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-language-popup"></div> <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button" aria-label="Close" data-acsb-popup-close="acsb-language-popup"> <i class="acsbi-close"></i> </span> <div class="acsb-popup-content-holder" data-acsb-popup-content-holder=""> <div class="acsb-language-selection"> <span class="acsb-popup-title">Choose the Interface Language</span> <div class="acsb-languages acsb-flex"> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="en"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/en.svg" data-acsb-lazy-load-options="alt=English"></span> </span> <span class="acsb-language-text">English</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="es"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/es.svg" data-acsb-lazy-load-options="alt=Español"></span> </span> <span class="acsb-language-text">Español</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="de"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/de.svg" data-acsb-lazy-load-options="alt=Deutsch"></span> </span> <span class="acsb-language-text">Deutsch</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="pt"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/pt.svg" data-acsb-lazy-load-options="alt=Português"></span> </span> <span class="acsb-language-text">Português</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="fr"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/fr.svg" data-acsb-lazy-load-options="alt=Français"></span> </span> <span class="acsb-language-text">Français</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="it"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/it.svg" data-acsb-lazy-load-options="alt=Italiano"></span> </span> <span class="acsb-language-text">Italiano</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="he"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/he.svg" data-acsb-lazy-load-options="alt=עברית"></span> </span> <span class="acsb-language-text">עברית</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="tw"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/tw.svg" data-acsb-lazy-load-options="alt=繁體中文"></span> </span> <span class="acsb-language-text">繁體中文</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ru"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ru.svg" data-acsb-lazy-load-options="alt=Pусский"></span> </span> <span class="acsb-language-text">Pусский</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ar"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ar.svg" data-acsb-lazy-load-options="alt=عربى"></span> </span> <span class="acsb-language-text">عربى</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ua"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ua.svg" data-acsb-lazy-load-options="alt=عربى"></span> </span> <span class="acsb-language-text">عربى</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="nl"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/nl.svg" data-acsb-lazy-load-options="alt=Nederlands"></span> </span> <span class="acsb-language-text">Nederlands</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="zh"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/zh.svg" data-acsb-lazy-load-options="alt=繁體中文"></span> </span> <span class="acsb-language-text">繁體中文</span> </div> <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ja"> <span class="acsb-language-flag"> <span data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ja.svg" data-acsb-lazy-load-options="alt=日本語"></span> </span> <span class="acsb-language-text">日本語</span> </div> </div>
+</div> </div> </div>
+</div><div class="acsb-popup acsb-feedback-popup" tabindex="0" data-acsb-popup="acsb-feedback-popup"> <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-feedback-popup"></div> <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button" aria-label="Close" data-acsb-popup-close="acsb-feedback-popup"> <i class="acsbi-close"></i> </span> <div class="acsb-popup-content-holder" data-acsb-popup-content-holder=""> </div> </div>
+</div><div class="acsb-popup acsb-statement-popup" tabindex="0" data-acsb-popup="acsb-statement-popup"> <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-statement-popup"></div> <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button" aria-label="Close" data-acsb-popup-close="acsb-statement-popup"> <i class="acsbi-close"></i> </span> <div class="acsb-popup-content-holder" data-acsb-popup-content-holder=""> <span data-acsb-lazy-load-tag="iframe" data-acsb-lazy-load-options="aria-label=Accessibility Statement" data-acsb-lazy-load="https://acsbapp.com/statement/?app=true&amp;domain={domain}&amp;lang=en"></span> </div> </div>
+</div><div class="acsb-popup acsb-help-popup" tabindex="0" data-acsb-popup="acsb-help-popup"> <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-help-popup"></div> <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button" aria-label="Close" data-acsb-popup-close="acsb-help-popup"> <i class="acsbi-close"></i> </span> <div class="acsb-popup-content-holder" data-acsb-popup-content-holder=""> </div> </div>
+</div><div class="acsb-popup acsb-hide-popup" tabindex="0" data-acsb-popup="acsb-hide-popup"> <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-hide-popup"></div> <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button" aria-label="Close" data-acsb-popup-close="acsb-hide-popup"> <i class="acsbi-close"></i> </span> <div class="acsb-popup-content-holder" data-acsb-popup-content-holder=""> <div class="acsb-hide"> <span class="acsb-title">Hide Accessibility Interface?</span> <span class="acsb-text">Please note: If you choose to hide the accessibility interface, you won't be able to see it anymore, unless you clear your browsing history and data. Are you sure that you wish to hide the interface?</span> <div class="acsb-buttons"> <span role="button" tabindex="0" class="acsb-button acsb-button-colorized" data-acsb-option="hide">Accept</span> <span role="button" tabindex="0" class="acsb-button" data-acsb-popup-close="acsb-hide-popup">Cancel</span> </div>
+</div> </div> </div>
+</div><div class="acsb-popup acsb-message-popup" tabindex="0" data-acsb-popup="acsb-message-popup"> <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-message-popup"></div> <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button" aria-label="Close" data-acsb-popup-close="acsb-message-popup"> <i class="acsbi-close"></i> </span> <div class="acsb-popup-content-holder" data-acsb-popup-content-holder=""> <div class="acsb-popup-message-actual" data-acsb-popup-message-actual=""></div>
+<span class="acsb-button" data-acsb-popup-close="acsb-message-popup" role="button" tabindex="0"> Continue</span> </div> </div>
+</div><div class="acsb-loader" data-acsb-loader=""> <div class="acsb-loader-block acsb-bg-lead"> <span class="acsb-loader-actual"></span> <i class="acsbi-checkmark"></i> </div>
+</div>
+<div class="acsb-loader-overlay"></div></div><div data-acsb="blocker" data-acsb-option="close" class="acsb-widget-blocker acsb-ready" style="display: none;"></div><div data-acsb="processor" class="acsb-processor acsb-ready" style="display: none;"> <div class="acsb-loader" data-acsb-loader=""> <div class="acsb-loader-block"> <span class="acsb-loader-actual"></span> <span class="acsb-loader-content">Processing the data, please give it a few seconds...</span> </div> </div>
+</div><style type="text/css" class="acsb-dynamic-colors">body .acsb-widget .acsb-hero,
+    body .acsb-widget .acsb-footer,
+    body .acsb-widget .acsb-main:after,
+    body .acsb-widget .acsb-range-button,
+    body .acsb-widget .acsb-action-box.acsb-active,
+    body .acsb-widget .acsb-action-box:active,
+    body .acsb-widget .acsb-button:hover,
+    body .acsb-widget .acsb-button:focus,
+    body .acsb-widget .acsb-header,
+    body .acsb-widget .acsb-button.acsb-button-colorized,
+    body .acsb-widget .acsb-loader .acsb-loader-block,
+    body .acsb-widget .acsb-profile.acsb-active .acsb-profile-toggle .acsb-toggle:after,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-buttons .acsb-navigator-given-button:hover,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-buttons .acsb-navigator-given-button:focus,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group .acsb-navigator-option:hover,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-all-options .acsb-navigator-option-group .acsb-navigator-option:focus,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-buttons .acsb-navigator-given-button:hover {
+        background-color: #146FF8 !important;
+    }
+
+    body .acsb-widget .acsb-action-box:active,
+    body .acsb-widget .acsb-action-box:hover,
+    body .acsb-widget .acsb-button,
+    body .acsb-widget .acsb-button.acsb-button-colorized,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-search input.acsb-navigator-search-input:hover,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-search input.acsb-navigator-search-input:focus,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-buttons .acsb-navigator-given-button {
+        border-color: #146FF8 !important;
+    }
+
+    body .acsb-widget .acsb-hero-action,
+    body .acsb-widget .acsb-hero-action i,
+    body .acsb-widget .acsb-header-option i,
+    body .acsb-widget .acsb-range-base,
+    body .acsb-widget .acsb-button,
+	body .acsb-widget .acsb-profile:hover .acsb-profile-content i,
+	body .acsb-widget .acsb-profile:focus .acsb-profile-content i,
+    body .acsb-widget .acsb-profile:hover .acsb-profile-content .acsb-profile-name,
+	body .acsb-widget .acsb-profile:focus .acsb-profile-content .acsb-profile-name,
+    body .acsb-widget .acsb-profile:hover .acsb-profile-content .acsb-profile-text,
+    body .acsb-widget .acsb-profile:focus .acsb-profile-content .acsb-profile-text,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-links .acsb-navigator-given-link:hover,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-links .acsb-navigator-given-link:focus,
+    body .acsb-navigator .acsb-navigator-options .acsb-navigator-given-options .acsb-navigator-given-buttons .acsb-navigator-given-button {
+        color: #146FF8 !important;
+    }body .acsb-trigger {
+        background-color: #146FF8 !important;
+    }
+    body .acsb-trigger .acsb-actions-active-icon svg path {
+        fill: #146FF8 !important;
+    }
+    body .acsb-trigger .acsb-actions-active-icon {
+        border-color: #146FF8 !important;
+    }</style><span role="alert" class="acsb-sr-only acsb-sr-alert acsb-top-priority" aria-live="assertive" data-acsb-sr-alert="true" data-acsb-force-visible="true" data-acsb-sr-only="true" aria-label=" Press Alt+1 for screen-reader mode "></span></body></html>

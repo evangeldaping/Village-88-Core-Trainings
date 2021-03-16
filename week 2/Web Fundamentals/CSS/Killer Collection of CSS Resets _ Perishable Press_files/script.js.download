@@ -1,0 +1,94 @@
+/*
+	Custom JavaScript for Perishable Press Yes Theme.
+	Copyright 2020 Monzilla Media. All Rights Reserved.
+*/
+
+'use strict';
+
+(function() {
+	breakOut();
+	externalLinks();
+	toggleMode();
+})();
+
+window.onload = function() {
+	setMode();
+}
+
+window.addEventListener('hashchange', offsetAnchor);
+window.setTimeout(offsetAnchor, 1);
+
+function offsetAnchor() {
+	if (location.hash.length !== 0) {
+		window.scrollTo(window.scrollX, window.scrollY - 70);
+	}
+}
+
+function breakOut() {
+	if (top.location != self.location) top.location = self.location;
+}
+
+function externalLinks() {
+	var links = document.links;
+	for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+		var ext = links[i].href.split('.').pop().toLowerCase();
+		var exts = ['txt', 'jpg', 'jpe', 'jpeg', 'png', 'gif', 'html', 'php'];
+		var file = exts.includes(ext);
+		if (file || ((links[i].hostname != window.location.hostname) && (links[i].hostname != 'books.perishablepress.com'))) {
+			links[i].target = '_blank';
+		} 
+	}
+}
+
+function getCookie(name) {
+	var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+	return v ? v[2] : null;
+}
+
+function setCookie(name, value, days) {
+	var d = new Date;
+	d.setTime(d.getTime() + 24*60*60*1000*days);
+	document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+}
+
+function liteMode(b, el, p) {
+	b.setAttribute('class', 'lite');
+	el.setAttribute('class', 'mode lite-mode');
+	el.innerHTML = 'Night Mode';
+	setCookie('mode', 'lite', 30);
+}
+	
+function darkMode(b, el, p) {
+	b.setAttribute('class', 'dark');
+	el.setAttribute('class', 'mode dark-mode');
+	el.innerHTML = 'Light Mode';
+	setCookie('mode', 'dark', 30);
+}
+
+function setMode() {
+	if (getCookie('mode')) {
+		var el = document.getElementById('mode');
+		var b = document.getElementsByTagName('body')[0];
+		if (getCookie('mode') == 'lite') liteMode(b, el);
+		else darkMode(b, el);
+	}
+}
+
+function toggleMode() {
+	var b = document.getElementsByTagName('body')[0];
+	var p = document.getElementsByClassName('yn1a')[0];
+	var el = document.createElement('a');
+	el.setAttribute('id', 'mode');
+	el.setAttribute('href', '#mode');
+	el.setAttribute('title', 'Toggle light/dark mode');
+	el.setAttribute('class', 'mode lite-mode');
+	el.innerHTML = 'Night Mode';
+	p.appendChild(el);
+	document.addEventListener('click', function (event) {
+		if (event.target.matches('.lite-mode') || event.target.matches('.dark-mode')) {
+			event.preventDefault();
+			if (event.target.matches('.lite-mode')) darkMode(b, el, p);
+			else liteMode(b, el, p);
+		}
+	}, false);
+}

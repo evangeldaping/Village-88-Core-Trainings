@@ -1,0 +1,30 @@
+FAQ
+Q: Can I add multiple classes to an element?
+
+A: Yes. Simply separate the class names with space. Ex:
+
+<div class="nav side-bar"></div>
+Q: Can I add a class and an id to the same element?
+
+A: Yes. An element can have an id and multiple classes. Ex:
+
+<div id="primary-nav" class="nav side-bar"></div>
+Q: Do I have to add a class or an id to target a nested element?
+
+A: Not as a rule. Consider the following example:
+
+<ul id="nav-menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact Us</a></li>
+</ul>
+To target the links and remove the underlines from them we can do:
+
+#nav-menu li a{
+text-decoration: none;
+}
+This tells the browser to first locate the element with id nav-menu, then find all the list items inside the unordered
+lists, then find the links inside those list elements.
+
+In general, make your code easier to read by avoiding adding too many classes and ids.

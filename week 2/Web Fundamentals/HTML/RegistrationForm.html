@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+    </head>
+    <body>  
+        <h1>Registration Form</h1>
+        <form>
+            First Name:<input type="text" name="first name"></br>
+            Last Name<input type="text" name="last name"></br>
+            Email Address:<input type="email" name="email address"></br>
+            Password:<input type="password" name="password"></br>
+            Confirm Password:<input type="password" name="confirm password"></br>
+            Birthday:<input type="date" name="birthdate"></br>
+            Male<input type="radio" name="gender" value="male">
+            Female<input type="radio" name="gender" value="female">
+            I prefer not to answer<input type="radio" name="gender" value="decline">
+            <p>A short description about yourself:</p>
+            <textarea name="description"></textarea>
+            <p>Favorite Language:
+                <select name="language">
+                    <option value="javascript">Javascript</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                </select>
+            </p>  
+            <p>
+                <input type="checkbox" id="blue" name="color" value="blue">
+                Yes, I would like to receive periodic email updates         
+            </p>
+            <input type="submit" value="Create Account">
+        </form>
+    </body>
+</html>
+

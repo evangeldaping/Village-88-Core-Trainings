@@ -1,0 +1,222 @@
+CSS Best Practices
+Before you proceed further, we want to introduce a few additional best practices for HTML and CSS. Please read these
+carefully as these best practices are very important for you to understand.
+
+Best Practice #1: Avoid using too many <div> tags
+    Keep a close eye on how many times you're using <div> tags. Whenever you have one element within a division, it
+        means you don't need that division! For example, imagine you had a code like this
+
+        <div>
+            <h1>Word Stream</h1>
+        </div>
+        <div>
+            <div class="title">
+                <h3>WordStream for PPC</h3>
+            </div>
+            <div class="heading">
+                <div class="emphasis">Drive more Profits Through PPC!</div>
+            </div>
+        </div>
+        By looking at the code above, can you identify unnecessary divisions? Whenever you have one element inside a
+        division, it means that's redundant! Think about how you can refactor the code above to make it simpler. One
+        possible way to refactor the code is to do something like below
+
+        <h1>Word Stream</h1>
+        <div>
+            <h3>WordStream for PPC</h3>
+            <h4>Drive more Profits Through PPC!</h4>
+        </div>
+        Putting only one element in another element is like putting your Christmas gift in a box and then putting that box in
+        another box that's slightly bigger (which means that the outer box was not necessary).
+        
+        Great programmers always do things with less code, and we want you to practice reviewing your code and always striving
+        to do things in the most simple manner possible. Fewer lines of code -- less text -- this is always better. Please
+        remember that.
+        
+        Now, duplicate the page below while considering what you've learned above.
+        
+        Best Practice #2: Avoid using too many classes over and over again
+        It's a common mistake for a new front-end engineer to use a lot of classes in their html. For example, they may have:
+        
+        <div class='container'>
+            <div class='row'>
+                <p class='description'>Sample Text.</p>
+                <p class='description'>Sample Text.</p>
+                <p class='description'>Sample Text.</p>
+            </div>
+            <div class="row">
+                <p class="description">Sample Text.</p>
+                <p class="description">Sample Text.</p>
+                <p class="description">Sample Text.</p>
+            </div>
+            <div class="row">
+                <p class="description">Sample Text.</p>
+                <p class="description">Sample Text.</p>
+                <p class="description">Sample Text.</p>
+            </div>
+        </div>
+        As a typical rule, whenever you see things being repeated multiple times, always ask yourself, "the things that are
+        being repeated, are they really necessary?" Almost always, the answer is a strong "No" and where you can refactor your
+        HTML to make it cleaner. For example, do you really need a class "row" for all the division inside the division class
+        container? Do you really need the class description for all the paragraphs inside the div class='row'? The answer is a
+        No. You could easily make the above html code as follows:
+        
+        <div class="container">
+            <div>
+                <p>Sample Text.</p>
+                <p>Sample Text.</p>
+                <p>Sample Text.</p>
+            </div>
+            <div>
+                <p>Sample Text.</p>
+                <p>Sample Text.</p>
+                <p>Sample Text.</p>
+            </div>
+            <div>
+                <p>Sample Text.</p>
+                <p>Sample Text.</p>
+                <p>Sample Text.</p>
+            </div>
+        </div>
+        Best Practice #3: Don't overuse html tags un-necessarily
+        Imagine that you were creating a period table in HTML and CSS.
+
+        If you were creating this, how would you structure the elements (for element 21/22/23/24)? Would you do something like
+        this?
+        
+        <div class='row'>
+            <div class='element'>
+                <p>21</p>
+                <p class='name>Sc</p>
+                <p>44.956</p>
+            </div>
+            <div class=' element'>
+                <p>22</p>
+                <p class='name>Ti</p>
+                <p>47.867</p>
+            </div>
+            <div class=' element'>
+                <p>23</p>
+                <p class='name>V</p>
+                <p>50.942</p>
+            </div>
+            <div class=' element'>
+                <p>24</p>
+                <p class='name>Cr</p>
+                <p>51.996</p>
+            </div>
+            ...
+        </div>
+        Now, do you really need all the div inside div class=' row' to have a div class='element' ? Also, do you really need
+                    three paragraphs? How about p class='name' ? Is there another way you could group that information using a
+                    separate html tag? For example, you could minimize the number of html tags used by doing instead: <div
+                    class='row'>
+                <p>21
+                <h2>Sc</h2>44.956</p>
+                <p>22
+                <h2>Ti</h2>47.867</p>
+                <p>23
+                <h2>V</h2>50.942</p>
+                <p>24
+                <h2>Cr</h2>51.996</p>
+            </div>
+            Note that <div class='element'> was not needed at all, plus we could remove extra p tags by utilizing headers.
+                Whenever you have information that's more emphasized, instead of putting them into paragraphs, consider using
+                <h1>, <h2>, <h3>, etc. The key is always to do with less html as possible.
+        
+                            When you use less html tags and less classes, the html code also becomes a lot easier to read!
+        
+                            Best Practice #4: Start using html tags such as <section>
+                                <header>
+                                    <footer>, etc.
+                                        There are lots of html tags that you don't really need to use but which could be
+                                        helpful, especially if your html starts having too many divs. You could, for example,
+                                        consider
+        
+                                        <div class='header'>Header Info</div>
+                                        <div class='main'>
+                                            <div class='nav'>Nav Content</div>
+                                            <div class='body'>Main Body Content</div>
+                                        </div>
+                                        <div class='footer'>Footer</div>
+                                        Using <section>, <header>, and <footer>, you could structure your html as follows:
+        
+                                                    <header>Header Info</header>
+                                                    <section class='main'>
+                                                        <div class="nav">Nav Content</div>
+                                                        <div class="body">Main Body Content</div>
+                                                    </section>
+                                                    <footer>Footer</footer>
+                                                    As all websites all have a header and a footer, using <header> and <footer>
+                                                            could be very helpful. <section> is also used widely. Remember
+                                                                however that you don't technically need to use these html tags
+                                                                as all websites could be created using plain old divs.
+        
+                                                                Best Practice #5: Don't have HTML class contain information
+                                                                about the styles including locations
+                                                                Consider the following html:
+        
+                                                                <div class='top_right'>
+                                                                    Login Information
+                                                                </div>
+                                                                <div class='bottom'>
+                                                                    Blog Links
+                                                                    </divclass="support tag close from-rainbow">>
+                                                                    <div class='top_right">
+           Contact Information
+        </div>
+        What' s wrong with the html above? If you couldn't tell, look closely at the name of the classes. The key is that the
+                                                                        html class should not have information about how things
+                                                                        should look or where these elements should be placed.
+                                                                        That's up to the CSS file (or whoever is creating the
+                                                                        CSS file). Instead, you should give generic names and
+                                                                        leave it up to the designer to decide where to put that
+                                                                        information <div class='login'>
+                                                                        Login information
+                                                                    </div>
+                                                                    <div class='blog_links'>
+                                                                        Blog Links
+                                                                    </div>
+                                                                    <div class='contact'>
+                                                                        Contact Information
+                                                                    </div>
+                                                                    For example, visit the following links:
+        
+                                                                    http://www.csszengarden.com/221/
+                                                                    http://www.csszengarden.com/220/
+                                                                    http://www.csszengarden.com/219/
+                                                                    http://www.csszengarden.com/218/
+                                                                    http://www.csszengarden.com/215/
+                                                                    Did you know that all these 5 sites are using an exact same
+                                                                    HTML page? The only file that's different for these 5 urls
+                                                                    is the css file! Therefore, do not have the html file
+                                                                    dictate where different content should go. It's up to the
+                                                                    CSS designer whether they want to put certain information on
+                                                                    the top, bottom, left, or right.
+        
+                                                                    Similarly, you should avoid using color name such as red,
+                                                                    blue, green, etc and include them directly in the html
+                                                                    class. For example,
+        
+                                                                    <p>Hello <span class='red'>Michael</span>
+                                                                        <span>Sensei</span>.</p>
+                                                                    is not a good practice. Instead, you should do something
+                                                                    like this
+        
+                                                                    <p>Hello <span class='emphasis'>Michael</span>
+                                                                        <span>Sensei</span>.
+                                                                    <p>
+                                                                        Best Practice #6: Avoid using html tags that dictate
+                                                                        style
+                                                                        There are old html tags that you should avoid using.
+                                                                        These were used heavily when people weren't using CSS to
+                                                                        style a website. For example, consider the following
+                                                                        html tags:
+        
+                                                                        <u> - for putting underline
+                                                                            <i> - for putting italic
+                                                                                <hr> - for putting horizontal line
+                                                                                <br> - for putting a break
+                                                                                These html tags should never be used as all
+                                                                                style information should be dictated by the CSS
+                                                                                file instead of the HTML content.

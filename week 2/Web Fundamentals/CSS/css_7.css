@@ -1,0 +1,249 @@
+body * {
+    /* outline: 1px solid pink; */
+}
+
+div.container {
+    width: 920px;
+    min-height: 919px;
+    background-color: blue;
+    margin: 0px auto;
+}
+
+div.container div.header {
+    width: 920px;
+    height: 62px;
+    background-color: #f7f7f7;
+}
+
+div.container div.header div.name {
+    width: 400px;
+    height: 62px;
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    text-align: left;
+    margin-top: -10px;
+    font-family: 'Comic Sans MS Bold';
+}
+
+div.container div.header div.name h1{
+    text-align: left;
+}
+
+div.container div.header div.work {
+    width: 500px;
+    height: 57px;
+    margin-left: 470px;
+    position: absolute;
+    margin-top: -60px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+div.container div.main {
+    height: 985px;
+    width: 920px;
+    background: linear-gradient(to bottom, #39272d 8%, #6f5964 100%);
+}
+
+div.container div.main div.section1 {
+    width: 389px;
+    height: 258px;
+    background-color: greenyellow;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: url('./Portfolio_images/photo_of_me.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid #a7a6ad;
+}
+
+div.container div.main div.section2 {
+    height: 268px;
+    width: 458px;
+    background-color: #f0eaef;
+    display: inline-block;
+    margin-top: 20px;
+    vertical-align: top;
+}
+
+div.container div.main div.section2  p, a {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+}
+
+div.container div.main div.section2 h2{
+    height: 42px;
+    width: 453px;
+    margin-top: 0px;
+    background: linear-gradient(to top, #a7a6ad 108%, #ffffff 117%);
+    color: white;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+div.container div.main div.section3 {
+    height: 650px;
+    width: 880px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+div.container div.main div.section3 h2{
+    height: 42px;
+    width: 270px;
+    margin-top: 0px;
+    background: linear-gradient(to top, #a7a6ad 108%, #ffffff 117%);
+    color: white;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+div.container div.main div.section3 h3{
+    height: 42px;
+    width: 270px;
+    margin-top: 20px;
+    background: linear-gradient(to top, #a7a6ad 108%, #ffffff 117%);
+    color: white;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+div.container div.message {
+    display: inline-block;
+    width: 275px;
+    height: 650px;
+    margin-right: 15px;
+    position: relative;
+    background: linear-gradient(to bottom, #e0d3df 8%, #f9f6f9 100%);
+    vertical-align: top;
+}
+
+div.container div.main div.section3 div.message div.laMode {
+    height: 146px;
+    background-color: gray;
+    background: url('./Portfolio_images/lamode.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    height: 38px;
+    width: 40px;
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 0px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+div.container div.main div.section3 div.message div.familyContacts {
+    height: 146px;
+    background-color: gray;
+    background: url('./Portfolio_images/familycontacts.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.container div.main div.section3 div.message div.fiveEleven {
+    height: 146px;
+    background-color: gray;
+    background: url('./Portfolio_images/fiveEleven.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.container div.main div.section3 div.message3 {
+    margin-left: 13px;
+    position: absolute;
+}
+
+div.container div.main div.section3 div.message2 {
+    margin-left: 9px;
+}
+
+div.container div.message a {
+    background-color: #407d61;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    margin: 80px;
+    height: 30px;
+    margin-left: 80px;
+    box-shadow: 5px 3px #888888;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+div.container div.message a#lamode {
+    margin-left: -60px;
+    margin-top: 50px;
+    height: 20px;
+    position: absolute;
+    padding-top: 5px;
+    padding: 3px;
+}
+
+div.container div.message a#family {
+    margin-left: -80px;
+    margin-top: 50px;
+    height: 20px;
+    width: 109px;
+    position: absolute;
+    padding-top: 5px;
+    padding: 3px;
+}
+
+div.container div.message a#five {
+    margin-left: -120px;
+    margin-top: 50px;
+    height: 20px;
+    position: absolute;
+    padding-top: 5px;
+    padding: 3px;
+}
+
+div.container div.message p {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 75px;
+}
+
+div.footer {
+    width: 920px;
+    height: 75px;
+    background-color: #f7f7f7;
+}
+
+div.footer p {
+    margin: 0px auto;
+    align-items: center;
+    margin-left: 350px;
+    padding-top: 5px;
+}
+
+div.footer img {
+    height: 19px;
+    width: 21px;
+    display: inline-block;
+    margin-left: 70px;
+}
+
+div.footer a {
+    font-style: italic;
+    position: absolute;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+div.footer div.footerLinks {
+    padding-left: 200px;
+    margin-top: 20px;
+}

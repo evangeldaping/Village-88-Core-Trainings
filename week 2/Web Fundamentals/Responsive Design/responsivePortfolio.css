@@ -1,0 +1,162 @@
+#header {
+    width: 100%;
+    padding-left: 20px;
+}
+#header h1 {
+    font-family: "Comic Sans MS Bold";
+}
+#header h2 {
+    float: right;
+}
+
+#main_content {
+    width: 100%;
+    padding: 20px 20px;
+    background: #11051b; /*for all browsers that do not support gradients */
+    background: -webkit-radial-gradient(
+        circle,
+        #601390,
+        #400c60,
+        #11051b
+    ); /*Safari */
+    background: linear-gradient(to bottom, #39272d 8%, #6f5964 100%);
+    background: -moz-radial-gradient(
+        circle,
+        #601390,
+        #400c60,
+        #11051b
+    ); /*Firefox*/
+    border: solid;
+}
+
+#main_image {
+    height: 70%;
+    width: 70%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: grey;
+    margin-left: 50px;
+}
+
+.grey_gradient {
+    background: #696969; /*For browsers that do not support gradients */
+    background: -webkit-linear-gradient(
+        #a9a9a9,
+        #696969,
+        #a9a9a9
+    ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(
+        #a9a9a9,
+        #696969,
+        #a9a9a9
+    ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(
+        #a9a9a9,
+        #696969,
+        #a9a9a9
+    ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(
+        #a9a9a9,
+        #696969,
+        #a9a9a9
+    ); /* Standard syntax */
+    margin: 0px;
+    padding: 6px;
+}
+
+#about_section {
+    background: pink; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(
+        left,
+        #fff6f6,
+        #e5cdca
+    ); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right, #fff6f6, #e5cdca); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right, #fff6f6, #e5cdca); /*Fx 3.6-15*/
+    background: linear-gradient(to right, #fff6f6, #e5cdca); /*Standard*/
+}
+
+#about_section h3 {
+    width: 100%;
+}
+
+#about_section p {
+    margin: 13px;
+    font-size: 18px;
+}
+
+#about_section a {
+    margin: 13px;
+    font-size: 18px;
+}
+
+#portfolio {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sample_work h3 {
+    color: white;
+}
+
+.sample_work {
+    margin-top: 10px;
+    border: 15px solid transparent;
+    vertical-align: top;
+    display: table-row;
+    background: pink; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(
+        left,
+        #fff6f6,
+        #e5cdca
+    ); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right, #fff6f6, #e5cdca); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right, #fff6f6, #e5cdca); /*Fx 3.6-15*/
+    background: linear-gradient(to right, #fff6f6, #e5cdca); /*Standard*/
+}
+
+#table {
+    display: table;
+}
+
+.sample_work p {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.sample_work img {
+    margin-left: 15px;
+    width: 90%;
+    height: 80%;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: solid 1px black;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px 0px 5px 70px;
+    font-weight: 900;
+    margin-left: 35%;
+}
+
+.badges img {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    display: inline-block;
+}
+
+#footer img {
+    height: 15px;
+    width: 15px;
+    margin: 3px;
+}
+
+#footer {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+}

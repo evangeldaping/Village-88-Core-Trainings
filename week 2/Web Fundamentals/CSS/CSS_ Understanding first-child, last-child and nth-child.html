@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type -->
+<html lang="en"><script type="text/javascript" async="" src="./CSS_ Understanding first-child, last-child and nth-child_files/analytics.js.download"></script><script type="module" src="chrome-extension://jdkknkkbebbapilgoeccciglkfbmbnfm/hook.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="y_key" content="9c4b809a854824ce">
+    <meta name="google-site-verification" content="fkeFoEFB1NiuDjJcYRjHvaz8Od9jVb-RDZFrN4l0Dh4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="meta-apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="author" content="Krasimir Tsonev">
+    <meta name="copyright" content="Krasimir Tsonev">
+    <meta name="robots" content="follow,index">
+    <meta name="title" content="CSS: Understanding first-child, last-child and nth-child">
+    <meta name="keywords" content="child, element, nth child, scope, row4, markup, type, color, styles, CSS:, Understanding, first-child,, last-child, and, nth-child, javascript, node.js, developer, front-end, backend" lang="en-us">
+    <meta name="description" content="CSS: Understanding first-child, last-child and nth-child / I like the CSS only solutions. Very often I need to select a specific DOM element. Sure I could add a new class, but it is always nice if I can do that inside my stylesheets. It just looks better and keeps my HTML markup clean. first-child, last-child and nth-child are made exactly for this purpose.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="krasimirtsonev.com">
+    <meta property="og:description" content="CSS: Understanding first-child, last-child and nth-child / I like the CSS only solutions. Very often I need to select a specific DOM element. Sure I could add a new class, but it is always nice if I can do that inside my stylesheets. It just looks better and keeps my HTML markup clean. first-child, last-child and nth-child are made exactly for this purpose.">
+    <meta property="fb:app_id" content="495371670514815">
+
+    <meta name="twitter:card" content="CSS: Understanding first-child, last-child and nth-child / I like the CSS only solutions. Very often I need to select a specific DOM element. Sure I could add a new class, but it is always nice if I can do that inside my stylesheets. It just looks better and keeps my HTML markup clean. first-child, last-child and nth-child are made exactly for this purpose.">
+    <meta name="twitter:author" content="@KrasimirTsonev">
+    <meta name="twitter:title" content="CSS: Understanding first-child, last-child and nth-child">
+    <meta name="twitter:description" content="CSS: Understanding first-child, last-child and nth-child / I like the CSS only solutions. Very often I need to select a specific DOM element. Sure I could add a new class, but it is always nice if I can do that inside my stylesheets. It just looks better and keeps my HTML markup clean. first-child, last-child and nth-child are made exactly for this purpose.">
+
+    <link rel="preload" href="https://fonts.gstatic.com/">
+    <link rel="icon" type="image/png" href="https://krasimirtsonev.com/home/assets/pics/favicon.jpg">
+    <meta property="og:image" content="/blog/assets/articles/krasimirtsonev.jpg">
+    <meta property="og:url" content="https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type">
+    <meta property="og:title" content="CSS: Understanding first-child, last-child and nth-child">
+    <meta property="og:description" content="CSS: Understanding first-child, last-child and nth-child / I like the CSS only solutions. Very often I need to select a specific DOM element. Sure I could add a new class, but it is always nice if I can do that inside my stylesheets. It just looks better and keeps my HTML markup clean. first-child, last-child and nth-child are made exactly for this purpose.">
+    <title>CSS: Understanding first-child, last-child and nth-child</title>
+    <style>
+      body,html{width:100%;height:100%;font-family:Helvetica,Verdana;font-size:20px;line-height:1.6em;color:#000;padding:0;margin:0}@media all and (max-width:800px){body{font-size:16px}}a{color:#000;font-weight:bold}a:hover{color:#000;text-decoration:none}a img{border:0}hr{border-bottom:0;border-top:2px dotted #aeaeae;margin:2em 0}h1{font-size:3em;line-height:1em;margin:1em auto .3em auto;text-align:center;max-width:1100px}h2{font-size:2em;line-height:1.2em;font-weight:normal;max-width:700px;margin:1em auto 0 auto}h3{font-size:1.17em;line-height:1.2em;max-width:700px;margin:1em auto 0 auto}h4{font-size:1em;line-height:1.2em;max-width:700px;margin:1em auto 0 auto}@media all and (max-width:800px){h1{font-size:2em}h2{font-size:1.5em}h3{font-size:1em}}@media all and (max-width:520px){h1{font-size:2em}h2{font-size:1.2em}h3{font-size:.8em}}.cf{clear:both}.cf::after{display:table;content:" ";clear:both}.left{float:left}.right{float:right}.bb{box-sizing:border-box;-moz-box-sizing:border-box}@media all and (max-width:750px){.rc,h2,h3{padding-left:1em !important;padding-right:1em !important}}header{padding:0 1em 2em 0;border-bottom:solid 4px #e6e6e6}.header-content{max-width:1100px;display:grid;margin:0 auto;grid-template-columns:65% 35%}header .content-left{position:relative;border-right:1px dotted #aeaeae}header .content-right{position:relative;padding-left:1em;opacity:.7;transition:opacity 300ms ease-out;-webkit-transition:opacity 300ms ease-out;-moz-transition:opacity 300ms ease-out}header .content-right:hover{opacity:1}@media all and (max-width:720px){.header-content{display:block}header .content-left{width:100%;padding-right:0;border-right:0}header .content-right{display:none}}.sidebar{padding:4.4em 0 0 1em;font-size:14px;opacity:.8;transition:opacity 600ms;-webkit-transition:opacity 600ms;-moz-transition:opacity 600ms;-ms-transition:opacity 600ms;-o-transition:opacity 600ms;max-width:385px}.sidebar:hover{opacity:1}.sidebar hr{border-bottom:0;border-top:1px dotted #aeaeae;margin:1em 0}.sidebar-small{font-size:.8em}@media all and (max-height:767px){.sidebar{position:relative}}@media all and (max-width:1000px){.sidebar{position:relative}}.item-list{max-width:700px;margin:2em auto;padding:0 0 2em 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-bottom:1px dotted #c8c8c8}.item-list img{width:100%;max-width:100%}.item-list h2{margin:0 0 .2em 0;padding:0}.item-list h2 a{text-decoration:none}.item-list dd{padding:0;margin:0}.author-avatar{width:100px;height:100px;border-radius:50px;display:block;margin:0 0 .8em 0}article,h1{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}article img{width:100%;min-width:100%}.article-content p,.article-content ul,.article-content ol,.article-content .center{max-width:700px;margin-left:auto;margin-right:auto;padding:0 1em}.article-content ul,.article-content ol{padding-left:3em}.article-content pre{background:#fff !important;font-size:.8em !important;max-width:700px !important;margin-left:auto !important;margin-right:auto !important;border-left:solid 1px #e6e6e6}.article-meta{display:block;margin-bottom:4em;margin-top:.2em;font-size:.8em;text-align:center}.article-abstract{max-width:700px;margin:0 auto}.article-head-photo{float:right;padding:0 0 1em 1em;margin:0;max-width:450px}@media all and (max-width:720px){.article-head-photo{float:none;padding:0;margin:1em 0 0 0;width:100%;max-width:100%}.article-abstract{max-width:100%}}.keywords{max-width:700px;margin:2em auto}small.keywords a{font-weight:normal}small.keywords a::before{content:"#"}.share-it{max-width:700px;margin:3em auto 1em auto}.share-it span{display:block;margin:0 0 4px 0}.author-card{font-size:1em;margin-top:3em;padding-right:1em}.author-card .author-avatar{width:100px;height:100px;margin-right:1em;float:left;min-width:auto;filter:none;-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);cursor:pointer;transition:filter 300ms ease}.author-card .author-avatar:hover{filter:none;-webkit-filter:grayscale(0);-moz-filter:grayscale(0);-ms-filter:grayscale(0);-o-filter:grayscale(0)}.author-card p{margin:0 0 .4em 0}@media all and (max-width:720px){.author-card{font-size:1em;margin-top:1em;padding-bottom:.4em;text-align:left}.author-card .author-avatar{width:60px;height:60px}.author-card>div{margin:0}}article iframe{max-width:900px;margin:0 auto;display:block}.article-teaser-image{display:block;min-width:auto}.poster-image{max-width:1100px;margin:0 auto}.poster-image img{display:block;max-width:100%;margin:1em auto 0 auto}.newsletter-form p{margin-top:0}.newsletter-form form{position:relative}.newsletter-form .newsletter-email{padding:.6em;font-size:1em;border:1px #6bbf6e solid;transform:translateY(1px);-webkit-transform:translateY(1px)}.newsletter-form .newsletter-submit{padding:.6em;font-size:1em;background:#2a532b;border-radius:.2em;-webkit-appearance:none;color:#fff;border-top:0;border-left:0;border-right:solid 1px #37823a;border-bottom:solid 2px #37823a;outline:0;cursor:pointer}.newsletter-form .newsletter-submit:hover{background:#35be3a}.newsletter-form .newsletter-submit:active{transform:translateY(3px);-webkit-transform:translateY(3px)}.newsletter-form .author-avatar{float:right;width:60px;height:60px;margin:0 10px 0 0}p.view-previous-campaigns{font-size:.8em;margin-top:1em}p code,li code{font-family:inherit;display:inline-block;font-size:.8em;background:#f0f0f0;padding:0 .4em;border-radius:.2em;line-height:1.2em}pre{overflow-y:scroll}pre br{display:none}blockquote{font-style:italic;color:#717171;margin:1em auto;max-width:700px;border-left:dotted 1px #999;border-right:dotted 1px #999}.article-content blockquote p{max-width:none}.wisdom{display:block;font-size:1em;color:#000;padding:1em;margin:.5em 0 0 .5em;float:right;width:16em;background:#f7f7f7;position:relative}.wisdom a{font-weight:normal}.wisdom::before{display:inline-block;content:"💡";padding-right:.3em}.btn{display:inline-block;text-decoration:none;padding:.4em .6em;color:#fff;background:#6bbf6e;border-radius:.2em;border-bottom:2px solid #37823a;margin:0 .4em 0 0;transition:all 200ms;-webkit-transition:all 200ms;-ms-transition:all 200ms;-o-transition:all 200ms}.btn:hover{color:#fff;background:#35be3a}.btn:active{border-bottom:1px solid #37823a;transform:translate(0,0.1em);-webkit-transform:translate(0,0.1em);-ms-transform:translate(0,0.1em);-o-transform:translate(0,0.1em)}footer{background:#f0f0f0;padding-top:3em;padding-bottom:1em;border-top:solid 4px #e6e6e6}.footer-content{max-width:700px;margin:0 auto}.footer-block{margin-bottom:2em}@media all and (max-width:800px){footer{display:block}.footer-block{margin-bottom:1em;padding-top:1em;border-top:1px dotted #c8c8c8}}.articles-navigation{padding-bottom:1em;max-width:700px;margin:0 auto}.similar-posts,.categories-list{list-style:none;margin:0;padding:0}.categories-list li{display:inline-block}.similar-posts .star{display:inline-block;margin-right:.6em;transform:translateY(2px);-webkit-transform:translateY(2px);-moz-transform:translateY(2px)}#carbonads{width:351px;height:140px}#carbonads img{display:block;float:right;margin-left:1em}#carbonads .carbon-wrap{display:block;float:left;line-height:1.7em}#carbonads .carbon-poweredby{font-size:.8em;display:block;clear:both;text-align:left}.blog-map p{display:inline-block;padding:.2em .4em;margin:0;line-height:1em}.blog-map p a{text-decoration:none}.blog-map p a:hover{color:red}.blog-map p[data-num="2"]{font-size:1.3em}.blog-map p[data-num="3"]{font-size:1.6em}.blog-map p[data-num="4"]{font-size:1.9em}.blog-map p[data-num="5"]{font-size:2.2em}.blog-map p[data-num="6"]{font-size:2.5em}.blog-map p[data-num="7"]{font-size:2.8em}.blog-map p[data-num="8"]{font-size:3.1em}.blog-map p[data-num="9"]{font-size:3.4em}.blog-map p[data-num="10"]{font-size:3.4em}.blog-map p[data-num="11"]{font-size:3.4em}.blog-map p[data-num="12"]{font-size:3.4em}.blog-map p[data-num="13"]{font-size:3.4em}.blog-map p[data-num="14"]{font-size:3.4em}.blog-map p[data-num="15"]{font-size:3.4em}.blog-map p[data-num="16"]{font-size:3.4em}.blog-map p[data-num="17"]{font-size:3.4em}.blog-map p[data-num="18"]{font-size:3.4em}.blog-map p[data-num="19"]{font-size:3.4em}.blog-map p[data-num="20"]{font-size:3.4em}.series{margin:2em 0;padding:.6em 1.6em;background:#f7f7f7;border-bottom-right-radius:1em}.series ol{list-style:upper-roman}.article-image-media img{display:block;max-width:100%}.article-image-media small{font-size:.5em;display:block;opacity:.5;text-align:right}.footer-keywords{max-width:700px;margin-top:2em;margin-left:auto;margin-right:auto;padding-top:1em;border-top:dotted 1px #999}.footer-keywords a{display:inline-block;font-weight:normal}.footer-keywords a::before{content:"#"}.blog-comments{max-width:700px;margin:0 auto 2em auto;clear:both}.stats{max-width:700px;margin:4em auto 2em auto;clear:both}code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,'Andale Mono',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;font-size:.9em;line-height:1.4em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]::-moz-selection,pre[class*="language-"] ::-moz-selection,code[class*="language-"]::-moz-selection,code[class*="language-"] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*="language-"]::selection,pre[class*="language-"] ::selection,code[class*="language-"]::selection,code[class*="language-"] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*="language-"],pre[class*="language-"]{text-shadow:none}}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f5f2f0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function{color:#dd4a68}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre.line-numbers>code{position:relative}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}
+
+    </style>
+    <link rel="stylesheet" href="./CSS_ Understanding first-child, last-child and nth-child_files/ocs-ui.min.css">
+    <link rel="canonical" href="https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type">
+  <script id="_carbonads_projs" type="text/javascript" src="./CSS_ Understanding first-child, last-child and nth-child_files/CKYIE2QI.json"></script><style></style></head>
+
+  <body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed=""><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-left cc-color-override--810904148 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">This website uses cookies to ensure you get the best experience on our website. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://cookiesandyou.com/" rel="noopener noreferrer nofollow" target="_blank">Learn more</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+    <header itemscope="" itemtype="http://schema.org/BlogPosting">
+      <meta itemprop="url" content="https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type">
+      <meta itemprop="datePublished" content="2013-08-16">
+      <meta itemprop="dateModified" content="2013-08-16">
+      <meta itemprop="headline" content="CSS: Understanding first-child, last-child and nth-child">
+      <meta itemprop="image" content="/blog/assets/articles/krasimirtsonev.jpg">
+      <span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Krasimir Tsonev">
+        <span itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://krasimirtsonev.com/blog/assets/static/avatar_100x100.jpg">
+        </span>
+      </span>
+      <div class="header-content">
+        <div class="content-left bb">
+          <div class="author-card">
+            <div class="cf">
+              <a href="https://krasimirtsonev.com/blog" itemprop="mainEntityOfPage">
+                <img src="./CSS_ Understanding first-child, last-child and nth-child_files/avatar_100x100.jpg" alt="author: Krasimir Tsonev" class="author-avatar" width="100" height="100">
+              </a>
+              <p>
+                Hi there, I'm
+                <span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">Krasimir</span></span>. Senior front-end engineer with over 13 years of experience. I
+                <a href="https://krasimirtsonev.com/#publications" target="_blank">write</a>,
+                <a href="https://krasimirtsonev.com/#talks" target="_blank">speak</a>
+                and occasionally
+                <a href="https://krasimirtsonev.com/#projects" target="_blank">code</a>
+                <a href="https://github.com/krasimir" target="_blank">stuff</a>. Follow me on
+                <a href="https://twitter.com/KrasimirTsonev" target="_blank">Twitter</a>,
+                <a href="https://github.com/krasimir" target="_blank">GitHub</a>,
+                <a href="https://facebook.com/profile.php?id=617578836" class="external">Facebook</a>
+                or
+                <a href="https://linkedin.com/in/krasimir-tsonev-67b8b66/" class="external">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <aside class="content-right bb">
+          <div class="sidebar bb">
+            <script async="" src="./CSS_ Understanding first-child, last-child and nth-child_files/carbon.js.download" id="_carbonads_js"></script><div id="carbonads"><span><span class="carbon-wrap"><a href="https://www.smashwords.com/books/view/620892" class="carbon-img" target="_blank" rel="noopener sponsored"><img src="./CSS_ Understanding first-child, last-child and nth-child_files/dfe917cab8cfcb1954bd1371fc5cb87b.jpg" alt="ads via Carbon" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="https://www.smashwords.com/books/view/620892" class="carbon-text" target="_blank" rel="noopener sponsored">Checkout "10 Lessons in Front-end" ebook.</a></span><a href="http://carbonads.net/?utm_source=krasimirtsonevcom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a></span></div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <div itemprop="articleBody">
+<h1 itemprop="headline">CSS: Understanding first-child, last-child and nth-child</h1>
+<article>
+  <div class="article-meta">
+    <a href="https://krasimirtsonev.com/blog/" title="Blog home"><span itemprop="articleSection">Blog</span></a>/<a href="https://krasimirtsonev.com/blog/category/CSS3" title="CSS3"><span itemprop="articleSection">CSS3</span></a>
+    · <small itemprop="datePublished" content="2013-08-16">2013-08-16</small> ·
+    <small class="keywords" itemprop="keywords"><a href="https://krasimirtsonev.com/blog/keyword/child" rel="tag">child</a>, <a href="https://krasimirtsonev.com/blog/keyword/element" rel="tag">element</a>, <a href="https://krasimirtsonev.com/blog/keyword/nth-child" rel="tag">nth child</a></small>
+    <meta itemprop="dateModified" content="2013-08-16">
+  </div>
+  <div itemprop="abstract" class="article-abstract rc">
+     <p>I like the <a href="http://krasimirtsonev.com/blog/category/CSS3">CSS</a> only solutions. Very often I need to select a specific DOM element. Sure I could add a new class, but it is always nice if I can do that inside my stylesheets. It just looks better and keeps my HTML markup clean. <em>first-child</em>, <em>last-child</em> and <em>nth-child</em> are made exactly for this purpose.</p>
+  </div>
+  <div class="article-content">
+    <p>Here is the markup which I'm going to use in this article:</p>
+
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"wrapper"</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"content"</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Row1<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">&gt;</span>text <span class="token keyword">in</span> between<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Row2<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Row3<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Row4<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Row4<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"content"</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>RowA<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>RowB<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>RowC<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>RowD<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>RowE<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">&gt;</span>link at the end<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre>
+
+<h2 id="first-child">first-child</h2>
+
+<p>
+  The <em>first-child</em> pseudo selector matches the first element of series of tags. That's only valid for a specific
+  scope. And by scope I mean DOM element. In the markup above every <em>.content</em> div defines its own scope. So, if
+  you write:
+</p>
+
+<pre class=" language-javascript"><code class=" language-javascript">p<span class="token punctuation">:</span>first<span class="token operator">-</span>child <span class="token punctuation">{</span>
+    font<span class="token operator">-</span>weight<span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    text<span class="token operator">-</span>decoration<span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>
+  those styles will be applied to <em>Row1</em> and <em>RowA</em>, because they are first matches of <em>p</em> tag
+  inside their parents.
+</p>
+
+<h2 id="last-child">last-child</h2>
+
+<p>
+  It works absolutely identical as <em>first-child</em>, but it selects the last element in the list. However, if we use
+  the same markup and add
+</p>
+
+<pre class=" language-javascript"><code class=" language-javascript">p<span class="token punctuation">:</span>last<span class="token operator">-</span>child <span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> #<span class="token number">000</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>
+  only <em>Row4</em> will be changed. Why is that? It's because in the second <em>.content</em> div <em>RowE</em> is not
+  the very last child. It's actually a link represented by <em>a</em> tag. So, <em>p:last-child</em> became invalid.
+</p>
+
+<h2 id="nth-child">nth-child</h2>
+
+<p>
+  What if you want to select only the third paragraph. <em>nth-child</em> accepts a number, a keyword, or a formula. For
+  example:
+</p>
+
+<pre class=" language-javascript"><code class=" language-javascript">p<span class="token punctuation">:</span>nth<span class="token operator">-</span><span class="token function">child<span class="token punctuation">(</span></span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> #00009F<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>
+  matches <em>Row2</em> (because it's a third element in its scope) and <em>RowC</em>. You are able to pass
+  <em>odd</em>, <em>even</em> or <em>3n+0</em> for example, which styles every element whose index is a multiple of 3.
+</p>
+
+<h2 id="nth-of-type">nth-of-type</h2>
+
+<p>
+  As you already saw, the above classes could lead to a unexpected results. That's because not always your selectors are
+  valid and apply styles to the element which you want. In those cases you may use <em>nth-of-type</em>.
+</p>
+
+<pre class=" language-javascript"><code class=" language-javascript">p<span class="token punctuation">:</span>nth<span class="token operator">-</span>of<span class="token operator">-</span><span class="token function">type<span class="token punctuation">(</span></span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> #009F00<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>This selects <em>Row4</em> and <em>RowD</em>. I.e. every fourth paragraph.</p>
+
+<h2 id="example">Example</h2>
+
+<p>Here is a jsfiddle, which demonstrates all the things above</p>
+
+<iframe width="100%" height="350" src="./CSS_ Understanding first-child, last-child and nth-child_files/result,html,css.html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+  </div>
+</article>
+<div class="footer-keywords rc" itemprop="keywords">
+  keywords: <a href="https://krasimirtsonev.com/blog/keyword/child" rel="tag">child</a>, <a href="https://krasimirtsonev.com/blog/keyword/element" rel="tag">element</a>, <a href="https://krasimirtsonev.com/blog/keyword/nth-child" rel="tag">nth child</a>, <a href="https://krasimirtsonev.com/blog/keyword/scope" rel="tag">scope</a>, <a href="https://krasimirtsonev.com/blog/keyword/row4" rel="tag">row4</a>, <a href="https://krasimirtsonev.com/blog/keyword/markup" rel="tag">markup</a>
+</div>
+<div class="share-it rc">
+  <small>
+    If you enjoy this post, share it on
+    <a href="https://twitter.com/share?url=https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type&amp;text=CSS:%20Understanding%20first-child,%20last-child%20and%20nth-child&amp;via=KrasimirTsonev" target="_blank" title="share in twitter">Twitter</a>,
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type" target="_blank" title="share in facebook">Facebook</a>
+    or
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type" target="_blank" title="share in linkedin">LinkedIn</a>. Or maybe comment below:
+  </small>
+</div>
+<a name="comments"></a>
+<div id="blog-comments" class="blog-comments rc"><div class="O_root"><div class="O_comments"><div class="O_summary">
+        <div id="O_num-of-comments">0 comments</div>
+        <div>
+          <a href="https://github.com/krasimir/ktcom-comments/issues/483" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+      </div></div><div class="O_new-comment" style="display: block;"><div class="O_comment">
+        <div class="O_comment_left" id="O_new_comment">
+          <div class="O_avatar_placeholder"></div>
+        </div>
+        <div class="O_comment_right">
+          <textarea id="O__textarea" placeholder="I think ..."></textarea>
+          <button id="O__submit_comment" disabled="">Log in and comment</button>
+        </div>
+      </div></div></div></div>
+</div>
+    <br class="clear">
+    <footer class="rc">
+  <div class="footer-content">
+    <div class="footer-block">
+  Similar posts:
+  <ul class="similar-posts">
+    <li><a href="https://krasimirtsonev.com/blog/article/csssteal-chrome-extension-that-extracts-css"><span class="star"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 32 32"><g></g><path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z" fill="#6BBF6E"></path></svg></span> CSSSteal - Chrome extension that extracts CSS</a></li><li><a href="https://krasimirtsonev.com/blog/article/CSS-variables-are-here-for-ages"><span class="star"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 32 32"><g></g><path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z" fill="#6BBF6E"></path></svg></span> CSS variables are here for ages</a></li><li><a href="https://krasimirtsonev.com/blog/article/Simple-good-looking-separator-made-with-pure-CSS"><span class="star"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 32 32"><g></g><path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z" fill="#6BBF6E"></path></svg></span> Simple, good looking separator made with pure CSS</a></li><li><a href="https://krasimirtsonev.com/blog/article/Select-drop-down-broken-under-Firefox"><span class="star"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 32 32"><g></g><path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z" fill="#6BBF6E"></path></svg></span> Select drop-down broken under Firefox</a></li><li><a href="https://krasimirtsonev.com/blog/article/SASS-interpolation-in-a-name-of-variable-nest-variables-within-variables"><span class="star"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 32 32"><g></g><path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z" fill="#6BBF6E"></path></svg></span> SASS: interpolation in a name of variable</a></li>
+  </ul>
+</div>
+<div class="footer-block">
+  Blog categories:
+  <ul class="categories-list">
+    <li><a href="https://krasimirtsonev.com/blog/category/JavaScript">JavaScript</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Inspiration">Inspiration</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/ActionScript">ActionScript</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Must-see">Must-see</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Architecture">Architecture</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/PHP">PHP</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Other">Other</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/NADCAST">NADCAST</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/HTML5">HTML5</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/CSS3">CSS3</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Nodejs">Nodejs</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Cinema">Cinema</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Fun">Fun</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Design">Design</a></li> · <li><a href="https://krasimirtsonev.com/blog/category/Riew">Riew</a></li>
+  </ul>
+</div>
+
+
+    <div class="newsletter-form footer-block">
+      <form action="https://krasimirtsonev.us12.list-manage.com/subscribe/post?u=765f9eb0c6abb87872ba30f87&amp;id=8db0568af1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+        <p>
+          <a href="https://us12.list-manage.com/subscribe?u=765f9eb0c6abb87872ba30f87&amp;id=8db0568af1" title="Subscribe to my newsletter" target="_blank">Subscribe to my newsletter</a>
+          to get the latest updates on my projects or follow me on
+          <a href="https://twitter.com/KrasimirTsonev" target="_blank">Twitter</a>,
+          <a href="https://github.com/krasimir" target="_blank">GitHub</a>,
+          <a href="https://facebook.com/profile.php?id=617578836" class="external">Facebook</a>
+          or
+          <a href="https://linkedin.com/in/krasimir-tsonev-67b8b66/" class="external">LinkedIn</a>.
+        </p>
+      </form>
+    </div>
+
+    <div class="footer-block">
+      <p>
+        my email: me (@) krasimir.dev<br>
+        <a href="https://krasimirtsonev.com/home/assets/other/cv.pdf" title="CV of Krasimir Tsonev" class="external">CV / Resume</a><br>
+        <a href="https://krasimirtsonev.com/blog/rss" title="RSS" class="external">Blog RSS</a><br>
+        <a href="https://krasimirtsonev.com/blog/stats" title="Statistics" class="external">Stats</a><br>
+        <a href="https://krasimirtsonev.com/blog/keywords" title="Keywords" class="external">Keywords</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="./CSS_ Understanding first-child, last-child and nth-child_files/prism.js.download"></script>
+    <script src="./CSS_ Understanding first-child, last-child and nth-child_files/ocs.min.js.download"></script>
+    <script async="" src="./CSS_ Understanding first-child, last-child and nth-child_files/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-1621908-1");
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="./CSS_ Understanding first-child, last-child and nth-child_files/cookieconsent.min.css">
+    <script src="./CSS_ Understanding first-child, last-child and nth-child_files/cookieconsent.min.js.download"></script>
+    <script>
+      window.addEventListener("load", function() {
+        window.cookieconsent.initialise({
+          palette: {
+            popup: {
+              background: "#edeff5",
+              text: "#838391",
+            },
+            button: {
+              background: "#8a8a8a",
+            },
+          },
+          theme: "classic",
+          position: "bottom-left",
+        });
+        [].slice.call(document.querySelectorAll(".wisdom")).forEach(function(el) {
+          const text = el.innerText;
+          const noTwitter = el.getAttribute("data-noTwitter");
+          if (noTwitter) return;
+          const shareURL =
+            "http://twitter.com/share?text=" + encodeURIComponent(text) + "&amp;url=" + window.location.href;
+          el.innerHTML =
+            '<a href="' +
+            shareURL +
+            '" target="_blank" aria-label="Share on Twitter" title="Share on Twitter">' +
+            text +
+            "</a>";
+        });
+
+        const issueNumber = "483";
+
+        // comments
+        if (issueNumber !== "undefined") {
+          Octomments({
+            github: {
+              owner: "krasimir",
+              repo: "ktcom-comments",
+            },
+            issueNumber: issueNumber,
+            renderer: [OctommentsRenderer, "#blog-comments"],
+          }).init();
+        }
+      });
+    </script>
+  
+
+<div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div></body></html>

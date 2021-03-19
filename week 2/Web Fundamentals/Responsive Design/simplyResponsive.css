@@ -10,10 +10,16 @@
     padding: 20px;
 }
 
-h3,
-p {
+h3 {
     margin-top: 5px;
     background-color: #b3b3b3;
+    border: 2px solid #d0c4a1;
+    padding: 10px;
+}
+
+p {
+    margin-top: 5px;
+    background-color: #cccccc;
     border: 2px solid #d0c4a1;
     padding: 10px;
 }

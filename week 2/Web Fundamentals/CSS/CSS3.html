@@ -1,0 +1,71 @@
+CSS3
+
+
+CSS3 is a series of modules that are designed to be implemented separately and independently from each other. Although
+there are parts of CSS3 that are not yet implemented in any browser, this doesn't mean we can't be using CSS3 today. We
+can start using portions of it today as long as we know when and how to add it in.
+
+We can group our website's visual elements into two categories: critical and non-critical. Visual elements that are
+critical include branding, usability, accessibility and layout. Visual elements that are non-critical include
+interaction, visual rewards, feedback, and movement. We have to make sure we apply CSS3 to non-critical areas because it
+will be risky to use CSS3 on critical areas. CSS3 is the cherry on top. We will be going over a small set of CSS3
+properties that have reached enough browser support to be usable right now.
+
+First Child, Last Child, nth Child
+Given
+
+<body>
+    <p>hello</p>
+    <div>
+        <p>dojo</p>
+    </div>
+</body>
+How would you select just the first paragraph and not the secondary paragraph that's inside the division? Please see:
+http://krasimirtsonev.com/blog/article/CSS-Understanding-first-child-second-child-and-nth-child-nth-of-type.
+
+Some students were asked this during their interviews. In the real world, if a website uses first child, second child,
+or nth Child to style the website, it may look nice on the first CSS version but as the website evolves and new contents
+are added, maintaining the site using these CSS elements become more cumbersome than needed. Most professionals
+therefore don't rely too heavily on these elements and use these sparingly. However, as these are shown in other
+tutorials and as other developers may like using these, it's still good to know what these are and how to use them when
+needed.
+
+Box Shadow
+With box-shadow property, you can add shadow to an element with options for the direction, the amount of blur, and color
+of the shadow. You can learn more about box-shadow here.
+
+.awesome {
+-webkit-box-shadow: 10px 10px 5px #333;
+-moz-box-shadow: 10px 10px 5px #333;
+box-shadow: 10px 10px 5px #333;
+}
+Opacity
+With opacity property, you can define how opaque an element is. A value of 1 means that the element is fully opaque
+(fully filled) while a value of 0 means transparent (invisible). You can learn more about opacity here.
+
+.awesome {
+opacity: 0.5;
+}
+RGBA
+RGBA is not a CSS property but rather a new color model introduced in CSS3, adding the ability to specify a level of
+opacity along with an RGB color value. You can learn more about RGBA here
+
+.awesome {
+background-color: rgba(0, 0, 0, 0.8);
+}
+Multiple Background Images
+CSS3 allows you to apply multiple background images on an element (separated with commas). This is how people create the
+parallax scrolling effect. You can learn more about multiple background images here.
+
+body {
+background: url(first_image.png) no-repeat top left,
+url(second_image.png) repeat-x bottom left;
+}
+Browser Prefixes
+CSS Browser Prefixes or CSS Vendor prefixes are a way for browser developers to add support for new CSS features before
+such feature becomes fully supported by all browsers. Sample of these prefixes are '-webkit-' and '-moz'. You may check
+this for more information about prefixes.
+
+Other Goodies
+You can also transition and transform your elements with CSS3. This was once only possible with JavaScript. You can read
+more about transitions here and transformations here.

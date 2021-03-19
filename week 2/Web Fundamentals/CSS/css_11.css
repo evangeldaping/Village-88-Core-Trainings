@@ -1,0 +1,46 @@
+body * {
+  /* outline: 1px solid pink; */
+}
+#container {
+  width: 692px;
+  min-height: 638px;
+  background-color: #d4d2ae;
+  margin: 0px auto;
+}
+#container #header {
+  height: 100px;
+  width: 692px;
+}
+#header img {
+  height: 53px;
+  width: 99px;
+  padding-left: 50px;
+  padding-top: 30px;
+  position: relative;
+  display: inline;
+}
+#header img .github {
+  margin-left: 60px;
+  position: absolute;
+}
+#header h1 {
+  margin: 0px auto;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 0px;
+}
+#header img.catandninja {
+  margin-left: -60px;
+  position: absolute;
+}
+#main .mainRow {
+  margin-left: 20px;
+}
+#main .row img {
+  height: 120px;
+  width: 120px;
+  display: inline-block;
+  border: 3px solid black;
+}

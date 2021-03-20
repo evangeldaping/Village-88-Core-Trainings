@@ -10,11 +10,23 @@ div {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: 62px 62px 62px 28px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px 62px;
+  grid-template-rows: 62px;
+  grid-gap: 3px;
+  padding: 10px;
+}
+.grid-container > p {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
 div.wrapper {
-  background: #eeeeee;
+  background-color: #eeeeee;
   margin: 15px auto;
-  width: 1295px;
-  min-height: 780px;
+  width: 1325px;
+  min-height: 790px;
 }
 div.wrapper h1 {
   text-align: center;
@@ -23,76 +35,39 @@ div.wrapper h1 {
 div.wrapper p {
   font-size: 15px;
 }
-div.wrapper p.credits {
-  padding: 25px;
-  text-align: center;
-}
-div.boxChemicalContent,
-div.box,
-div.boxVerticalSpace,
-div.boxHorizontalSpace,
-div.boxHorizontalSpace2 {
-  text-align: center;
-  display: inline-block;
-  vertical-align: top;
-}
-div.box,
-div.boxVerticalSpace,
-div.boxHorizontalSpace,
-div.boxHorizontalSpace2 {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  margin-bottom: 5px;
-}
-div.boxChemicalContent,
 div.box {
   height: 70px;
   width: 62px;
+  padding-top: 15px;
 }
-div.boxChemicalContent {
+.blue,
+.pink,
+.yellow,
+.green,
+.red {
+  text-align: center;
+  height: 70px;
+  width: 62px;
   padding: 4px;
   border: 1px solid black;
-}
-div.box {
-  padding-top: 15px;
-  padding-left: 5px;
-}
-div.box,
-div.boxVerticalSpace {
-  color: #f68598;
-}
-div.boxVerticalSpace {
-  height: 69px;
-  width: 20px;
-  padding-top: 15px;
-}
-div.boxHorizontalSpace,
-div.boxHorizontalSpace2 {
-  height: 15px;
-}
-div.boxHorizontalSpace {
-  width: 62px;
-}
-div.boxHorizontalSpace2 {
-  width: 20px;
 }
 h3 {
   color: #1913a2;
 }
 .blue {
-  background: #689bff;
+  background-color: #689bff;
 }
 .pink {
-  background: #fd9a98;
+  background-color: #fd9a98;
 }
 .yellow {
-  background: #fecb00;
+  background-color: #fecb00;
 }
 .green {
-  background: #1fca21;
+  background-color: #1fca21;
 }
-.red {
+.red,
+.box,
+.grid-container > p {
   color: #f68598;
 }

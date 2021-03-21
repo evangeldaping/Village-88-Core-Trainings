@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>jQuery Functions</title>
+
+    <script>
+        $(document).ready(function () {
+            $(".addClass button").click(function () {
+                $(".addClass p").addClass("red");
+            });
+            $(".slideToggle button").click(function () {
+                $(".slideToggle .slideImage").slideToggle("slow");
+            });
+            $(".append button").click(function () {
+                $(".append p").append("<p>Appended new paragraph</p>");
+            });
+            $(".click #showText").click(function () {
+                alert("Text: " + $("#test").text());
+            });
+            $(".click #showHTML").click(function () {
+                alert("HTML: " + $("#test").html());
+            });
+            $(".hide #hide").click(function () {
+                $(".hide p").hide();
+            });
+            $(".show #show").click(function () {
+                $(".hide p").show();
+            });
+            $(".toggle button").click(function () {
+                $(".toggle p").toggle();
+            });
+            $(".slideUp #slideUp").click(function () {
+                $(".slideUp p").slideUp("slow");
+            });
+            $(".slideDown #slideDown").click(function () {
+                $(".slideUp p").slideDown("slow");
+            });
+            $(".fadeIn button").click(function () {
+                $(".fadeIn #div1").fadeIn();
+                $(".fadeIn #div2").fadeIn("slow");
+                $(".fadeIn #div3").fadeIn(3000);
+            });
+            $(".fadeOut button").click(function () {
+                $(".fadeIn #div1").fadeOut();
+                $(".fadeIn #div2").fadeOut("slow");
+                $(".fadeIn #div3").fadeOut(3000);
+            });
+            $(".before button").click(function () {
+                $(".before .image").before("<b>Before</b>");
+            });
+            $(".after button").click(function () {
+                $(".before .image").after("<i>After</i>");
+            });
+            $(".attribute button").click(function () {
+                $(".attribute img").attr("width", "500");
+            });
+            $(".value button").click(function () {
+                $("input:text").val("Evangel Daping");
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0 auto;
+            margin-left: 350px;
+            margin-right: 350px;
+        }
+        .container {
+            background-color: #eeeeee;
+            margin: 0 auto;
+            padding: 100px;
+            padding-top: 0px;
+        }
+        .red {
+            font-size: 150%;
+            color: red;
+        }
+        button {
+            background-color:white;
+            box-shadow: 5px 3px #888888;
+        }
+        .lineBreak {
+            border-bottom: 2px solid black;
+            box-shadow: 5px 3px #888888;
+        }
+        div.container h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery Functions</h1>
+        <div class="addClass">
+            <button>AddClass</button>
+            <p>Click the button to add class 'red' to this paragraph</p>
+        </div>
+
+        <div class="lineBreak"></div>
+
+        <div class="slideToggle">
+            <button>SlideToggle</button>
+            <p>Click the button to slide toggle a hidden image</p>
+            <img class="slideImage" src="../CSS/Portfolio_images/jQuery.png" alt="jQuery">
+        </div>
+
+        <div class="lineBreak"></div>
+
+        <div class="append">
+            <button>Append</button>
+            <p>Click the button to append a new paragraph</p>        
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="click">
+            <button id="showText">Show Text</button>
+            <button id="showHTML">Show HTML</button>
+            <p>Click the button to alert the paragraph below</p>
+            <p id="test">This is some <b>bold</b> text in a paragraph.</p>                 
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="hide">
+            <button id="hide">Hide</button>
+            <p>Click the button to hide paragraph</p>                 
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="show">
+            <button id="show">Show</button>
+            <p>Click the button to show paragraph</p>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="toggle">
+            <button id="show">Toggle</button>
+            <p>Click the button to toggle paragraph</p>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="slideUp">
+            <button id="slideUp">Slide Up</button>
+            <p>Click the button to slide up</p>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="slideDown">
+            <button id="slideDown">Slide Down</button>
+            <p>Click the button to slide down</p>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="fadeIn">
+            <button>Fade In</button><br><br>
+            <p>Click the button to fade in</p>
+            <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+            <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+            <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="fadeOut">
+            <button>Fade Out</button><br><br>
+            <p>Click the button to fade out</p>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="before">
+            <button>Before</button>
+            <p>Click the button to add "before" in image</p>
+            <img class="image" src="../CSS/Portfolio_images/jQuery.png" alt="jQuery">
+        </div>
+
+        <div class="lineBreak"></div>
+
+        <div class="after">
+            <button>After</button>
+            <p>Click the button to add "after" in image</p>
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="attribute">
+            <button>Attribute</button>
+            <p>Click the button to add attribute</p>
+            <img class="image" src="../CSS/Portfolio_images/jQuery.png" alt="jQuery">
+        </div>
+
+        <div class="lineBreak"></div>
+        
+        <div class="value">
+            <button>Value</button>
+            <p>Click the button to add value</p>
+            <p>Name: <input type="text" name="user"></p>
+        </div>
+    </div>
+</body>
+</html>

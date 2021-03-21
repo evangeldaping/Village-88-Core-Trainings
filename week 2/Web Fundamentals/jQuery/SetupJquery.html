@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Setup JQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                alert('Document is ready');
+                $('h1').html('hello');
+                $('h1').click(function(){
+                    alert('h1 is clicked and toggles p');
+                    $('p').toggle();
+                });
+                $('#btn_fade').click(function () {
+                    alert('div with id btn_fade is clicked and it hides p with class sp');
+                    $('p.sp').hide();
+                });
+            });  
+        </script>
+    </head>
+    <body>
+            <h1>CodingDojo</h1>
+            <p>evangel</p>
+            <p class="sp">daping</p>
+            <div id="btn_fade">
+                <p class="sp">click me</p>
+            </div>
+    </body>
+</html>

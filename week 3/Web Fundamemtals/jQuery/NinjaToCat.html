@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Ninja to Cat</title>
+
+        <style>
+            body * {
+                margin: 0;
+                padding: 0;
+            }
+
+            #main {
+                width: 692px;
+                min-height: 638px;
+                margin: 0px auto;
+            }
+
+            #main .mainRow {
+                margin-left: 20px;
+            }
+
+            #main .row img {
+                height: 100px;
+                width: 500px;
+                display: inline-block;
+                border: 3px solid black;
+            }
+
+            button {
+                background-color: green;
+                box-shadow: 5px 3px black;
+                color: white;
+                height: 30px;
+                width: 70px;
+                border-radius: 5px;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                    $('img').click(function () {
+                    var temp = $(this).attr('src');
+                    $(this).attr('src', $(this).attr('alt-src'));
+                    $(this).attr('alt-src', temp);
+                });
+                })
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <div class="mainRow">
+                <div class="row">
+                    <img src="./NinjaToCat_images/ninja0.png" alt-src="./NinjaToCat_images/cat0.png" alt="cat_ninja">
+                </div>
+                <div class="row">
+                    <img src="./NinjaToCat_images/ninja1.png" alt-src="./NinjaToCat_images/cat1.png" alt="cat_ninja">
+                </div>
+                <div class="row">
+                    <img src="./NinjaToCat_images/ninja2.png" alt-src="./NinjaToCat_images/cat2.png" alt="cat_ninja">
+                </div>
+                <div class="row">
+                    <img src="./NinjaToCat_images/ninja3.png" alt-src="./NinjaToCat_images/cat3.png" alt="cat_ninja">
+                </div>
+                <div class="row">
+                    <img src="./NinjaToCat_images/ninja4.png" alt-src="./NinjaToCat_images/cat4.png" alt="cat_ninja">
+                </div>  
+            </div>
+        </div>
+    </body>
+</html>

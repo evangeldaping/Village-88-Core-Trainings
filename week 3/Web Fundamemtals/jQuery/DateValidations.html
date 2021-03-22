@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <title>Date Validations</title>
+        <style>
+            body {
+                margin-left: 400px;
+                font-family: 'Lato';
+                font-weight: 300;
+                font-size: 1.25rem;
+                width: 770px;
+            }
+
+            input {
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                padding: 4px;
+                font-family: 'Lato';
+                width: 300px;
+                margin-top: 10px;
+            }
+
+            [type="submit"] {
+                margin-left: 0;
+                border-radius: 0;
+                background: #085394;
+                color: white;
+                border: none;
+                font-weight: 300;
+                padding: 10px 0;
+                line-height: 1;
+                box-shadow: 20px 10px black;
+            }
+
+            [type="text"] {
+                margin-left: 0;
+                border-radius: 0;
+                border: 5px solid black;
+                color: black;
+                font-weight: 300;
+                padding: 10px 0;
+                line-height: 1;
+            }
+
+            form{
+                height: 400px;
+                width: 500px;
+            }
+
+            h2 {
+                width: 600px;;
+                overflow-wrap: break-word;
+                }
+
+            #add-container{
+                margin: 10px 0px 10px 0px;
+                width: 350px;
+                position: relative;
+            }
+
+            input{
+                position: absolute;
+                right: 0px;
+            }
+
+            .error_box{
+                width: 350px;
+                height: 100px;
+                color: red;
+                text-align: center;
+                margin: 25px 0px 25px 0px;
+                display: inline-block;
+                overflow-wrap: break-word;
+            }
+
+            #submit{
+                background-color: #085394;
+                padding: 10px;
+                border-radius: 10px;
+            } 
+        </style>
+        <script>
+            $(document).ready(function () {
+                $(document).ready(function () {
+                    $("form :submit").click(function () {
+                        $("#cards").hide();
+                        $("#submit").css('background-color', '#89f4f9');
+                        console.log("You clicked it!");
+                        if ($("#name").val() == "") {
+                            $("#cards").show();
+                            $("#cards").html("<div class='error_box'><p>Name cannot be blank!</p></div>");
+                            $("#submit").css('background-color', '#db3f3f');
+                        }
+
+                        if ($("#to_date").val() == "" || $("#from_date").val() == "") {
+                            $("#cards").show();
+                            $("#cards").html("<div class='error_box'><p>Dates cannot be blank!</p></div>");
+                            $("#submit").css('background-color', '#db3f3f');
+                        }
+
+                        if ($("#name").val() != "" && $("#to_date").val() != "" && $("#from_date").val() != "") {
+                            $("#dialog").dialog("open");
+                            $("#dialog").html("<p>Thanks " + $("#name").val() + ". Your cruise leaves on " + $("#from_date").val() + " and returns on " + $("#to_date").val() + ".</p>");
+                        }
+                        return false;
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#dialog").dialog({ autoOpen: false });
+
+                $('#from_date').datepicker();
+
+                $('#from_date').focus(function () {
+                    $('#from_date').datepicker('show');
+                });
+
+                $('#from_date').click(function () {
+                    $('#from_date').datepicker('show');
+                });
+
+                $('#to_date').datepicker();
+
+                $('#to_date').focus(function () {
+                    $('#to_date').datepicker('show');
+                });
+
+                $('#to_date').click(function () {
+                    $('#to_date').datepicker('show');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container"> 
+            <h2>Welcome to the Codingdojo plan-a-Cruise</h2>
+            <div id="add-container">
+                <form>          
+                    <input type="text" placeholder="From: DD/MM/YY" name="from_date" id="from_date">
+                    <br><br><br>
+                    <input type="text" placeholder="To: DD/MM/YY" name="to_date" id="to_date">
+                    <br><br><br>
+                    <input type="text" placeholder="Name:" name="name" id="name">
+                    <br><br><br>
+                    <input type="submit" name="submit" value="Submit" id="submit">
+                </form>
+            </div>            
+            <div id="cards"> </div>
+            <div id="dialog" title="Alert"></div>
+        </div>
+    </body>
+</html>

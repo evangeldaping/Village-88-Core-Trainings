@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <title>Accordion And Tab</title>
+        <style>
+            body {
+            margin-left: 400px;
+            font-family: 'Lato';
+            font-weight: 300;
+            font-size: 1.25rem;
+            width: 770px;
+            }
+
+            form, p {
+            margin: 20px;
+            }
+
+            p.note {
+            font-size: 1rem;
+            color: red;
+            }
+
+            input {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 4px;
+            font-family: 'Lato';
+            width: 300px;
+            margin-top: 10px;
+            }
+
+            label {
+            width: 300px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            }
+
+            label span {
+            font-size: 1rem;
+            }
+
+            label.error {
+                color: red;
+                font-size: 1rem;
+                display: block;
+                margin-top: 5px;
+            }
+
+            input.error {
+                border: 1px dashed red;
+                font-weight: 300;
+                color: red;
+            }
+
+            [type="submit"], [type="reset"], button, html [type="button"] {
+                margin-left: 0;
+                border-radius: 0;
+                background: black;
+                color: white;
+                border: none;
+                font-weight: 300;
+                padding: 10px 0;
+                line-height: 1;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                $("#accordion").accordion();
+                $("#tabs").tabs();
+                $("#hasDatepicker").datepicker();
+                $("#basic-form").validate();
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">HOME</a></li>
+                    <li><a href="#tabs-2">OFFERED COURSES</a></li>
+                    <li><a href="#tabs-3">REGISTER</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi
+                        sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus
+                        auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci.
+                        Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius
+                        sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                </div>
+                <div id="tabs-2">
+                    <div id="accordion">
+                        <h3>HTML</h3>
+                        <div>
+                            <p>
+                                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                            </p>
+                        </div>
+                        <h3>CSS</h3>
+                        <div>
+                            <p>
+                                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                                purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                                suscipit faucibus urna.
+                            </p>
+                        </div>
+                        <h3>JAVASCRIPT</h3>
+                        <div>
+                            <p>
+                                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                                Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                                ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                                lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                            </p>
+                            <ul>
+                                <li>List item one</li>
+                                <li>List item two</li>
+                                <li>List item three</li>
+                            </ul>
+                        </div>
+                        <h3>BOOTSTRAP</h3>
+                        <div>
+                            <p>
+                                Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                                mauris vel est.
+                            </p>
+                            <p>
+                                Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                                inceptos himenaeos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-3">
+                    <form id="basic-form" action="" method="post">
+                        <p>
+                            <label for="name">Name <span>(required, at least 3 characters)</span></label>
+                            <input id="name" name="name" minlength="3" type="text" required>
+                        </p>
+                        <p>
+                            <label for="email">E-Mail <span>(required)</span></label>
+                            <input id="email" type="email" name="email" required>
+                        </p>
+                        <p>
+                            <label for="birthdate">Birthdate <span>(required)</span></label>
+                            <input type="text" id="hasDatepicker" class="fromDate large" maxlength="10" placeholder="dd-mm-yyyy" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <input class="submit" type="submit" value="SUBMIT">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

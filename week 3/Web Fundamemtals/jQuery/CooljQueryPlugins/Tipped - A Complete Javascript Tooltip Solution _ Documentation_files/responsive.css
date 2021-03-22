@@ -1,0 +1,39 @@
+/* Responsive */
+
+
+
+/* iphone */
+@media only screen
+and (max-width : 640px) {
+  #all_projects { display: none; }
+  
+  #menu .menu-buttons {
+    display: none;
+  }
+
+  #footer .column_half { display: none; }
+  #footer .rightmost { display: block; }
+  
+
+  .dataForm dt { width: 25%; margin-right: 10px; }
+  .dataForm dd { width: 69%; }
+
+  * {
+    
+  }
+  #page { 
+    width: 320px;
+
+  }
+  #page-wrapper {
+    width: 300px;
+    margin-left: 10px;
+  }
+  
+  .columns .column {
+    width: 300px;
+    clear: both;
+    margin-right: 0;
+  }
+  
+}

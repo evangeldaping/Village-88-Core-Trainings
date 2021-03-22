@@ -1,0 +1,272 @@
+
+/* Painter demo */
+.tooltip-painter {
+  float: left;
+  width: 400px;
+  background: #fff;
+}
+.tooltip-painter .photo {
+  float: left;
+  clear: both;
+  width: 100%;
+  height: auto;
+}
+.tooltip-painter .photo img {
+  float: left;
+  max-width: 100%;
+  height: auto;
+}
+.tooltip-painter .content {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.tooltip-painter .content .padder {
+  float: left;
+  padding: 10px;
+}
+.tooltip-painter .title,
+.tooltip-painter .description {
+  float: left;
+  clear: both;
+  width: 100%;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.tooltip-painter .title {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", Helvetica, sans-serif;
+  color: #000;
+}
+.tooltip-painter a,
+.tooltip-painter a:hover {
+  color: #808080;
+  text-decoration: none;
+
+}
+.tooltip-painter .more .text {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* iPhone */
+@media only screen and (max-width : 640px) {
+  .tooltip-painter { width: 300px; }
+  .tooltip-painter .title { font-size: 18px; line-height: 22px; }
+  .tooltip-painter .description { font-size: 11px; line-height: 18px; }
+}
+
+
+/* Music demo */
+.tooltip-music {
+  float: left;
+  width: 280px;
+  height: 70px;
+  background: #fff;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.tooltip-music .photo {
+  float: left;
+  clear: both;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  margin-right: 10px;
+}
+.tooltip-music .photo img {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.tooltip-music .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,.2);
+}
+.tooltip-music .content {
+  float: left;
+  width: 200px;
+  height: 70px;
+}
+.tooltip-music .title,
+.tooltip-music .album-count {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.tooltip-music .album-count { color: #666; margin-bottom: 4px; }
+
+.tooltip-music .title {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 2px;
+  font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", Helvetica, sans-serif;
+  color: #000;
+}
+
+
+.tooltip-music .albums {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.tooltip-music .album {
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.tooltip-music .album img { float: left; position: relative; }
+
+
+
+
+.tooltip-music .more {
+  float: left;
+  color: #666;
+  text-transform: uppercase;
+  font-size: 10px;
+  height: 18px;
+  border: 1px solid #999;
+  width: 48px;
+  line-height: 18px;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 100ms ease-in, color 100ms ease-in;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+}
+.tooltip-music .more:hover {
+  color: #333;
+  border: 1px solid #666;
+}
+
+
+/* Brands */
+.tooltip-brands {
+  float: left;
+  width: 150px;
+  height: 225px; /* max-height would be nicer here but it doesn't give accurate dimensions in IE<9 on the scrollbar */
+  margin: 10px 0;
+  border-bottom: 1px solid #404040;
+  border-top: 1px solid #404040;
+}
+.tooltip-brands .tse-content {
+  float: left;
+  width: 150px;
+}
+
+.tooltip-brands a {
+  float: left;
+  clear: both;
+  width: 150px;
+  height: 29px;
+  line-height: 29px;
+  border-bottom: 1px solid #404040;
+  color: #eaeaea;
+  text-decoration: none;
+}
+.tooltip-brands a:hover {
+  text-decoration: none;
+  color: #fefefe;
+}
+.no-touch .tooltip-brands a:hover {
+  background: rgba(110,110,110,.1);
+}
+
+.tooltip-brands a.last {
+  border-bottom: 0;
+}
+
+.tooltip-brands a span {
+  padding: 0 8px;
+}
+
+.tooltip-brands .tse-scrollbar {
+  margin-right: 1px;
+}
+
+
+/* Google map */
+.map {
+  float: left;
+  width: 280px;
+  height: 280px;
+}
+
+
+/* Confirm */
+
+.tooltip-confirm {
+  float: left;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.tooltip-confirm .question {
+  float: left;
+}
+
+.tooltip-confirm .yesno {
+  float: left;
+  margin-left: 5px;
+}
+.tooltip-confirm .yesno div {
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  padding: 1px 8px;
+  margin-left: 5px;
+  min-width: 22px;
+  text-align: center;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #efefef;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  background: #ccc;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 0 rgba(255,255,255,.1);
+  border-radius: 5px;
+  cursor: pointer;
+  /*-moz-user-select: none;
+  user-select: none;*/
+}
+
+.tooltip-confirm .yesno .no {
+  background: #e13c37;
+  border-color: #a30500;
+  border-color: rgba(12,0,0,.4);
+}
+.tooltip-confirm .yesno .no:hover { background: #ee403b; }
+
+.tooltip-confirm .yesno .yes {
+  background: #4aab3a;
+  border-color: #127c00;
+  border-color: rgba(0,12,0,.4);
+}
+.tooltip-confirm .yesno .yes:hover { background: #4fb63e; }
+
+.no-touch .tooltip-confirm .yesno div:active {
+  box-shadow: inset 0 1px 10px rgba(0,0,0,.3);
+  padding: 2px 8px 0 8px;
+}

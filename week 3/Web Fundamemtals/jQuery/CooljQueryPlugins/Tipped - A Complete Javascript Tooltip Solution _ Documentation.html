@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.tippedjs.com/documentation -->
+<html class="no-touch"><script type="text/javascript" async="" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/ga.js.download"></script><script type="module" src="chrome-extension://jdkknkkbebbapilgoeccciglkfbmbnfm/hook.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Tipped is a complete javascript tooltip solution, use it to create tooltips that work beautifully in every browser on any device.">
+<meta name="keywords" content="javascript tooltip, jquery tooltip, tooltip, css tooltip, tooltip jquery, tooltip script, tooltips, nick stakenburg">
+	<title>Tipped - A Complete Javascript Tooltip Solution | Documentation</title>
+  <script type="text/javascript" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/jquery-3.1.1.min.js.download"></script>
+  <script type="text/javascript" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/reset.js.download"></script>
+  <script type="text/javascript" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/bodyshift.js.download"></script>
+
+  <script type="text/javascript" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/saved_resource"></script>
+  <script type="text/javascript" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/highlight.min.js.download"></script>
+<script type="text/javascript" src="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/jquery.scrollTo.min.js.download"></script>
+  <link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/saved_resource(1)" media="all" rel="stylesheet" type="text/css">
+  <link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/reset.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/style.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/responsive.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/documentation.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/documentation_responsive.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/demonstration-tooltips.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Tipped - A Complete Javascript Tooltip Solution _ Documentation_files/github.min.css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.tippedjs.com/favicon.ico" rel="shortcut icon">
+  
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48468531-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<style type="text/css"></style><style type="text/css">.pixelParallel-panel[data-v-54cb82b4]{position:fixed;right:10px;bottom:10px;z-index:2147483647;width:375px;height:265px;transform:translate(0);background:#fff;transition:width .2s ease-out,height .2s ease-out;will-change:top,left,width,height,transform;opacity:0}.pixelParallel-panel-inner[data-v-54cb82b4]{position:relative;overflow:hidden;height:100%;border:1px solid #dddedf;box-shadow:0 2px 10px rgba(0,0,0,.1);box-sizing:border-box}.pixelParallel-panel-handle[data-v-54cb82b4]{position:absolute;top:-10px;right:-10px;z-index:3;width:20px;height:20px;background:red;transform:rotate(45deg);background:linear-gradient(0deg,transparent,transparent 50%,#ccc 0,#ccc);background-size:100% 2px;cursor:move}.pixelParallel-panel-isolator[data-v-54cb82b4]{border:0;width:100%;height:100%;overflow:hidden;position:relative}.pixelParallel-panel-dragging .pixelParallel-panel-inner[data-v-54cb82b4]{pointer-events:none}.pixelParallel-panel-minimized[data-v-54cb82b4]{width:112px;height:50px;transition:width .2s ease-out .15s,height .2s ease-out .15s}@media (max-width:395px){.pixelParallel-panel[data-v-54cb82b4]{right:0;bottom:0;width:320px}.pixelParallel-panel-minimized[data-v-54cb82b4]{width:112px}}</style><style type="text/css">.pixelParallel-overlay{position:absolute;left:0;top:0;width:100%;text-align:center;white-space:nowrap;display:none}.pixelParallel-overlay-enabled{display:block}</style><style type="text/css">.pixelParallel-image-outer{visibility:hidden;position:absolute;top:0;left:0;width:100%;overflow:hidden;max-width:100vw;min-height:100vh}.pixelParallel-image-inner{position:absolute;z-index:2147483646;left:50%;top:0;cursor:move;transform:translateX(-50%);transition:opacity .15s}.pixelParallel-image-inner img{width:auto;height:auto;max-width:none;max-height:none;vertical-align:top;margin:0;padding:0;position:relative;transform-origin:50% 0;top:-1px;border:1px dashed #333}.pixelParallel-image-inner img:not([src]),.pixelParallel-image-inner img[src=""]{visibility:hidden}.pixelParallel-image-enabled{visibility:visible}.pixelParallel-image-difference{mix-blend-mode:difference}.pixelParallel-image-difference img{opacity:1!important}.pixelParallel-image-locked,.pixelParallel-image-no-image{pointer-events:none}.pixelParallel-image-locked .pixelParallel-image-inner img{top:0;border:0 none}</style><style type="text/css">.pixelParallel-grids{position:relative;z-index:2147483646;pointer-events:none}.pixelParallel-grid-horizontal,.pixelParallel-grid-vertical{position:fixed;z-index:1;pointer-events:none;visibility:hidden}.pixelParallel-grid-horizontal{top:50%;left:50%;display:table;width:100vw;height:200vh;opacity:.5;table-layout:fixed;border-spacing:30px;transform:translate(-50%,-50%)}.pixelParallel-grid-horizontal span{display:table-cell;background:red;height:200vh}.pixelParallel-grid-vertical{top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,transparent 90%,blue 0,blue);background-size:100% 10px;opacity:.5}.pixelParallel-grid-horizontal-enabled,.pixelParallel-grid-vertical-enabled{visibility:visible}</style><style type="text/css">.pixelParallel-rulers{position:relative;z-index:2147483646}.pixelParallel-ruler-x,.pixelParallel-ruler-y{display:none;position:fixed;top:0;left:0;z-index:2;background:cyan}.pixelParallel-ruler-x:after,.pixelParallel-ruler-y:after{content:"";position:absolute;top:-8px;left:-8px;right:0;bottom:0;padding:10px}.pixelParallel-ruler-x{right:0;height:1px;cursor:row-resize}.pixelParallel-ruler-y{bottom:0;width:1px;cursor:col-resize}.pixelParallel-rulers-enabled .pixelParallel-ruler-x,.pixelParallel-rulers-enabled .pixelParallel-ruler-y{display:block}</style></head>
+<body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+
+<div id="body-shift-wrapper"><div id="body-shift">
+
+<div id="header-mobile">
+  <div class="top-bar top-bar-no-active-section">
+    <a href="https://www.tippedjs.com/" class="logo"><!-- logo --></a>
+
+    <div class="toggle"><i><!-- ||| --></i></div>
+  </div>
+</div>
+
+
+
+
+
+<div id="menu">
+  <div class="menu-buttons">
+
+        <div class="item item-demonstrations">
+      <a href="https://www.tippedjs.com/" class="state"><span>Demos</span></a>
+    </div>
+
+        <div class="item documentation">
+      <a href="https://www.tippedjs.com/documentation" class="state active">Documentation</a>
+    </div>
+
+     <div class="item item-download">
+      <a href="https://github.com/staaky/tipped" class="state" target="_blank"><span>GitHub</span></a>
+          </div>
+
+
+
+
+    
+    <!-- user -->
+    
+    <div id="userbar">
+                  <a href="https://www.tippedjs.com/login" id="signin" class="user-button">
+            <span class="text">Login</span>           </a>
+            </div>
+
+  </div>
+
+  <div class="toggle">
+    <div class="icon"><i></i><i></i><i></i></div>
+  </div>
+
+</div>
+<div id="page"><div id="page-wrapper">
+
+  <div id="header">
+    <a href="https://www.tippedjs.com/" id="logo"><!-- logo --></a>
+</div>
+
+  <div id="documentation_menu_top">
+
+  
+  <div class="item">
+    <a href="https://www.tippedjs.com/documentation/usage" class="state active">Usage</a>
+  </div>
+    
+  <div class="item">
+    <a href="https://www.tippedjs.com/documentation/options" class="state">Options</a>
+  </div>
+  
+    <div class="item">
+    <a href="https://www.tippedjs.com/documentation/callbacks" class="state">Callbacks</a>
+  </div>
+  
+  <div class="item">
+    <a href="https://www.tippedjs.com/documentation/skins" class="state">Skins</a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.tippedjs.com/documentation/api" class="state">API</a>
+  </div>
+  
+</div>
+
+
+  <div id="content">
+    	
+<div id="documentation">
+
+<div class="chapter">
+  <h1 id="usage_installation">Installation</h1>
+
+	<p><a href="https://github.com/staaky/tipped/releases" target="_blank">Download Tipped</a> and include it below the latest 3.x release of <a href="http://www.jquery.com/" target="_blank">jQuery</a>:</p>
+
+	<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.1.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/tipped/dist/js/tipped.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/tipped/dist/css/tipped.css"</span>/&gt;</span></code></pre>
+
+	<p>Alternatively Tipped can be installed using <a href="https://www.npmjs.com/package/@staaky/tipped" target="_blank">npm</a>:</p>
+
+	<pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i @staaky/tipped</code></pre>
+</div>
+
+
+<div class="chapter">
+  <h1 id="usage_creating_tooltips">Creating Tooltips</h1>
+
+  <p><span class="ic">Tipped.create</span> can be used to create one or more tooltips at the same time. It accepts a CSS Selector or HTML Element as the first parameter:</p>
+
+  <pre class="has-example"><code class="hljs javascript">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  Tipped.create(<span class="hljs-string">'#demo-tooltip'</span>, <span class="hljs-string">'Some tooltip text'</span>);
+});</code></pre>
+  <div class="example">
+    <span id="demo-tooltip">Hover me!</span>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      Tipped.create('#demo-tooltip', 'Some tooltip text');
+    });
+  </script>
+
+
+  <p>If no string is given as the second argument Tipped will look for it in the <span class="ic">title</span> attribute.
+     By using this multiple tooltips can be created using a single CSS Selector:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"simple-tooltip"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"First tooltip"</span>&gt;</span>I have a tooltip<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"simple-tooltip"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Second tooltip"</span>&gt;</span>I also have a tooltip<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'.simple-tooltip'</span>);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+  <div class="example">
+      <span class="simple-tooltip" title="">I have a tooltip</span>
+    <span class="simple-tooltip" title="">I also have a tooltip</span>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        Tipped.create('.simple-tooltip');
+      });
+    </script>
+  </div>
+
+</div>
+
+<div class="chapter">
+
+  <h1 id="usage_options" class="has_font">Options</h1>
+
+  <p>Additional <span class="ic"><a href="https://www.tippedjs.com/documentation/options">Options</a></span>
+  can be provided as the last argument:</p>
+
+  <pre class="has-example"><code class="hljs css"><span class="hljs-selector-tag">Tipped</span><span class="hljs-selector-class">.create</span>("<span class="hljs-selector-id">#demo-options</span>", "<span class="hljs-selector-tag">Options</span> <span class="hljs-selector-tag">are</span> <span class="hljs-selector-tag">awesome</span>", { <span class="hljs-attribute">position</span>: <span class="hljs-string">'topleft'</span> });</code></pre>
+  <div class="example">
+    <span id="demo-options">Options</span>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      Tipped.create('#demo-options', 'Options are awesome', { position: 'topleft' });
+    });
+  </script>
+
+  <p>Options can also be set on elements using the <span class="ic">data-tipped-options</span> attribute.
+     Those options will overwrite the ones provided through <span class="ic">Tipped.create</span>:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"x-small-tooltip"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Red"</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"skin: 'red'"</span>&gt;</span>Red<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"x-small-tooltip"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Green"</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"skin: 'green'"</span>&gt;</span>Green<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"x-small-tooltip"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Blue"</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"skin: 'blue'"</span>&gt;</span>Blue<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'.x-small-tooltip'</span>, { <span class="hljs-attr">size</span>: <span class="hljs-string">'x-small'</span> });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+  <div class="example">
+    <span class="x-small-tooltip" title="" data-tipped-options="skin: &#39;red&#39;">Red</span>
+    <span class="x-small-tooltip" title="" data-tipped-options="skin: &#39;green&#39;">Green</span>
+    <span class="x-small-tooltip" title="" data-tipped-options="skin: &#39;blue&#39;">Blue</span>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        Tipped.create('.x-small-tooltip', { size: 'x-small' });
+      });
+    </script>
+  </div>
+
+  
+
+  <p>When using the data-attribute it's important to ask yourself if you really need it. In the example above it would probably have been better
+    to use a separate <span class="ic">class</span> and <span class="ic">Tipped.create</span> call for each color, that would avoid unnecessary styling
+    in the markup and make the code more maintainable.
+    We'll see more practical use of the <span class="ic">data-tipped-options</span> attribute when
+    using <a href="https://www.tippedjs.com/documentation#usage_inline" class="scrollTo">Inline</a> and <a href="https://www.tippedjs.com/documentation#usage_ajax" class="scrollTo">Ajax</a> tooltips.</p>
+
+  <p>More complex tooltips that define <span class="ic"><a href="https://www.tippedjs.com/documentation/options">Callbacks</a></span>
+     are best created entirely through <span class="ic">Tipped.create</span>:</p>
+
+  <pre class="has-example"><code class="hljs javascript">Tipped.create(<span class="hljs-string">"#demo-options-callbacks"</span>, <span class="hljs-string">"This tooltip is a bit more advanced"</span>, {
+  <span class="hljs-attr">skin</span>: <span class="hljs-string">'light'</span>,
+  <span class="hljs-attr">position</span>: <span class="hljs-string">'topleft'</span>,
+  <span class="hljs-attr">close</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">hideOn</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">onShow</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">content, element</span>) </span>{
+    $(element).addClass(<span class="hljs-string">'highlight'</span>);
+  },
+  <span class="hljs-attr">afterHide</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">content, element</span>) </span>{
+    $(element).removeClass(<span class="hljs-string">'highlight'</span>);
+  }
+});</code></pre>
+  <div class="example">
+    <span id="demo-options-callbacks">Options &amp; Callbacks</span>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create("#demo-options-callbacks", "This tooltip is a bit more advanced", {
+          skin: 'light',
+          position: 'topleft',
+          close: true,
+          hideOn: false,
+          onShow: function(content, element) {
+            $(element).addClass('highlight');
+          },
+          afterHide: function(content, element) {
+            $(element).removeClass('highlight');
+          }
+        });
+      });
+    </script>
+  </div>
+
+  <p>These examples only cover a few of the options that come with Tipped, see the <a href="https://www.tippedjs.com/documentation/options">documentation on options</a> for all the available options.</p>
+
+</div>
+
+
+
+<div class="chapter">
+  <h1 id="usage_inline">Inline</h1>
+
+  <p>Anything on the page can be pulled into a tooltip by giving the <span class="ic">inline</span> option
+     the <span class="ic">id</span> of the element to pull into the tooltip:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'inline'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"inline: 'inline-tooltip-1'"</span>&gt;</span>Inline 1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'inline-tooltip-1'</span> <span class="hljs-attr">style</span>=<span class="hljs-string">'display:none'</span>&gt;</span>Moved into the tooltip<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'inline'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"inline: 'inline-tooltip-2'"</span>&gt;</span>Inline 2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'inline-tooltip-2'</span> <span class="hljs-attr">style</span>=<span class="hljs-string">'display:none'</span>&gt;</span>Another one<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'.inline'</span>);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<div class="example">
+    <span class="inline" data-tipped-options="inline: &#39;inline-tooltip-1&#39;">Inline 1</span>
+    <div id="inline-tooltip-1" style="display:none">Moved into the tooltip</div>
+
+    <span class="inline" data-tipped-options="inline: &#39;inline-tooltip-2&#39;">Inline 2</span>
+    <div id="inline-tooltip-2" style="display:none">Another one</div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create('.inline', { inline: true });
+      });
+    </script>
+  </div>
+
+  <div class="note"><div class="padder">
+    <span class="icon_font">=</span>
+
+    <strong>Note:</strong> Keep in mind that an <span class="ic">id</span> <a href="http://www.w3.org/TR/html401/struct/global.html#adef-id"><strong>needs to be unique</strong></a> for a page to validate.
+            Each element with an inline tooltip requires its own unique inline element. Since this element is moved into the tooltip
+            and not cloned (that would invalidate the page) it cannot be reused.
+  </div></div>
+
+
+</div>
+
+
+
+<div class="chapter">
+  <h1 id="usage_elements">Elements</h1>
+
+  <p>Elements can be used as tooltip content, dynamically created or taken from the page.
+     When taking elements from the page this works almost the same as using the <span class="ic">inline</span> option
+     but without being restricted in using an <span class="ic">id</span>, so this approach has some advantages:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'element-dynamic'</span>&gt;</span>Dynamic<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'element-inline'</span>&gt;</span>Inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'move-into-tooltip'</span> <span class="hljs-attr">style</span>=<span class="hljs-string">'display:none'</span>&gt;</span>Moved into the tooltip<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'#element-dynamic'</span>, $(<span class="hljs-string">'&lt;i/&gt;'</span>).html(<span class="hljs-string">'Dynamically created'</span>));
+    Tipped.create(<span class="hljs-string">'#element-inline'</span>, $(<span class="hljs-string">'#element-inline'</span>).next(<span class="hljs-string">'.move-into-tooltip'</span>)[<span class="hljs-number">0</span>]);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<div class="example">
+    <span id="element-dynamic">Dynamic</span>
+
+
+    <span id="element-inline">Inline</span>
+    <div class="move-into-tooltip" style="display:none">Moved into the tooltip</div>
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    Tipped.create('#element-dynamic', $('<i/>').html('Dynamically created'));
+    Tipped.create('#element-inline', $('#element-inline').next('.move-into-tooltip')[0]);
+  });
+    </script>
+  </div>
+
+  <div class="note"><div class="padder">
+    <span class="icon_font">=</span>
+
+    <strong>Note:</strong> As with the <span class="ic"><a href="https://www.tippedjs.com/documentation#usage_inline" class="scrollTo">inline</a></span> option elements are moved into tooltips, not cloned, so each tooltip requires a unique element.
+            Should you need identical elements in tooltips make sure to create clones.
+  </div></div>
+</div>
+
+
+
+<div class="chapter">
+  <h1 id="usage_functions">Functions</h1>
+
+  <p>A function can be used as content for the tooltip. It should return the content to be pushed into the tooltip.
+     The first argument within the function refers to the <span class="ic">element</span> the tooltip was created for:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'function'</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">'Bold'</span>&gt;</span>Function<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'#function'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;strong&gt;"</span> + $(element).data(<span class="hljs-string">'content'</span>) + <span class="hljs-string">"&lt;\/strong&gt;"</span>;
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<div class="example">
+    <span id="function" data-content="Bold">Function</span>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      Tipped.create('#function', function(element) {
+        return "<strong>" + $(element).data('content') + "<\/strong>";
+      });
+    });
+    </script>
+  </div>
+
+  <p>The return value of the function will be cached by default. The <span class="ic">cache</span> option can be used
+     to disable this and call the function every time the tooltip is shown:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'function-no-cache'</span>&gt;</span>Function - No cache<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'#function-no-cache'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">var</span> random = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">1000</span>) + <span class="hljs-number">1</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Random number: "</span> + random;
+    }, {
+      <span class="hljs-attr">cache</span>: <span class="hljs-literal">false</span>
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<div class="example">
+    <span id="function-no-cache">Function - No cache</span>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      Tipped.create('#function-no-cache', function() {
+        var random = Math.floor(Math.random() * 1000) + 1;
+        return "Random number: " + random;
+      }, {
+        cache: false
+      });
+    });
+    </script>
+  </div>
+
+
+
+  <p>Instead of return a string an object can be used to set both title and content:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'function'</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"Some content"</span> <span class="hljs-attr">data-title</span>=<span class="hljs-string">"A title"</span>&gt;</span>Function 1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'function'</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"This tooltip doesn't have a title"</span>&gt;</span>Function 2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'.function'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>) </span>{
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">title</span>: $(element).data(<span class="hljs-string">'title'</span>),
+        <span class="hljs-attr">content</span>: $(element).data(<span class="hljs-string">'content'</span>)
+      };
+    }, {
+      <span class="hljs-attr">skin</span>: <span class="hljs-string">'light'</span>
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<div class="example">
+    <span class="function" data-content="Some content" data-title="A title">Function 1</span>
+    <span class="function" data-content="This tooltip doesn&#39;t have a title">Function 2</span>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      Tipped.create('.function', function(element) {
+        return {
+          title: $(element).data('title'),
+          content: $(element).data('content')
+        };
+      }, {
+        skin: 'light'
+      });
+    });
+    </script>
+  </div>
+
+
+</div>
+
+
+<div class="chapter">
+  <h1 id="usage_ajax">Ajax <a class="pro" href="https://www.tippedjs.com/download">Pro only</a></h1>
+
+  <p>The <span class="ic">ajax</span> option can be used to make Ajax requests,
+     it accepts the same settings as <span class="ic"><a href="https://api.jquery.com/jQuery.ajax/" target="_blank">jQuery.ajax()</a></span>.
+     A simple Ajax request that updates a tooltip would look like this:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'ajax-example'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"ajax: { url: 'hello-world.php' }"</span>&gt;</span>Ajax<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'#ajax-example'</span>);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+  <div class="example">
+    <span id="ajax-example" data-tipped-options="ajax: { url: &#39;/index/ajax/helloworld&#39; }">Ajax</span>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create('#ajax-example');
+      });
+    </script>
+  </div>
+
+  <p>When using a <span class="ic">success</span> callback the tooltip won't automatically be updated with the response.
+     This allows the response to be modified before proceeding with the update.
+     Use <span class="ic">return</span> in the callback to update the tooltip with a modified response:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'ajax-callback'</span>&gt;</span>Ajax Callback<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'#ajax-callback'</span>, {
+      <span class="hljs-attr">ajax</span>: {
+        <span class="hljs-attr">url</span>: <span class="hljs-string">'hello-world.php'</span>,
+        <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, textStatus, jqXHR</span>) </span>{
+          <span class="hljs-keyword">return</span> jqXHR.responseText + <span class="hljs-string">', this is a modified response'</span>;
+        }
+      }
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+  <div class="example">
+    <span id="ajax-callback">Ajax Callback</span>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create('#ajax-callback', {
+          ajax: {
+            url: '/index/ajax/helloworld',
+            success: function(data, textStatus, jqXHR) {
+              return jqXHR.responseText + ', this is a modified response';
+            }
+          }
+        });
+      });
+    </script>
+  </div>
+
+  <div class="note"><div class="padder">
+    <span class="icon_font">!</span>
+
+    <strong>Important:</strong> Using <span class="ic">return</span> within a success callback doesn't update the tooltip straight away.
+            Use <span class="ic"><a href="https://www.tippedjs.com/documentation/callbacks">afterUpdate</a></span> for a
+            reliable callback after the tooltip has been updated.
+  </div></div>
+
+
+
+  <p>Ajax request become more useful when sending along <span class="ic">data</span> with the request to modify the response on the server side:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'ajax-artist'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"ajax: {
+  data: { artist: 'norahjones' }
+}"</span>&gt;</span>Norah Jones<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'ajax-artist'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"ajax: {
+  data: { artist: 'theglitchmob' }
+}"</span>&gt;</span>The Glitch Mob<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'.ajax-artist'</span>, {
+      <span class="hljs-attr">ajax</span>: {
+        <span class="hljs-attr">url</span>: <span class="hljs-string">'artist.php'</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'post'</span>
+      },
+      <span class="hljs-attr">skin</span>: <span class="hljs-string">'light'</span>,
+      <span class="hljs-attr">size</span>: <span class="hljs-string">'large'</span>,
+      <span class="hljs-attr">radius</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">position</span>: <span class="hljs-string">'topleft'</span>
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+  <div class="example">
+    <span class="ajax-artist" data-tipped-options="ajax: { data: { artist: &#39;norahjones&#39; } }">Norah Jones</span>
+    <span class="ajax-artist" data-tipped-options="ajax: { data: { artist: &#39;theglitchmob&#39; } }">The Glitch Mob</span>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create('.ajax-artist', {
+          ajax: {
+            url: '/index/ajax/artist',
+            type: 'post'
+          },
+          skin: 'light',
+          size: 'large',
+          radius: false,
+          position: 'topleft'
+        });
+      });
+    </script>
+  </div>
+
+  <div class="note"><div class="padder">
+    <span class="icon_font">=</span>
+
+    <strong>Note:</strong> The above example uses <span class="ic">data-tipped-options</span> only for those options that are unique to elements,
+            this helps avoid code repetition.
+  </div></div>
+
+  
+
+</div>
+
+
+
+<div class="chapter">
+  <h1 id="usage_json">JSON <a class="pro" href="https://www.tippedjs.com/download">Pro only</a></h1>
+
+  <p>Since the <a href="https://www.tippedjs.com/documentation#usage_ajax" class="scrollTo"><span class="ic">ajax</span></a> implementation makes it possible to modify
+     the response before proceeding with the update it can also be used to handle JSON to create the content of a tooltip:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'json-vimeo'</span>&gt;</span>JSON - Vimeo<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'#json-vimeo'</span>, {
+      <span class="hljs-attr">ajax</span>: {
+        <span class="hljs-attr">url</span>: <span class="hljs-string">'http://vimeo.com/api/oembed.json?url=http://vimeo.com/6428069&amp;maxwidth=280&amp;maxheight=280'</span>,
+        <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, textStatus, jqXHR</span>) </span>{
+          <span class="hljs-keyword">return</span> {
+            <span class="hljs-attr">title</span>: data.title,
+            <span class="hljs-attr">content</span>: data.html
+          };
+        }
+      },
+      <span class="hljs-attr">close</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">hideOn</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">skin</span>: <span class="hljs-string">'light'</span>,
+      <span class="hljs-attr">radius</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">position</span>: <span class="hljs-string">'topleft'</span>
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+  <div class="example">
+    <span id="json-vimeo">JSON - Vimeo</span>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create('#json-vimeo', {
+          ajax: {
+            url: 'http://vimeo.com/api/oembed.json?url=http://vimeo.com/6428069&maxwidth=280&maxheight=280',
+            success: function(data, textStatus, jqXHR) {
+              return {
+                title: data.title,
+                content: data.html
+              };
+            }
+          },
+          close: true,
+          hideOn: false,
+          skin: 'light',
+          radius: false,
+          position: 'topleft'
+        });
+      });
+    </script>
+  </div>
+
+</div>
+
+
+
+<div class="chapter">
+  <h1 id="usage_event_delegation">Event Delegation <a class="pro" href="https://www.tippedjs.com/download">Pro only</a></h1>
+
+  <p>When there are a lot of tooltips on the page it'll make sense to use event delegation to lighten the load on the page.
+     <span class="ic">Tipped.delegate</span> can be used for this, it doesn't create tooltips when called,
+     instead it creates tooltips once an event is triggered that requires a tooltip to be shown.</p>
+
+     <p><span class="ic">Tipped.delegate</span> accepts a CSS Selector, followed by optional content and/or options:</p>
+
+     <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'delegation-example'</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Created with event delegation"</span>&gt;</span>Delegation 1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'delegation-example'</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Another one"</span>&gt;</span>Delegation 2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.delegate(<span class="hljs-string">'.delegation-example'</span>, {
+      <span class="hljs-attr">skin</span>: <span class="hljs-string">'blue'</span>
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+  <div class="example">
+    <span class="delegation-example" title="Created with event delegation">Delegation 1</span>
+    <span class="delegation-example" title="Another one">Delegation 2</span>
+
+    <script type="text/javascript">
+       $(document).ready(function() {
+        Tipped.delegate('.delegation-example', { skin: 'blue' });
+      });
+    </script>
+  </div>
+
+
+
+  <p>Even ajax tooltips can be created this way:</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'delegation-ajax'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"ajax: {
+  data: { artist: 'norahjones' }
+}"</span>&gt;</span>Ajax Delegation - Norah Jones<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'delegation-ajax'</span> <span class="hljs-attr">data-tipped-options</span>=<span class="hljs-string">"ajax: {
+  data: { artist: 'theglitchmob' }
+}"</span>&gt;</span>Ajax Delegation - The Glitch Mob<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.delegate(<span class="hljs-string">'.delegation-ajax'</span>, {
+      <span class="hljs-attr">ajax</span>: {
+        <span class="hljs-attr">url</span>: <span class="hljs-string">'/index/ajax/artist'</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'post'</span>
+      },
+      <span class="hljs-attr">skin</span>: <span class="hljs-string">'light'</span>,
+      <span class="hljs-attr">radius</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">size</span>: <span class="hljs-string">'large'</span>,
+      <span class="hljs-attr">position</span>: <span class="hljs-string">'topleft'</span>
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+  <div class="example">
+    <span class="delegation-ajax" data-tipped-options="ajax: {
+      data: { artist: &#39;norahjones&#39; }
+    }">Ajax Delegation - Norah Jones</span>
+    <span class="delegation-ajax" data-tipped-options="ajax: {
+      data: { artist: &#39;theglitchmob&#39; }
+    }">Ajax Delegation - The Glitch Mob</span>
+
+    <script type="text/javascript">
+       $(document).ready(function() {
+        Tipped.delegate('.delegation-ajax', {
+          ajax: {
+            url: '/index/ajax/artist',
+            type: 'post'
+          },
+          skin: 'light',
+          radius: false,
+          size: 'large',
+          position: 'topleft'
+        });
+      });
+    </script>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="chapter last">
+  <h1 id="usage_api">API <a class="pro" href="https://www.tippedjs.com/download">Pro only</a></h1>
+
+  <p>For more advanced use that goes beyond simply creating and removing tooltips see the documentation on the <a href="https://www.tippedjs.com/documentation/api">Javascript API</a>.</p>
+
+  <pre class="has-example"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'api-example'</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"1"</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'api-example'</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"2"</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'api-example'</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"3"</span>&gt;</span>Three<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Tipped.create(<span class="hljs-string">'.api-example'</span>, {
+      <span class="hljs-attr">size</span>: <span class="hljs-string">'x-small'</span>,
+      <span class="hljs-attr">skin</span>: <span class="hljs-string">'blue'</span>,
+      <span class="hljs-attr">showOn</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">hideOn</span>: <span class="hljs-literal">false</span>
+    });
+
+    $(<span class="hljs-string">'.api-example'</span>).on(<span class="hljs-string">'mouseenter'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      Tipped.show(<span class="hljs-string">'.api-example'</span>);
+    })
+    .on(<span class="hljs-string">'mouseleave'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      Tipped.hide(<span class="hljs-string">'.api-example'</span>);
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<div class="example">
+    <span class="api-example" title="">One</span>
+    <span class="api-example" title="">Two</span>
+    <span class="api-example" title="">Three</span>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Tipped.create('.api-example', {
+          size: 'x-small',
+          skin: 'blue',
+          showOn: false,
+          hideOn: false
+        });
+
+        $('.api-example').on('mouseenter', function() {
+          Tipped.show('.api-example');
+        })
+        .on('mouseleave', function() {
+          Tipped.hide('.api-example');
+        });
+      });
+    </script>
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  <div id="footer">
+  <div class="columns">
+    <div class="column column_half">
+           </div>
+    
+    
+    <div class="column column_half rightmost">
+	    <div class="copyright">© 2021 <a href="http://www.nickstakenburg.com/">Nick Stakenburg</a></div>
+	    
+	    <div class="by">
+	   	  <a class="site" href="http://www.nickstakenburg.com/"><!-- nickstakenburg --></a>
+	   	</div> 
+    </div>
+  </div>
+</div>
+
+
+
+</div></div> <!-- /#page -->
+
+</div></div> <!-- /#body-shift-wrapper -->
+
+
+<div id="body-shift-menu">
+  <div class="close"><span>×</span></div>
+
+  <div class="links">
+  <!-- evenementen -->
+  
+  <a href="https://www.tippedjs.com/" class="item"><span>Demos</span></a>
+
+    <a href="https://www.tippedjs.com/documentation" class="item active"><span>Documentation</span></a>
+
+  <a href="https://github.com/staaky/tipped" class="item" target="_blank"><span>GitHub</span></a>
+
+      <a href="https://www.tippedjs.com/login" class="item spaced"><span>Login</span></a>
+  
+  </div>
+</div>
+
+
+
+<div id="documentationMenu">
+  <h1 class="has_font">Contents</h1>
+
+  <ul class="links">
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_installation" class="scrollTo"><span>Installation</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_creating_tooltips" class="scrollTo"><span>Creating tooltips</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_options" class="scrollTo"><span>Options</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_inline" class="scrollTo"><span>Inline</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_elements" class="scrollTo"><span>Elements</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_functions" class="scrollTo"><span>Functions</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_ajax" class="scrollTo"><span>Ajax</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_json" class="scrollTo"><span>JSON</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_event_delegation" class="scrollTo"><span>Event Delegation</span></a></li>
+    <li class="sub"><a href="https://www.tippedjs.com/documentation#usage_api" class="scrollTo"><span>API</span></a></li>
+  </ul>
+</div><div id="scrollTop" style="display: none;"></div><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div></body></html>

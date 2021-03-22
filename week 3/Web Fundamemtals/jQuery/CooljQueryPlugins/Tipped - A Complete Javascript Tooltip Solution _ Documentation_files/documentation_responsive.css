@@ -1,0 +1,47 @@
+/* Responsive */
+
+/* change menu once we go below 980 */
+@media only screen
+and (max-width : 1090px) {
+	#documentationMenu,
+  #scrollTop {
+    display: none !important;
+  }
+}
+
+/* iphone */
+@media only screen
+and (max-width : 640px) {
+  /*#documentation {
+    width: 300px;
+    margin-left: 0px;
+  }
+  
+  #documentation .columns .column {
+    width: 100%;
+  }
+  
+  #documentation .columns .rightmost { display: none; }
+  #documentation .columns .rightmost img {
+    display:none;
+  } */
+  
+  /* Functions */
+  #documentation .functions li {
+    width: 290px; 
+  }
+  #documentation .functions .function span { margin-bottom: 9px; }
+  #documentation .functions .explained {
+    width: 100%;
+    clear: both;
+  }
+  
+  /* API */
+  #documentation .params { width: 278px; }
+  #documentation .inset h3,
+  #documentation .inset .params { width: 258px; }
+  #documentation .notations .desc { width: 258px; clear: both; margin-bottom: 9px; padding-left: 5px; }
+  #documentation .notations .inset .desc { width: 238px; }
+		
+  #documentationMenu { display: none; }
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://mottie.github.io/tablesorter/docs/themes.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>jQuery tablesorter 2.4 - Themes</title>
+
+	<!-- demo css -->
+	<style>
+	.minitable {float:left;min-width:190px; min-height: 280px; margin:5px;}
+	.minitable table {width:175px;margin:10px auto;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+	.minitable table th {font-size:11px;}
+	.minitable table td {font-size:11px;padding:4px !important;text-align:center;}
+	.minitable h3, .minitable h5 {text-align:center;margin:0;}
+	</style>
+
+	<!-- jQuery -->
+	<script src="./jquery-latest.min.js.download"></script>
+
+	<!-- Tablesorter themes -->
+	<!-- jquery ui -->
+	<link href="./jquery-ui.min.css" rel="stylesheet">
+	<link href="./theme.jui.css" rel="stylesheet">
+
+	<!-- bootstrap -->
+	<link href="./bootstrap-v3.min.css" rel="stylesheet">
+	<link href="./theme.bootstrap.css" rel="stylesheet">
+
+	<!-- more themes -->
+	<link href="./theme.black-ice.css" rel="stylesheet">
+	<link href="./theme.blue.css" rel="stylesheet">
+	<link href="./theme.dark.css" rel="stylesheet">
+	<link href="./theme.default.css" rel="stylesheet">
+	<link href="./theme.dropbox.css" rel="stylesheet">
+	<link href="./theme.green.css" rel="stylesheet">
+	<link href="./theme.grey.css" rel="stylesheet">
+	<link href="./theme.ice.css" rel="stylesheet">
+	<link href="./theme.metro-dark.css" rel="stylesheet">
+
+	<!-- Tablesorter: required -->
+	<script src="./jquery.tablesorter.js.download"></script>
+	<script src="./jquery.tablesorter.widgets.js.download"></script>
+
+<script>
+$(function() {
+
+	$.extend($.tablesorter.defaults, {
+		widthFixed: true,
+		widgets : ['zebra','columns'],
+		sortList : [ [0,0],[1,0],[2,0] ]
+	});
+
+	$('.demo').tablesorter();
+
+	// grey & dropbox themes need the {icon} for header icons
+	$('.tablesorter-dropbox,.tablesorter-grey').tablesorter({
+		headerTemplate: '{content}{icon}' // dropbox theme doesn't like a space between the content & icon
+	});
+
+	$('.tablesorter-bootstrap').tablesorter({
+		theme : 'bootstrap',
+		headerTemplate: '{content} {icon}',
+		widgets    : ['zebra','columns', 'uitheme']
+	});
+
+	$('.tablesorter-jui').tablesorter({
+		theme : 'jui',
+		headerTemplate: '{content} {icon}',
+		widgets    : ['zebra','columns', 'uitheme']
+	});
+
+});
+</script>
+<style>body.tablesorter-disableSelection { -ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none; -webkit-user-select: none; user-select: none; }.tablesorter-resizable-container { position: relative; height: 1px; }.tablesorter-resizable-handle { position: absolute; display: inline-block; width: 8px;top: 1px; cursor: ew-resize; z-index: 3; user-select: none; -moz-user-select: none; }</style></head>
+<body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+
+<div id="main">
+
+	<div class="minitable">
+		<h3>Blackice</h3>
+		<h5>(blackice)</h5>
+		<table class="demo tablesorter-blackice tablesorter tablesorterd9ec0cb78f69f" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Blue</h3>
+		<h5>(blue)</h5>
+		<table class="demo tablesorter-blue tablesorter tablesorterfa1dbd7db5844" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Dark</h3>
+		<h5>(dark)</h5>
+		<table class="demo tablesorter-dark tablesorter tablesorterb8472f7ec29e9" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Default</h3>
+		<h5>(default)</h5>
+		<table class="demo tablesorter-default tablesorter tablesorter53c25ec3f254c" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Green</h3>
+		<h5>(green)</h5>
+		<table class="demo tablesorter-green tablesorter tablesorterd20a992bd84a6" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Grey</h3>
+		<h5>(grey)</h5>
+		<table class="tablesorter-grey tablesorter tablesorter47fed37473d83" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A<i class="tablesorter-icon"></i></div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B<i class="tablesorter-icon"></i></div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C<i class="tablesorter-icon"></i></div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D<i class="tablesorter-icon"></i></div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Ice</h3>
+		<h5>(ice)</h5>
+		<table class="demo tablesorter-ice tablesorter tablesorter75149aa0ce00f" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Bootstrap</h3>
+		<h5>(bootstrap)</h5>
+		<table class="tablesorter-bootstrap tablesorter tablesortera7ee54df7a631 table table-bordered table-striped" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc bootstrap-header primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">A <i class="tablesorter-icon glyphicon glyphicon-chevron-up"></i></div></div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc bootstrap-header secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">B <i class="tablesorter-icon glyphicon glyphicon-chevron-up"></i></div></div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc bootstrap-header tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">C <i class="tablesorter-icon glyphicon glyphicon-chevron-up"></i></div></div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted bootstrap-header" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">D <i class="tablesorter-icon bootstrap-icon-unsorted"></i></div></div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>jQuery UI</h3>
+		<h5>(jui)</h5>
+		<table class="tablesorter-jui tablesorter tablesorter408fdf79dd4fe ui-widget ui-widget-content ui-corner-all" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc ui-widget-header ui-corner-all ui-state-default ui-state-active primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">A <i class="tablesorter-icon ui-icon ui-icon-carat-1-n ui-icon-caret-1-n"></i></div></div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc ui-widget-header ui-corner-all ui-state-default ui-state-active secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">B <i class="tablesorter-icon ui-icon ui-icon-carat-1-n ui-icon-caret-1-n"></i></div></div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc ui-widget-header ui-corner-all ui-state-default ui-state-active tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">C <i class="tablesorter-icon ui-icon ui-icon-carat-1-n ui-icon-caret-1-n"></i></div></div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted ui-widget-header ui-corner-all ui-state-default" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-wrapper" style="position:relative;height:100%;width:100%"><div class="tablesorter-header-inner">D <i class="tablesorter-icon ui-icon ui-icon-carat-2-n-s ui-icon-caret-2-n-s"></i></div></div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Dropbox</h3>
+		<h5>(dropbox)</h5>
+		<table class="tablesorter-dropbox tablesorter tablesorter6af5466f308bb" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead><tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A<i class="tablesorter-icon"></i></div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B<i class="tablesorter-icon"></i></div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C<i class="tablesorter-icon"></i></div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D<i class="tablesorter-icon"></i></div></th></tr></thead>
+			<tfoot><tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr></tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+	<div class="minitable">
+		<h3>Metro Dark</h3>
+		<h5>(metro-dark)</h5>
+		<table class="tablesorter-metro-dark demo tablesorter tablesorter1150ba009c655" role="grid"><colgroup class="tablesorter-colgroup"></colgroup>
+			<thead>
+				<tr class="dark-row tablesorter-headerRow" role="row"><th class="sorter-false tablesorter-header tablesorter-headerUnSorted primary" colspan="4" data-column="0" scope="col" role="columnheader" aria-disabled="true" unselectable="on" aria-sort="none" aria-label="Title: No sort applied, sorting is disabled" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">Title</div></th></tr>
+				<tr role="row" class="tablesorter-headerRow"><th data-column="0" class="tablesorter-header tablesorter-headerAsc primary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="A: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">A</div></th><th data-column="1" class="tablesorter-header tablesorter-headerAsc secondary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="B: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">B</div></th><th data-column="2" class="tablesorter-header tablesorter-headerAsc tertiary" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending" aria-label="C: Ascending sort applied, activate to apply a descending sort" data-sortedby="sorton" style="user-select: none;"><div class="tablesorter-header-inner">C</div></th><th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="D: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner">D</div></th></tr>
+			</thead>
+			<tfoot>
+				<tr role="row"><th data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">A</th><th data-column="1" class="tablesorter-headerAsc secondary" aria-sort="ascending">B</th><th data-column="2" class="tablesorter-headerAsc tertiary" aria-sort="ascending">C</th><th data-column="3">D</th></tr>
+				<tr class="dark-row" role="row"><th colspan="4" data-column="0" class="tablesorter-headerAsc primary" aria-sort="ascending">&nbsp;</th></tr>
+			</tfoot>
+			<tbody aria-live="polite" aria-relevant="all">
+				
+				
+				
+				
+				
+			<tr role="row"><td class="primary">1</td><td class="secondary">2</td><td class="tertiary">3</td><td>4</td></tr><tr role="row"><td class="primary">11</td><td class="secondary">10</td><td class="tertiary">9</td><td>8</td></tr><tr role="row"><td class="primary">12</td><td class="secondary">19</td><td class="tertiary">18</td><td>7</td></tr><tr role="row"><td class="primary">13</td><td class="secondary">20</td><td class="tertiary">17</td><td>6</td></tr><tr role="row"><td class="primary">14</td><td class="secondary">15</td><td class="tertiary">16</td><td>5</td></tr></tbody>
+		</table>
+	</div>
+
+</div>
+
+
+
+</body></html>

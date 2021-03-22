@@ -1,0 +1,187 @@
+(function($) {
+  var Browser = (function(uA) {
+    function getVersion(identifier) {
+      var version = new RegExp(identifier + '([\\d.]+)').exec(uA);
+      return version ? parseFloat(version[1]) : true;
+    }
+  
+    return {
+      MobileSafari: !!uA.match(/Apple.*Mobile.*Safari/),
+      Android: uA.indexOf('Android') > -1 && getVersion('Android '),
+      IEMobile: uA.indexOf('IEMobile') > -1 && getVersion('IEMobile/')
+    };
+  })(navigator.userAgent);
+    
+  var Support = (function() {
+    return {
+      touch: (function() {
+        try {
+          return !!(('ontouchstart' in window) || 
+            window.DocumentTouch && document instanceof DocumentTouch); // firefox for Android;
+        } catch (e) { 
+          return false;
+        }
+      })()
+      
+    };
+  })();
+  // add mobile touch to support
+  Support.mobileTouch = Support.touch && 
+  (Browser.MobileSafari || Browser.Android || Browser.IEMobile 
+   || !/^(Win|Mac|Linux)/.test(navigator.platform) // otherwise, asume anything not on Windows, Mac on Linux is a mobile device
+  );
+  
+  
+  var BodyShift = {
+    initialize: function() {
+      this.body = $('#body-shift');
+      this.menu = $('#body-shift-menu');
+      //this.menuBackground = $('#body-shift-menu-background');
+      this.header = $('#menu');
+      
+      this._opened = false;
+      
+      //this.resize();
+      this.startObserving();
+    },
+    
+    startObserving: function() {
+      $(window).bind('orientationchange', $.proxy(function() {
+        this.resize();
+        this.close();
+      }, this));
+      
+      this.header.delegate('.toggle', 'click', $.proxy(function() {
+        console.log('toggle');
+        this.toggle();
+      }, this));
+      
+      this.menu.delegate('.close', 'click', $.proxy(this.close, this));
+      
+      /*$(window).bind('resize', $.proxy(function() {
+        this.close();
+      }, this));*/
+    },
+    
+    open: function() {
+      //if (this._opened) return;
+      this.body.addClass('body-shift-shifted');
+      this.menu.addClass('body-shift-menu-shifted');
+      //this.menuBackground.addClass('body-shift-menu-background-shifted');
+      this._opened = true;
+    },
+    
+    close: function() {
+      //if (!this._opened) return;
+      this.body.removeClass('body-shift-shifted');
+      this.menu.removeClass('body-shift-menu-shifted');
+      //this.menuBackground.removeClass('body-shift-menu-background-shifted');
+      this._opened = false;
+    },
+    
+    /*resize: function() {
+      this.menuBackground.css({
+        height: $(window).height() + 'px'
+      });
+    },*/
+    
+    toggle: function() {
+      this[this._opened? 'close' : 'open']();
+    }
+  };
+
+  window.BodyShift = BodyShift;
+
+  
+  var touchSwipe;
+  (function($){
+    var suffix = '.ns',
+        touchStopEvent = 'touchend',// + suffix,
+        touchMoveEvent = 'touchmove',// + suffix,
+        touchStartEvent = 'touchstart',// + suffix,
+        horizontalDistanceThreshold = 30,
+        verticalDistanceThreshold = 75, 
+        scrollSupressionThreshold = 10, 
+        durationThreshold = 1000;
+    
+    if (!Support.mobileTouch) {
+      touchSwipe = /*touchSwipeLeft = touchSwipeRight =*/ function() { };
+      return;
+    } 
+    
+    touchSwipe = function(element, callback, prevent) {
+      if (prevent) $(element).data('stopPropagation' + suffix, true);
+      if (callback) swipe(element, callback);    
+    };
+    
+    
+    function swipe(element, callback) {
+      //unbindSwipe(element, true);
+      if (!$(element).data('ns-swipe' + suffix)) $(element).data('ns-swipe', callback);
+      addSwipe(element);
+    }
+    
+    function addSwipe(element) {
+      //unbindSwipe(element);
+      $(element).bind(touchStartEvent, touchStart);
+    }
+    
+    function touchStart(event) {
+      if ($(this).hasClass('ns-prevent-swipe')) return;
+      
+      var time = new Date().getTime(),
+      data = event.originalEvent.touches ? event.originalEvent.touches[0] : event,
+      $this = $(this).bind(touchMoveEvent, moveHandler).one(touchStopEvent, touchEnded),
+      pageX = data.pageX,
+      pageY = data.pageY,
+      newPageX, 
+      newPageY,
+      newTime;
+      
+      if($this.data("stopPropagation" + suffix)) event.stopImmediatePropagation();
+        
+      function touchEnded(event) {
+        
+        $this.unbind(touchMoveEvent);
+  
+        if(time && newTime) {
+          
+          if(newTime - time < durationThreshold && Math.abs(pageX - newPageX) > horizontalDistanceThreshold && Math.abs(pageY - newPageY) < verticalDistanceThreshold) {
+            var callback = $this.data('ns-swipe');
+            
+            if(pageX > newPageX) {
+              if (callback) callback('left');
+            }
+            else {
+              if (callback) callback('right');
+            }
+          }
+        }
+        time = newTime = null;
+      }
+      
+      function moveHandler(event) {
+        if (time) {
+          data = event.originalEvent.touches ? event.originalEvent.touches[0] : event;
+          newTime = new Date().getTime();
+          newPageX = data.pageX;
+          newPageY = data.pageY;
+    
+          if(Math.abs(pageX - newPageX) > scrollSupressionThreshold) event.preventDefault();
+        }
+      }
+    }
+  })(jQuery);
+  
+  
+  $(document).ready(function() {
+    BodyShift.initialize();
+
+    touchSwipe('#body-shift-menu', function(side) {
+      if (side == 'right') {
+        BodyShift.close();
+      }
+    });
+  });  
+})(jQuery);
+

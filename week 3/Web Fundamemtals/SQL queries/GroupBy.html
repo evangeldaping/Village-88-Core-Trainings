@@ -1,0 +1,52 @@
+<!-- Sometimes we want to GROUP multiple records to produce some interesting insight.
+
+For example, imagine that you ran the following query in the world database.
+
+SELECT name, continent, population, life_expectancy
+FROM world.countries
+ORDER BY continent ASC;
+This query generates a result that looks like this.
+
+
+Now, if I asked you to come up with the following, how would you obtain the answers?
+
+Get the number of countries in each continent. For example, how many countries are there in Asia, Europe, etc?
+For each continent, what's the total population?
+For each continent, what's the average life expectancy?
+Note that to get an answer to the first question, you looked at the results and COUNTED the number of records for each
+continent?
+
+For the 2nd question, you probably looked at all the countries for say 'Asia', and got the SUM of all the population for
+'Asia'.
+
+For the 3rd question, you probably looked at all the countries for say 'Asia', and got the AVERAGE of all the population
+for 'Asia.
+
+Whenever you have multiple records and you're combining the multiple records into a single record, you can use these
+aggregate function to obtain some valuable data.
+
+Please spend no more than 10 minutes going through each of the article below:
+
+https://www.w3schools.com/sql/sql_groupby.asp
+https://dev.mysql.com/doc/refman/8.0/en/group-by-modifiers.html
+https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html
+https://www.w3schools.com/sql/sql_having.asp - important
+The art of self checking
+Too often, developers use aggregative functions to create a summary record but do not check the data themselves to see
+if the returned data is accurate.
+
+You should not do this but every time you're about to use an aggregate function,
+
+Do NOT use an aggregate function just yet
+Retrieve all records and manually calculate what some of the summary results should be (e.g. sum, count, average, or
+other value for the record you're expecting to get)
+Use an aggregate function and then compare the sample result with what you've calculated manually above
+What you should not do is
+
+Use an aggregate function
+Assume that what you got was the correct value
+Sometimes, with complex queries, especially with lots of join statements and other complex behavior, without manually
+checking some sample data, you will get some weird output that may easily go un-noticed and be used for generating some
+important reports. An experienced developer always verifies whether they are doing the join statements correctly, check
+the records first, analyze some data to see what the expected aggregate value would be for a specific field, add the
+aggregate function, and then verify that the aggregate function indeed returned the value one was expecting. -->

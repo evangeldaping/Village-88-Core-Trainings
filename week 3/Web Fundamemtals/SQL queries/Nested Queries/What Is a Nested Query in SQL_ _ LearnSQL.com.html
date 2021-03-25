@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://learnsql.com/blog/sql-nested-select/ -->
+<html lang="en-us"><script type="text/javascript" async="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/ec.js.download"></script><script type="text/javascript" async="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/pixel.js.download"></script><script type="text/javascript" async="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/uwt.js.download"></script><script src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/268851984556896" async=""></script><script src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/identity.js.download" async=""></script><script type="text/javascript" async="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/analytics.js.download"></script><script async="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/gtm.js.download"></script><script type="module" src="chrome-extension://jdkknkkbebbapilgoeccciglkfbmbnfm/hook.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>   What Is a Nested Query in SQL? |   LearnSQL.com </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    
+    
+    
+      <meta name="ROBOTS" content="INDEX, FOLLOW">
+    
+
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&amp;display=swap" as="style" rel="preload stylesheet">
+
+    
+    
+
+    
+
+    <link href="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/main.min.css" rel="stylesheet">
+    <link href="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/tiny-slider.min.css">
+
+    <script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/blog-static.v3.min.js.download"></script>
+
+    <script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/academy.min.js.download"></script>
+    <script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/jQuery.progressBar.min.js.download"></script>
+
+
+
+    
+
+    
+      
+<link rel="shortcut icon" href="https://cdn.vertabelo.com/lsc/blog/img/favicon.ico" type="image/x-icon">
+
+    
+
+    
+
+    <meta property="og:title" content="What Is a Nested Query in SQL?">
+<meta property="og:description" content="Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learnsql.com/blog/sql-nested-select/"><meta property="article:published_time" content="2020-05-07T17:00:00+02:00">
+<meta property="article:modified_time" content="2020-05-07T17:00:00+02:00"><meta property="og:site_name" content="LearnSQL.com">
+<meta property="article:publisher" content="https://www.facebook.com/https://www.facebook.com/groups/welearnsql/">
+<meta property="article:section" content="blog">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="learn sql">
+<meta property="article:tag" content="subquery">
+
+<meta itemprop="name" content="What Is a Nested Query in SQL?">
+<meta itemprop="description" content="Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL.">
+
+
+<meta itemprop="datePublished" content="2020-05-07T17:00:00+02:00">
+<meta itemprop="dateModified" content="2020-05-07T17:00:00+02:00">
+<meta itemprop="wordCount" content="1330">
+
+
+
+
+
+
+<meta name="twitter:title" content="What Is a Nested Query in SQL?">
+<meta name="twitter:description" content="Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL.">
+<meta name="twitter:site" content="@LearnSQLcom">
+
+
+
+
+<meta property="og:locale" content="en_US">
+
+
+    
+        
+            
+<meta property="og:image" content="https://learnsql.com/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL.jpg">
+<meta property="og:image:secure_url" content="https://learnsql.com/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1333">
+<meta property="og:image:alt" content="Isometric design, software development and programming concept. Computation of big data center.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://learnsql.com/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL.jpg">
+            
+        
+
+
+
+<meta name="description" content="Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL.">
+
+<meta property="twitter:creator" content="@LearnSQLcom">
+
+    <link rel="canonical" href="https://learnsql.com/blog/sql-nested-select/">
+
+
+
+<link rel="icon" href="https://cdn.vertabelo.com/lsc/blog/favicon.ico" type="image/x-icon" sizes="32x32">
+<link rel="icon" href="https://cdn.vertabelo.com/lsc/blog/favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://cdn.vertabelo.com/lsc/blog/favicon-180x180.png">
+<meta name="msapplication-TileImage" content="https://cdn.vertabelo.com/lsc/blog/favicon-270x270.png">
+
+
+      
+    
+
+    <link rel="stylesheet" type="text/css" href="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/shCore.css"><link rel="stylesheet" type="text/css" href="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+    <script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/shCore.js.download"></script>
+<script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/shBrushSql.js.download"></script>
+<script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/shBrushPython.js.download"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "/blog-css/syntaxhighlighter3/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "/blog-css/syntaxhighlighter3/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+    <script type="text/javascript">
+	window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/blog-js\/wp-emoji\/wp-emoji-release.min.js?ver=4.9.8"}};
+	!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+    
+      
+<script>
+    dataLayer = [];
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9F33V3');</script>
+
+    
+
+  <style></style><style type="text/css">#mc_embed_signup input.mce_inline_error { border-color:#6B0505; } #mc_embed_signup div.mce_inline_error { margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff; }</style><style type="text/css"></style><style type="text/css">.pixelParallel-panel[data-v-54cb82b4]{position:fixed;right:10px;bottom:10px;z-index:2147483647;width:375px;height:265px;transform:translate(0);background:#fff;transition:width .2s ease-out,height .2s ease-out;will-change:top,left,width,height,transform;opacity:0}.pixelParallel-panel-inner[data-v-54cb82b4]{position:relative;overflow:hidden;height:100%;border:1px solid #dddedf;box-shadow:0 2px 10px rgba(0,0,0,.1);box-sizing:border-box}.pixelParallel-panel-handle[data-v-54cb82b4]{position:absolute;top:-10px;right:-10px;z-index:3;width:20px;height:20px;background:red;transform:rotate(45deg);background:linear-gradient(0deg,transparent,transparent 50%,#ccc 0,#ccc);background-size:100% 2px;cursor:move}.pixelParallel-panel-isolator[data-v-54cb82b4]{border:0;width:100%;height:100%;overflow:hidden;position:relative}.pixelParallel-panel-dragging .pixelParallel-panel-inner[data-v-54cb82b4]{pointer-events:none}.pixelParallel-panel-minimized[data-v-54cb82b4]{width:112px;height:50px;transition:width .2s ease-out .15s,height .2s ease-out .15s}@media (max-width:395px){.pixelParallel-panel[data-v-54cb82b4]{right:0;bottom:0;width:320px}.pixelParallel-panel-minimized[data-v-54cb82b4]{width:112px}}</style><style type="text/css">.pixelParallel-overlay{position:absolute;left:0;top:0;width:100%;text-align:center;white-space:nowrap;display:none}.pixelParallel-overlay-enabled{display:block}</style><style type="text/css">.pixelParallel-image-outer{visibility:hidden;position:absolute;top:0;left:0;width:100%;overflow:hidden;max-width:100vw;min-height:100vh}.pixelParallel-image-inner{position:absolute;z-index:2147483646;left:50%;top:0;cursor:move;transform:translateX(-50%);transition:opacity .15s}.pixelParallel-image-inner img{width:auto;height:auto;max-width:none;max-height:none;vertical-align:top;margin:0;padding:0;position:relative;transform-origin:50% 0;top:-1px;border:1px dashed #333}.pixelParallel-image-inner img:not([src]),.pixelParallel-image-inner img[src=""]{visibility:hidden}.pixelParallel-image-enabled{visibility:visible}.pixelParallel-image-difference{mix-blend-mode:difference}.pixelParallel-image-difference img{opacity:1!important}.pixelParallel-image-locked,.pixelParallel-image-no-image{pointer-events:none}.pixelParallel-image-locked .pixelParallel-image-inner img{top:0;border:0 none}</style><style type="text/css">.pixelParallel-grids{position:relative;z-index:2147483646;pointer-events:none}.pixelParallel-grid-horizontal,.pixelParallel-grid-vertical{position:fixed;z-index:1;pointer-events:none;visibility:hidden}.pixelParallel-grid-horizontal{top:50%;left:50%;display:table;width:100vw;height:200vh;opacity:.5;table-layout:fixed;border-spacing:30px;transform:translate(-50%,-50%)}.pixelParallel-grid-horizontal span{display:table-cell;background:red;height:200vh}.pixelParallel-grid-vertical{top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,transparent 90%,blue 0,blue);background-size:100% 10px;opacity:.5}.pixelParallel-grid-horizontal-enabled,.pixelParallel-grid-vertical-enabled{visibility:visible}</style><style type="text/css">.pixelParallel-rulers{position:relative;z-index:2147483646}.pixelParallel-ruler-x,.pixelParallel-ruler-y{display:none;position:fixed;top:0;left:0;z-index:2;background:cyan}.pixelParallel-ruler-x:after,.pixelParallel-ruler-y:after{content:"";position:absolute;top:-8px;left:-8px;right:0;bottom:0;padding:10px}.pixelParallel-ruler-x{right:0;height:1px;cursor:row-resize}.pixelParallel-ruler-y{bottom:0;width:1px;cursor:col-resize}.pixelParallel-rulers-enabled .pixelParallel-ruler-x,.pixelParallel-rulers-enabled .pixelParallel-ruler-y{display:block}</style><script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/jquery.min.js.download" async="true"></script><link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://cdnjs.cloudflare.com/"><link rel="preconnect" href="https://display.popt.in/"></head>
+
+  <body class="" style="zoom: 1;" data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <header class="site-header">
+<nav role="navigation">
+  <div class="site-navigation">
+        <a href="https://learnsql.com/" class="site-logo">
+          <img src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/logo.svg" alt="LearnSQL.com">
+        </a>
+      <div id="skip-navigation">
+          <button class="button--ghost">Skip navigation</button>
+      </div>
+      
+      <ul class="main-menu"><li class="main-menu__item main-menu__item--courses"><a href="https://learnsql.com/" title="Courses page">Courses</a></li>
+        <li class="main-menu__item main-menu__item--pricing"><a href="https://learnsql.com/pricing/" title="Pricing page">Pricing</a></li>
+        <li class="main-menu__item main-menu__item--library"><a href="https://learnsql.com/library/" title="Library page">Library</a></li>
+        <li class="main-menu__item main-menu__item--log-in"><a href="https://learnsql.com/log-in" title="Log in page">Log in</a></li>
+        <li class="main-menu__item main-menu__item--create-free-account"><a href="https://learnsql.com/sign-up" title="Create free account page">Create free account</a></li>
+        
+          
+              <div class="main-menu__item main-menu__item--logout hide" tabindex="0" role="button">
+                  <img class="logout__avatar avatar" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/user.png" alt="avatar">
+                  <p class="logout__full-name user-name-element">fullName</p>
+                  <svg role="document" width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    
+                    <title>User profile menu open</title>
+                    <desc>Open user profile menu</desc>
+                    <g id="03-TRACKS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="LearnSQL_Track_Details_Logged" transform="translate(-1509.000000, -55.000000)" fill-rule="nonzero" stroke="currentColor">
+                            <g id="Navigation">
+                                <g id="Profile" transform="translate(1356.000000, 39.000000)">
+                                    <polyline id="ico_arrow_small_bottom" transform="translate(159.000000, 20.033937) rotate(90.000000) translate(-159.000000, -20.033937) " points="155.966063 14.0339368 162.033937 20.1018105 156.10181 26.0339368"></polyline>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+              </div>
+              <div class="logout-modal modal" aria-modal="true" role="dialog" aria-labelledby="User Profile Menu" aria-describedby="User fullName">
+                  <div class="logout-modal__layer modal__layer"></div>
+                  <div class="logout-modal__window modal__window" aria-label="" tabindex="-1">
+                      <div class="logout-modal__intro">
+                          <img class="logout-modal__avatar avatar" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/user.png" alt="avatar">
+                          <div class="logout-modal__name user-name-element">fullName</div>
+                      </div>
+                      <div class="logout-modal__link">
+                          <a href="https://learnsql.com/dashboard">Dashboard</a>
+                      </div>
+                      <div class="logout-modal__link">
+                          <a href="https://learnsql.com/dashboard/my-profile">My Profile</a>
+                      </div>
+                      <div class="logout-modal__link">
+                          <a href="https://learnsql.com/dashboard/payment-billing">Payment &amp; Billing</a>
+                      </div>
+                      <div class="logout-modal__separator-border"></div>
+                      <div class="logout-modal__link logout-modal__link--logout">
+                          <a id="layout-logout-button" tabindex="0" rel="nofollow">Log out 
+                            <svg role="img" width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="03-TRACKS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="LearnSQL_Track_Details_Logged_Profile" transform="translate(-1478.000000, -291.000000)" fill="currentColor">
+                                        <g id="logout-Profile-menu" transform="translate(0.000000, 30.000000)">
+                                            <path d="M1484.1807,273.421452 C1484.39808,273.421452 1484.57727,273.589234 1484.57727,273.798961 C1484.57727,274.008689 1484.40102,274.176471 1484.1807,274.176471 L1480.57039,274.176471 C1479.15447,274.176471 1478,273.080296 1478,271.729651 L1478,263.446819 C1478,262.098971 1479.15154,261 1480.57039,261 L1484.23945,261 C1484.45977,261 1484.63602,261.167782 1484.63602,261.377509 C1484.63602,261.587237 1484.45977,261.755018 1484.23945,261.755018 L1480.57039,261.755018 C1479.59218,261.755018 1478.79315,262.512833 1478.79315,263.446819 L1478.79315,271.729651 C1478.79315,272.660841 1479.58924,273.421452 1480.57039,273.421452 L1484.1807,273.421452 Z M1490.7139,267.322581 C1490.86959,267.467992 1490.86959,267.708479 1490.71096,267.859483 L1488.19051,270.258764 C1488.11413,270.334265 1488.01132,270.370618 1487.91144,270.370618 C1487.81156,270.370618 1487.70874,270.331469 1487.63237,270.258764 C1487.47668,270.110556 1487.47668,269.872865 1487.63237,269.724658 L1489.47718,267.968541 L1481.43111,267.968541 C1481.21079,267.968541 1481.03453,267.800759 1481.03453,267.591032 C1481.03453,267.381304 1481.21079,267.213522 1481.43111,267.213522 L1489.47718,267.213522 L1487.63237,265.457405 C1487.47668,265.309198 1487.47668,265.071507 1487.63237,264.9233 C1487.78806,264.775092 1488.03776,264.775092 1488.19345,264.9233 L1490.7139,267.322581 Z" id="logout-path"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          
+      </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+      <div class="site-header-home-navigation-layer-menu pages">
+          <span class="site-header-home-navigation-layer-menu-cover">MENU</span>
+          <span class="site-header-home-navigation-layer-menu-cover-active">CLOSE</span>
+          <div class="site-header-home-navigation-layer-menu-icon pages" role="button" tabindex="0" aria-label="Toggle menu">
+              <div class="site-header-home-navigation-layer-menu-icon top"></div>
+              <div class="site-header-home-navigation-layer-menu-icon middle"></div>
+              <div class="site-header-home-navigation-layer-menu-icon bottom"></div>
+          </div>
+          <div class="site-header-home-navigation-hamburger-wrapper pages hide">
+              <div class="site-header-home-navigation-hamburger-layout">
+                  <ul class="site-header-home-navigation-hamburger"><li class="site-header-home-navigation-hamburger-item site-header-home-navigation-hamburger-item--courses"><a href="https://learnsql.com/" title="Courses page">Courses</a></li>
+                      <li class="site-header-home-navigation-hamburger-item site-header-home-navigation-hamburger-item--pricing"><a href="https://learnsql.com/pricing/" title="Pricing page">Pricing</a></li>
+                      <li class="site-header-home-navigation-hamburger-item site-header-home-navigation-hamburger-item--library"><a href="https://learnsql.com/library/" title="Library page">Library</a></li>
+                      <li class="site-header-home-navigation-hamburger-item site-header-home-navigation-hamburger-item--log-in"><a href="https://learnsql.com/log-in" title="Log in page">Log in</a></li>
+                      <li class="site-header-home-navigation-hamburger-item site-header-home-navigation-hamburger-item--create-free-account"><a href="https://learnsql.com/sign-up" title="Create free account page">Create free account</a></li>
+                      
+
+                      <li class="site-header-home-navigation-hamburger-item showOnLogged hide">
+                        <a href="https://learnsql.com/dashboard">Dashboard</a>
+                      </li>
+                      <li class="site-header-home-navigation-hamburger-item showOnLogged hide">
+                          <a href="https://learnsql.com/dashboard/my-profile">My Profile</a>
+                      </li>
+                      <li class="site-header-home-navigation-hamburger-item showOnLogged hide">
+                          <a href="https://learnsql.com/dashboard/payment-billing">Payment &amp; Billing</a>
+                      </li>
+                  </ul>
+                  <ul class="site-header-home-navigation-below hideOnLogged">
+                      <li class="site-header-home-navigation-below-item">
+                          <a class="site-header-home-navigation-below-item-link button--link" href="https://learnsql.com/log-in">Log in</a>
+                      </li>
+                      <li class="site-header-home-navigation-below-item">
+                          <a class="site-header-home-navigation-below-item-button button--primary" href="https://learnsql.com/sign-up">Create free account</a>
+                      </li>
+                  </ul>
+                  <ul class="site-header-home-navigation-below showOnLogged hide">
+                    <li class="site-header-home-navigation-below-item">
+                        <a class="site-header-home-navigation-below-item-link button--link" id="hamburger-logout-button" tabindex="0">Log out&nbsp;
+                          <svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g id="03-TRACKS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                  <g id="LearnSQL_Track_Details_Logged_Profile" transform="translate(-1478.000000, -291.000000)" fill="currentColor">
+                                      <g id="logout-Profile-menu" transform="translate(0.000000, 30.000000)">
+                                          <path d="M1484.1807,273.421452 C1484.39808,273.421452 1484.57727,273.589234 1484.57727,273.798961 C1484.57727,274.008689 1484.40102,274.176471 1484.1807,274.176471 L1480.57039,274.176471 C1479.15447,274.176471 1478,273.080296 1478,271.729651 L1478,263.446819 C1478,262.098971 1479.15154,261 1480.57039,261 L1484.23945,261 C1484.45977,261 1484.63602,261.167782 1484.63602,261.377509 C1484.63602,261.587237 1484.45977,261.755018 1484.23945,261.755018 L1480.57039,261.755018 C1479.59218,261.755018 1478.79315,262.512833 1478.79315,263.446819 L1478.79315,271.729651 C1478.79315,272.660841 1479.58924,273.421452 1480.57039,273.421452 L1484.1807,273.421452 Z M1490.7139,267.322581 C1490.86959,267.467992 1490.86959,267.708479 1490.71096,267.859483 L1488.19051,270.258764 C1488.11413,270.334265 1488.01132,270.370618 1487.91144,270.370618 C1487.81156,270.370618 1487.70874,270.331469 1487.63237,270.258764 C1487.47668,270.110556 1487.47668,269.872865 1487.63237,269.724658 L1489.47718,267.968541 L1481.43111,267.968541 C1481.21079,267.968541 1481.03453,267.800759 1481.03453,267.591032 C1481.03453,267.381304 1481.21079,267.213522 1481.43111,267.213522 L1489.47718,267.213522 L1487.63237,265.457405 C1487.47668,265.309198 1487.47668,265.071507 1487.63237,264.9233 C1487.78806,264.775092 1488.03776,264.775092 1488.19345,264.9233 L1490.7139,267.322581 Z" id="logout-path"></path>
+                                      </g>
+                                  </g>
+                              </g>
+                          </svg>
+                        </a>
+                    </li>
+                </ul>
+              </div>
+          </div>
+
+  </div>
+</div></nav>
+
+
+
+</header>
+
+
+    
+<div class="learnsql-blog-navigation">
+    <a href="https://learnsql.com/blog" title="Articles" class="learnsql-blog-navigation-item active">Articles</a>
+    <a href="https://learnsql.com/cookbook" title="Cookbook" class="learnsql-blog-navigation-item ">Cookbook</a>
+    
+</div>
+
+    <main>
+      <div class="site-content post-container" id="sticky_container">
+  <article>
+    <header class="blog-post-intro">
+
+
+
+    
+    
+      
+    
+
+    
+
+
+
+
+<div class="blog-post-featured-image blog-list-feature-image tall" style="background-image:url(&#39;/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL_huc3ea215d5ebbe7b39ffafa48d8f89807_1709621_968x550_fill_q90_box_center.jpg&#39;)">
+
+  
+</div>
+
+<a class="blog-post-intro-link" href="https://learnsql.com/blog/">
+        <img class="ico_arrow" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/arrow_white.svg">
+        <span class="button--link-white">Back to articles list</span>
+      </a>
+      <div class="blog-post-header">
+        <span class="ico_clock"><img src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/ico_clock.png" alt=""></span>
+        <time class="summary-time" datetime="2020-05-07T17:00:00+02:00">May 7, 2020</time>
+        <span class="blog-post-reading-time">-</span>
+        <span class="blog-post-reading-time">7 minutes read</span>
+        <div class="blog-post-category-header">
+<a class="blog-post-category" href="https://learnsql.com/blog/">  </a></div>
+        <h1 class="blog-post-header-title">What Is a Nested Query in SQL?</h1>      <div class="summary-blog-post-meta">
+         
+     
+        
+
+  
+    <div class="summary-blog-post-meta-author">
+      
+      
+        
+        
+        
+          
+          
+          <div class="img summary-blog-post-meta-author-img"><a href="https://learnsql.com/authors/kateryna-koidan/"><img src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/kateryna-koidan_photo_hubab482a83e40a9d4d66f3edaabebc847_48345_50x50_fill_q90_box_center.jpg" alt="Author&#39;s photo"></a></div>
+        
+        <div class="summary-blog-post-meta-author-info">
+          <a href="https://learnsql.com/authors/kateryna-koidan/"><div class="summary-blog-post-meta-author-name">Kateryna Koidan</div></a>
+          <div class="summary-blog-post-meta-author-position"><p>Kateryna is a data science writer from Kyiv, Ukraine. She worked for BNP Paribas, the leading European banking group, as an internal auditor for more than 6 years. More recently, she decided to pursue only the favorite part of her job—data analysis. Now she is continuing her self-education with deep-learning courses, enjoys coding for data analysis and visualization projects, and writes on the topics of data science and artificial intelligence. Kateryna is also a proud mother of two lovely toddlers, who make her life full of fun.</p>
+</div>
+        </div>
+      
+    </div>
+  
+
+
+</div>
+
+
+<div class="summary-tags">
+  <ul class="summary-tags-list">
+      <div class="summary-tags-title">Tags:</div>
+      
+       <li class="summary-tags-list-element">
+         <a href="https://learnsql.com/tags/sql">sql</a>
+       </li>
+      
+       <li class="summary-tags-list-element">
+         <a href="https://learnsql.com/tags/learn-sql">learn sql</a>
+       </li>
+      
+       <li class="summary-tags-list-element">
+         <a href="https://learnsql.com/tags/subquery">subquery</a>
+       </li>
+      
+    </ul>
+</div>
+
+</div>
+    </header>
+    <div class="blog-post-main blog-post-container" style="position: relative;">
+        <div></div><div class="social_ico is-sticky sticky" id="sticky-ico" style="position: absolute; top: 2921.36px;">
+            <a data-sumome-share-id="46ed7856-05ac-49b7-9856-091dc96a2504"></a>
+        </div>
+      <div class="blog-post-main-content">
+<p><em>Have you ever wished that you could build a query with several SELECT statements? Good news! You can do this – and a lot more – with SQL’s nested queries.</em></p>
+
+<p>If you’ve been learning SQL (and maybe writing some queries) for a while, you’ve probably encountered cases where it looks like you need another SELECT statement inside your main statement. You may wonder “Is it possible to use nested SELECTs in SQL?”. Yes, it’s possible! In this article, I’ll explain the nested query (aka the nested SELECT) and how to use it efficiently.</p>
+
+<h3>What Is a Nested SELECT?</h3>
+
+<div class="rek-banner " style="" banner-url="/course/sql-queries"></div>
+
+<p><strong>A nested SELECT is a query within a query</strong>, i.e. when you have a SELECT statement within the main SELECT. To make the concept clearer, let’s go through an example together.</p>
+
+<p>In this article, we’re going to work with data from a fictional high school. The database includes three tables: <code><strong>students</strong></code>, <code><strong>teachers</strong></code>, and <code><strong>classes</strong></code>. You can see the tables below:</p>
+
+<p><code><strong>Students</strong></code></p>
+
+<table cellspacing="0" summary="">
+<thead>
+  <tr>
+    <th>id</th><th>name</th><th>class_id</th><th>GPA</th>
+  </tr>
+</thead>
+<tfoot>
+</tfoot>
+<tbody>
+  <tr>
+    <td>1</td><td>Jack Black</td><td>3</td><td>3.45</td>
+  </tr>
+  <tr>
+    <td>2</td><td>Daniel White</td><td>1</td><td>3.15</td>
+  </tr>
+  <tr>
+    <td>3</td><td>Kathrine Star</td><td>1</td><td>3.85</td>
+  </tr>
+  <tr>
+    <td>4</td><td>Helen Bright</td><td>2</td><td>3.10</td>
+  </tr>
+  <tr>
+    <td>5</td><td>Steve May</td><td>2</td><td>2.40</td>
+  </tr>
+</tbody>
+</table>
+
+
+<p><code><strong>Teachers</strong></code></p>
+
+<table cellspacing="0" summary="">
+<thead>
+  <tr>
+    <th>id</th><th>name</th><th>subject</th><th>class_id</th><th>monthly_salary</th>
+  </tr>
+</thead>
+<tfoot>
+</tfoot>
+<tbody>
+  <tr>
+    <td>1</td><td>Elisabeth Grey</td><td>History</td><td>3</td><td>2,500</td>
+  </tr>
+  <tr>
+    <td>2</td><td>Robert Sun</td><td>Literature</td><td>[NULL]</td><td>2,000</td>
+  </tr>
+  <tr>
+    <td>3</td><td>John Churchill</td><td>English</td><td>1</td><td>2,350</td>
+  </tr>
+  <tr>
+    <td>4</td><td>Sara Parker</td><td>Math</td><td>2</td><td>3,000</td>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+
+<p><code><strong>Classes</strong></code></p>
+
+<table cellspacing="0" summary="">
+<thead>
+  <tr>
+    <th>id</th><th>grade</th><th>teacher_id</th><th>number_of_students</th>
+  </tr>
+</thead>
+<tfoot>
+</tfoot>
+<tbody>
+  <tr>
+    <td>1</td><td>10</td><td>3</td><td>21</td>
+  </tr>
+  <tr>
+    <td>2</td><td>11</td><td>4</td><td>25</td>
+  </tr>
+  <tr>
+    <td>3</td><td>12</td><td>1</td><td>28</td>
+  </tr>
+</tbody>
+</table>
+
+<p>Let’s say you want to find all students that have above-average GPAs. However, you don’t know the average GPA score. Certainly, you can use a query to find out:</p>
+
+<div><div id="highlighter_591667" class="syntaxhighlighter nogutter  sql"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql color2">AVG</code><code class="sql plain">(GPA)</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">students;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>You’ll get a number (3.19) that you can use to solve the initial task – showing all information for students with a GPA above this average:</p>
+
+<div><div id="highlighter_334538" class="syntaxhighlighter nogutter  sql"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">*</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">students</code></div><div class="line number3 index2 alt2"><code class="sql keyword">WHERE</code> <code class="sql plain">GPA &gt; 3.19;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>But can you solve this task in one step? You can with a nested query. Here is how it looks:</p>
+
+<div><div id="highlighter_753048" class="syntaxhighlighter nogutter  sql"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">*</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">students</code></div><div class="line number3 index2 alt2"><code class="sql keyword">WHERE</code> <code class="sql plain">GPA &gt; (</code></div><div class="line number4 index3 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">SELECT</code> <code class="sql color2">AVG</code><code class="sql plain">(GPA)</code></div><div class="line number5 index4 alt2"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">FROM</code> <code class="sql plain">students);</code></div></div></td></tr></tbody></table></div></div>
+
+<p>Our subquery here returns a single value (i.e. a table with a single column and a single row). This is important for the comparison operator to work. With the average GPA score returned by the inner query, the outer query can select the students who satisfy our filter condition (i.e. a GPA score above average).</p>
+
+<p>And here is the result:</p>
+
+<table cellspacing="0" summary="">
+<thead>
+  <tr>
+    <th>id</th><th>name</th><th>class_id</th><th>GPA</th>
+  </tr>
+</thead>
+<tfoot>
+</tfoot>
+<tbody>
+  <tr>
+    <td>1</td><td>Jack Black</td><td>3</td><td>3.45</td>
+  </tr>
+  <tr>
+    <td>3</td><td>Kathrine Star</td><td>1</td><td>3.85</td>
+  </tr>
+</tbody>
+</table>
+
+<p>The proper term for this nested SELECT statement is a <strong>subquery</strong>. There are many different scenarios where SQL subqueries are very helpful.</p>
+
+<h3>More Examples of Nested SQL Queries</h3>
+
+<p>First of all, you can put a nested SELECT <strong>within the WHERE clause</strong> with comparison operators or the <code>IN</code>, <code>NOT IN</code>, <code>ANY</code>, or <code>ALL</code> operators. The second group of operators are used when your subquery returns a list of values (rather than a single value, as in the previous example):</p>
+
+<ul>
+  <li>The <code>IN</code> operator checks if a certain value <strong>is in the table</strong> returned by the subquery.</li>
+  <li>The <code>NOT IN</code> operator filters out the rows corresponding to the values <strong>not present</strong> in that table returned by a subquery.</li>
+  <li>The <code>ANY</code> operator is used with comparison operators to <strong>evaluate if any of the values</strong> returned by the subquery satisfy the condition.</li>
+  <li>The <code>ALL</code> operator is also used with comparison operators to <strong>evaluate if all values</strong> returned by the subquery satisfy the condition.</li>
+</ul>
+
+<p>Let’s see how the <code>IN</code> operator works. In this example, you’ll calculate the average number of students in classes where the teacher teaches History or English:</p>
+
+<div><div id="highlighter_75559" class="syntaxhighlighter nogutter  sql"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql color2">AVG</code><code class="sql plain">(number_of_students)</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">classes</code></div><div class="line number3 index2 alt2"><code class="sql keyword">WHERE</code> <code class="sql plain">teacher_id </code><code class="sql color1">IN</code> <code class="sql plain">(</code></div><div class="line number4 index3 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">SELECT</code> <code class="sql plain">id</code></div><div class="line number5 index4 alt2"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">FROM</code> <code class="sql plain">teachers</code></div><div class="line number6 index5 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">WHERE</code> <code class="sql plain">subject = </code><code class="sql string">'English'</code> <code class="sql color1">OR</code> <code class="sql plain">subject = </code><code class="sql string">'History'</code><code class="sql plain">);</code></div></div></td></tr></tbody></table></div></div>
+
+<p>Here you use a subquery to select only those teacher IDs that correspond to teachers of English or History. Note that our subquery returns <strong>a list of values</strong>, i.e. a table with one column (<em>id</em>) and multiple rows that satisfy the condition of the inner query. </p>
+
+<p>Then, in our outer query, you calculate the average number of students <strong>only</strong> for those classes that satisfy the above condition. For every <em>teacher_id</em>, the IN operator checks if that ID is present in the table returned by the inner query; this ensures that only the classes corresponding to these teachers are considered in the calculation.</p>
+
+<p>If you want more examples using the  <code>IN</code>, <code>NOT IN</code>, <code>ANY</code>, or <code>ALL</code> operators, check out our <a href="https://learnsql.com/blog/sql-subqueries/" title="SQL Subqueries |   LearnSQL.com" target="_blank">SQL Subqueries</a> guide.</p>
+
+<h4>Multiple subqueries in one statement</h4>
+
+<p>Ready for more challenging examples? Well, it’s actually possible to have <strong>multiple nested SELECTs in one statement</strong>. </p>
+
+<p>Let’s say you want to show all information about the students in the class with the highest number of students. To answer this question, you’ll need to find the class with the maximal number of students and then define that class. Finally, you’ll need to show information about the students in that class. </p>
+
+<p>You can use a subquery within another subquery to answer this question:</p>
+
+<div><div id="highlighter_301274" class="syntaxhighlighter nogutter  sql"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">*</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">students</code></div><div class="line number3 index2 alt2"><code class="sql keyword">WHERE</code> <code class="sql plain">class_id = (</code></div><div class="line number4 index3 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">SELECT</code> <code class="sql plain">id</code></div><div class="line number5 index4 alt2"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">FROM</code> <code class="sql plain">classes</code></div><div class="line number6 index5 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">WHERE</code> <code class="sql plain">number_of_students = (</code></div><div class="line number7 index6 alt2"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">SELECT</code> <code class="sql keyword">MAX</code><code class="sql plain">(number_of_students)</code></div><div class="line number8 index7 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">FROM</code> <code class="sql plain">classes));</code></div></div></td></tr></tbody></table></div></div>
+
+<p>Pretty handy, isn’t it?</p>
+
+<h4>Using subqueries outside of WHERE</h4>
+
+<p>Furthermore, subqueries are not limited to use in the WHERE clause. For example, you can also use <strong>a nested query in the FROM clause</strong>. In the next example, our subquery will return, not a single value, but a table. </p>
+
+<p>Let’s find out what subject area corresponds to the highest average teacher salary. You’ll first need to calculate the average salary by subject, then use this table to find the maximum average salary:</p>
+
+<div><div id="highlighter_407808" class="syntaxhighlighter nogutter  sql"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">subject, </code><code class="sql keyword">MAX</code><code class="sql plain">(salary_by_subject.avg_salary) </code><code class="sql keyword">AS</code> <code class="sql plain">max_salary</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">(</code></div><div class="line number3 index2 alt2"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">SELECT</code> <code class="sql plain">subject, </code><code class="sql color2">AVG</code><code class="sql plain">(monthly_salary) </code><code class="sql keyword">AS</code> <code class="sql plain">avg_salary</code></div><div class="line number4 index3 alt1"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">FROM</code> <code class="sql plain">teachers</code></div><div class="line number5 index4 alt2"><code class="sql spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="sql keyword">GROUP</code> <code class="sql keyword">BY</code> <code class="sql plain">subject) salary_by_subject;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>Note that the inner query will return a table with multiple rows and columns. To be more specific, the table will have two columns, <em>subject</em> and <em>avg_salary</em>, to show the average salary of teachers based on their main subject. The number of rows will correspond to the number of unique subjects taught in the school (i.e. as specified in the <code><strong>teachers</strong></code> table). You also need to specify an alias for this table – <code><strong>salary_by_subject</strong></code>.</p>
+
+<p>Then, the outer query simply calculates the maximum average salary based on the <code><strong>salary_by_subject</strong></code> table and returns this value, together with the name of the corresponding subject:</p>
+
+<table cellspacing="0" summary="">
+<thead>
+  <tr>
+    <th>subject</th><th>max_salary</th>
+  </tr>
+</thead>
+<tfoot>
+</tfoot>
+<tbody>
+  <tr>
+    <td>Math</td><td>3,000</td>
+  </tr>
+</tbody>
+</table>
+
+<p>As you can see, our school’s math teachers have the highest average monthly salary ($3000).</p>
+
+<p>For some tasks, you may need the inner query to use information from the outer query. When two queries are related like this, we call them <strong>correlated subqueries</strong>. This is a more advanced topic that is very well explained in our <a href="https://learnsql.com/blog/correlated-sql-subqueries-newbies/" title="Correlated Subquery in SQL: A Beginner’s Guide |   LearnSQL.com" target="_blank">beginner’s guide to correlated subqueries</a> and this <a href="https://learnsql.com/blog/correlated-sql-subquery-5-minutes/" title="Learn to Write a SQL Correlated Subquery in 5 Minutes |   LearnSQL.com" target="_blank">practical tutorial on writing correlated subqueries</a>.</p>
+
+<h3>Additional Tips on Using Nested SELECTs</h3>
+
+<p>SQL subqueries are a powerful tool. They allow us to perform tasks more efficiently by having only one query instead of several.</p>
+<p>When using nested queries, <strong>keep these</strong> <strong>considerations in mind</strong>:</p>
+<ul>
+<li>Subqueries can return <strong>single values or tables</strong> (with one or many rows and columns).</li>
+<li>You can include a subquery:
+<ul>
+<li>In the <strong>WHERE</strong> clause, to filter data.</li>
+<li>In the <strong>FROM</strong> clause, to specify a new table.</li>
+<li>In the <strong>SELECT</strong> clause, to specify a certain column.</li>
+<li>In the <strong>HAVING</strong> clause, as a group selector.</li>
+</ul>
+</li>
+<li>Subqueries should always be enclosed in parentheses ().</li>
+<li>Different database management systems have certain <strong>limitations</strong> on the number of subquery levels (e.g. up to 32 levels in SQL Server). However, in practice, you’ll rarely have more than 2-3 levels of nested queries.</li>
+<li>Subqueries are often <strong>computationally inefficient</strong>. Thus, I recommend avoiding nested queries when other options are available (e.g. JOINs).</li>
+</ul>
+
+<h3>Time to Practice SQL Subqueries!</h3>
+
+<p>Now that you’ve learned so much about nested queries in SQL, you’re probably eager to start practicing them! Luckily, we have LOTS of interactive exercises for you to practice different SQL subqueries.</p>
+
+<p>First of all, our <a href="https://learnsql.com/course/sql-queries/" title="SQL Basics - SQL online course | LearnSQL.com" target="_blank">SQL Basics</a> course has a big section on subqueries. Make sure to check it out!</p>
+
+<p>If you want to become a really confident user of nested queries in SQL, I also recommend completing the “Subqueries” section in the <a href="https://learnsql.com/course/sql-practice-set/" title="SQL Practice Set - SQL online course | LearnSQL.com" target="_blank">SQL Practice Set</a>.</p>
+
+<div class="rek-banner " style="" banner-url="/course/sql-practice-set"></div>
+
+<p>You can also check our YouTube channel - We Learn SQL. There you will find episodes about SQL Subqueries and their variations. Remember to subscribe and, if you like it, give it a thumbs up.</p>
+
+<div class="youtube-wrapper " style="--widthAR: 16; --heightAR: 9; "><iframe src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/GA7Td6R4OSs.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+<p>Subqueries will definitely make you a much more powerful SQL user. Happy learning!</p>
+
+<div style="z-index: 100; height: 3px; background-color: rgb(241, 241, 241); position: fixed; width: 100%; top: 0px; left: 0px;"><div style="position: absolute; width: 63.5786%; height: 100%; background-color: rgb(0, 109, 255); transition: width 0.3s linear 0s;"></div></div></div>
+    </div>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://google.com/article"
+ },
+ "headline": "What Is a Nested Query in SQL?",
+ "image": [
+      "https://learnsql.com/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL.jpg"
+ ],
+ "datePublished": "2020-05-07T17:00:00+02:00",
+ "dateModified": "2020-05-07T17:00:00+02:00",
+ "author": {
+    "@type": "Person",
+    "name": "Kateryna Koidan"
+ },
+ "publisher": {
+    "@type": "Organization",
+    "name": "LearnSQL.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cdn.vertabelo.com/lsc/blog/img/logo.png"
+    }
+ },
+ "description": "Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL."
+}
+</script>
+
+    <div class="blog-post-tags-below">
+      
+<div class="summary-tags">
+  <ul class="summary-tags-list">
+      <div class="summary-tags-title">Tags:</div>
+      
+       <li class="summary-tags-list-element">
+         <a href="https://learnsql.com/tags/sql">sql</a>
+       </li>
+      
+       <li class="summary-tags-list-element">
+         <a href="https://learnsql.com/tags/learn-sql">learn sql</a>
+       </li>
+      
+       <li class="summary-tags-list-element">
+         <a href="https://learnsql.com/tags/subquery">subquery</a>
+       </li>
+      
+    </ul>
+</div>
+
+
+    </div>
+<div class="related-posts">
+  <h3>You may also like</h3>
+  <div class="related-posts__content row blog-post-container">
+    <div class="tns-outer" id="tns1-ow"><div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">4 to 6</span>  of 8</div><div id="tns1-mw" class="tns-ovh"><div class="tns-inner" id="tns1-iw"><div class="tiny-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" id="tns1" style="transition-duration: 0s; transform: translate3d(-18.75%, 0px, 0px);"><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-subquery-cte-difference/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-subquery-cte-difference/sql-subquery-cte-difference_hu549457b1ecf193bf543e354e8e9c6a9e_512138_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Subquery vs. CTE: A SQL Primer</div>
+              <div class="excerpt">
+              SQL subqueries and CTEs seem similar, but even pros may not know all their quirks. Learn their similarities, differences, and best use cases.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-subquery-for-beginners/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-subquery-for-beginners/sql-subquery-for-beginners_hu27bb4e829040221c26313130205e3f32_415956_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Beginner’s Guide to the SQL Subquery</div>
+              <div class="excerpt">
+              Did you know that you can use a SQL query inside another SQL query? Find out the ABCs of subqueries and improve your SQL skills!
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-nested-select/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL_huc3ea215d5ebbe7b39ffafa48d8f89807_1709621_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">What Is a Nested Query in SQL?</div>
+              <div class="excerpt">
+              Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div><div class="tns-item tns-slide-cloned tns-slide-active">
+        <a href="https://learnsql.com/blog/converting-subqueries-joins/" class="related-posts__item">
+          
+            
+            
+            
+            <img class="tns-lazy-img loaded tns-complete" height="550px" data-src="/blog/converting-subqueries-joins/generated__CONVERTING-SUBQUERIES-TO-JOINS-980.png_hu639ddafa92f50ff406577ac586a7fdb3_153843_968x550_fill_q90_box_center.jpg" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/generated__CONVERTING-SUBQUERIES-TO-JOINS-980.png_hu639ddafa92f50ff406577ac586a7fdb3_153843_968x550_fill_q90_.jpg" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Converting Subqueries to Joins</div>
+              <div class="excerpt">
+              No more badly performed queries! Find out how you can convert SQL subqueries to joins and improve your query efficiency.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      
+      <div class="tns-item tns-slide-active" id="tns1-item0">
+        <a href="https://learnsql.com/blog/correlated-sql-subqueries-newbies/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img loaded tns-complete" height="550px" data-src="/blog/correlated-sql-subqueries-newbies/correlated-subqueries_hudcaadb9410bb114799a37bcc33ae8335_163027_968x550_fill_q90_box_center.jpg" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/correlated-subqueries_hudcaadb9410bb114799a37bcc33ae8335_163027_968x550_fill_q90_box_center.jpg" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Correlated Subquery in SQL: A Beginner’s Guide</div>
+              <div class="excerpt">
+              Correlated subqueries are the only way to solve some SQL statements. But they can be very slow. In this post, we’ll talk about why, how, and when to use them.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item tns-slide-active" id="tns1-item1">
+        <a href="https://learnsql.com/blog/correlated-sql-subquery-5-minutes/" class="related-posts__item">
+          
+            
+            
+            
+            <img class="tns-lazy-img loaded tns-complete" height="550px" data-src="/blog/correlated-sql-subquery-5-minutes/generated__Correlated-subqueries-in-5-minutes.png_hue3e6c0a73667d082d7e497f082534275_210593_968x550_fill_q90_box_center.jpg" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/generated__Correlated-subqueries-in-5-minutes.png_hue3e6c0a73667d082d7e497f082534275_210593_968x550_fill_q90_.jpg" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Learn to Write a SQL Correlated Subquery in 5 Minutes</div>
+              <div class="excerpt">
+              A correlated subquery is a subquery that is executed many times—once for each record (row) returned by the outer (main) query. Sounds complex? Not!
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item" id="tns1-item2" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-subqueries/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-subqueries/matryoshka_huda791932de0301bc323f45fe731bd3aa_95545_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">SQL Subqueries</div>
+              <div class="excerpt">
+              The article describes what a subquery is and what these useful statements look like. We will cover basic examples with the IN, EXISTS, ANY, and ALL operators, look at subqueries in FROM and WHERE clauses, and explore the difference between correlated and nested subqueries.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item" id="tns1-item3" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/subquery-vs-join/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/subquery-vs-join/Subquery-vs-JOIN_hu964c90ffee456fc05612f6d9f20714ee_235699_968x550_fill_box_center_2.png" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Subquery vs. JOIN</div>
+              <div class="excerpt">
+              What are the differences between a subquery and a JOIN in SQL? How do you choose one over the other? See examples of when to use which.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item" id="tns1-item4" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-subquery-cte-difference/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-subquery-cte-difference/sql-subquery-cte-difference_hu549457b1ecf193bf543e354e8e9c6a9e_512138_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Subquery vs. CTE: A SQL Primer</div>
+              <div class="excerpt">
+              SQL subqueries and CTEs seem similar, but even pros may not know all their quirks. Learn their similarities, differences, and best use cases.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item" id="tns1-item5" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-subquery-for-beginners/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-subquery-for-beginners/sql-subquery-for-beginners_hu27bb4e829040221c26313130205e3f32_415956_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Beginner’s Guide to the SQL Subquery</div>
+              <div class="excerpt">
+              Did you know that you can use a SQL query inside another SQL query? Find out the ABCs of subqueries and improve your SQL skills!
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item" id="tns1-item6" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-nested-select/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-nested-select/What-Is-a-Nested-Query-in-SQL_huc3ea215d5ebbe7b39ffafa48d8f89807_1709621_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">What Is a Nested Query in SQL?</div>
+              <div class="excerpt">
+              Have you ever faced a problem where it would be great to put a SELECT inside another SELECT statement? Learn how to use a nested query in SQL.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+      
+      
+      
+      <div class="tns-item" id="tns1-item7" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/converting-subqueries-joins/" class="related-posts__item">
+          
+            
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/converting-subqueries-joins/generated__CONVERTING-SUBQUERIES-TO-JOINS-980.png_hu639ddafa92f50ff406577ac586a7fdb3_153843_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Converting Subqueries to Joins</div>
+              <div class="excerpt">
+              No more badly performed queries! Find out how you can convert SQL subqueries to joins and improve your query efficiency.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div>
+      
+    
+    <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/correlated-sql-subqueries-newbies/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/correlated-sql-subqueries-newbies/correlated-subqueries_hudcaadb9410bb114799a37bcc33ae8335_163027_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Correlated Subquery in SQL: A Beginner’s Guide</div>
+              <div class="excerpt">
+              Correlated subqueries are the only way to solve some SQL statements. But they can be very slow. In this post, we’ll talk about why, how, and when to use them.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/correlated-sql-subquery-5-minutes/" class="related-posts__item">
+          
+            
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/correlated-sql-subquery-5-minutes/generated__Correlated-subqueries-in-5-minutes.png_hue3e6c0a73667d082d7e497f082534275_210593_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Learn to Write a SQL Correlated Subquery in 5 Minutes</div>
+              <div class="excerpt">
+              A correlated subquery is a subquery that is executed many times—once for each record (row) returned by the outer (main) query. Sounds complex? Not!
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/sql-subqueries/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/sql-subqueries/matryoshka_huda791932de0301bc323f45fe731bd3aa_95545_968x550_fill_q90_box_center.jpg" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">SQL Subqueries</div>
+              <div class="excerpt">
+              The article describes what a subquery is and what these useful statements look like. We will cover basic examples with the IN, EXISTS, ANY, and ALL operators, look at subqueries in FROM and WHERE clauses, and explore the difference between correlated and nested subqueries.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+        <a href="https://learnsql.com/blog/subquery-vs-join/" class="related-posts__item">
+          
+            
+            
+              
+            
+            
+            <img class="tns-lazy-img" height="550px" data-src="/blog/subquery-vs-join/Subquery-vs-JOIN_hu964c90ffee456fc05612f6d9f20714ee_235699_968x550_fill_box_center_2.png" src="https://learnsql.com/blog/sql-nested-select/" alt="">
+          
+  
+          <div class="contents">
+            <div>
+              <div class="title">Subquery vs. JOIN</div>
+              <div class="excerpt">
+              What are the differences between a subquery and a JOIN in SQL? How do you choose one over the other? See examples of when to use which.
+              
+              </div> 
+            </div> 
+            <div class="summary-read-more"><span class="summary-read-more-link button--link">Read more</span></div>
+          </div>
+        </a>
+      </div></div></div></div><div class="tns-nav" aria-label="Carousel Pagination"><button type="button" data-nav="0" aria-controls="tns1" style="" aria-label="Carousel Page 1 (Current Slide)" class="tns-nav-active"></button><button type="button" data-nav="1" tabindex="-1" aria-controls="tns1" style="" aria-label="Carousel Page 2"></button><button type="button" data-nav="2" tabindex="-1" aria-controls="tns1" style="" aria-label="Carousel Page 3"></button><button type="button" data-nav="3" tabindex="-1" aria-controls="tns1" style="display:none" aria-label="Carousel Page 4"></button><button type="button" data-nav="4" tabindex="-1" aria-controls="tns1" style="display:none" aria-label="Carousel Page 5"></button><button type="button" data-nav="5" tabindex="-1" aria-controls="tns1" style="display:none" aria-label="Carousel Page 6"></button><button type="button" data-nav="6" tabindex="-1" aria-controls="tns1" style="display:none" aria-label="Carousel Page 7"></button><button type="button" data-nav="7" tabindex="-1" aria-controls="tns1" style="display:none" aria-label="Carousel Page 8"></button></div><div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button type="button" data-controls="prev" tabindex="-1" aria-controls="tns1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ico_arrow_right" width="14px" height="12px" viewBox="0 0 14 12" version="1.1"><g id="02-HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="LearnSQL_Home" transform="translate(-1573.000000, -3348.000000)" fill="currentColor"><g id="SQL-Querying&amp;Reporting" transform="translate(0.000000, 1825.000000)"><g id="Tracks" transform="translate(311.000000, 1201.000000)"><g id="Arrows" transform="translate(0.000000, 298.000000)"><g id="arr" transform="translate(1239.000000, 0.000000)"><polygon id="ico_arrow_right" transform="translate(29.596830, 30.222222) scale(-1, 1) translate(-29.596830, -30.222222)" fill="currentColor" points="23 30 29.88856 36 31.0453754 35.0356723 25.8772488 30.7051965 36 30.7662506 36 29.2599792 25.8772488 29.1989252 31.0453754 24.8573326 29.7806604 24"></polygon></g></g></g></g></g></g></svg></button><button type="button" data-controls="next" tabindex="-1" aria-controls="tns1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ico_arrow_right" width="14px" height="12px" viewBox="0 0 14 12" version="1.1"><g id="02-HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="LearnSQL_Home" transform="translate(-1573.000000, -3348.000000)" fill="currentColor"><g id="SQL-Querying&amp;Reporting" transform="translate(0.000000, 1825.000000)"><g id="Tracks" transform="translate(311.000000, 1201.000000)"><g id="Arrows" transform="translate(0.000000, 298.000000)"><g id="arr" transform="translate(1239.000000, 0.000000)"><polygon id="ico_arrow_right" transform="translate(29.596830, 30.222222) scale(-1, 1) translate(-29.596830, -30.222222)" fill="currentColor" points="23 30 29.88856 36 31.0453754 35.0356723 25.8772488 30.7051965 36 30.7662506 36 29.2599792 25.8772488 29.1989252 31.0453754 24.8573326 29.7806604 24"></polygon></g></g></g></g></g></g></svg></button></div></div> 
+  </div> 
+</div> 
+
+
+<div style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ico_arrow_right" width="14px" height="12px" viewBox="0 0 14 12" version="1.1"><g id="02-HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="LearnSQL_Home" transform="translate(-1573.000000, -3348.000000)" fill="currentColor"><g id="SQL-Querying&amp;Reporting" transform="translate(0.000000, 1825.000000)"><g id="Tracks" transform="translate(311.000000, 1201.000000)"><g id="Arrows" transform="translate(0.000000, 298.000000)"><g id="arr" transform="translate(1239.000000, 0.000000)"><polygon id="ico_arrow_right" transform="translate(29.596830, 30.222222) scale(-1, 1) translate(-29.596830, -30.222222)" fill="currentColor" points="23 30 29.88856 36 31.0453754 35.0356723 25.8772488 30.7051965 36 30.7662506 36 29.2599792 25.8772488 29.1989252 31.0453754 24.8573326 29.7806604 24"></polygon></g></g></g></g></g></g></svg></div>
+
+<script type="text/javascript">
+  var sliderContainer = document.querySelector('.tiny-slider');
+  var slider = tns({
+    container: sliderContainer,
+    loop: true,
+    center: true,
+    gutter: 10,
+    nav: true,
+    navPosition: "bottom",
+    controlsPosition: "bottom",
+    mouseDrag: true,
+    lazyload: true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 2
+        },
+        800: {
+            items: 3
+        },
+    },
+    controlsText: [
+      document.querySelector("#ico_arrow_right").outerHTML,
+      document.querySelector("#ico_arrow_right").outerHTML,
+    ]
+  });
+</script>
+
+<div class="blog-post-newsletter" style="background-image:url(https://cdn.vertabelo.com/lsc/blog/img/Bg.png)"> 
+    
+    <div id="mc_embed_signup">
+        <form action="https://learnsql.us11.list-manage.com/subscribe/post?u=9b8d486cb0c5e78ce5fb6818a&amp;id=e086f7de13" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+            <div class="newsletter_content" id="mc_embed_signup_scroll">
+                <span class="newsletter_title">Subscribe to our newsletter</span>
+                <span class="newsletter_subtitle">Join our weekly newsletter to be <br> notified about the latest posts.</span>
+                <div class="mc-field-group">
+                    <input class="newsletter_email" id="mce-EMAIL" name="EMAIL" placeholder="Email address"> 
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9b8d486cb0c5e78ce5fb6818a_e086f7de13" tabindex="-1" value=""></div>
+                <div class="clear">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/mc-validate.js.download"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    
+ </div>
+<div class="blog-post-see-also blog-post-container"></div>
+    <div class="post-navigation blog-post-container">
+       
+    </div>
+
+    <aside>
+
+
+    </aside>
+  </article>
+
+  <a class="to-top home sticky_scroll" href="https://learnsql.com/blog/sql-nested-select/#top" style="">
+    <img src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/Arrow.png" alt="go to top">
+</a>
+</div>
+
+
+    </main>
+
+
+
+<footer class="footer" role="contentinfo">
+    <div class="footer__main-section">
+        <div class="footer__quick-links">
+            <h3 class="footer__header">Quick links</h3>
+            <ul class="footer__quick-link-list">
+                <li class="footer__quick-link-list-item"><a href="https://learnsql.com/pricing">Pricing</a></li>
+                <li class="footer__quick-link-list-item"><a href="https://learnsql.com/blog">Blog</a></li>
+                <li class="footer__quick-link-list-item"><a href="https://learnsql.com/cookbook">Cookbook</a></li>
+                <li class="footer__quick-link-list-item"><a href="https://vertabelo.com/">Vertabelo.com</a></li>
+            </ul>
+        </div>
+        <div class="footer__assistance">
+            <h3 class="footer__header">Assistance</h3>
+            <p class="footer__assistance-content">Need assistance? Drop us a line at: contact@learnsql.com</p>
+            <a class="button--footer" href="mailto:contact@learnsql.com">Write to us</a>
+        </div>
+        <div class="footer__follow-us">
+            <h3 class="footer__header">Follow us</h3>
+            <div class="footer__social-share">
+                <a class="footer__social-share-item" href="https://www.facebook.com/groups/welearnsql/" aria-label="Facebook We Learn SQL">
+                    <svg width="10px" height="16px" viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        
+                        <title>We Learn SQL Facebook</title>
+                        <desc>We Learn SQL Facebook</desc>
+                        <g id="08-SIGN-UP-/-SIGN-IN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="LearnSQL_SignIn-1" transform="translate(-1213.000000, -272.000000)" fill="currentColor" fill-rule="nonzero">
+                                <g id="Right-side" transform="translate(1074.000000, 180.000000)">
+                                    <g id="Form" transform="translate(30.000000, 0.000000)">
+                                        <g id="Buttons" transform="translate(0.000000, 81.000000)">
+                                            <g id="Fb" transform="translate(99.000000, 0.000000)">
+                                                <path d="M13.02293,27 L13,20 L10,20 L10,17 L13,17 L13,15 C13,12.3008 14.67151,11 17.07938,11 C18.23277,11 19.22406,11.08587 19.51294,11.12425 L19.51294,13.94507 L17.84296,13.94583 C16.53343,13.94583 16.27987,14.5681 16.27987,15.48124 L16.27987,17 L20,17 L19,20 L16.27986,20 L16.27986,27 L13.02293,27 Z" id="ico_fb"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a class="footer__social-share-item" href="https://www.linkedin.com/company/vertabelo/" aria-label="Linkedin Vertabelo">
+                    <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        
+                        <title>Vertabelo Linkedin</title>
+                        <desc>Vertabelo Linkedin</desc>
+                        <g id="02-HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="LearnSQL_Home" transform="translate(-1383.000000, -9043.000000)" fill="currentColor" fill-rule="nonzero">
+                                <g id="Footer" transform="translate(0.000000, 8867.000000)">
+                                    <g id="Follow-us" transform="translate(1171.000000, 106.000000)">
+                                        <g id="social" transform="translate(0.000000, 56.000000)">
+                                            <g id="linkedin" transform="translate(195.000000, 0.000000)">
+                                                <g id="ico_linkedin" transform="translate(17.000000, 14.000000)">
+                                                    <path d="M3.25883871,4.49843203 C3.38357419,4.49843203 3.48464516,4.59977111 3.48464516,4.72473636 L3.48464516,4.72473636 L3.48464516,13.7736504 C3.48464516,13.8986609 3.38357419,13.9999547 3.25883871,13.9999547 L3.25883871,13.9999547 L0.448316129,13.9999547 C0.323580645,13.9999547 0.222509677,13.8986609 0.222509677,13.7736504 L0.222509677,13.7736504 L0.222509677,4.72473636 C0.222509677,4.59977111 0.323580645,4.49843203 0.448316129,4.49843203 L0.448316129,4.49843203 Z M10.4076,4.2735308 C13.5731806,4.2735308 14,6.56685353 14,8.81020826 L14,13.7736957 C14,13.8987062 13.898929,14 13.7741935,14 L13.7741935,14 L10.9687742,14 C10.8440387,14 10.7429677,13.8987062 10.7429677,13.7736957 L10.7429677,13.7736957 L10.7423737,9.21518237 C10.7330817,8.06218615 10.6024592,7.20009828 9.50929677,7.20009828 C8.45992903,7.20009828 8.05103871,7.78785586 8.05103871,9.29653625 L8.05103871,9.29653625 L8.05103871,13.7736504 C8.05103871,13.8986609 7.94996774,14 7.82523226,14 L7.82523226,14 L5.02085161,14 C4.89611613,14 4.79504516,13.8986609 4.79504516,13.7736504 L4.79504516,13.7736504 L4.79504516,4.72473636 C4.79504516,4.59977111 4.89611613,4.49843203 5.02085161,4.49843203 L5.02085161,4.49843203 L7.71241935,4.49843203 C7.83715484,4.49843203 7.93822581,4.59977111 7.93822581,4.72473636 L7.93822581,4.72473636 L7.93822581,5.31244868 C8.44434839,4.75985879 9.27879355,4.2735308 10.4076,4.2735308 Z M1.85459355,5.47117907e-13 C2.8764129,5.47117907e-13 3.70774194,0.832890423 3.70769677,1.85664591 C3.70769677,2.88080875 2.8764129,3.71406126 1.85459355,3.71406126 C0.83196129,3.71406126 -3.55271368e-14,2.88085401 -3.55271368e-14,1.85664591 C-3.55271368e-14,0.832890423 0.83196129,5.47117907e-13 1.85459355,5.47117907e-13 Z" id="linkedin"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a class="footer__social-share-item" href="https://www.youtube.com/channel/UCMbqEtWNIz5mEqrblj_axBA?view_as=subscriber" aria-label="YouTube We Learn SQL">
+                    <svg width="18px" height="13px" viewBox="0 0 18 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        
+                        <title>We Learn SQL Youtube</title>
+                        <desc>We Learn SQL Youtube</desc>
+                        <defs>
+                            <polygon id="path-1" points="3.31695612e-05 8.95408163e-05 17.5902673 8.95408163e-05 17.5902673 12.7182634 3.31695612e-05 12.7182634"></polygon>
+                        </defs>
+                        <g id="02-HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="LearnSQL_Home" transform="translate(-1315.000000, -9045.000000)">
+                                <g id="Footer" transform="translate(0.000000, 8867.000000)">
+                                    <g id="Follow-us" transform="translate(1171.000000, 106.000000)">
+                                        <g id="social" transform="translate(0.000000, 56.000000)">
+                                            <g id="youtube" transform="translate(130.000000, 0.000000)">
+                                                <g id="ico_yt" transform="translate(14.000000, 16.000000)">
+                                                    <mask id="mask-2" fill="#FFFFFF">
+                                                        <use xlink:href="#path-1"></use>
+                                                    </mask>
+                                                    <g id="Mask"></g>
+                                                    <path d="M6.6284325,9.0948398 L6.6284325,3.23081173 C8.4509325,4.21217908 10.2578111,5.18548776 12.0915932,6.17222755 C10.2612825,7.15180408 8.45266821,8.1188449 6.6284325,9.0948398 M17.1121468,1.65220714 C16.8682789,0.998559184 16.4187289,0.570554082 15.7860611,0.336852551 C14.7055789,-0.0651857143 5.33011821,-0.113537755 2.2969575,0.223135714 C1.70681464,0.289395918 1.21213607,0.562495408 0.8268075,1.02900306 C-0.297935357,2.39629133 -0.125231786,9.33570459 0.459703929,10.9940005 C0.6992325,11.6736153 1.14617893,12.1231102 1.80922179,12.3478577 C3.29846464,12.8537633 14.9459754,12.8609265 16.0767932,12.2484673 C16.4959682,12.0228245 16.8257539,11.70585 17.0270968,11.2581459 C17.7751896,9.60611786 17.7517575,3.36780918 17.1121468,1.65220714" id="Fill-1" fill="currentColor" mask="url(#mask-2)"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__hr"></div>
+    <div class="footer__bottom-text">
+        <div class="footer__copyright">
+            Copyright ©2016-<span id="current-year">2021</span> <a class="footer__vertabelo-link" href="https://www.vertabelo.com/">Vertabelo SA</a> All rights reserved
+            <script content-type="text/javascript">
+                document.getElementById("current-year").innerHTML = new Date().getFullYear();
+            </script>
+        </div>
+        <div class="footer__logo">
+            <img src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/vertabelo-logo.svg" xmlns="http://www.w3.org/2000/svg" alt="Vertabelo">
+        </div>
+        <ul class="footer__policies-list">
+            <li class="footer__policies-list-item"><a href="https://learnsql.com/files/terms-of-service">Terms of service</a></li>
+            <li class="footer__policies-list-item"><a href="https://learnsql.com/files/privacy-policy">Privacy policy</a></li>
+            <li class="footer__policies-list-item"><a href="https://learnsql.com/imprint">Imprint</a></li>
+        </ul> 
+    </div>
+</footer>
+<script type="text/javascript" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/blog-banners.js.download"></script>
+<script type="text/javascript">
+(function(){
+  var bannerCamp = "_default";
+  loadBlogBanners(bannerCamp);
+})();
+</script>
+
+<script type="text/javascript" id="" src="./What Is a Nested Query in SQL_ _ LearnSQL.com_files/pa-5f7c936d35289b001300009b.js.download"></script><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div><div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;"></div></body></html>

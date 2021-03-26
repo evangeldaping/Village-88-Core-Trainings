@@ -1,71 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>World I</title>
+        <style>
+            * {
+                box-sizing: border-box
+            }
+        
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+        
+            .mySlides {
+                display: none
+            }
+        
+            main {
+                margin-left: -360px;
+            }
+        
+            img {
+                vertical-align: middle;
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+        
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+        
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+        
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
+        
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 110px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            .solution {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+        
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+        
+            .dots {
+                margin-left: 270px;
+            }
+        
+            h1 {
+                margin-left: 400px;
+            }
+        
+            .solution {
+                font-size: 20px;
+            }
+        
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+        
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+        
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+        
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
+            }
+        </style>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World I</title>
-    <style>
-        ol li {
-            font-size: 25px;
-        }
-    </style>
-</head>
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
 
-<body>
-    <h1>Come up with a query to accomplish each of the following tasks:</h1>
-    <ol>
-        <li>Get all the list of countries that are in the continent of Europe.
-            <img src="./Answers/1.png" alt="list of countries that are in the continent of Europe">
-        </li>
-        <li>Get all the list of countries that are in the continent of North America and Africa
-            <img src="./Answers/2.png" alt="list of countries that are in the continent of North America and Africa">
-        </li>
-        <li>Get all the list of cities that are part of a country with population greater than 100 millions
-            <img src="./Answers/3.png" alt="list of cities that are part of a country with population greater than 100 millions">
-        </li>
-        <li>Get all the list of countries (display the full country name) who speak 'Spanish' as their language
-            <img src="./Answers/4.png" alt="list of countries (display the full country name) who speak 'Spanish' as their language">
-        </li>
-        <li>Get all the list of countries (display the full country name) who speak 'Spanish' as their official language
-            <img src="./Answers/5.png" alt="list of countries (display the full country name) who speak 'Spanish' as their official language">
-        </li>
-        <li>Get all the list of countries (display the full country name) who speak either 'Spanish' or 'English' as their official
-            language
-            <img src="./Answers/6.png" alt="list of countries (display the full country name) who speak either 'Spanish' or 'English' as their official
-            language">
-        </li>
-        <li>Get all the list of countries (display the full country name) where 'Arabic' is spoken by more than 30% of the
-            population but where it's not the country's official language.
-            <img src="./Answers/7.png" alt="list of countries (display the full country name) where 'Arabic' is spoken by more than 30% of the
-            population but where it's not the country's official language">
-        </li>
-        <li>Get all the list of countries (display the full country name) where 'French' is the official language but where less
-            than 50% of the population in that country actually speaks that language.
-            <img src="./Answers/8.png"
-                alt="list of countries (display the full country name) where 'French' is the official language but where less
-            than 50% of the population in that country actually speaks that language">
-        </li>
-        <li>Get all the list of countries (display the full country name and the full language name) and their official language.
-            Order the result so that those with the same official language are shown together
-            <img src="./Answers/9.png" alt="list of countries (display the full country name and the full language name) and their official language.
-            Order the result so that those with the same official language are shown together">
-        </li>
-        <li>Get the top 100 cities with the most population. Display the city's full country name also as well as their official
-            language.
-            <img src="./Answers/10.png" alt="top 100 cities with the most population. Display the city's full country name also as well as their official
-            language">
-        </li>
-        <li>Get the top 100 cities with the most population where the life_expectancy for the country is less than 40.
-            <img src="./Answers/11.png"
-                alt="top 100 cities with the most population where the life_expectancy for the country is less than 40">
-        </li>
-        <li>Get the top 100 countries who speak English and where life expectancy is highest. Show the country with the highest life
-            expectancy first.
-            <img src="./Answers/12.png" alt="top 100 countries who speak English and where life expectancy is highest. Show the country with the highest life
-            expectancy first">
-        </li>
-    </ol>
-</body>
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>Come up with a query to accomplish each of the following tasks:</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 12</div>
+                        <img src="./Answers/1.png" alt="list of countries that are in the continent of Europe">
+                        <div class="text">Get all the list of countries that are in the continent of Europe.</div>
+                        <div class="solution">
+                            SELECT * FROM country
+                            WHERE continent = 'Europe';
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 12</div>
+                        <img src="./Answers/2.png" alt="list of countries that are in the continent of North America and Africa">
+                        <div class="text">Get all the list of countries that are in the continent of North America and Africa</div>
+                        <div class="solution">
+                            SELECT * FROM country
+                            WHERE continent in ('North America', 'Africa');
+                        </div>
+                    </div>
+            
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 12</div>
+                        <img src="./Answers/3.png" alt="list of cities that are part of a country with population greater than 100 millions">
+                        <div class="text">Get all the list of cities that are part of a country with population greater than 100 millions</div>
+                        <div class="solution">
+                            SELECT Countrycode AS country_code,
+                            country.name AS country_name,
+                            Continent AS continent,
+                            country.population AS country_population,
+                            city.name as city
+                            FROM country
+                            LEFT JOIN city ON city.CountryCode = country.Code
+                            WHERE country.Population > 100000000;
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 12</div>
+                        <img src="./Answers/4.png" alt="list of countries (display the full country name) who speak 'Spanish' as their language">
+                        <div class="text">Get all the list of countries (display the full country name) who speak 'Spanish' as their language</div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            countrylanguage.Language AS language
+                            FROM country
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                            WHERE countrylanguage.Language = 'Spanish';
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 12</div>
+                        <img src="./Answers/5.png" alt="list of countries (display the full country name) who speak 'Spanish' as their official language">
+                        <div class="text">Get all the list of countries (display the full country name) who speak 'Spanish' as their official language</div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            countrylanguage.Language AS language,
+                            IsOfficial
+                            FROM country
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                            WHERE countrylanguage.Language = 'Spanish'
+                            AND countrylanguage.IsOfficial = 'T';
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">6 / 12</div>
+                        <img src="./Answers/6.png" alt="list of countries (display the full country name) who speak either 'Spanish' or 'English' as their official language">
+                        <div class="text">
+                            Get all the list of countries (display the full country name) who speak either 'Spanish' or 'English' as their official language
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            countrylanguage.Language AS language
+                            FROM country
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                            WHERE language = 'English'
+                            OR language = 'Spanish';
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">7 / 12</div>
+                        <img src="./Answers/7.png" alt="list of countries (display the full country name) where 'Arabic' is spoken by more than 30% of the
+                                        population but where it's not the country's official language">
+                        <div class="text">
+                            Get all the list of countries (display the full country name) where 'Arabic' is spoken by more than 30% of the
+                            population but where it's not the country's official language.
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            countrylanguage.Language AS language,
+                            Percentage as percentage,
+                            IsOfficial
+                            FROM country
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                            WHERE language = 'Arabic'
+                            AND countrylanguage.Percentage > '30%'
+                            AND countrylanguage.IsOfficial = 'F';
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">8 / 12</div>
+                        <img src="./Answers/8.png" alt="list of countries (display the full country name) where 'French' is the official language but where less
+                                    than 50% of the population in that country actually speaks that language">
+                        <div class="text">
+                            Get all the list of countries (display the full country name) where 'French' is the official language but where less
+                            than 50% of the population in that country actually speaks that language.
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            countrylanguage.Language AS language,
+                            IsOfficial,
+                            Percentage as percentage
+                            FROM country
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                            WHERE language = 'French'
+                            AND countrylanguage.Percentage < '50%' AND countrylanguage.IsOfficial='T' ;
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">9 / 12</div>
+                        <img src="./Answers/9.png" alt="list of countries (display the full country name and the full language name) and their official language.
+                                Order the result so that those with the same official language are shown together">
+                        <div class="text">
+                            Get all the list of countries (display the full country name and the full language name) and their official language.
+                            Order the result so that those with the same official language are shown together
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            countrylanguage.Language AS language,
+                            IsOfficial
+                            FROM country
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = country.Code
+                            WHERE countrylanguage.IsOfficial = TRUE
+                            GROUP BY country.Name
+                            ORDER BY countrylanguage.Language ASC;
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">10 / 12</div>
+                            <img src="./Answers/10.png" alt="top 100 cities with the most population. Display the city's full country name also as well as their official language">
+                        <div class="text">
+                            Get the top 100 cities with the most population. Display the city's full country name also as well as their official
+                            language.
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            city.Name AS city,
+                            countrylanguage.Language AS language,
+                            IsOfficial
+                            FROM city
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = city.CountryCode
+                            LEFT JOIN country ON city.CountryCode = country.Code
+                            WHERE countrylanguage.IsOfficial = TRUE
+                            GROUP BY country.name
+                            order by city.Population DESC
+                            LIMIT 100;
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">11 / 12</div>
+                        <img src="./Answers/11.png"
+                            alt="top 100 cities with the most population where the life_expectancy for the country is less than 40">
+                        <div class="text">
+                            Get the top 100 cities with the most population where the life_expectancy for the country is less than 40.
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            LifeExpectancy,
+                            city.Name AS city,
+                            city.Population
+                            FROM city
+                            LEFT JOIN country ON city.CountryCode = country.Code
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = city.CountryCode
+                            WHERE country.LifeExpectancy < 40 GROUP BY city.Name ORDER BY city.Population DESC LIMIT 100;
+                        </div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">12 / 12</div>
+                        <img src="./Answers/12.png" alt="top 100 countries who speak English and where life expectancy is highest. Show the country with the highest life
+                                    expectancy first">
+                        <div class="text">
+                            Get the top 100 countries who speak English and where life expectancy is highest. Show the country with the highest life
+                            expectancy first.
+                        </div>
+                        <div class="solution">
+                            SELECT country.name AS country,
+                            city.Name AS city,
+                            LifeExpectancy
+                            FROM city
+                            LEFT JOIN country ON city.CountryCode = country.Code
+                            LEFT JOIN countrylanguage ON countrylanguage.CountryCode = city.CountryCode
+                            WHERE countrylanguage.Language = 'English'
+                            GROUP BY city
+                            ORDER BY LifeExpectancy DESC
+                            LIMIT 100;
+                        </div>
+                    </div>
+        
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+                </div>
+                <br>
+        
+                <div class="dots" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+                    <span class="dot" onclick="currentSlide(11)"></span>
+                    <span class="dot" onclick="currentSlide(12)"></span>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>

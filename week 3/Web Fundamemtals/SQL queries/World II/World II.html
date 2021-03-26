@@ -6,87 +6,422 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>World II</title>
         <style>
-            ol li {
-                font-size: 25px;
+            * {
+                box-sizing: border-box
+            }
+        
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+        
+            .mySlides {
+                display: none
+            }
+        
+            main {
+                margin-left: -360px;
+            }
+        
+            img {
+                vertical-align: middle;
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+        
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+        
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+        
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
+        
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 110px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            .solution {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+        
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+        
+            .dots {
+                margin-left: 270px;
+            }
+        
+            h1 {
+                margin-left: 400px;
+            }
+        
+            .solution {
+                font-size: 20px;
+            }
+        
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+        
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+        
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+        
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
             }
         </style>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
     </head>
     <body>
-        <h1>Please come up with a SQL query to obtain answers for each of the following question:</h1>
-        <ol>
-            <li>How many countries in each continent, have life expectancy greater than 70?
-                <img src="./Answers/1.png" alt="countries with life expectancy greater than 70">
-            </li>
-            <li>How many countries in each continent have life expectancy between 60 and 70?
-                <img src="./Answers/2.png" alt="countries with life expectancy between 60 and 70">
-            </li>
-            <li>How many countries have life expectancy greater than 75?
-                <img src="./Answers/3.png" alt="countries have life expectancy greater than 75">
-            </li>
-            <li>How many countries have life expectancy less than 40?
-                <img src="./Answers/4.png" alt="countries have life expectancy less than 40">
-            </li>
-            <li>How many people live in the top 10 countries with the most population?
-                <img src="./Answers/5.png" alt="top 10 countries with the most populatione">
-            </li>
-            <li>According to the world database, how many people are there in the world?
-                <img src="./Answers/6.png" alt="how many people are there in the world?">
-            </li>
-            <li>Show results for continents where it shows the continent name and the total population. Only show results where the
-            total_population for the continent is more than 500,00,000. If. the continent doesn't have 500,000,000 people, do NOT
-            show the result.
-                <img src="./Answers/7.png" alt="Only show results where the
-            total_population for the continent is more than 500,00,000. If. the continent doesn't have 500,000,000 people, do NOT
-            show the result.">
-            </li>
-            <li>Show results of all continents that has average life expectancy for the continent to be less than 71. Show each of these
-                continent name, how many countries there are in each of the continent, total population for the continent, as well as
-                the life expectancy of this continent. For example, as Europe and North America both have continent life expectancy
-                greater than 71, these continents shouldn't show up in your sql results.
-                <img src="./Answers/8.png"
-                    alt="Show results of all continents that has average life expectancy for the continent to be less than 71.">
-            </li>
-            <ul>
-                <li>
-                    For the average life expectancy, for simplicity, just assume that you can use the AVG aggregate function. To compute the
-                    true average life expectancy, we would need to do something slightly more advanced, but for now, just assume that you
-                    can use the AVG function for now.
-                </li>
-                <li>
-                    Now that you've used the group by a bit, let's now have you use this together with other records that were joined from
-                    multiple tables.
-                </li>
-                <li>
-                    Now, write a SQL query to obtain answers to the following questions:
-                </li>
-                <ol>
-                    <li>How many cities are there for each of the country? Show the total city count for each country where you display the full
+        <main>
+            <h1>Please come up with a SQL query to obtain answers for each of the following question:</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 13</div>
+                    <img src="./Answers/1.png" alt="countries with life expectancy greater than 70">
+                    <div class="text">How many countries in each continent, have life expectancy greater than 70?</div>
+                    <div class="solution">
+                        SELECT country.continent,
+                        COUNT(country.name) AS total_countries,
+                        lifeexpectancy
+                        FROM country
+                        WHERE country.LifeExpectancy > '70%'
+                        GROUP BY country.continent;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 13</div>
+                    <img src="./Answers/2.png" alt="countries with life expectancy between 60 and 70">
+                    <div class="text">How many countries in each continent have life expectancy between 60 and 70?</div>
+                    <div class="solution">
+                        SELECT country.continent,
+                        COUNT(country.name) AS total_countries,
+                        lifeexpectancy
+                        FROM country
+                        WHERE country.LifeExpectancy BETWEEN '60%' AND '70%'
+                        GROUP BY country.continent;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 13</div>
+                    <img src="./Answers/3.png" alt="countries have life expectancy greater than 75">
+                    <div class="text">How many countries have life expectancy greater than 75?</div>
+                    <div class="solution">
+                        SELECT country.name AS country,
+                        lifeexpectancy
+                        FROM country
+                        WHERE country.LifeExpectancy > '75%'
+                        GROUP BY country.name;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 13</div>
+                    <img src="./Answers/4.png" alt="countries have life expectancy less than 40">
+                    <div class="text">How many countries have life expectancy less than 40?</div>
+                    <div class="solution">
+                        SELECT country.name AS country,
+                        lifeexpectancy
+                        FROM country
+                        WHERE country.LifeExpectancy < '40%' GROUP BY country.name;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 13</div>
+                    <img src="./Answers/5.png" alt="top 10 countries with the most populatione">
+                    <div class="text">How many people live in the top 10 countries with the most population?</div>
+                    <div class="solution">
+                        SELECT country.name AS country,
+                        SUM(population) AS populations
+                        FROM country
+                        GROUP BY country.Population
+                        ORDER BY country.Population DESC
+                        LIMIT 10;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 13</div>
+                    <img src="./Answers/6.png" alt="how many people are there in the world?">
+                    <div class="text">
+                        According to the world database, how many people are there in the world?
+                    </div>
+                    <div class="solution">
+                        SELECT SUM(population) AS total_population
+                        FROM country;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 13</div>
+                    <img src="./Answers/7.png" alt="Only show results where the
+                                total_population for the continent is more than 500,00,000. If. the continent doesn't have 500,000,000 people, do NOT
+                                show the result.">
+                    <div class="text">
+                        Show results for continents where it shows the continent name and the total population. Only show results where the
+                        total_population for the continent is more than 500,00,000. If. the continent doesn't have 500,000,000 people, do NOT
+                        show the result.
+                    </div>
+                    <div class="solution">
+                        SELECT country.continent, SUM(population) AS total_population
+                        FROM country
+                        GROUP BY Continent
+                        HAVING SUM(population) > 500000000;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 13</div>
+                    <img src="./Answers/8.png"
+                        alt="Show results of all continents that has average life expectancy for the continent to be less than 71.">
+                    <div class="text">
+                        Show results of all continents that has average life expectancy for the continent to be less than 71. Show each of these
+                        continent name, how many countries there are in each of the continent, total population for the continent, as well as
+                        the life expectancy of this continent. For example, as Europe and North America both have continent life expectancy
+                        greater than 71, these continents shouldn't show up in your sql results.
+                    </div>
+                    <div class="solution">
+                        SELECT continent,
+                        COUNT(Name) AS country,
+                        SUM(population) AS total_population,
+                        AVG(LifeExpectancy) AS life_expectancy
+                        FROM country
+                        GROUP BY Continent
+                        HAVING AVG(LifeExpectancy) < 71;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 13</div>
+                    <img src="./Answers/9.png" alt="total city count for each country where you display the full country name">
+                    <div class="text">
+                        How many cities are there for each of the country? Show the total city count for each country where you display the full
                         country name.
-                        <img src="./Answers/9.png"
-                            alt="total city count for each country where you display the full country name">
-                    </li>
-                    <li>For each language, find out how many countries speak each language.
-                        <img src="./Answers/10.png"
-                            alt="find out how many countries speak each language">
-                    </li>
-                    <li>For each language, find out how many countries use that language as the official language.
-                        <img src="./Answers/11.png"
-                            alt="find out how many countries use that language as the official language">
-                    </li>
-                    <li>For each continent, find out how many cities there are (according to this database) and the average population of the
+                    </div>
+                    <div class="solution">
+                        SELECT country.Name AS country,
+                        COUNT(city.Name) AS number_of_cities
+                        FROM city
+                        LEFT JOIN country ON country.Code = city.CountryCode
+                        GROUP BY country.name;
+                    </div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">10 / 13</div>
+                    <img src="./Answers/10.png" alt="find out how many countries speak each language">
+                    <div class="text">
+                        For each language, find out how many countries speak each language.
+                    </div>
+                    <div class="solution">
+                        SELECT country.Name AS country,
+                        countrylanguage.Language AS language,
+                        COUNT(country.Name) AS number_of_countries
+                        FROM countrylanguage
+                        LEFT JOIN country ON country.Code = countrylanguage.CountryCode
+                        GROUP BY language;
+                    </div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">11 / 13</div>
+                    <img src="./Answers/11.png" alt="find out how many countries use that language as the official language">
+                    <div class="text">
+                        For each language, find out how many countries use that language as the official language.
+                    </div>
+                    <div class="solution">
+                        SELECT countrylanguage.Language,
+                        COUNT(country.name) AS total_countries,
+                        countrylanguage.IsOfficial
+                        FROM countrylanguage
+                        LEFT JOIN country ON countrylanguage.CountryCode = country.Code
+                        WHERE countrylanguage.IsOfficial = TRUE
+                        GROUP BY Language; 
+                    </div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">12 / 13</div>
+                    <img src="./Answers/12.png" alt="find out how many cities there are (according to this database) and the average population of the
+                            cities for each continent">
+                    <div class="text">
+                        For each continent, find out how many cities there are (according to this database) and the average population of the
                         cities for each continent. For example, for continent A, have it state the number of cities for that continent, and the
                         average city population for that continent.
-                        <img src="./Answers/12.png"
-                            alt="find out how many cities there are (according to this database) and the average population of the
-                        cities for each continent">
-                    </li>
-                    <li>(Advanced) Find out how many people in the world speak each language. Make sure the total sum of. this number is
-                    comparable to the total population in the world.
-                        <img src="./Answers/13.png"
-                            alt=" Find out how many people in the world speak each language">
-                    </li>
-                </ol>
-            </ul>
-        </ol>
+                    </div>
+                    <div class="solution">
+                    SELECT continent,
+                    COUNT(city.Name) AS total_cities,
+                    AVG(city.Population) AS average_cities_population
+                    FROM country
+                    LEFT JOIN city ON city.CountryCode = country.Code
+                    GROUP BY Continent
+                    HAVING AVG(city.Population);
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">13 / 13</div>
+                    <img src="./Answers/13.png" alt=" Find out how many people in the world speak each language">
+                    <div class="text">
+                        (Advanced) Find out how many people in the world speak each language. Make sure the total sum of. this number is
+                        comparable to the total population in the world.
+                    </div>
+                    <div class="solution">
+                        SELECT countrylanguage.Language,
+                        SUM(city.Population + country.Population) AS total_population
+                        FROM countrylanguage
+                        LEFT JOIN country ON countrylanguage.CountryCode = country.Code
+                        LEFT JOIN city ON city.CountryCode = country.Code
+                        GROUP BY countrylanguage.Language;
+                    </div>
+                </div>
+    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <br>
+    
+                <div class="dots" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+                    <span class="dot" onclick="currentSlide(11)"></span>
+                    <span class="dot" onclick="currentSlide(12)"></span>
+                    <span class="dot" onclick="currentSlide(13)"></span>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

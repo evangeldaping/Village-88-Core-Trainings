@@ -1,68 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakila II</title>
-    <style>
-        ol li {
-            font-size: 25px;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sakila II</title>
+        <style>
+            * {
+                box-sizing: border-box
+            }
+        
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+        
+            .mySlides {
+                display: none
+            }
+        
+            main {
+                margin-left: -360px;
+            }
+        
+            img {
+                vertical-align: middle;
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+        
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+        
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+        
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
+        
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 110px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            .solution {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+        
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+        
+            .dots {
+                margin-left: 270px;
+            }
+        
+            h1 {
+                margin-left: 650px;
+            }
 
-<body>
-    <h1>Write a query for each of these tasks:</h1>
-    <ol>
-        <li>Get all the list of customers.
-            <img src="./Answers/1.png" alt="list of customers">
-        </li>
-        <li>Get all the list of customers as well as their address.
-            <img src="./Answers/2.png" alt="list of customers as well as their address">
-        </li>
-        <li>Get all the list of customers as well as their address and the city name.
-            <img src="./Answers/3.png" alt="list of customers as well as their address and the city name">
-        </li>
-        <li>Get all the list of customers as well as their address, city name, and the country.
-            <img src="./Answers/4.png" alt="list of customers as well as their address, city name, and the country">
-        </li>
-        <li>Get all the list of customers who live in Bolivia
-            <img src="./Answers/5.png" alt="list of customers who live in Bolivia">
-        </li>
-        <li>Get all the list of customers who live in Bolivia, Germany and Greece
-            <img src="./Answers/6.png" alt="list of customers who live in Bolivia, Germany and Greece">
-        </li>
-        <li>Get all the list of customers who live in the city of Baku.
-            <img src="./Answers/7.png" alt="list of customers who live in the city of Baku">
-        </li>
-        <li>Get all the list of customers who live in the city of Baku, Beira, and Bergamo.
-            <img src="./Answers/8.png"
-                alt="list of customers who live in the city of Baku, Beira, and Bergamo">
-        </li>
-        <li>Get all the list of customers who live in a country where the country name's length is less than 5. Show the customer
-            with the longest full name first. (Hint: Look into how you can concatenate a string in SQL).
-            <img src="./Answers/9.png" alt="list of customers who live in a country where the country name's length is less than 5. Show the customer
-            with the longest full name first">
-        </li>
-        <li>Get all the list of customers who live in a city name whose length is more than 10. Order the result so that the
-            customers who live in the same country are shown together.
-            <img src="./Answers/10.png" alt="list of customers who live in a city name whose length is more than 10">
-        </li>
-        <li>Get all the list of customers who live in a city where the city name includes the word 'ba'. For example Arratuba or
-            Baiyin should show up in your result.
-            <img src="./Answers/11.png"
-                alt="list of customers who live in a city where the city name includes the word 'ba'">
-        </li>
-        <li>Get all the list of customers where the city name includes a space. Order the result so that customers who live in the
-            longest city are shown first.
-            <img src="./Answers/12.png" alt="list of customers where the city name includes a space">
-        </li>
-        <li>Get all the customers where the country name is longer than the city name.
-            <img src="./Answers/13.png" alt="all the customers where the country name is longer than the city name">
-        </li>
-    </ol>
-</body>
+            .solution {
+                font-size: 20px;
+            }
+        
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+        
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+        
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+        
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
+            }
+        </style>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
 
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+    </head>
+
+    <body>
+        <main>
+            <h1>Write a query for each of these tasks:</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 13</div>
+                    <img src="./Answers/1.png" alt="list of customers">
+                    <div class="text">Get all the list of customers.</div>
+                    <div class="solution">SELECT * FROM customer;</div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 13</div>
+                    <img src="./Answers/2.png" alt="list of customers as well as their address">
+                    <div class="text">Get all the list of customers as well as their address.</div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 13</div>
+                    <img src="./Answers/3.png" alt="list of customers as well as their address and the city name">
+                    <div class="text">Get all the list of customers as well as their address and the city name.</div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address, city
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 13</div>
+                    <img src="./Answers/4.png" alt="list of customers as well as their address, city name, and the country">
+                    <div class="text">Get all the list of customers as well as their address, city name, and the country.</div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address, city, country
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        INNER JOIN country ON city.country_id = country.country_id;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 13</div>
+                    <img src="./Answers/5.png" alt="list of customers who live in Bolivia">
+                    <div class="text">Get all the list of customers who live in Bolivia</div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address, city, country
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE country = 'Bolivia';
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 13</div>
+                    <img src="./Answers/6.png" alt="list of customers who live in Bolivia, Germany and Greece">
+                    <div class="text">
+                        Get all the list of customers who live in Bolivia, Germany and Greece
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address, city, country
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE country in ('Bolivia', 'Germany', 'Greece');
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 13</div>
+                    <img src="./Answers/7.png" alt="list of customers who live in the city of Baku">
+                    <div class="text">
+                        Get all the list of customers who live in the city of Baku.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address, city, country
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE city = 'Baku';
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 13</div>
+                    <img src="./Answers/8.png" alt="list of customers who live in the city of Baku, Beira, and Bergamo">
+                    <div class="text">
+                        Get all the list of customers who live in the city of Baku, Beira, and Bergamo.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, address, city, country
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE city in ('Baku', 'Beira', 'Bergamo');
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 13</div>
+                    <img src="./Answers/9.png" alt="list of customers who live in a country where the country name's length is less than 5. Show the customer
+                        with the longest full name first">
+                    <div class="text">
+                        Get all the list of customers who live in a country where the country name's length is less than 5. Show the customer
+                        with the longest full name first. (Hint: Look into how you can concatenate a string in SQL).
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, country, CHAR_LENGTH(country) AS country_name_length
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE CHAR_LENGTH(country) < 5 ORDER BY CHAR_LENGTH(country) DESC;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">10 / 13</div>
+                    <img src="./Answers/10.png" alt="list of customers who live in a city name whose length is more than 10">
+                    <div class="text">
+                        Get all the list of customers who live in a city name whose length is more than 10. Order the result so that the
+                        customers who live in the same country are shown together.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, country, city, CHAR_LENGTH(city) AS city_name_length
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE CHAR_LENGTH(city) > 10
+                        ORDER BY country, city ASC;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">11 / 13</div>
+                    <img src="./Answers/11.png" alt="list of customers who live in a city where the city name includes the word 'ba'">
+                    <div class="text">
+                        Get all the list of customers who live in a city where the city name includes the word 'ba'. For example Arratuba or
+                        Baiyin should show up in your result.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, country, city, CHAR_LENGTH(city) AS city_name_length
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE CHAR_LENGTH(city) > 10
+                        ORDER BY country, city ASC;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">12 / 13</div>
+                    <img src="./Answers/12.png" alt="list of customers where the city name includes a space">
+                    <div class="text">
+                        Get all the list of customers where the city name includes a space. Order the result so that customers who live in the
+                        longest city are shown first.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name, city, CHAR_LENGTH(city) AS city_name_length
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE CHAR_LENGTH(city)
+                        ORDER BY CHAR_LENGTH(city) DESC;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">13 / 13</div>
+                    <img src="./Answers/13.png" alt="all the customers where the country name is longer than the city name">
+                    <div class="text">
+                        Get all the customers where the country name is longer than the city name.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(first_name," ",last_name) AS customer_name,
+                        city, country, CHAR_LENGTH(city) AS city_name_length,
+                        CHAR_LENGTH(country) AS country_name_length
+                        FROM customer
+                        LEFT JOIN address ON customer.address_id = address.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        WHERE CHAR_LENGTH(country) > CHAR_LENGTH(city);
+                    </div>
+                </div>
+        
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+            </div>
+            <br>
+        
+            <div class="dots" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+            </div>
+        </main>
+    </body>
 </html>

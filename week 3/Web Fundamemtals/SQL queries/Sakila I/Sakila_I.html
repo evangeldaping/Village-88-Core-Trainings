@@ -1,69 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakila I</title>
-    <style>
-        ol li {
-            font-size: 25px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Write a query for each of these tasks:</h1> 
-    <ol>
-        <li>Retrieve customer information (all fields) where customer_id is 20
-            <img src="./Answers/1.png" alt="customer_id is 20">
-        </li>
-        <li>Retrieve customer information (all fields) where customer_id is BETWEEN 20 and 60
-            <img src="./Answers/2.png" alt="customer_id is BETWEEN 20 and 60">
-        </li>
-        <li>Retrieve customer information (all fields) WHERE first_name starts with L
-            <img src="./Answers/3.png" alt="first_name starts with L">
-        </li>
-        <li>Retrieve customer information (all fields) WHERE first_name includes L.
-            <img src="./Answers/4.png" alt="first_name includes L">
-        </li>
-        <li>Retrieve customer information (all fields) WHERE first_name ends with L
-            <img src="./Answers/5.png" alt="first_name ends with L">
-        </li>
-        <li>Retrieve customer information (all fields) WHERE last_name starts with C and have the results be shown, starting with
-            the record where it was created most recently.
-            <img src="./Answers/6.png" alt="last_name starts with C and created_date is DESC">
-        </li>
-        <li>Retrieve customer information (all fields) WHERE last_name includes NN. Only have it retrieve the top 5 records, where
-            the first record shown is the oldest customer (in terms of the create_date)
-            <img src="./Answers/7.png" alt="last_name includes NN, top 5 records and created_date is ASC">
-        </li>
-        <li>Retrieve customer information (customer_id, first_name, last_name, and email address only) for customers with the
-            following customer_id 515, 181, 582, 503, 29, 85.
-            <img src="./Answers/8.png" alt="customer_id, first_name, last_name, and email address only with customer_id 515, 181, 582, 503, 29, 85">
-        </li>
-        <li>Retrieve customer information where store_id is 2. Now when displaying the columns, instead of the column name be
-            'email', have it appear as 'email_address'.
-            <img src="./Answers/9.png" alt="'email', have it appear as 'email_address'">
-        </li>
-        <li>Retrieve customer information (only the first_name, last_name, and email) but order the result with the email address in
-            the DESC order.
-            <img src="./Answers/10.png" alt="only the first_name, last_name, and (email in DESC order)">
-        </li>
-        <li>Retrieve only 'active' customer information (only the customer_id, first_name, last_name, and email) and where their
-            record was created in the month of February.
-            <img src="./Answers/11.png" alt="only the ative customer_id, first_name, last_name, and email and record is February only">
-        </li>
-        <li>Retrieve customer records (email field as well as email_length field) where the customer with the longest email address
-            is shown first. If customers have the same length of email address, order the list by the email field in the ASC order
-            (meaning it shows email address that starts with 'A' first).
-            <img src="./Answers/12.png" alt="email field as well as email_length field where the customer with the longest email address
-                is shown first. If customers have the same length of email address, order the list by the email field in the ASC order
-                (meaning it shows email address that starts with 'A' first">
-        </li>
-        <li>Now retrieve top 100 customer records with the shortest email address.
-            <img src="./Answers/13.png"
-                alt="top 100 customer records with the shortest email address">
-        </li>
-    </ol>    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sakila I</title>
+        <style>
+        * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            .mySlides {display: none}
+            main {margin-left: -360px;}
+
+            img {
+                vertical-align: middle;  
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;         
+            }
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+                color: white;
+            }
+
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 80px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+            .solution {
+                color: orange;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .dots {
+                margin-left: 270px;
+            }
+
+            h1 {
+                margin-left: 650px;
+            }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+            }
+        </style>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>Write a query for each of these tasks:</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 13</div>
+                    <img src="./Answers/1.png" alt="customer_id is 20" width="150%">
+                    <div class="text">Retrieve customer information (all fields) where customer_id is 20</div>
+                    <div class="solution">SELECT * FROM customer WHERE customer_id = 20;</div>                           
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 13</div>
+                    <img src="./Answers/2.png" alt="customer_id is BETWEEN 20 and 60" width="150%">
+                    <div class="text">Retrieve customer information (all fields) where customer_id is BETWEEN 20 and 60</div>
+                    <div class="solution">SELECT * FROM customer WHERE customer_id BETWEEN 20 AND 60;</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 13</div>
+                    <img src="./Answers/3.png" alt="first_name starts with L" width="150%">
+                    <div class="text">Retrieve customer information (all fields) WHERE first_name starts with L</div>
+                    <div class="solution">SELECT * FROM customer WHERE first_name LIKE 'L%';</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 13</div>
+                    <img src="./Answers/4.png" alt="first_name includes L" width="150%">
+                    <div class="text">Retrieve customer information (all fields) WHERE first_name includes L.</div>
+                    <div class="solution">SELECT * FROM customer WHERE first_name LIKE '%L%';</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 13</div>
+                    <img src="./Answers/5.png" alt="first_name ends with L" width="150%">
+                    <div class="text">Retrieve customer information (all fields) WHERE first_name ends with L</div>
+                    <div class="solution">SELECT * FROM customer WHERE first_name LIKE '%L';</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 13</div>
+                    <img src="./Answers/6.png" alt="last_name starts with C and created_date is DESC" width="150%">
+                    <div class="text">
+                        Retrieve customer information (all fields) WHERE last_name starts with C and have the results be shown,
+                        starting with
+                        the record where it was created most recently.
+                    </div>
+                    <div class="solution">SELECT * FROM customer WHERE last_name LIKE 'C%' ORDER BY create_date DESC;</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 13</div>
+                    <img src="./Answers/7.png" alt="last_name includes NN, top 5 records and created_date is ASC" width="150%">
+                    <div class="text">
+                        Retrieve customer information (all fields) WHERE last_name includes NN. Only have it retrieve the top 5
+                        records, where
+                        the first record shown is the oldest customer (in terms of the create_date)
+                    </div>
+                    <div class="solution">SELECT * FROM customer WHERE last_name LIKE '%NN%' ORDER BY create_date ASC LIMIT 5;</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 13</div>
+                    <img src="./Answers/8.png"
+                        alt="customer_id, first_name, last_name, and email address only with customer_id 515, 181, 582, 503, 29, 85"
+                        width="150%">
+                    <div class="text">
+                        Retrieve customer information (customer_id, first_name, last_name, and email address only) for customers
+                        with the
+                        following customer_id 515, 181, 582, 503, 29, 85.
+                    </div>
+                    <div class="solution">SELECT customer_id, first_name, last_name, email FROM customer WHERE customer_id in (515, 181, 582, 503, 29, 85);</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 13</div>
+                    <img src="./Answers/9.png" alt="'email', have it appear as 'email_address'" width="150%">
+                    <div class="text">
+                        Retrieve customer information where store_id is 2. Now when displaying the columns, instead of the column
+                        name be
+                        'email', have it appear as 'email_address'.
+                    </div>
+                    <div class="solution">
+                        SELECT customer_id store_id, first_name, last_name, email as email_address, address_id, active, create_date, last_update
+                        FROM customer
+                        WHERE store_id = 2;
+                    </div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">10 / 13</div>
+                    <img src="./Answers/10.png" alt="only the first_name, last_name, and (email in DESC order)" width="150%">
+                    <div class="text">
+                        Retrieve customer information (only the first_name, last_name, and email) but order the result with the
+                        email address in the DESC order.
+                    </div>
+                    <div class="solution">SELECT first_name, last_name, email FROM customer ORDER BY email DESC;</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">11 / 13</div>
+                    <img src="./Answers/11.png"
+                        alt="only the ative customer_id, first_name, last_name, and email and record is February only" width="150%">
+                    <div class="text">
+                        Retrieve only 'active' customer information (only the customer_id, first_name, last_name, and email) and
+                        where
+                        their
+                        record was created in the month of February.
+                    </div>
+                    <div class="solution">SELECT customer_id, first_name, last_name, email FROM customer WHERE create_date = 2006-02 OR active = 1;</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">12 / 13</div>
+                    <img src="./Answers/12.png" alt="email field as well as email_length field where the customer with the longest email address
+                                is shown first. If customers have the same length of email address, order the list by the email field in the ASC order
+                                (meaning it shows email address that starts with 'A' first" width="150%">
+                    <div class="text">
+                        Retrieve customer records (email field as well as email_length field) where the customer with the longest
+                        email
+                        address
+                        is shown first. If customers have the same length of email address, order the list by the email field in the
+                        ASC
+                        order
+                        (meaning it shows email address that starts with 'A' first).
+                    </div>
+                    <div class="solution">
+                        SELECT *, CHAR_LENGTH(email) FROM customer
+                        WHERE CHAR_LENGTH(email)
+                        ORDER BY CHAR_LENGTH(email) DESC, email ASC;
+                    </div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">13 / 13</div>
+                    <img src="./Answers/13.png" alt="top 100 customer records with the shortest email address" width="150%">
+                    <div class="text">
+                        Now retrieve top 100 customer records with the shortest email address.
+                    </div>
+                    <div class="solution">
+                        SELECT *, CHAR_LENGTH(email) FROM customer
+                        WHERE CHAR_LENGTH(email)
+                        ORDER BY CHAR_LENGTH(email) ASC, email ASC LIMIT 100;
+                    </div>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            <div class="dots" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+            </div>
+        </main>
+    </body>
 </html>

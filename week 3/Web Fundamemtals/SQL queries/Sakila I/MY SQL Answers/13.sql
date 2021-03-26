@@ -1,0 +1,3 @@
+SELECT *, CHAR_LENGTH(email) FROM customer
+WHERE CHAR_LENGTH(email) 
+	ORDER BY CHAR_LENGTH(email) ASC, email ASC LIMIT 100;

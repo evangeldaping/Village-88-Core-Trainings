@@ -1,0 +1,1 @@
+SELECT customer_id, first_name, last_name, email FROM customer WHERE create_date = 2006-02 OR active = 1;

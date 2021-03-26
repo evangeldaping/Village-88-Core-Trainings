@@ -1,0 +1,1 @@
+SELECT customer_id, first_name, last_name, email FROM customer WHERE customer_id in (515, 181, 582, 503, 29, 85);

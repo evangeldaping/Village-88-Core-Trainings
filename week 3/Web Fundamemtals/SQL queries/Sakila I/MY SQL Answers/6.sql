@@ -1,0 +1,1 @@
+SELECT * FROM customer WHERE last_name LIKE 'C%' ORDER BY create_date DESC;

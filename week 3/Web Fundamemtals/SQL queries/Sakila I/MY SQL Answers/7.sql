@@ -1,0 +1,1 @@
+SELECT * FROM customer WHERE last_name LIKE '%NN%' ORDER BY create_date ASC LIMIT 5;

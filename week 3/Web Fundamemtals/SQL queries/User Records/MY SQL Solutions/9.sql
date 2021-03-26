@@ -1,0 +1,1 @@
+ALTER TABLE Users CHANGE email email_address char(50);

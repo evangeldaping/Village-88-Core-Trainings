@@ -6,55 +6,311 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User Records</title>
         <style>
-            ol li {
-                font-size: 25px;
+            * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            .mySlides {display: none}
+            main {margin-left: -360px;}
+            
+            img {
+                vertical-align: middle;
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+            
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+            
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+            
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+                color: white;
+            }
+            
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 110px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+            .solution {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+            
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+            
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            
+            .dots {
+                margin-left: 270px;
+            }
+            
+            h1 {
+                margin-left: 650px;
+            }
+            
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+            
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+            
+            @-webkit-keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+            
+            @keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+            
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
             }
         </style>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
     </head>
     <body>
-        <h1>Your challenge</h1>
-        <ol>
-            <li>What's the query for creating this new database table with the fields above?
-                <img src="./Answers/1.png" alt="create new database">
-            </li>
-            <li>What's the query for inserting new records into this table? Write queries for inserting three fake users into the table
-                (one query for each insert).
-                <img src="./Answers/2-a.png" alt="insert new records">
-                <img src="./Answers/2-b.png" alt="insert new records">
-            </li>
-            <li>What's the query for updating one of the user records? For example, if you wanted to update the user record for id = 1,
-                with some fake data, what would the query be?
-                <img src="./Answers/3.png" alt="update user records">
-            </li>
-            <li>What query would you run for updating all of the user records with the last_name of 'Choi'?
-                <img src="./Answers/4.png" alt="update all user records with the last_name of 'Choi'">
-            </li>
-            <li>What query would you run for updating all the user records where ID is 3, 5, 7, 12, or 19?
-                <img src="./Answers/5.png" alt="updating all the user records where ID is 3, 5, 7, 12, or 19">
-            </li>
-            <li>What's the query for deleting a user record where id = 1?
-                <img src="./Answers/6.png" alt="deleting a user record where id = 1">
-            </li>
-            <li>What's the query for deleting the entire users records in the users table?
-                <img src="./Answers/7.png" alt="deleting the entire users records in the users table">
-            </li>
-            <li>What's the query for dropping the entire users table? What's the difference between dropping the table and deleting all
-                records?
-                <img src="./Answers/8.png"
-                    alt="difference between dropping and deleting all records">
+        <main>
+            <h1>Your challenge</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 11</div>
+                    <img src="./Answers/1.png" alt="create new database">
+                    <div class="text">What's the query for creating this new database table with the fields above?</div>
+                    <div class="solution">CREATE DATABASE hackerhero_practice;</div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 11</div>
+                    <img src="./Answers/2-a.png" alt="insert new records">
+                    <img src="./Answers/2-b.png" alt="insert new records">
+                    <div class="text">
+                        What's the query for inserting new records into this table? Write queries for inserting three fake users into the table
+                        (one query for each insert).
+                    </div>
+                    <div class="solution" style="font-size: 20px;">
+                        CREATE TABLE Users (
+                        id INT NOT NULL AUTO_INCREMENT,
+                        first_name VARCHAR(255),
+                        last_name VARCHAR(255),
+                        email VARCHAR(255),
+                        encrypted_password VARCHAR(255),
+                        created_at DATETIME,
+                        updated_at DATETIME,
+                        PRIMARY KEY (id)
+                        );
+                        <br><br>
+                        INSERT INTO Users (first_name, last_name, email, encrypted_password)
+                        VALUES ('Michael', 'Choi', 'mchoi@gmail.com', '123456')
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 11</div>
+                    <img src="./Answers/3.png" alt="update user records">
+                    <div class="text">
+                        What's the query for updating one of the user records? For example, if you wanted to update the user record for id = 1,
+                        with some fake data, what would the query be?
+                    </div>
+                    <div class="solution">
+                        UPDATE Users
+                        SET first_name = 'Precious', last_name = 'Daping', email = 'preciousdaping@gmail.com', encrypted_password = '000000'
+                        WHERE id = 1;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 11</div>
+                    <img src="./Answers/4.png" alt="update all user records with the last_name of 'Choi'">
+                    <div class="text">What query would you run for updating all of the user records with the last_name of 'Choi'?</div>
+                    <div class="solution">
+                        UPDATE Users
+                        SET first_name = 'Evangel', last_name = 'Daping', email = 'evangeldaping@gmail.com', created_at = '2021/2/23',
+                        updated_at = '2021/2/23'
+                        WHERE last_name = 'Choi';
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 11</div>
+                    <img src="./Answers/5.png" alt="updating all the user records where ID is 3, 5, 7, 12, or 19">
+                    <div class="text">What query would you run for updating all the user records where ID is 3, 5, 7, 12, or 19?</div>
+                    <div class="solution">
+                        UPDATE Users SET updated_at = '2021/2/23'
+                        WHERE id in (3,5,7,12,19);
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 11</div>
+                    <img src="./Answers/6.png" alt="deleting a user record where id = 1">
+                    <div class="text">
+                        What's the query for deleting a user record where id = 1?
+                    </div>
+                    <div class="solution">DELETE FROM Users WHERE id = 1;</div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 11</div>
+                    <img src="./Answers/7.png" alt="deleting the entire users records in the users table">
+                    <div class="text">
+                        What's the query for deleting the entire users records in the users table?
+                    </div>
+                    <div class="solution">DELETE FROM Users;</div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 11</div>
+                    <img src="./Answers/8.png" alt="difference between dropping and deleting all records">
+                    <div class="text">
+                        What's the query for dropping the entire users table? What's the difference between dropping the table and deleting all
+                        records?
+                    </div>
                     <p>Drop Table will totally delete the table and its records while Delete Table will just delete the records only.</p>
-            </li>
-            <li>What's the query for altering the email field to have it be 'email_address' instead?
-                <img src="./Answers/9.png" alt="email to email_address">
-            </li>
-            <li>What's the query for altering the id so that it's a BIGINT instead?
-                <img src="./Answers/10.png" alt="id to have BIGINT value">
-            </li>
-            <li>What's the query for adding a new field to the users table called is_active where it's a Boolean (meaning it's either a
-                0 or a 1). Imagine you wanted the default value of this to be 0 when a new record is created and you won't allow this
-                field to ever be NULL. With this in mind, now come up with a query.
-                <img src="./Answers/11.png" alt="is_active with boolean datatype set to 0 default value">
-            </li>
-        </ol>
+                    <div class="solution">DROP TABLE Users;</div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 11</div>
+                    <img src="./Answers/9.png" alt="email to email_address">
+                    <div class="text">
+                        What's the query for altering the email field to have it be 'email_address' instead?
+                    </div>
+                    <div class="solution">
+                        ALTER TABLE Users CHANGE email email_address char(50);
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">10 / 11</div>
+                    <img src="./Answers/10.png" alt="id to have BIGINT value">
+                    <div class="text">
+                        What's the query for altering the id so that it's a BIGINT instead?
+                    </div>
+                    <div class="solution">ALTER TABLE Users MODIFY id BIGINT AUTO_INCREMENT;</div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">11 / 11</div>
+                    <img src="./Answers/11.png" alt="is_active with boolean datatype set to 0 default value">
+                    <div class="text">
+                        What's the query for adding a new field to the users table called is_active where it's a Boolean (meaning it's either a
+                        0 or a 1). Imagine you wanted the default value of this to be 0 when a new record is created and you won't allow this
+                        field to ever be NULL. With this in mind, now come up with a query.
+                    </div>
+                    <div class="solution">
+                        ALTER TABLE Users
+                        ADD COLUMN is_active BOOLEAN NOT NULL DEFAULT FALSE;</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>       
+            </div>
+            <br>       
+            <div class="dots" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+            </div>
+        </main>
     </body>
 </html>

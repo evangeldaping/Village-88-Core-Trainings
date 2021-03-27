@@ -6,35 +6,284 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sakila III</title>
         <style>
-            ol li {
-                font-size: 25px;
+            * {
+                box-sizing: border-box
+            }
+        
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+        
+            .mySlides {
+                display: none
+            }
+        
+            main {
+                margin-left: -360px;
+            }
+        
+            img {
+                vertical-align: middle;
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+        
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+        
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+        
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
+        
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 110px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            .solution {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+        
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+        
+            .dots {
+                margin-left: 270px;
+            }
+        
+            h1 {
+                margin-left: 650px;
+            }
+        
+            .solution {
+                font-size: 20px;
+            }
+        
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+        
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+        
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+        
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
             }
         </style>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
     </head>
     <body>
-        <h1>Write a query for each of the task below:</h1>
-        <ol>
-            <li>How many customers are there for each country? Have your result display the full country name and the number of
-                customers for each country.
-                <img src="./Answers/1.png" alt="customers are there for each country">
-            </li>
-            <li>How many customers are there for each city? Have your result display the full city name, the full country name, as well
-                as the number of customers for each city.
-                <img src="./Answers/2.png" alt="customers are there for each city">
-            </li>
-        </ol>
-        <p>Now, look at the payment table where it has information about the customer as well as how much the customer paid to rent
-            the item. Based on this,</p>
-        <ol>
-            <li>Retrieve both the average rental amount, the total rental amount, as well as the total number of transactions for each
-                month of each year.
-                <img src="./Answers/3.png" alt="Retrieve both the average rental amount, the total rental amount, as well as the total number of transactions for each month of each year">
-            </li>
-            <li>Your manager comes and asks you to pull payment report based on the hour of the day. The managers wants to know which
-                hour the company earns the most money/payment. Have your sql query generate the top 10 hours of the day with the most
-                sales. Have the first row of your result be the hour with the most payments received.
-                <img src="./Answers/4.png" alt="Have your sql query generate the top 10 hours of the day with the most sales.  Have the first row of your result be the hour with the most payments received.">
-            </li>
-        </ol>
+        <main>
+            <h1>Write a query for each of the task below:</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="./Answers/1.png" alt="customers are there for each country">
+                    <div class="text">
+                        How many customers are there for each country? Have your result display the full country name and the number of
+                        customers for each country.
+                    </div>
+                    <div class="solution">
+                        SELECT country.country, COUNT(customer.address_id) AS total_number_of_customer
+                        FROM customer
+                        LEFT JOIN address ON address.address_id = customer.address_id
+                        LEFT JOIN city ON address.city_id = city.city_id
+                        LEFT JOIN country ON city.country_id = country.country_id
+                        GROUP BY country.country;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="./Answers/2.png" alt="customers are there for each city">
+                    <div class="text">
+                        How many customers are there for each city? Have your result display the full city name, the full country name, as well
+                        as the number of customers for each city.
+                    </div>
+                    <div class="solution">
+                        Select country.country, city, COUNT(customer.address_id) AS total_customer
+                        from country
+                        LEFT JOIN city ON country.country_id = city.country_id
+                        LEFT JOIN address ON city.city_id = address.city_id
+                        LEFT JOIN customer ON country.country_id = customer.address_id
+                        GROUP BY city.city
+                        ORDER BY country.country, city.city ASC;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="./Answers/3.png" alt="Retrieve both the average rental amount, the total rental amount, as well as the total number of transactions for each month of each year">
+                    <div class="text">
+                        Retrieve both the average rental amount, the total rental amount, as well as the total number of transactions for each
+                        month of each year.
+                    </div>
+                    <div class="solution">
+                        SELECT DATE_FORMAT(payment.payment_date , "%M %Y") AS month_and_year,
+                        SUM(payment.amount) AS total_rental_amount,
+                        COUNT(customer.customer_id) AS total_transactions,
+                        AVG(payment.amount) AS average_rental_amount
+                        FROM customer
+                        LEFT JOIN rental ON rental.rental_id = customer.customer_id
+                        LEFT JOIN payment ON payment.customer_id = customer.customer_id
+                        GROUP BY YEAR(payment.payment_date), Month(payment.payment_date);
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="./Answers/4.png"
+                        alt="Have your sql query generate the top 10 hours of the day with the most sales.  Have the first row of your result be the hour with the most payments received.">
+                    <div class="text">
+                        Your manager comes and asks you to pull payment report based on the hour of the day. The managers wants to know which
+                        hour the company earns the most money/payment. Have your sql query generate the top 10 hours of the day with the most
+                        sales. Have the first row of your result be the hour with the most payments received.
+                    </div>
+                    <div class="solution">
+                        SELECT DATE_FORMAT(payment.payment_date , "%I %p") AS hour_of_the_day,
+                        SUM(payment.amount) AS total_payments_received
+                        FROM customer
+                        LEFT JOIN rental ON rental.customer_id = customer.customer_id
+                        LEFT JOIN payment ON payment.rental_id = rental.rental_id
+                        GROUP BY hour(payment.payment_date)
+                        ORDER BY total_payments_received DESC
+                        LIMIT 10;
+                    </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <br>
+
+                <div class="dots" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

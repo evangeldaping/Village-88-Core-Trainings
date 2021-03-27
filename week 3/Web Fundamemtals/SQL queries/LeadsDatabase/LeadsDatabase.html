@@ -4,66 +4,425 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Leads Database Excercise</title> <style>
-            ol li {
-                font-size: 25px;
+        <title>Leads Database Excercise</title> 
+        <style>
+            * {
+                box-sizing: border-box
+            }
+        
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+        
+            .mySlides {
+                display: none
+            }
+        
+            main {
+                margin-left: -360px;
+            }
+        
+            img {
+                vertical-align: middle;
+                height: 130%;
+                width: 130%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+        
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+        
+            /* Position the "next button" to the right */
+            .next {
+                right: -300px;
+                border-radius: 3px 0 0 3px;
+            }
+        
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
+        
+            /* Caption text */
+            .text {
+                color: blue;
+                font-size: 30px;
+                padding: 200px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            .solution {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 150%;
+                text-align: left;
+            }
+        
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: red;
+                font-size: 30px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+        
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+        
+            .dots {
+                margin-left: 270px;
+            }
+        
+            h1 {
+                margin-left: 650px;
+            }
+        
+            .solution {
+                font-size: 20px;
+            }
+        
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+        
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+        
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+        
+                to {
+                    opacity: 1
+                }
+            }
+        
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+        
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
             }
         </style>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
     </head>
     <body>
-        <h1>Queries</h1>
-        <ol>
-            <li>What query would you run to get the total revenue for March of 2012?
-                <img src="./Answers/1.png" alt="total revenue for March of 2012">
-            </li>
-            <li>What query would you run to get total revenue collected from the client with an id of 2?
-                <img src="./Answers/2.png" alt="total revenue collected from the client with an id of 2">
-            </li>
-            <li>What query would you run to get all the sites that client=10 owns?
-                <img src="./Answers/3.png" alt="all the sites that client=10 owns">
-            </li>
-            <li>What query would you run to get total # of sites created per month per year for the client with an id of 1?
-                <img src="./Answers/4-a.png" alt="total # of sites created per month per year for the client with an id of 1? What about
-                for client=20">
-                What about for client=20?
-                <img src="./Answers/4-b.png" alt="total # of sites created per month per year for the client with an id of 1? What about
-                                for client=20">
-            </li>
-            <li>What query would you run to get the total # of leads generated for each of the sites between January 1, 2011 to February
-                15, 2011?
-                <img src="./Answers/5.png" alt="total # of leads generated for each of the sites between January 1, 2011 to February
-                15, 2011">
-            </li>
-            <li>What query would you run to get a list of client names and the total # of leads we've generated for each of our clients
-                between January 1, 2011 to December 31, 2011?
-                <img src="./Answers/6.png" alt="list of client names and the total # of leads we've generated for each of our clients
-                between January 1, 2011 to December 31, 2011">
-            </li>
-            <li>What query would you run to get a list of client names and the total # of leads we've generated for each client each
-                month between months 1 - 6 of Year 2011?
-                <img src="./Answers/7.png" alt="list of client names and the total # of leads we've generated for each client each
-                month between months 1 - 6 of Year 2011">
-            </li>
-            <li>What query would you run to get a list of client names and the total # of leads we've generated for each of our clients'
-                sites between January 1, 2011 to December 31, 2011? Order this query by client id. 
-                <img src="./Answers/8-a.png"
-                    alt="of client names and the total # of leads we've generated for each of our clients'
-                sites between January 1, 2011 to December 31, 2011? Order this query by client id">
-                Come up with a second query that
-                shows all the clients, the site name(s), and the total number of leads generated from each site for all time.
-                <img src="./Answers/8-b.png" alt="of client names and the total # of leads we've generated for each of our clients'
-                                sites between January 1, 2011 to December 31, 2011? Order this query by client id">
-            </li>
-            <li>Write a single query that retrieves total revenue collected from each client for each month of the year. Order it by
-                client id.
-                <img src="./Answers/9.png" alt="retrieves total revenue collected from each client for each month of the year. Order it by
-                client id">
-            </li>
-            <li>Write a single query that retrieves all the sites that each client owns. Group the results so that each row shows a new
-                client. It will become clearer when you add a new field called 'sites' that has all the sites that the client owns.
-                (HINT: use GROUP_CONCAT)
-                <img src="./Answers/10.png" alt="query that retrieves all the sites that each client owns">
-            </li>
-        </ol>
+        <main>
+            <h1>Queries</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 10</div>
+                    <img src="./Answers/1.png" alt="total revenue for March of 2012">
+                    <div class="text">What query would you run to get the total revenue for March of 2012?</div>
+                    <div class="solution">
+                        SELECT DATE_FORMAT(billing.charged_datetime , "%M") AS month,
+                        SUM(billing.amount) AS total_revenue
+                        FROM billing
+                        WHERE billing.charged_datetime >= '2012/03/01'
+                        AND billing.charged_datetime < '2012/04/01' ;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 10</div>
+                    <img src="./Answers/2.png" alt="total revenue collected from the client with an id of 2">
+                    <div class="text">
+                        What query would you run to get total revenue collected from the client with an id of 2?
+                    </div>
+                    <div class="solution">
+                        SELECT (clients.client_id) AS client_id,
+                        SUM(billing.amount) AS total_revenue
+                        FROM billing
+                        LEFT JOIN clients ON billing.client_id = clients.client_id
+                        WHERE clients.client_id = 2;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 10</div>
+                    <img src="./Answers/3.png" alt="all the sites that client=10 owns">
+                    <div class="text">
+                        What query would you run to get all the sites that client=10 owns?
+                    </div>
+                    <div class="solution">
+                        SELECT (sites.domain_name) AS website,
+                        (clients.client_id) AS client_id
+                        FROM sites
+                        LEFT JOIN clients ON sites.client_id = clients.client_id
+                        WHERE clients.client_id = 10;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 10</div>
+                    <img src="./Answers/4-a.png" alt="total # of sites created per month per year for the client with an id of 1? What about for client=20">
+                    <img src="./Answers/4-b.png" alt="total # of sites created per month per year for the client with an id of 1? What about for client=20">
+                    <div class="text">
+                        What query would you run to get total # of sites created per month per year for the client with an id of 1? What about for client=20?
+                    </div>
+                    <div class="solution">
+                        SELECT (clients.client_id) AS client_id,
+                        count(sites.domain_name) AS number_of_websites,
+                        DATE_FORMAT(sites.created_datetime , "%M") AS month_created,
+                        DATE_FORMAT(sites.created_datetime , "%Y") AS year_created
+                        FROM sites
+                        LEFT JOIN clients ON sites.client_id = clients.client_id
+                        WHERE clients.client_id = 1
+                        GROUP BY month_created, year_created
+                        ORDER BY year_created;
+                        <br><br>
+                        SELECT (clients.client_id) AS client_id,
+                        count(sites.domain_name) AS number_of_websites,
+                        DATE_FORMAT(sites.created_datetime , "%M") AS month_created,
+                        DATE_FORMAT(sites.created_datetime , "%Y") AS year_created
+                        FROM sites
+                        LEFT JOIN clients ON sites.client_id = clients.client_id
+                        WHERE clients.client_id = 20
+                        GROUP BY month_created, year_created
+                        ORDER BY year_created;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 10</div>
+                    <img src="./Answers/5.png" alt="total # of leads generated for each of the sites between January 1, 2011 to February 15, 2011">
+                    <div class="text">
+                        What query would you run to get the total # of leads generated for each of the sites between January 1, 2011 to February
+                        15, 2011?
+                    </div>
+                    <div class="solution">
+                        SELECT (sites.domain_name) AS website,
+                        COUNT(leads.leads_id) AS number_of_leads,
+                        DATE_FORMAT(sites.created_datetime , "%M %d %Y") AS date_generated
+                        FROM sites
+                        LEFT JOIN leads ON sites.site_id = leads.site_id
+                        WHERE leads.registered_datetime BETWEEN "2011-01-01%" AND "2011-02-15%"
+                        GROUP BY sites.domain_name;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 10</div>
+                    <img src="./Answers/6.png" alt="list of client names and the total # of leads we've generated for each of our clients
+                            between January 1, 2011 to December 31, 2011">
+                    <div class="text">
+                        What query would you run to get a list of client names and the total # of leads we've generated for each of our clients
+                        between January 1, 2011 to December 31, 2011?
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name,
+                        COUNT(leads.leads_id) AS number_of_leads
+                        FROM clients
+                        LEFT JOIN sites ON sites.client_id = clients.client_id
+                        LEFT JOIN leads ON sites.site_id = leads.site_id
+                        WHERE leads.registered_datetime BETWEEN "2011-01-01%" AND "2011-12-31%"
+                        GROUP BY clients.first_name;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 10</div>
+                    <img src="./Answers/7.png" alt="list of client names and the total # of leads we've generated for each client each
+                            month between months 1 - 6 of Year 2011">
+                    <div class="text">
+                        What query would you run to get a list of client names and the total # of leads we've generated for each client each
+                        month between months 1 - 6 of Year 2011?
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name,
+                        COUNT(leads.leads_id) AS number_of_leads,
+                        DATE_FORMAT(leads.registered_datetime , "%M") AS date_generated
+                        FROM clients
+                        LEFT JOIN sites ON sites.client_id = clients.client_id
+                        LEFT JOIN leads ON sites.site_id = leads.site_id
+                        WHERE leads.registered_datetime BETWEEN "2011-01-01%" AND "2011-06-30%"
+                        GROUP BY date_generated, clients.first_name
+                        ORDER BY DATE_FORMAT(leads.registered_datetime, "%m");
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 10</div>
+                    <img src="./Answers/8-a.png" alt="of client names and the total # of leads we've generated for each of our clients'
+                            sites between January 1, 2011 to December 31, 2011? Order this query by client id">
+                    <img src="./Answers/8-b.png" alt="of client names and the total # of leads we've generated for each of our clients'
+                            sites between January 1, 2011 to December 31, 2011? Order this query by client id">
+                    <div class="text">
+                        What query would you run to get a list of client names and the total # of leads we've generated for each of our clients'
+                        sites between January 1, 2011 to December 31, 2011? Order this query by client id.
+                        Come up with a second query that
+                        shows all the clients, the site name(s), and the total number of leads generated from each site for all time.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name,
+                        sites.domain_name AS website,
+                        COUNT(leads.leads_id) AS number_of_leads,
+                        DATE_FORMAT(leads.registered_datetime , "%M") AS date_generated
+                        FROM clients
+                        LEFT JOIN sites ON sites.client_id = clients.client_id
+                        LEFT JOIN leads ON sites.site_id = leads.site_id
+                        WHERE leads.registered_datetime BETWEEN "2011-01-01%" AND "2011-12-31%"
+                        GROUP BY sites.domain_name
+                        ORDER BY clients.client_id;
+                        <br><br>
+                        SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name,
+                        sites.domain_name AS website,
+                        COUNT(leads.leads_id) AS number_of_leads
+                        FROM clients
+                        LEFT JOIN sites ON sites.client_id = clients.client_id
+                        LEFT JOIN leads ON sites.site_id = leads.site_id
+                        GROUP BY sites.domain_name
+                        ORDER BY clients.client_id;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 10</div>
+                    <img src="./Answers/9.png" alt="retrieves total revenue collected from each client for each month of the year. Order it by client id">
+                    <div class="text">
+                        Write a single query that retrieves total revenue collected from each client for each month of the year. Order it by
+                        client id.
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name,
+                        SUM(billing.amount) AS Total_Revenue,
+                        DATE_FORMAT(billing.charged_datetime, "%M") AS month_charge,
+                        DATE_FORMAT(billing.charged_datetime, "%Y") AS year_charge
+                        FROM clients
+                        LEFT JOIN billing
+                        ON billing.client_id = clients.client_id
+                        GROUP BY month_charge,
+                        clients.client_id
+                        ORDER BY clients.client_id,
+                        billing.charged_datetime;
+                    </div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <div class="numbertext">10 / 10</div>
+                    <img src="./Answers/10.png" alt="query that retrieves all the sites that each client owns">
+                    <div class="text">
+                        Write a single query that retrieves all the sites that each client owns. Group the results so that each row shows a new
+                        client. It will become clearer when you add a new field called 'sites' that has all the sites that the client owns.
+                        (HINT: use GROUP_CONCAT)
+                    </div>
+                    <div class="solution">
+                        SELECT CONCAT(clients.first_name, ' ', clients.last_name) AS client_name,
+                        GROUP_CONCAT(sites.domain_name, '/') AS sites
+                        FROM clients
+                        LEFT JOIN sites
+                        ON sites.client_id = clients.client_id
+                        GROUP BY clients.client_id
+                        ORDER BY clients.client_id;
+                    </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <br>
+        
+                <div class="dots" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

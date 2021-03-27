@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up</title>
+</head>
+<body>
+    <main>
+        There are some important settings that we want to make sure we have before we get started with the PHP basics. The
+        instructions for what is done in the video are below.
+        
+        1. Locate your httpd.conf file and set a Document Root (allows us to manually set a folder we want to serve website files
+            like PHP)
+            WAMP
+                Click on the WAMP Server icon on the bottom right
+        
+        
+                Go to Apache
+                Click on httpd.conf. If you are having trouble opening httpd.conf, you might need to manually navigate to the file
+                through Windows Explorer and open it with Sublime or your favorite text editor.
+        
+                Look for DocumentRoot and set it to the directory you want to serve files
+            MAMP
+                Open MAMP and click on Preferences
+                Click the Apache(Webserver) tab and set it to the directory you want to serve files from.
+        2. Restart your Apache server.
+        3. Navigate to the Document Root directory that you just set.
+        4. Create a file in that directory called info.php and place the following inside:
+            <?php
+            echo phpinfo();
+            ?>
+        
+        5. Navigate to that file in your browser by going to http://localhost/info.php
+        6. Locate the Loaded Configuration File to see where your php.ini configuration file is.
+        7. Open up that file in a text editor and make the following changes.
+            Find the setting for display_errors and make sure that it is set to On.
+            Find zend_extension and make sure it is not commented out (remove the semicolon in front of it).
+            Find html_errors and make sure it is set to On.
+            NOTE: If you are using php version 5.5.3 or higher; Find opcache.revalidate_freq and set the value to 0.
+        8. If you change the display_errors value, you have to restart Apache for changes to take effect.
+    </main>
+</body>
+</html>

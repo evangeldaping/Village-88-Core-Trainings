@@ -99,7 +99,7 @@ $studyantes = array(
 
 foreach ($studyantes as $row) {
     foreach ($row as $info => $value) {
-        echo $info . ' ' . $value;
+        echo $info . ' ' . $value . ' ';
     }
     echo '<br>';
 }

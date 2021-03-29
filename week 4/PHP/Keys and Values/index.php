@@ -14,12 +14,17 @@
         $users['first_name'] = "Michael";
         $users['last_name'] = "Choi";
 
-        foreach ($users as $row => $value) {
-
-            echo $row . ' ' . $value . ' ';
-
-            echo '<br>';
+        function keysAndValues($users)
+        {
+            echo "There are " . count($users) . " keys in this array:";
+            foreach ($users as $row => $value) {
+                echo '<br>';
+                echo $row;
+                echo '<br>';
+                echo "The value in the key '" . $row . "' is " . $value . ".";
+            }
         }
+        keysAndValues($users);
         ?>
     </main>
 </body>

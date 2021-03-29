@@ -11,16 +11,22 @@
 <body>
     <main>
         <?php
-        $files = scandir($dir);
-        //remove "." and ".."
-        print_r($files);
+        $arr = array(2, 3, 'hello');
+        function print_lists($arr)
+        {
+            $html = '<ul>';
+            foreach ($arr as $item) {
+                if (is_array($item)) {
+                    $html = print_lists($item); // <<< here is the recursion
+                } else {
+                    $html .= '<li>' . $item . '</li>';
+                }
+            }
+            $html .= '</ul>';
+            return $html;
+        }
+        echo (print_lists($arr));
         ?>
-
-        <ul>
-            <?php foreach ($files as $file) { ?>
-                <li><?php echo $file; ?></li>
-            <?php } ?>
-        </ul>
     </main>
 </body>
 

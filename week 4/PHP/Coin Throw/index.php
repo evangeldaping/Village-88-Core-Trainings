@@ -11,22 +11,22 @@
 <body>
     <main>
         <?php
-        $flips = 0;
-        $heads = 1;
-        $tails = 0;
-        while ($flips < 5000) {
-            $coin = rand(1, 2);
-            $flips += 1;
-            if ($coin == 1) {
-                echo "Attempt #" . $flips . ": Throwing a coin... It's a head! ... Got " . $heads . " head(s) so far and " . $tails . "tail(s) so far";
-                echo '<br>';
-                $heads += 1;
-            } else if ($coin == 2) {
-                echo "Attempt #" . $flips . ": Throwing a coin... It's a tail! ... Got " . $heads . " head(s) so far and " . $tails . "tail(s) so far";
-                echo '<br>';
-                $tails += 1;
+        echo "<h2>Starting the program</h2>";
+        $count_heads = 0;
+        $count_tails = 0;
+        for ($i = 1; $i <= 5000; $i++) {
+            $toss_num = rand(0, 1);
+            if ($toss_num == 1) {
+                $toss_ht = "heads";
+                $count_heads += 1;
+            } else {
+                $toss_ht = "tails";
+                $count_tails += 1;
             }
+            echo "Attempt #" . $i . ": Throwing a coin... It's a " . $toss_ht . "! ... Got " .
+                $count_heads . " heads so far and " . $count_tails . " tails so far.<br>";
         }
+        echo "<h2>Ending the program - thank you!</h2>";
         ?>
     </main>
 </body>

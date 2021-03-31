@@ -14,84 +14,74 @@
         }
 
         body {
-            padding: 40px;
+            padding: 0px 400px 400px 400px;
         }
 
-        div.checkerBoardBlack ul {
+        div.checkerBoardBlack {
             float: left;
         }
 
-        div.checkerBoardBlack ul li {
-            list-style-type: none;
-            width: 50px;
-            height: 50px;
-            background-color: red;
-        }
-
-        div.checkerBoardBlack ul li.black {
-            background-color: black;
-        }
-
-        div.checkerBoardGreen ul {
+        div.checkerBoardGreen {
             float: right;
         }
 
-        div.checkerBoardGreen ul li {
-            list-style-type: none;
+        div div {
+            display: inline-block;
             width: 50px;
             height: 50px;
-            background-color: #FFFFE0;
+            margin: -4px -4px 0px 0px;
         }
 
-        div.checkerBoardGreen ul li.black {
+        div.color_1 {
             background-color: black;
         }
 
-        div.checkerBoardGreen ul li.green {
+        div.color_2 {
+            background-color: red;
+        }
+
+        div.color_3 {
             background-color: #556B2F;
+        }
+
+        div.color_4 {
+            background-color: #FFFFE0;
         }
     </style>
 </head>
 
 <body>
     <main>
-        <?php
-        echo "<div class=\"checkerBoardBlack\">";
-        function checkerBoardBlack()
-        {
-            for ($i = 0; $i < 8; $i++) {
-                echo "<ul>";
-                for ($j = 0; $j < 8; $j++) {
-                    if (($i % 2 == 0) and ($j % 2 == 0) or ($i % 2 == 1) and ($j % 2 == 1)) {
-                        echo "<li class='black'></li>";
-                    } else {
-                        echo "<li></li>";
-                    }
-                }
-                echo "</ul>";
-            }
-        }
-        checkerBoardBlack();
-        echo "</div>";
 
-        echo "<div class=\"checkerBoardGreen\">";
-        function checkerBoardGreen()
-        {
-            for ($i = 0; $i < 8; $i++) {
-                echo "<ul>";
-                for ($j = 0; $j < 8; $j++) {
-                    if (($i % 2 == 0) and ($j % 2 == 0) or ($i % 2 == 1) and ($j % 2 == 1)) {
-                        echo "<li class='green'></li>";
-                    } else {
-                        echo "<li></li>";
-                    }
-                }
-                echo "</ul>";
-            }
-        }
-        checkerBoardGreen();
-        echo "</div>";
-        ?>
+        <?php echo "<div class=\"checkerBoardBlack\">"; ?>
+        <?php function checkerBoardBlack()
+        { ?>
+            <?php $size = 10; ?>
+            <?php for ($a = 0; $a < $size; $a++) { ?>
+                <div>
+                    <?php for ($b = 0; $b < $size; $b++) { ?>
+                        <div class='color_<?= ($b + $a) % 2 + 1 ?>'></div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+        <?php } ?>
+        <?php checkerBoardBlack(); ?>
+        <?php echo "</div>";  ?>
+
+        <?php echo "<div class=\"checkerBoardGreen\">"; ?>
+        <?php function checkerBoardGreen()
+        { ?>
+            <?php $size = 10; ?>
+            <?php for ($c = 0; $c < $size; $c++) { ?>
+                <div>
+                    <?php for ($d = 0; $d < $size; $d++) { ?>
+                        <div class='color_<?= ($d + $c) % 2 + 3 ?>'></div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+        <?php } ?>
+        <?php checkerBoardGreen(); ?>
+        <?php echo "</div>";  ?>
     </main>
 </body>
 

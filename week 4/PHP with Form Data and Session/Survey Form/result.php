@@ -47,24 +47,24 @@
 <body>
     <div class="container">
         <h2>Submitted Information</h2>
-        <form action="index.php"">
-			<table class=" result">
-            <tr>
-                <td>Name:</td>
-                <td><?php echo $_POST['your_name']; ?></td>
-            </tr>
-            <tr>
-                <td>Dojo Location:</td>
-                <td><?php echo $_POST['dojo_location']; ?></td>
-            </tr>
-            <tr>
-                <td>Favorite Language:</td>
-                <td><?php echo $_POST['favorite_language']; ?></td>
-            </tr>
-            <tr>
-                <td>Comment:</td>
-                <td><?php echo $_POST['comment']; ?></td>
-            </tr>
+        <form action="index.php">
+            <table class=" result">
+                <tr>
+                    <td>Name:</td>
+                    <td><?= $_POST['your_name']; ?></td>
+                </tr>
+                <tr>
+                    <td>Dojo Location:</td>
+                    <td><?= $_POST['dojo_location']; ?></td>
+                </tr>
+                <tr>
+                    <td>Favorite Language:</td>
+                    <td><?= $_POST['favorite_language']; ?></td>
+                </tr>
+                <tr>
+                    <td>Comment:</td>
+                    <td><?= $_POST['comment']; ?></td>
+                </tr>
             </table>
             <input type="submit" value="Go back">
         </form>

@@ -8,11 +8,14 @@ if (isset($_POST['crawl'])) {
         $html->load_file($crawl);
         foreach ($html->find('a') as $link) {
             if (strpos($link, "$crawl") !== false) {
-                echo "<p class='links'>" . $link->href . "</p>";
+                $link =  "<p class='links'>" . $link->href . "</p>";
+                echo "<a href=" . $link . ">" . "</a>";
             } else if (strpos($link, "http://") !== false || strpos($link, "https://") !== false) {
-                echo "<p class='links'>" . $link->href . "</p>";
+                $link =  "<p class='links'>" . $link->href . "</p>";
+                echo "<a href=" . $link . ">" . "</a>";
             } else {
-                echo "<p class='links'>" . "$crawl/" . $link->href . "</p>";
+                $link =  "<p class='links'>" . $link->href . "</p>";
+                echo "<a href=" . $link . ">" . "</a>";
             }
         }
     } else {

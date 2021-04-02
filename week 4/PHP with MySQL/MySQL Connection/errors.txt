@@ -1,0 +1,101 @@
+ Warning: mysqli::__construct(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 7
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0019	410320	{main}( )	...\index.php:0
+2	0.0020	410800	__construct ( )	...\index.php:7
+
+ ! ) Warning: var_dump(): Property access is not allowed yet in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Property access is not allowed yet in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Property access is not allowed yet in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Property access is not allowed yet in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8
+
+( ! ) Warning: var_dump(): Couldn't fetch mysqli in C:\wamp64\www\PHP with MySQL\MySQL Connection\index.php on line 8
+Call Stack
+#	Time	Memory	Function	Location
+1	0.0004	412424	{main}( )	...\index.php:0
+2	0.0131	413584	var_dump ( )	...\index.php:8

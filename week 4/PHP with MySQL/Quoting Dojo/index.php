@@ -4,52 +4,53 @@ require_once('includes/new-connection.php');
 ?>
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Quoting Dojo</title>
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/styles.css" />
 
 </head>
+
 <body>
 
-<div id="wrapper">
+    <div id="wrapper">
 
-    <h1>Welcome to Quoting Dojo</h1>
+        <h1>Welcome to Quoting Dojo</h1>
 
-    <form action="process.php" method="post">
+        <form action="process.php" method="post">
 
-        <p><em>Please enter your name and quote. Then click submit to add it to the database.</em></p>
+            <p><em>Please enter your name and quote. Then click submit to add it to the database.</em></p>
 
-        <p>Your name:<br /><input type="text" name="name"/></p>
-        
-        <p>Your quote:<br />
-        <textarea name="quote" id="" cols="30" rows="10"></textarea>
-        </p>
+            <p>Your name:<br /><input type="text" name="name" /></p>
 
-        <p><input type="submit" value="Add my Quote"/></p>
+            <p>Your quote:<br />
+                <textarea name="quote" id="" cols="30" rows="10"></textarea>
+            </p>
 
-        <p><a href="main.php">SKIP TO QUOTES</a></p>
+            <p><input type="submit" value="Add my Quote" /></p>
 
-    </form>
+            <p><a href="main.php">SKIP TO QUOTES</a></p>
 
-    <div id="errors" class="error">
-    <?php
-    if(isset($_SESSION['errors']))
-    {
+        </form>
 
-        foreach($_SESSION['errors'] as $error)
-        {
-            echo $error . '<br />';
-        }
-    }
-    ?>
+        <div id="errors" class="error">
+            <?php
+            if (isset($_SESSION['errors'])) {
+
+                foreach ($_SESSION['errors'] as $error) {
+                    echo $error . '<br />';
+                }
+            }
+            ?>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <p><a href="reset.php">Reset Session</a></p>
+
     </div>
 
-    <p>&nbsp;</p>
-
-    <p><a href="reset.php">Reset Session</a></p>
-
-</div>
-
 </body>
+
 </html>

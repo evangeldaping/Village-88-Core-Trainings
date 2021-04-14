@@ -1,0 +1,28 @@
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 860px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    border: 2px dotted black;
+    width: 320px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 20px;
+	color: red;
+}
+
+#current-time {
+    text-align: center;
+    border: 2px dotted black;
+    width: 320px;
+    margin: 20px auto 0 auto;
+    padding: 20px 0;
+	color: blue;
+}

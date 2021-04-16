@@ -32,7 +32,7 @@ class Users extends CI_Controller
         redirect(base_url() . 'users/count');
     }
 
-    public function say($id1, $id2)
+    public function say($id1, $id2 = 1)
     {
         $result['number'] = $id2;
         if (is_numeric($id2)) {

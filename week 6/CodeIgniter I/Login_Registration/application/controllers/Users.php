@@ -47,38 +47,22 @@ class Users extends CI_Controller
 
 	public function login()
 	{
-		$data = array();
-		if ($this->session->userdata('success_msg')) {
-			$data['success_msg'] = $this->session->userdata('success_msg');
-			$this->session->unset_userdata('success_msg');
-		}
-		if ($this->session->userdata('error_msg')) {
-			$data['error_msg'] = $this->session->userdata['error_msg'];
-			$this->session->unset_userdata('error_msg');
-		}
-
-		if ($this->input->post('login')) {
-			# code...
-			$this->form_validation->set_rules('email', 'Email', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
-			$login_data = array(
-				'email' => $this->input->post('email'),
-				'password' => md5($this->input->post('password'))
-			);
-			if ($this->form_validation->run() == true) {
-				$log = $this->Users_model->login($login_data);
-				//var_dump($log);exit;
-				if ($log) {
-					$this->session->set_userdata('isloggedin', true);
-					$this->session->set_userdata('loguserid', $log->id);
-					redirect('users/home');
-				} else {
-					$data['error_msg'] = 'invalid username or password';
-				}
-				# code...
-			}
-		}
-		$this->load->view('users/login', $data);
+		$this->form_validation->set_rules('email', 'email id ', 'trim|required');
+		$this->form_validation->set_rules('password', 'password', 'trim|required');
+		if ($this->form_validation->run() == FALSE) :
+			$this->load->view('users/login');
+		else :
+			$email     = $this->input->post('email');
+			$password  = md5($this->input->post('password'));
+			$log_users = $this->Users_model->login($email, $password);
+			if (is_object($log_users)) :
+				$this->session->set_userdata('isloggedin', true);
+				$this->session->set_userdata('loguserid', $log_users->id);
+				redirect('users/home');
+			else :
+				$data['error_msg'] = 'invalid username or password';
+			endif;
+		endif;
 	}
 
 	public function existed_email($str)

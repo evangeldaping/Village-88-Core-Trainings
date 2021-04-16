@@ -9,18 +9,12 @@ class Users_model extends CI_Model
 		return $this->db->get('users')->row();
 	}
 
-	public function login($lg = array())
+	public function login($email, $password)
 	{
-		$uname = $lg['email'];
-		$pword = $lg['password'];
-
-		$where = "email='$uname' and password='$pword'";
-		$this->db->where($where);
-		if ($this->db->count_all_results('users') == 1) {
-			return $this->db->get('users')->row();
-		} else {
-			return false;
-		}
+		$sql = "SELECT * FROM users
+                WHERE email='$email' AND password='$password' LIMIT 1 ";
+		$result = $this->db->query($sql)->row();
+		return $result;
 	}
 
 	public function registration($user_data = array())

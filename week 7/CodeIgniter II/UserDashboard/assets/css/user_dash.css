@@ -1,0 +1,48 @@
+/* <?php */
+/* header("Content-type: text/css; charset=utf-8"); */
+/* ?> */
+
+body {
+    font-family: sans-serif;
+
+    /* turn this off if the navbar is static-top */
+    padding-top: 50px;
+    /* turn this on if the navbar is fixed-top */
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-brand {
+    width: 172px;
+}
+#signin-header {
+    margin-top: 13px;
+}
+.navbar-right {
+    margin-right: 0;
+    padding-right: 10px;
+}
+.validation_error {
+    color: red;
+    margin-top: 20px;
+    vertical-align: bottom;
+}
+.validation_error p {
+    margin: 0;
+}
+table {
+    background-color: #eeeeee;
+}
+.new-user-button {
+    margin: 15px 0;
+}
+.btn-primary {
+    margin-bottom: 12px;
+}
+select {
+    height: 27px;
+    vertical-align: bottom;
+}
+textarea {
+    text-align: left;
+}

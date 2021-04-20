@@ -2,20 +2,15 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Players</title>
-    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="<?php echo base_url(); ?>asset/jquery-ui.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>asset/style.css" rel="stylesheet">
 </head>
 <style>
     * {
@@ -40,16 +35,9 @@
         width: 100%;
         height: 100%;
     }
-
-    #loading {
-        text-align: center;
-        background-image: url('<?php echo base_url(); ?>images/loader.gif') no-repeat center;
-        height: 150px;
-    }
 </style>
 
 <body>
-    <!-- Page Content -->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
@@ -61,105 +49,57 @@
                 <div class="col-md-2">
                     <form action="" method="post" class="mb-3">
                         <label>Search Users</label><br>
-                        <input type="text" name="name_search" id="search_box" class="form-control input-lg typeahead" placeholder="name" />
-                        <?php
-                        foreach ($gender->result_array() as $row) {
-                        ?>
-                            <div class="list-group-item checkbox">
-                                <label>
-                                    <input type="checkbox" class="common_selector gender" id="female" name="key" value="<?php echo $row['gender']; ?>">
+                        <input type="text" class="form-control" id="search" name="key" placeholder="name"><br>
 
-                                    <?php echo $row['gender']; ?>
-                                </label><br>
-                            </div>
-                        <?php
-                        }
-                        ?>
+                        <label>Female</label>
+                        <input type="checkbox" class="common_selector female" id="female" name="key" value="Female"><br>
+
+                        <label>Male</label>
+                        <input type="checkbox" class="common_selector male" id="female" name="key" value="Male"><br><br>
+
 
                         <label>Sports</label><br>
-                        <?php
-                        foreach ($sports->result_array() as $row) {
-                        ?>
-                            <div class="list-group-item checkbox">
-                                <label>
-                                    <input type="checkbox" class="common_selector sports" id="female" name="key" value="<?php echo $row['sports']; ?>">
-                                    <?php echo $row['sports']; ?>
-                                </label><br>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                        <button type="submit" class="form-control btn btn-primary" name="submit" value="Search">Search</button>
+                        <label>Basketball</label>
+                        <input type="checkbox" class="common_selector basketball" id="basketball" name="key" value="Basketball"><br>
+
+                        <label>Volleyball</label>
+                        <input type="checkbox" class="common_selector volleyball" id="volleyball" name="key" value="Volleyball"><br>
+
+                        <label>Baseball</label>
+                        <input type="checkbox" class="common_selector baseball" id="baseball" name="key" value="Baseball"><br>
+
+                        <label>Soccer</label>
+                        <input type="checkbox" class="common_selector soccer" id="soccer" name="key" value="Soccer"><br>
+
+                        <label>Football</label>
+                        <input type="checkbox" class="common_selector football" id="football" name="key" value="Football"><br>
+
+                        <input type="submit" class="form-control btn btn-primary" name="submit" value="Search">
                     </form>
                 </div>
 
                 <div class="col-md-10">
-                    <div class="col-md-12">
-                        <br /><br />
-                        <!--class for showing images-->
-                        <div align="center" class="row filter_data">
-
-                        </div>
-                        <!--class for showing pagination-->
-                        <div align="center" id="pagination_link">
-
-                        </div>
-                    </div>
+                    <?php if ($sports_players) : ?>
+                        <?php foreach ($sports_players as $row) : ?>
+                            <div class="col-sm-4 ">
+                                <div class="card-columns-fluid players">
+                                    <div class="card  bg-light">
+                                        <img src="<?php echo base_url() ?>images/<?= $row->image;  ?>" class="card-img-top" alt="players">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $row->name; ?></h5>
+                                            <h5 class="card-title"><?= $row->sports; ?></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <h3>Player's name not found.</h3>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            // $("button").click(function() {
-            filter_data(1);
-
-            function filter_data(page) {
-                $('.filter_data').html('<div id="loading" style="" ></div>');
-                var action = 'fetch_data';
-
-                var gender = get_filter('gender');
-                var sports = get_filter('sports');
-                var name = get_filter('name');
-                $.ajax({
-                    url: "<?php echo base_url(); ?>player_filter/fetch_data/" + page,
-                    method: "POST",
-                    dataType: "JSON",
-                    data: {
-                        action: action,
-                        gender: gender,
-                        sports: sports,
-                        name: name
-                    },
-                    success: function(data) {
-                        $('.filter_data').html(data.player_list);
-                        $('#pagination_link').html(data.pagination_link);
-                    }
-                })
-            }
-
-            function get_filter(class_name) {
-                var filter = [];
-                $('.' + class_name + ':checked').each(function() {
-                    filter.push($(this).val());
-                });
-                return filter;
-            }
-
-            $(document).on('click', '.pagination li a', function(event) {
-                event.preventDefault();
-                var page = $(this).data('ci-pagination-page');
-                filter_data(page);
-            });
-
-            $('.common_selector').click(function() {
-                filter_data(1);
-            });
-        });
-        // });
-    </script>
-
 </body>
 
 </html>

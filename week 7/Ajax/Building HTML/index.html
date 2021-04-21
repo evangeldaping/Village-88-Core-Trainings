@@ -12,7 +12,7 @@ grass. -->
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.get("http://pokeapi.co/api/v1/pokemon/1/", function (res) {
+            $.get("http://pokeapi.co/api/v2/pokemon/1/", function (res) {
                 var html_str = "";
                 html_str += "<h4>Types</h4>";
                 html_str += "<ul>";
@@ -20,7 +20,7 @@ grass. -->
                     html_str += "<li>" + res.types[i].name + "</li>";
                 }
                 html_str += "</ul>";
-                $("#bulbasaur").html(html_str);
+                $("#bulbasaur").append("<img src='" + res.sprites.front_default + "' id='" + res.id + "'>");
             }, "json");
         })
     </script>

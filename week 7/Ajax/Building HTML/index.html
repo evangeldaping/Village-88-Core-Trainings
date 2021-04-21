@@ -1,0 +1,45 @@
+<!-- Building HTML
+What if we wanted to display the JSON data onto our website instead of just logging it to our console? We can include
+the data from JSON object into our HTML so that the users of our website can see that Bulbasaur's types are poison and
+grass. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Gotta Catch'em All</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.get("http://pokeapi.co/api/v1/pokemon/1/", function (res) {
+                var html_str = "";
+                html_str += "<h4>Types</h4>";
+                html_str += "<ul>";
+                for (var i = 0; i < res.types.length; i++) {
+                    html_str += "<li>" + res.types[i].name + "</li>";
+                }
+                html_str += "</ul>";
+                $("#bulbasaur").html(html_str);
+            }, "json");
+        })
+    </script>
+</head>
+
+<body>
+    <div id="bulbasaur">
+    </div>
+</body>
+
+</html>
+<!-- We are passing in three arguments to the $.get function.
+
+The URL that we want to load information from (i.e. "http://pokeapi.co/api/v1/pokemon/1/")
+Function we want to run after information was successfully loaded
+We want to build a string that looks like "<h4>Types</h4>
+<ul>
+    <li>poison</li>
+    <li>grass</li>
+</ul>" and inserting its content inside the div with the id of Bulbasaur. The browser will read the string and render it
+as HTML when we call $("#bulbasaur).html(html_str)
+The type of information we are expecting back which in our case is json. -->

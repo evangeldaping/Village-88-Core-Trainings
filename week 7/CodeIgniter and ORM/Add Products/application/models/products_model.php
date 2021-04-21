@@ -10,16 +10,23 @@ class Products_model extends CI_Model
     // Add a new item into the database
     public function add_product($post_data)
     {
-        $this->db->query("INSERT INTO products (product_name, price, description, created_at, updated_at) VALUES (?,?,?,NOW(),NOW())", array($post_data['product_name'], $post_data['price'], $post_data['description']));
-    }
+        $now = date("Y-m-d, H:i:s");
+        $query = "INSERT INTO products (product_name, price, description, created_at, updated_at) 
+                         VALUES        (?,         ?,          ?,           ?,          ?)";
 
-    public function show_product($product_id)
-    {
-        return $this->db->query("SELECT * FROM products WHERE id = {$product_id}")->row_array();
+        $values = array($post_data['product_name'], $post_data['price'], $post_data['description'], $now, $now);
+
+        return $this->db->query($query, $values);
     }
 
     public function delete_product($product_id)
     {
-        $this->db->query("DELETE FROM products WHERE id = $product_id");
+        $query = "DELETE FROM products
+                  WHERE
+                      id = ?";
+
+        $values = array($product_id);
+
+        return $this->db->query($query, $values);
     }
 }

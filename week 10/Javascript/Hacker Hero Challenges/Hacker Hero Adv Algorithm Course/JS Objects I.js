@@ -1,6 +1,6 @@
 function displayNameCountry(lists){
     for (var i = 0; i < lists.length; i++) {
-        console.log("Name: " + lists[i].name + ", Cohort: " + lists[i].country)
+        console.log("Name: " + lists[i].name + ", Country: " + lists[i].country)
     }
 }
 

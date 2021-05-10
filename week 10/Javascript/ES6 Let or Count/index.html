@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Let/Count</title>
+</head>
+<body>
+    ES6 Offers Block Scoping
+    ES6 gives us the ability to create variable with const and let in addition to var. While var is function scoped, let and
+    const are also block scoped. For example, if a let or const variable is defined inside an if-block or a loop, then it
+    will not be defined outside of that block. Referring to that variable outside of the block will produce a ReferenceError
+    since it is not defined.
+    
+    function letLoop(){
+    for (let i=0; i<3; i++) { // notice we use let to define i console.log(i); // this will log 0, 1, 2 } console.log(i); //
+        this will give us a ReferenceError because i is not defined outside the loop } In contrast, when we use var to
+        define our iterator in a loop, then we may refer to it outside the loop. function varLoop(){ for (var i=0; i<3; i++)
+        { // notice we use var to define i console.log(i); // this will log 0, 1, 2 } console.log(i); // this will log 3 }
+        For variables where the value is not going to be changed, you can declare using const. If you try to update or
+        change a value that was storied in a variable that was declared using 'const' , it will throw an error. For example,
+        const a=15; a=a + 10; // this will throw a TypeError: Assignment to constant variable Most developers who are
+        familiar with ES6 will typically use let and const and stop using var. Some of the older code base may still declare
+        variables all using 'var' . For you, you should know how to use both and for us, going forward, we'll lean more
+        heavily on using let and const instead of var. 
+        
+        Key Takeaways 
+        1. Each function has access to all the variables in its parent function. 
+        2. No function has access to the variables in its child functions.
+        3. Your entire .js file can be thought
+        of as the outermost function or 'global' scope.
+        4. With ES6, we can also take advantage of block-scoping.
+</body>
+</html>

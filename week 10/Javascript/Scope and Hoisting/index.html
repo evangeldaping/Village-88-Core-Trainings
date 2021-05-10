@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope and Hoisting</title>
+</head>
+<body>
+    Scope and Hoisting
+    Scope
+    The understanding of scope is a key part to your growth as a JS developer. Read this section slowly, and refer back to
+    it often, as some of the most common misunderstandings of JS stem from scope problems. At a base level, JavaScript has
+    function scoping. This means that when we declare variables inside of a function, they are only accessible to that
+    function. Function calls create new scope. Consider the below diagram:
+    
+    
+    
+    In this example, we have two levels of our scope. Global scope refers to everything in our global namespace. In this
+    example, Global contains no variables. The addNumbers scope refers to all the variables that exist within that function
+    call.
+    
+    Note: Global scope is never actually empty, however. Anytime we declare a variable globally, it needs to share namespace
+    with all of the objects JavaScript already makes available to us, like console, document, and Math.
+    
+    Now let's see something more complex:
+    
+    
+    
+    Finally, consider what would happen when we start nesting functions:
+    
+    
+    
+    Key Takeaways
+    Each function has access to all the variables in its parent function.
+    No function has access to the variables in its child functions.
+    Your entire .js file can be thought of as the outermost function or 'global' scope.
+    With ES6, we can also take advantage of block-scoping.
+    Hoisting
+    Imagine the following code:
+    
+    console.log( whoamI );
+    What would be the result? Go ahead and run this, and you'll see that the Javascript interpreter will respond "Uncaught
+    ReferenceError: whoamI is not defined". This makes sense as that variable whoamI was never defined.
+    
+    Now, what would happen if you did the following?
+    
+    console.log( whoamI );
+    var whoamI = 5;
+    Would it still say "Uncaught ReferenceError: whoamI is not defined"? After all, whoamI variable was never defined until
+    the second line right?
+    
+    The answer is that it does NOT. Instead, it says simply that whoamI is 'undefined' (meaning that variable actually
+    exists and Javascript recognized that variable even though it was never defined until the following line)! What actually
+    happens is what's called Javascript Hoisting. Whenever a variable is created using 'var', it's as if that variable was
+    created at the top of its scope. For example, Javascript would really interpret the top code as follows:
+    
+    var whoamI;
+    console.log ( whoamI );
+    whoamI = 5;
+    Note that the variable declaration 'ballooned to the top'.
+</body>
+</html>

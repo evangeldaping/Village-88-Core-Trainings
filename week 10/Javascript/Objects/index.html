@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    Objects
+    A variable type that we haven't used very much yet is a type called Objects. In other programming languages, this is
+    often called as an associative array, hash, or a dictionary. In Javascript, it's simply called as Objects.
+    
+    An object has a key value pair. For example:
+    
+    var teacher = { name: 'Michael', city: 'Seattle', state: 'Washington' };
+    We can access each value by doing:
+    
+    console.log( teacher.name );
+    console.log( teacher.city );
+    We can update the value by doing:
+    
+    teacher.city = 'Bellevue';
+    console.log( teacher.city ); //this will now log Bellevue
+    You could even create a new key/value by adding a new property. For example:
+    
+    teacher.favorite_sport = "soccer";
+    console.log(teacher); //this would now log all the key values storied in the variable teacher
+    An Array of Objects
+    It's also very common to have a variable be an array of multiple objects. For example,
+    
+    var students = [ { name: "John", age: 25 },
+    { name: "KB", age: 21 },
+    { name: "Jomar", age: 25 } ];
+    If you wanted to loop through this array and print each value in the object, you could do something like this:
+    
+    for(var i=0; i<students.length; i++){ console.log( "Student Name: " + students[i].name + " - Age: " + students[i].age);
+        } You could alternatively, do something like this also: for(student of students){ console.log( "Student Name: " +
+        student.name + " - Age: " + student.age); }
+</body>
+</html>

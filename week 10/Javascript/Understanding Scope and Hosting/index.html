@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Scope and Hosting</title>
+</head>
+<body>
+    Example 1
+    var a = 10;
+    function abc() {
+    var a = 15;
+    console.log('a is', a);
+    }
+    console.log('a really is', a);
+
+    ANSWER:
+    a really is 10
+    -----------------------------------
+
+    Example 2
+    var a = 10;
+    function abc() {
+    var a = 15;
+    console.log('a is', a);
+    }
+    abc();
+    console.log('a really is', a);
+
+    ANSWER:
+    a is 15
+    a really is 10
+    -----------------------------------
+
+    Example 3
+    if(a == undefined) {
+    console.log("a is declared but hasn't been set to a specific value yet");
+    }
+
+    ANSWER:
+    undefined
+    -----------------------------------
+
+    Example 4
+    if(a == undefined) {
+    console.log("a is declared but hasn't been set to a specific value yet");
+    }
+    var a = 15;
+
+    ANSWER:
+    undefined
+    -----------------------------------
+
+    Example 5
+    var a = 15;
+    function abc(a){
+    return a+10;
+    }
+    var final = abc(a);
+    console.log('final is', final);
+
+    ANSWER:
+    final is 25
+    -----------------------------------
+
+    Example 6
+    var a = 15;
+    function abc(){
+    a = a+10;
+    }
+    console.log('a is', a);
+
+    ANSWER:
+    a is 15
+    -----------------------------------
+
+    Example 7
+    var a = 15;
+    function abc(){
+    a = a+10;
+    }
+    console.log('a is', a);
+    abc();
+    console.log('a is', a);
+
+    ANSWER:
+    a is 15
+    a is 25
+    -----------------------------------
+
+    Example 8
+    var a = 15;
+    function abc(){
+    var a = a+10;
+    }
+    console.log('a is', a);
+    abc();
+    console.log('a is', a);
+
+    ANSWER:
+    a is 15
+    a is 15
+    -----------------------------------
+
+    Example 9
+    var a = 15;
+    function abc(a){
+    a = a + 15;
+    }
+    console.log('a is', a);
+    abc();
+    console.log('a is', a);
+
+    ANSWER:
+    a is 15
+    a is 15
+    -----------------------------------
+
+</body>
+</html>
